@@ -1,0 +1,451 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>My Cart | Yummy Tummy</title>
+
+    <link rel="stylesheet" href="css/variables.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/header.css">
+    <link rel="stylesheet" href="css/footer.css">
+    <link rel="stylesheet" href="css/cart.css">
+</head>
+
+<body>
+
+    <!-- ================================
+         HEADER
+    ================================= -->
+
+    <header class="site-header">
+
+        <div class="container header-container">
+
+            <a href="index.html" class="header-logo-link">
+                <img
+                    src="images/logo/yummy-tummy-logo.png"
+                    alt="Yummy Tummy"
+                    class="header-logo"
+                >
+            </a>
+
+            <nav class="main-navigation">
+
+                <a href="index.html" class="nav-link">
+                    Home
+                </a>
+
+                <a href="menu.html" class="nav-link">
+                    Menu
+                </a>
+
+                <a href="restaurants.html" class="nav-link">
+                    Restaurants
+                </a>
+
+            </nav>
+
+            <div class="header-actions">
+
+                <a href="#" class="header-search">
+                    Search food or restaurant
+                </a>
+
+                <a href="#" class="header-action-link">
+                    Wishlist
+                </a>
+
+                <a
+                    href="cart.html"
+                    class="header-action-link active"
+                >
+                    Cart
+                </a>
+
+                <a
+                    href="login.html"
+                    class="header-login-button"
+                >
+                    Login
+                </a>
+
+            </div>
+
+        </div>
+
+    </header>
+
+
+    <!-- ================================
+         CART MAIN
+    ================================= -->
+
+    <main class="cart-main">
+
+        <section class="cart-section">
+
+            <div class="container">
+
+                <!-- Page Heading -->
+
+                <div class="cart-heading">
+
+                    <span class="cart-label">
+                        YOUR CART
+                    </span>
+
+                    <h1 class="cart-title">
+                        Your Food Cart
+                    </h1>
+
+                    <p class="cart-description">
+                        Review your selected food items before checkout.
+                    </p>
+
+                </div>
+
+
+                <!-- ================================
+                     CART CONTENT
+                ================================= -->
+
+                <div class="cart-layout">
+
+                    <!-- Cart Items -->
+
+                    <div class="cart-items-section">
+
+                        <div
+                            id="cartItems"
+                            class="cart-items"
+                        >
+
+                            <!--
+                                Cart item structure is prepared here.
+                                JavaScript will handle data later.
+                            -->
+
+                            <article
+                                class="cart-item"
+                                id="cartItemTemplate"
+                                hidden
+                            >
+
+                                <div class="cart-item-image-wrapper">
+
+                                    <img
+                                        src=""
+                                        alt=""
+                                        class="cart-item-image"
+                                        id="cartItemImage"
+                                    >
+
+                                </div>
+
+
+                                <div class="cart-item-content">
+
+                                    <span
+                                        class="cart-item-category"
+                                        id="cartItemCategory"
+                                    >
+                                    </span>
+
+                                    <h2
+                                        class="cart-item-name"
+                                        id="cartItemName"
+                                    >
+                                    </h2>
+
+                                    <p
+                                        class="cart-item-restaurant"
+                                        id="cartItemRestaurant"
+                                    >
+                                    </p>
+
+
+                                    <div class="cart-item-bottom">
+
+                                        <span
+                                            class="cart-item-price"
+                                            id="cartItemPrice"
+                                        >
+                                        </span>
+
+
+                                        <div class="cart-item-quantity">
+
+                                            <button
+                                                type="button"
+                                                class="quantity-button"
+                                                id="decreaseQuantity"
+                                            >
+                                                -
+                                            </button>
+
+                                            <span
+                                                class="quantity-value"
+                                                id="quantityValue"
+                                            >
+                                                1
+                                            </span>
+
+                                            <button
+                                                type="button"
+                                                class="quantity-button"
+                                                id="increaseQuantity"
+                                            >
+                                                +
+                                            </button>
+
+                                        </div>
+
+
+                                        <button
+                                            type="button"
+                                            class="cart-remove-button"
+                                            id="removeCartItem"
+                                        >
+                                            Remove
+                                        </button>
+
+                                    </div>
+
+                                </div>
+
+                            </article>
+
+                        </div>
+
+
+                        <!-- Empty Cart -->
+
+                        <div
+                            class="cart-empty"
+                            id="cartEmpty"
+                        >
+
+                            <div class="cart-empty-content">
+
+                                <span class="cart-empty-label">
+                                    CART
+                                </span>
+
+                                <h2>
+                                    Your Cart is Empty
+                                </h2>
+
+                                <p>
+                                    Add delicious food from the menu
+                                    to see it here.
+                                </p>
+
+                                <a
+                                    href="menu.html"
+                                    class="cart-continue-button"
+                                >
+                                    Explore Menu
+                                </a>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+
+                    <!-- ================================
+                         CART SUMMARY
+                    ================================= -->
+
+                    <aside class="cart-summary">
+
+                        <div class="cart-summary-card">
+
+                            <h2 class="cart-summary-title">
+                                Cart Summary
+                            </h2>
+
+
+                            <div class="cart-summary-row">
+
+                                <span>
+                                    Items
+                                </span>
+
+                                <strong id="cartItemCount">
+                                    0
+                                </strong>
+
+                            </div>
+
+
+                            <div class="cart-summary-row">
+
+                                <span>
+                                    Subtotal
+                                </span>
+
+                                <strong id="cartSubtotal">
+                                    ₹0
+                                </strong>
+
+                            </div>
+
+
+                            <div class="cart-summary-row">
+
+                                <span>
+                                    Delivery Fee
+                                </span>
+
+                                <strong id="cartDeliveryFee">
+                                    ₹0
+                                </strong>
+
+                            </div>
+
+
+                            <div class="cart-summary-divider"></div>
+
+
+                            <div class="cart-summary-total">
+
+                                <span>
+                                    Total
+                                </span>
+
+                                <strong id="cartTotal">
+                                    ₹0
+                                </strong>
+
+                            </div>
+
+
+                            <a
+                                href="checkout.html"
+                                class="cart-checkout-button"
+                                id="cartCheckoutButton"
+                            >
+                                Proceed to Checkout
+                            </a>
+
+                        </div>
+
+                    </aside>
+
+                </div>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <!-- ================================
+         FOOTER
+    ================================= -->
+
+    <footer class="site-footer">
+
+        <div class="container footer-container">
+
+            <div class="footer-brand">
+
+                <img
+                    src="images/logo/yummy-tummy-logo.png"
+                    alt="Yummy Tummy"
+                    class="footer-logo"
+                >
+
+                <p>
+                    Yummy Tummy makes it easy to discover
+                    delicious food and explore your favourite
+                    restaurants from one place.
+                </p>
+
+            </div>
+
+
+            <div class="footer-column">
+
+                <h3>
+                    Quick Links
+                </h3>
+
+                <a href="index.html">
+                    Home
+                </a>
+
+                <a href="menu.html">
+                    Menu
+                </a>
+
+                <a href="restaurants.html">
+                    Restaurants
+                </a>
+
+            </div>
+
+
+            <div class="footer-column">
+
+                <h3>
+                    Customer
+                </h3>
+
+                <a href="#">
+                    Wishlist
+                </a>
+
+                <a href="cart.html">
+                    My Cart
+                </a>
+
+                <a href="orders.html">
+                    My Orders
+                </a>
+
+                <a href="login.html">
+                    Login
+                </a>
+
+            </div>
+
+
+            <div class="footer-column">
+
+                <h3>
+                    Contact
+                </h3>
+
+                <p>
+                    Email:
+                    support@yummytummy.com
+                </p>
+
+                <p>
+                    Phone:
+                    +91 00000 00000
+                </p>
+
+                <p>
+                    Available for customer support
+                </p>
+
+            </div>
+
+        </div>
+
+    </footer>
+
+
+    <script src="js/cart.js"></script>
+
+</body>
+
+</html>
