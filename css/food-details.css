@@ -7,9 +7,11 @@
     background-color: var(--white-color);
 }
 
+
 .food-details-section {
     padding: 70px 0 100px;
 }
+
 
 .food-details-card {
     display: grid;
@@ -21,10 +23,16 @@
     box-shadow: var(--shadow-md);
 }
 
+
+/* =================================
+   FOOD IMAGE
+================================= */
+
 .food-details-image-wrapper {
     min-height: 520px;
     background-color: var(--light-background-color);
 }
+
 
 .food-details-image {
     display: block;
@@ -34,12 +42,18 @@
     object-fit: cover;
 }
 
+
+/* =================================
+   FOOD CONTENT
+================================= */
+
 .food-details-content {
     display: flex;
     flex-direction: column;
     justify-content: center;
     padding: 55px;
 }
+
 
 .food-details-category {
     color: var(--primary-color);
@@ -49,6 +63,7 @@
     text-transform: uppercase;
 }
 
+
 .food-details-title {
     margin-top: 12px;
     color: var(--black-color);
@@ -57,6 +72,7 @@
     line-height: 1.1;
 }
 
+
 .food-details-description {
     margin-top: 18px;
     color: var(--muted-color);
@@ -64,11 +80,17 @@
     line-height: 1.75;
 }
 
+
+/* =================================
+   FOOD INFORMATION
+================================= */
+
 .food-details-info {
     display: grid;
     gap: 0;
     margin-top: 28px;
 }
+
 
 .food-info-item {
     display: flex;
@@ -79,10 +101,12 @@
     border-bottom: 1px solid var(--border-light-color);
 }
 
+
 .food-info-label {
     color: var(--muted-color);
     font-size: var(--font-sm);
 }
+
 
 .food-info-value {
     color: var(--black-color);
@@ -90,6 +114,11 @@
     font-weight: var(--weight-semibold);
     text-align: right;
 }
+
+
+/* =================================
+   FOOD FOOTER
+================================= */
 
 .food-details-footer {
     display: flex;
@@ -99,45 +128,116 @@
     margin-top: 32px;
 }
 
+
 .food-details-price {
     color: var(--black-color);
     font-size: var(--font-xl);
     font-weight: var(--weight-bold);
 }
 
+
+/* =================================
+   FOOD ACTIONS
+================================= */
+
+.food-details-actions {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+
+/* =================================
+   WISHLIST BUTTON
+================================= */
+
+.food-details-wishlist-button,
 .food-details-cart-button {
-    padding: 13px 24px;
-    color: var(--white-color);
-    background-color: var(--primary-color);
-    border: 0;
+    padding: 13px 22px;
     border-radius: var(--radius-full);
     font-size: var(--font-sm);
     font-weight: var(--weight-semibold);
     cursor: pointer;
     transition:
         transform var(--transition-fast),
-        background-color var(--transition-fast);
+        background-color var(--transition-fast),
+        color var(--transition-fast),
+        border-color var(--transition-fast);
 }
+
+
+.food-details-wishlist-button {
+    color: var(--black-color);
+    background-color: var(--white-color);
+    border: 1px solid var(--border-light-color);
+}
+
+
+.food-details-wishlist-button:hover {
+    transform: translateY(-2px);
+    border-color: var(--primary-color);
+    color: var(--primary-color);
+}
+
+
+.food-details-wishlist-button.added {
+    color: var(--white-color);
+    background-color: var(--primary-color);
+    border-color: var(--primary-color);
+}
+
+
+/* =================================
+   CART BUTTON
+================================= */
+
+.food-details-cart-button {
+    color: var(--white-color);
+    background-color: var(--primary-color);
+    border: 1px solid var(--primary-color);
+}
+
 
 .food-details-cart-button:hover {
     transform: translateY(-2px);
 }
+
+
+/* =================================
+   WISHLIST MESSAGE
+================================= */
+
+.food-details-wishlist-message {
+    min-height: 22px;
+    margin-top: 14px;
+    color: var(--primary-color);
+    font-size: var(--font-sm);
+    font-weight: var(--weight-semibold);
+}
+
+
+/* =================================
+   FOOD NOT FOUND
+================================= */
 
 .food-not-found {
     padding: 100px 20px;
     text-align: center;
 }
 
+
 .food-not-found h2 {
     color: var(--black-color);
     font-size: var(--font-xl);
 }
+
 
 .food-not-found p {
     margin-top: 10px;
     color: var(--muted-color);
     font-size: var(--font-sm);
 }
+
 
 .food-back-button {
     display: inline-flex;
@@ -162,13 +262,16 @@
         grid-template-columns: 1fr;
     }
 
+
     .food-details-image-wrapper {
         min-height: 400px;
     }
 
+
     .food-details-image {
         min-height: 400px;
     }
+
 
     .food-details-content {
         padding: 40px;
@@ -183,31 +286,45 @@
         padding: 40px 0 60px;
     }
 
+
     .food-details-image-wrapper {
         min-height: 280px;
     }
+
 
     .food-details-image {
         min-height: 280px;
     }
 
+
     .food-details-content {
         padding: 28px 22px;
     }
+
 
     .food-details-title {
         font-size: 2rem;
     }
 
+
     .food-details-description {
         font-size: var(--font-sm);
     }
+
 
     .food-details-footer {
         align-items: stretch;
         flex-direction: column;
     }
 
+
+    .food-details-actions {
+        width: 100%;
+        flex-direction: column;
+    }
+
+
+    .food-details-wishlist-button,
     .food-details-cart-button {
         width: 100%;
     }
