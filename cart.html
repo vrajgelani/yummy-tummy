@@ -1,85 +1,122 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
 
     <title>My Cart | Yummy Tummy</title>
 
     <link rel="stylesheet" href="css/variables.css">
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/header.css">
-    <link rel="stylesheet" href="css/footer.css">
     <link rel="stylesheet" href="css/cart.css">
+    <link rel="stylesheet" href="css/footer.css">
 </head>
 
 <body>
 
-    <!-- ================================
+    <!-- =================================
          HEADER
     ================================= -->
 
     <header class="site-header">
 
-        <div class="container header-container">
+    <div class="container header-container">
 
-            <a href="index.html" class="header-logo-link">
-                <img
-                    src="images/logo/yummy-tummy-logo.png"
-                    alt="Yummy Tummy"
-                    class="header-logo"
-                >
+        <a
+            href="index.html"
+            class="header-logo"
+        >
+            <img
+                src="images/logo/yummy-tummy-logo.png"
+                alt="Yummy Tummy"
+            >
+        </a>
+
+
+        <nav
+            class="header-nav"
+            aria-label="Main navigation"
+        >
+
+            <a
+                href="index.html"
+                class="header-nav-link"
+            >
+                Home
             </a>
 
-            <nav class="main-navigation">
+            <a
+                href="menu.html"
+                class="header-nav-link"
+            >
+                Menu
+            </a>
 
-                <a href="index.html" class="nav-link">
-                    Home
-                </a>
+            <a
+                href="restaurants.html"
+                class="header-nav-link"
+            >
+                Restaurants
+            </a>
 
-                <a href="menu.html" class="nav-link">
-                    Menu
-                </a>
+        </nav>
 
-                <a href="restaurants.html" class="nav-link">
-                    Restaurants
-                </a>
 
-            </nav>
+        <div class="header-search">
 
-            <div class="header-actions">
-
-                <a href="#" class="header-search">
-                    Search food or restaurant
-                </a>
-
-                <a href="#" class="header-action-link">
-                    Wishlist
-                </a>
-
-                <a
-                    href="cart.html"
-                    class="header-action-link active"
-                >
-                    Cart
-                </a>
-
-                <a
-                    href="login.html"
-                    class="header-login-button"
-                >
-                    Login
-                </a>
-
-            </div>
+            <input
+                type="search"
+                placeholder="Search food or restaurants"
+                aria-label="Search food or restaurants"
+            >
 
         </div>
 
-    </header>
+
+        <div class="header-actions">
+
+            <a
+                href="wishlist.html"
+                class="header-action"
+            >
+                Wishlist
+            </a>
+
+            <a
+                href="cart.html"
+                class="header-action active"
+            >
+                Cart
+            </a>
+
+            <a
+                href="login.html"
+                class="header-action header-login"
+            >
+                Login
+            </a>
+
+        </div>
 
 
-    <!-- ================================
+        <button
+            type="button"
+            class="header-menu-toggle"
+            aria-label="Open menu"
+        >
+            Menu
+        </button>
+
+    </div>
+
+</header>
+
+
+    <!-- =================================
          CART MAIN
     ================================= -->
 
@@ -98,49 +135,62 @@
                     </span>
 
                     <h1 class="cart-title">
-                        Your Food Cart
+                        My Cart
                     </h1>
 
                     <p class="cart-description">
-                        Review your selected food items before checkout.
+                        Review your selected food before checkout.
                     </p>
 
                 </div>
 
 
-                <!-- ================================
+                <!-- =================================
                      CART CONTENT
                 ================================= -->
 
-                <div class="cart-layout">
+                <div
+                    class="cart-layout"
+                    id="cartLayout"
+                >
 
-                    <!-- Cart Items -->
+                    <!-- =================================
+                         CART ITEMS
+                    ================================= -->
 
                     <div class="cart-items-section">
 
+                        <div class="cart-items-header">
+
+                            <h2>
+                                Your Items
+                            </h2>
+
+                            <span
+                                id="cartItemCount"
+                                class="cart-item-count"
+                            >
+                                0 Items
+                            </span>
+
+                        </div>
+
+
                         <div
-                            id="cartItems"
                             class="cart-items"
+                            id="cartItems"
                         >
 
-                            <!--
-                                Cart item structure is prepared here.
-                                JavaScript will handle data later.
-                            -->
+                            <!-- Cart item structure -->
 
-                            <article
-                                class="cart-item"
-                                id="cartItemTemplate"
-                                hidden
-                            >
+                            <article class="cart-item">
 
                                 <div class="cart-item-image-wrapper">
 
                                     <img
-                                        src=""
-                                        alt=""
+                                        src="images/foods/restaurants/chilli-paneer.png"
+                                        alt="Food"
                                         class="cart-item-image"
-                                        id="cartItemImage"
                                     >
 
                                 </div>
@@ -148,31 +198,27 @@
 
                                 <div class="cart-item-content">
 
-                                    <span
-                                        class="cart-item-category"
-                                        id="cartItemCategory"
-                                    >
-                                    </span>
+                                    <div class="cart-item-details">
 
-                                    <h2
-                                        class="cart-item-name"
-                                        id="cartItemName"
-                                    >
-                                    </h2>
+                                        <span class="cart-item-category">
+                                            Chinese
+                                        </span>
 
-                                    <p
-                                        class="cart-item-restaurant"
-                                        id="cartItemRestaurant"
-                                    >
-                                    </p>
+                                        <h3 class="cart-item-name">
+                                            Food Name
+                                        </h3>
+
+                                        <p class="cart-item-restaurant">
+                                            Restaurant Name
+                                        </p>
+
+                                    </div>
 
 
                                     <div class="cart-item-bottom">
 
-                                        <span
-                                            class="cart-item-price"
-                                            id="cartItemPrice"
-                                        >
+                                        <span class="cart-item-price">
+                                            ₹0
                                         </span>
 
 
@@ -181,22 +227,19 @@
                                             <button
                                                 type="button"
                                                 class="quantity-button"
-                                                id="decreaseQuantity"
+                                                aria-label="Decrease quantity"
                                             >
-                                                -
+                                                −
                                             </button>
 
-                                            <span
-                                                class="quantity-value"
-                                                id="quantityValue"
-                                            >
+                                            <span class="quantity-value">
                                                 1
                                             </span>
 
                                             <button
                                                 type="button"
                                                 class="quantity-button"
-                                                id="increaseQuantity"
+                                                aria-label="Increase quantity"
                                             >
                                                 +
                                             </button>
@@ -207,7 +250,6 @@
                                         <button
                                             type="button"
                                             class="cart-remove-button"
-                                            id="removeCartItem"
                                         >
                                             Remove
                                         </button>
@@ -226,26 +268,23 @@
                         <div
                             class="cart-empty"
                             id="cartEmpty"
+                            hidden
                         >
 
                             <div class="cart-empty-content">
-
-                                <span class="cart-empty-label">
-                                    CART
-                                </span>
 
                                 <h2>
                                     Your Cart is Empty
                                 </h2>
 
                                 <p>
-                                    Add delicious food from the menu
-                                    to see it here.
+                                    Add delicious food to your cart and
+                                    it will appear here.
                                 </p>
 
                                 <a
                                     href="menu.html"
-                                    class="cart-continue-button"
+                                    class="cart-empty-button"
                                 >
                                     Explore Menu
                                 </a>
@@ -257,7 +296,7 @@
                     </div>
 
 
-                    <!-- ================================
+                    <!-- =================================
                          CART SUMMARY
                     ================================= -->
 
@@ -266,21 +305,8 @@
                         <div class="cart-summary-card">
 
                             <h2 class="cart-summary-title">
-                                Cart Summary
+                                Order Summary
                             </h2>
-
-
-                            <div class="cart-summary-row">
-
-                                <span>
-                                    Items
-                                </span>
-
-                                <strong id="cartItemCount">
-                                    0
-                                </strong>
-
-                            </div>
 
 
                             <div class="cart-summary-row">
@@ -302,7 +328,7 @@
                                     Delivery Fee
                                 </span>
 
-                                <strong id="cartDeliveryFee">
+                                <strong id="cartDelivery">
                                     ₹0
                                 </strong>
 
@@ -328,9 +354,16 @@
                             <a
                                 href="checkout.html"
                                 class="cart-checkout-button"
-                                id="cartCheckoutButton"
                             >
                                 Proceed to Checkout
+                            </a>
+
+
+                            <a
+                                href="menu.html"
+                                class="cart-continue-button"
+                            >
+                                Continue Shopping
                             </a>
 
                         </div>
@@ -346,7 +379,7 @@
     </main>
 
 
-    <!-- ================================
+    <!-- =================================
          FOOTER
     ================================= -->
 
@@ -356,22 +389,23 @@
 
             <div class="footer-brand">
 
-                <img
-                    src="images/logo/yummy-tummy-logo.png"
-                    alt="Yummy Tummy"
-                    class="footer-logo"
-                >
+                <a href="index.html">
+                    <img
+                        src="images/logo/yummy-tummy-logo.png"
+                        alt="Yummy Tummy"
+                        class="footer-logo"
+                    >
+                </a>
 
                 <p>
-                    Yummy Tummy makes it easy to discover
-                    delicious food and explore your favourite
-                    restaurants from one place.
+                    Yummy Tummy makes it easy to discover delicious food
+                    and explore your favourite restaurants from one place.
                 </p>
 
             </div>
 
 
-            <div class="footer-column">
+            <div class="footer-links">
 
                 <h3>
                     Quick Links
@@ -392,13 +426,13 @@
             </div>
 
 
-            <div class="footer-column">
+            <div class="footer-links">
 
                 <h3>
                     Customer
                 </h3>
 
-                <a href="#">
+                <a href="wishlist.html">
                     Wishlist
                 </a>
 
@@ -417,7 +451,7 @@
             </div>
 
 
-            <div class="footer-column">
+            <div class="footer-contact">
 
                 <h3>
                     Contact
@@ -425,12 +459,12 @@
 
                 <p>
                     Email:
+                    <br>
                     support@yummytummy.com
                 </p>
 
                 <p>
-                    Phone:
-                    +91 00000 00000
+                    Phone: +91 00000 00000
                 </p>
 
                 <p>
@@ -444,8 +478,8 @@
     </footer>
 
 
+    <script src="js/main.js"></script>
     <script src="js/cart.js"></script>
 
 </body>
-
 </html>

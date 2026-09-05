@@ -1,0 +1,264 @@
+/* =================================
+   WISHLIST
+================================= */
+
+.wishlist-main {
+    min-height: 700px;
+    background-color: var(--white-color);
+}
+
+
+/* =================================
+   WISHLIST HERO
+================================= */
+
+.wishlist-hero {
+    padding: 70px 0;
+    background-color: var(--light-background-color);
+}
+
+.wishlist-heading {
+    max-width: 760px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.wishlist-label {
+    color: var(--primary-color);
+    font-size: var(--font-xs);
+    font-weight: var(--weight-semibold);
+    letter-spacing: 0.1em;
+}
+
+.wishlist-title {
+    margin-top: 10px;
+    color: var(--black-color);
+    font-size: clamp(2.2rem, 5vw, 3.6rem);
+    font-weight: var(--weight-bold);
+    line-height: 1.1;
+}
+
+.wishlist-description {
+    max-width: 620px;
+    margin: 15px auto 0;
+    color: var(--muted-color);
+    font-size: var(--font-md);
+    line-height: 1.7;
+}
+
+
+/* =================================
+   WISHLIST SECTION
+================================= */
+
+.wishlist-section {
+    padding: 60px 0 90px;
+}
+
+
+/* =================================
+   FOOD GRID
+================================= */
+
+.wishlist-food-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 24px;
+}
+
+
+/* =================================
+   FOOD CARD
+================================= */
+
+.wishlist-food-card {
+    overflow: hidden;
+    background-color: var(--white-color);
+    border: 1px solid var(--border-light-color);
+    border-radius: var(--radius-lg);
+    box-shadow: var(--shadow-sm);
+    transition:
+        transform var(--transition-normal),
+        box-shadow var(--transition-normal);
+}
+
+.wishlist-food-card:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--shadow-md);
+}
+
+
+/* =================================
+   FOOD IMAGE
+================================= */
+
+.wishlist-food-image {
+    display: block;
+    width: 100%;
+    aspect-ratio: 1 / 0.78;
+    object-fit: cover;
+}
+
+
+/* =================================
+   FOOD CONTENT
+================================= */
+
+.wishlist-food-content {
+    padding: 18px;
+}
+
+.wishlist-food-category {
+    color: var(--primary-color);
+    font-size: var(--font-xs);
+    font-weight: var(--weight-semibold);
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+}
+
+.wishlist-food-name {
+    margin-top: 7px;
+    color: var(--black-color);
+    font-size: var(--font-lg);
+    font-weight: var(--weight-semibold);
+    line-height: 1.3;
+}
+
+.wishlist-food-restaurant {
+    margin-top: 6px;
+    color: var(--muted-color);
+    font-size: var(--font-xs);
+}
+
+.wishlist-food-footer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+    margin-top: 18px;
+}
+
+.wishlist-food-price {
+    color: var(--black-color);
+    font-size: var(--font-md);
+    font-weight: var(--weight-bold);
+}
+
+
+/* =================================
+   FOOD BUTTONS
+================================= */
+
+.wishlist-food-actions {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.wishlist-food-view-button,
+.wishlist-food-remove-button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 9px 13px;
+    border-radius: var(--radius-full);
+    font-size: var(--font-xs);
+    font-weight: var(--weight-semibold);
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.wishlist-food-view-button {
+    color: var(--white-color);
+    background-color: var(--primary-color);
+}
+
+.wishlist-food-remove-button {
+    color: var(--black-color);
+    background-color: var(--light-background-color);
+    border: 1px solid var(--border-light-color);
+}
+
+
+/* =================================
+   EMPTY WISHLIST
+================================= */
+
+.wishlist-empty {
+    max-width: 650px;
+    margin: 0 auto;
+    padding: 80px 20px;
+    text-align: center;
+}
+
+.wishlist-empty h2 {
+    color: var(--black-color);
+    font-size: var(--font-xl);
+    font-weight: var(--weight-bold);
+}
+
+.wishlist-empty p {
+    margin-top: 10px;
+    color: var(--muted-color);
+    font-size: var(--font-sm);
+    line-height: 1.7;
+}
+
+.wishlist-empty-button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 24px;
+    padding: 12px 22px;
+    color: var(--white-color);
+    background-color: var(--primary-color);
+    border-radius: var(--radius-md);
+    font-size: var(--font-sm);
+    font-weight: var(--weight-semibold);
+    text-decoration: none;
+}
+
+
+/* =================================
+   RESPONSIVE
+================================= */
+
+@media (max-width: 1000px) {
+
+    .wishlist-food-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+}
+
+
+@media (max-width: 600px) {
+
+    .wishlist-hero {
+        padding: 50px 0;
+    }
+
+    .wishlist-section {
+        padding: 45px 0 60px;
+    }
+
+    .wishlist-food-grid {
+        grid-template-columns: 1fr;
+        gap: 18px;
+    }
+
+    .wishlist-food-footer {
+        align-items: flex-start;
+        flex-direction: column;
+    }
+
+    .wishlist-food-actions {
+        width: 100%;
+    }
+
+    .wishlist-food-view-button,
+    .wishlist-food-remove-button {
+        flex: 1;
+    }
+
+}

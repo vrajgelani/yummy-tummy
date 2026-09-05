@@ -14,64 +14,73 @@ const cartItemCount =
 const cartSubtotal =
     document.querySelector("#cartSubtotal");
 
-const cartDeliveryFee =
-    document.querySelector("#cartDeliveryFee");
+const cartDelivery =
+    document.querySelector("#cartDelivery");
 
 const cartTotal =
     document.querySelector("#cartTotal");
 
-const cartCheckoutButton =
-    document.querySelector("#cartCheckoutButton");
-
-
-/* =================================
-   INITIAL CART STATE
-================================= */
 
 function initializeCart() {
 
-    if (!cartItems || !cartEmpty) {
+    if (!cartItems) {
+        return;
+    }
+
+    updateCartFoundation();
+
+}
+
+
+function updateCartFoundation() {
+
+    const items =
+        cartItems.querySelectorAll(".cart-item");
+
+    const itemCount =
+        items.length;
+
+
+    if (cartItemCount) {
+
+        cartItemCount.textContent =
+            `${itemCount} ${itemCount === 1 ? "Item" : "Items"}`;
+
+    }
+
+
+    if (itemCount === 0) {
+
+        if (cartEmpty) {
+            cartEmpty.hidden = false;
+        }
+
+        if (cartItems) {
+            cartItems.hidden = true;
+        }
+
+        if (cartSubtotal) {
+            cartSubtotal.textContent = "₹0";
+        }
+
+        if (cartDelivery) {
+            cartDelivery.textContent = "₹0";
+        }
+
+        if (cartTotal) {
+            cartTotal.textContent = "₹0";
+        }
+
         return;
     }
 
 
-    /*
-        Day 4 Part 4:
-        Cart starts empty.
-
-        Actual cart data, quantity,
-        remove and total calculation
-        will be implemented in Day 5.
-    */
-
-    cartEmpty.hidden = false;
-
-
-    if (cartItemCount) {
-        cartItemCount.textContent = "0";
+    if (cartEmpty) {
+        cartEmpty.hidden = true;
     }
 
-
-    if (cartSubtotal) {
-        cartSubtotal.textContent = "₹0";
-    }
-
-
-    if (cartDeliveryFee) {
-        cartDeliveryFee.textContent = "₹0";
-    }
-
-
-    if (cartTotal) {
-        cartTotal.textContent = "₹0";
-    }
-
-
-    if (cartCheckoutButton) {
-        cartCheckoutButton.setAttribute(
-            "aria-disabled",
-            "true"
-        );
+    if (cartItems) {
+        cartItems.hidden = false;
     }
 
 }
