@@ -12,7 +12,9 @@ const restaurants = [
         name: "Gujarati Thali House",
         category: "Gujarati",
         description:
-            "Traditional Gujarati vegetarian dining with authentic regional flavours."
+            "Traditional Gujarati vegetarian dining with authentic regional flavours.",
+        image:
+            "images/restaurants/outside/gujarati-thali-house.png"
     },
 
     {
@@ -20,7 +22,9 @@ const restaurants = [
         name: "Chinese Wok House",
         category: "Chinese",
         description:
-            "Delicious vegetarian Chinese favourites prepared with fresh ingredients."
+            "Delicious vegetarian Chinese favourites prepared with fresh ingredients.",
+        image:
+            "images/restaurants/outside/chinese-wok-house.png"
     },
 
     {
@@ -28,7 +32,9 @@ const restaurants = [
         name: "Green Bowl",
         category: "Healthy",
         description:
-            "Fresh salads, wholesome bowls and healthy vegetarian meals."
+            "Fresh salads, wholesome bowls and healthy vegetarian meals.",
+        image:
+            "images/restaurants/outside/green-bowl.png"
     },
 
     {
@@ -36,7 +42,9 @@ const restaurants = [
         name: "South Indian Express",
         category: "South Indian",
         description:
-            "Classic South Indian vegetarian favourites prepared fresh."
+            "Classic South Indian vegetarian favourites prepared fresh.",
+        image:
+            "images/restaurants/outside/south-indian-express.png"
     },
 
     {
@@ -44,7 +52,9 @@ const restaurants = [
         name: "Burger Station",
         category: "Burger",
         description:
-            "Gourmet vegetarian burgers with delicious fresh ingredients."
+            "Gourmet vegetarian burgers with delicious fresh ingredients.",
+        image:
+            "images/restaurants/outside/burger-station.png"
     },
 
     {
@@ -52,7 +62,9 @@ const restaurants = [
         name: "Pizza Corner",
         category: "Pizza",
         description:
-            "Freshly prepared vegetarian pizzas with delicious toppings."
+            "Freshly prepared vegetarian pizzas with delicious toppings.",
+        image:
+            "images/restaurants/outside/pizza-corner.png"
     }
 
 ];
@@ -80,17 +92,15 @@ function createRestaurantCard(restaurant) {
     image.className =
         "restaurant-card-image";
 
+    image.src =
+        restaurant.image;
+
     image.alt =
         restaurant.name;
 
     image.loading =
         "lazy";
 
-
-    /*
-        Restaurant exterior images
-        will be connected in Day 3 Part 2.
-    */
 
     imageWrapper.appendChild(image);
 

@@ -1,3 +1,15 @@
+const restaurantDetails =
+    document.querySelector("#restaurantDetails");
+
+const restaurantNotFound =
+    document.querySelector("#restaurantNotFound");
+
+const restaurantImage =
+    document.querySelector("#restaurantImage");
+
+const restaurantInteriorImage =
+    document.querySelector("#restaurantInteriorImage");
+
 const restaurantName =
     document.querySelector("#restaurantName");
 
@@ -7,76 +19,88 @@ const restaurantCategory =
 const restaurantDescription =
     document.querySelector("#restaurantDescription");
 
-const restaurantImage =
-    document.querySelector("#restaurantImage");
-
-const restaurantInfo =
-    document.querySelector("#restaurantInfo");
-
-const restaurantInfoName =
-    document.querySelector("#restaurantInfoName");
-
-const restaurantInfoCategory =
-    document.querySelector("#restaurantInfoCategory");
-
-const restaurantDetailsEmpty =
-    document.querySelector("#restaurantDetailsEmpty");
+const restaurantCuisine =
+    document.querySelector("#restaurantCuisine");
 
 
-const restaurantDetails = {
+const restaurants = {
 
-    "Gujarati Thali House": {
+    "gujarati-thali-house": {
+        name: "Gujarati Thali House",
         category: "Gujarati",
+        cuisine: "Gujarati Vegetarian",
         description:
-            "Traditional Gujarati vegetarian dining with authentic flavours.",
-        image:
+            "Traditional Gujarati vegetarian dining with authentic regional flavours and a warm dining experience.",
+        outsideImage:
+            "images/restaurants/outside/gujarati-thali-house.png",
+        insideImage:
             "images/restaurants/inside/gujarati-thali-house.png"
     },
 
-    "Chinese Wok House": {
+    "chinese-wok-house": {
+        name: "Chinese Wok House",
         category: "Chinese",
+        cuisine: "Vegetarian Chinese",
         description:
-            "Delicious vegetarian Chinese favourites with fresh ingredients.",
-        image:
+            "Delicious vegetarian Chinese favourites prepared with fresh ingredients and modern flavours.",
+        outsideImage:
+            "images/restaurants/outside/chinese-wok-house.png",
+        insideImage:
             "images/restaurants/inside/chinese-wok-house.png"
     },
 
-    "Green Bowl": {
+    "green-bowl": {
+        name: "Green Bowl",
         category: "Healthy",
+        cuisine: "Healthy Vegetarian",
         description:
-            "Fresh salads, healthy bowls and wholesome vegetarian meals.",
-        image:
+            "Fresh salads, wholesome bowls and healthy vegetarian meals prepared with fresh ingredients.",
+        outsideImage:
+            "images/restaurants/outside/green-bowl.png",
+        insideImage:
             "images/restaurants/inside/green-bowl.png"
     },
 
-    "South Indian Express": {
+    "south-indian-express": {
+        name: "South Indian Express",
         category: "South Indian",
+        cuisine: "South Indian Vegetarian",
         description:
-            "Classic South Indian vegetarian favourites and delicious meals.",
-        image:
+            "Classic South Indian vegetarian favourites prepared fresh with traditional flavours.",
+        outsideImage:
+            "images/restaurants/outside/south-indian-express.png",
+        insideImage:
             "images/restaurants/inside/south-indian-express.png"
     },
 
-    "Burger Station": {
+    "burger-station": {
+        name: "Burger Station",
         category: "Burger",
+        cuisine: "Vegetarian Burgers",
         description:
-            "Gourmet vegetarian burgers prepared with delicious ingredients.",
-        image:
+            "Gourmet vegetarian burgers prepared with delicious ingredients and modern flavours.",
+        outsideImage:
+            "images/restaurants/outside/burger-station.png",
+        insideImage:
             "images/restaurants/inside/burger-station.png"
     },
 
-    "Pizza Corner": {
+    "pizza-corner": {
+        name: "Pizza Corner",
         category: "Pizza",
+        cuisine: "Vegetarian Pizza",
         description:
-            "Freshly prepared vegetarian pizzas with delicious toppings.",
-        image:
+            "Freshly prepared vegetarian pizzas with delicious toppings and premium ingredients.",
+        outsideImage:
+            "images/restaurants/outside/pizza-corner.png",
+        insideImage:
             "images/restaurants/inside/pizza-corner.png"
     }
 
 };
 
 
-function getRestaurantName() {
+function getRestaurantId() {
 
     const params =
         new URLSearchParams(window.location.search);
@@ -86,47 +110,14 @@ function getRestaurantName() {
 }
 
 
-function showRestaurantNotFound() {
+function showRestaurant(restaurant) {
 
-    restaurantName.textContent =
-        "Restaurant Not Found";
-
-    restaurantCategory.textContent =
-        "";
-
-    restaurantDescription.textContent =
-        "The requested restaurant could not be found.";
-
-    restaurantImage.hidden =
-        true;
-
-    restaurantInfo.hidden =
-        true;
-
-    restaurantDetailsEmpty.hidden =
-        false;
-
-}
-
-
-function displayRestaurant() {
-
-    const selectedRestaurant =
-        getRestaurantName();
-
-    const restaurant =
-        restaurantDetails[selectedRestaurant];
-
-    if (!restaurant) {
-
-        showRestaurantNotFound();
-
-        return;
-    }
+    restaurantDetails.hidden = false;
+    restaurantNotFound.hidden = true;
 
 
     restaurantName.textContent =
-        selectedRestaurant;
+        restaurant.name;
 
     restaurantCategory.textContent =
         restaurant.category;
@@ -134,30 +125,58 @@ function displayRestaurant() {
     restaurantDescription.textContent =
         restaurant.description;
 
+    restaurantCuisine.textContent =
+        restaurant.cuisine;
+
 
     restaurantImage.src =
-        restaurant.image;
+        restaurant.outsideImage;
 
     restaurantImage.alt =
-        `${selectedRestaurant} interior`;
-
-    restaurantImage.hidden =
-        false;
+        `${restaurant.name} exterior`;
 
 
-    restaurantInfoName.textContent =
-        selectedRestaurant;
+    restaurantInteriorImage.src =
+        restaurant.insideImage;
 
-    restaurantInfoCategory.textContent =
-        restaurant.category;
+    restaurantInteriorImage.alt =
+        `${restaurant.name} interior`;
 
-    restaurantInfo.hidden =
-        false;
 
-    restaurantDetailsEmpty.hidden =
-        true;
+    document.title =
+        `${restaurant.name} | Yummy Tummy`;
 
 }
 
 
-displayRestaurant();
+function showNotFound() {
+
+    restaurantDetails.hidden = true;
+    restaurantNotFound.hidden = false;
+
+}
+
+
+function initializeRestaurantDetails() {
+
+    const restaurantId =
+        getRestaurantId();
+
+    const restaurant =
+        restaurants[restaurantId];
+
+
+    if (!restaurant) {
+
+        showNotFound();
+
+        return;
+    }
+
+
+    showRestaurant(restaurant);
+
+}
+
+
+initializeRestaurantDetails();

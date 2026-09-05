@@ -12,30 +12,11 @@
 
     <title>Restaurant Details | Yummy Tummy</title>
 
-    <link
-        rel="stylesheet"
-        href="css/variables.css"
-    >
-
-    <link
-        rel="stylesheet"
-        href="css/style.css"
-    >
-
-    <link
-        rel="stylesheet"
-        href="css/header.css"
-    >
-
-    <link
-        rel="stylesheet"
-        href="css/footer.css"
-    >
-
-    <link
-        rel="stylesheet"
-        href="css/restaurant-details.css"
-    >
+    <link rel="stylesheet" href="css/variables.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/header.css">
+    <link rel="stylesheet" href="css/footer.css">
+    <link rel="stylesheet" href="css/restaurant-details.css">
 
 </head>
 
@@ -72,14 +53,12 @@
                     Home
                 </a>
 
-
                 <a
                     href="menu.html"
                     class="header-nav-link"
                 >
                     Menu
                 </a>
-
 
                 <a
                     href="restaurants.html"
@@ -111,14 +90,12 @@
                     Wishlist
                 </a>
 
-
                 <a
                     href="cart.html"
                     class="header-action"
                 >
                     Cart
                 </a>
-
 
                 <a
                     href="login.html"
@@ -143,96 +120,145 @@
     </header>
 
 
-    <!-- Main Content -->
-
     <main class="restaurant-details-main">
-
-        <section class="restaurant-details-hero">
-
-            <div class="container">
-
-                <div class="restaurant-details-heading">
-
-                    <p
-                        class="restaurant-details-label"
-                        id="restaurantCategory"
-                    ></p>
-
-
-                    <h1
-                        class="restaurant-details-title"
-                        id="restaurantName"
-                    >
-                        Restaurant
-                    </h1>
-
-
-                    <p
-                        class="restaurant-details-description"
-                        id="restaurantDescription"
-                    ></p>
-
-                </div>
-
-            </div>
-
-        </section>
-
 
         <section class="restaurant-details-section">
 
             <div class="container">
 
-                <div class="restaurant-details-image-card">
-
-                    <img
-                        class="restaurant-details-image"
-                        id="restaurantImage"
-                        src=""
-                        alt=""
-                    >
-
-                </div>
-
-
                 <div
-                    class="restaurant-details-info"
-                    id="restaurantInfo"
+                    class="restaurant-details-card"
+                    id="restaurantDetails"
                 >
 
-                    <div class="restaurant-details-info-item">
+                    <div class="restaurant-details-image-wrapper">
 
-                        <p class="restaurant-details-info-label">
-                            Restaurant
-                        </p>
-
-                        <p
-                            class="restaurant-details-info-value"
-                            id="restaurantInfoName"
-                        ></p>
+                        <img
+                            class="restaurant-details-image"
+                            id="restaurantImage"
+                            src=""
+                            alt=""
+                        >
 
                     </div>
 
 
-                    <div class="restaurant-details-info-item">
-
-                        <p class="restaurant-details-info-label">
-                            Category
-                        </p>
+                    <div class="restaurant-details-content">
 
                         <p
-                            class="restaurant-details-info-value"
-                            id="restaurantInfoCategory"
+                            class="restaurant-details-category"
+                            id="restaurantCategory"
                         ></p>
+
+
+                        <h1
+                            class="restaurant-details-title"
+                            id="restaurantName"
+                        ></h1>
+
+
+                        <p
+                            class="restaurant-details-description"
+                            id="restaurantDescription"
+                        ></p>
+
+
+                        <div class="restaurant-details-info">
+
+                            <div class="restaurant-info-item">
+
+                                <span class="restaurant-info-label">
+                                    Cuisine
+                                </span>
+
+                                <span
+                                    class="restaurant-info-value"
+                                    id="restaurantCuisine"
+                                ></span>
+
+                            </div>
+
+
+                            <div class="restaurant-info-item">
+
+                                <span class="restaurant-info-label">
+                                    Vegetarian
+                                </span>
+
+                                <span class="restaurant-info-value">
+                                    100% Vegetarian
+                                </span>
+
+                            </div>
+
+
+                            <div class="restaurant-info-item">
+
+                                <span class="restaurant-info-label">
+                                    Service
+                                </span>
+
+                                <span class="restaurant-info-value">
+                                    Food Delivery
+                                </span>
+
+                            </div>
+
+                        </div>
+
+
+                        <a
+                            href="#restaurantMenu"
+                            class="restaurant-details-button"
+                            id="viewMenuButton"
+                        >
+                            View Restaurant Menu
+                        </a>
 
                     </div>
 
                 </div>
 
 
+                <section
+                    class="restaurant-interior-section"
+                    id="restaurantMenu"
+                >
+
+                    <div class="restaurant-section-heading">
+
+                        <p class="restaurant-section-label">
+                            INSIDE THE RESTAURANT
+                        </p>
+
+                        <h2 class="restaurant-section-title">
+                            Explore the Restaurant
+                        </h2>
+
+                        <p class="restaurant-section-description">
+                            Take a look inside this restaurant before exploring its menu.
+                        </p>
+
+                    </div>
+
+
+                    <div class="restaurant-interior-card">
+
+                        <img
+                            id="restaurantInteriorImage"
+                            class="restaurant-interior-image"
+                            src=""
+                            alt=""
+                        >
+
+                    </div>
+
+                </section>
+
+
                 <div
-                    class="restaurant-details-empty"
-                    id="restaurantDetailsEmpty"
+                    class="restaurant-not-found"
+                    id="restaurantNotFound"
                     hidden
                 >
 
@@ -241,14 +267,14 @@
                     </h2>
 
                     <p>
-                        The requested restaurant could not be found.
+                        The restaurant you are looking for is unavailable.
                     </p>
 
                     <a
                         href="restaurants.html"
-                        class="restaurant-details-back-button"
+                        class="restaurant-back-button"
                     >
-                        Explore Restaurants
+                        Back to Restaurants
                     </a>
 
                 </div>
@@ -300,7 +326,6 @@
                             Quick Links
                         </h3>
 
-
                         <nav class="footer-links">
 
                             <a
@@ -310,14 +335,12 @@
                                 Home
                             </a>
 
-
                             <a
                                 href="menu.html"
                                 class="footer-link"
                             >
                                 Menu
                             </a>
-
 
                             <a
                                 href="restaurants.html"
@@ -337,7 +360,6 @@
                             Customer
                         </h3>
 
-
                         <nav class="footer-links">
 
                             <a
@@ -347,7 +369,6 @@
                                 Wishlist
                             </a>
 
-
                             <a
                                 href="cart.html"
                                 class="footer-link"
@@ -355,14 +376,12 @@
                                 My Cart
                             </a>
 
-
                             <a
                                 href="orders.html"
                                 class="footer-link"
                             >
                                 My Orders
                             </a>
-
 
                             <a
                                 href="login.html"
@@ -382,18 +401,15 @@
                             Contact
                         </h3>
 
-
                         <div class="footer-contact">
 
                             <p class="footer-contact-item">
                                 Email: support@yummytummy.com
                             </p>
 
-
                             <p class="footer-contact-item">
                                 Phone: +91 00000 00000
                             </p>
-
 
                             <p class="footer-contact-item">
                                 Available for customer support
@@ -422,7 +438,6 @@
                             Great food is always a good idea.
                         </h3>
 
-
                         <p class="footer-app-description">
                             Explore delicious food and discover
                             your next favourite meal with Yummy Tummy.
@@ -447,7 +462,6 @@
                         © 2026 Yummy Tummy. All rights reserved.
                     </p>
 
-
                     <div class="footer-bottom-links">
 
                         <a
@@ -456,7 +470,6 @@
                         >
                             Privacy Policy
                         </a>
-
 
                         <a
                             href="#"
@@ -477,7 +490,7 @@
 
 
     <script src="js/restaurant-details.js"></script>
-    <script src="js/restaurant-foods.js"></script>
+
 </body>
 
 </html>
