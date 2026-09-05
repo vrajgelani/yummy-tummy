@@ -10,6 +10,7 @@
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/header.css">
     <link rel="stylesheet" href="css/footer.css">
+    <link rel="stylesheet" href="css/home.css">
 
 </head>
 
@@ -72,18 +73,279 @@
     </div>
 </header>
 
-<main>
-    <section class="section">
-        <div class="container">
-            <h1 class="section-title">
-                Yummy Tummy
-            </h1>
+<main class="home-main">
 
-            <p class="section-subtitle">
-                Delicious food, delivered with love.
+    <!-- Hero Section -->
+    <section class="home-section home-hero">
+
+    <div class="container">
+
+        <div class="hero-content">
+
+            <div class="hero-text">
+
+                <p class="hero-label">
+                    YOUR FOOD, YOUR WAY
+                </p>
+
+                <h1 class="hero-title">
+                    Delicious food,
+                    delivered to you.
+                </h1>
+
+                <p class="hero-description">
+                    Discover delicious meals, explore great
+                    restaurants and find your next favourite food
+                    with Yummy Tummy.
+                </p>
+
+                <div class="hero-actions">
+
+                    <a href="menu.html" class="btn btn-primary">
+                        Explore Food
+                    </a>
+
+                    <a href="restaurants.html" class="btn btn-secondary">
+                        Explore Restaurants
+                    </a>
+
+                </div>
+
+            </div>
+
+            <div class="hero-image-wrapper">
+
+                <img
+                    src="images/hero/hero-food-banner.png"
+                    alt="Delicious food selection"
+                    class="hero-image"
+                >
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+    <!-- Explore by Category -->
+    <section class="home-section home-categories">
+
+    <div class="container">
+
+        <div class="home-section-header category-section-header">
+
+            <p class="category-section-label">
+                EXPLORE FOOD
             </p>
+
+            <h2 class="home-section-title">
+                Explore by category
+            </h2>
+
+            <p class="home-section-description">
+                What are you craving?
+            </p>
+
+        </div>
+
+        <div class="category-grid">
+
+            <a
+                href="menu.html?category=gujarati"
+                class="category-card"
+                data-category="gujarati"
+            >
+                <div class="category-image-wrapper">
+                    <img
+                        src="images/categories/gujarati.png"
+                        alt="Gujarati Food"
+                    >
+                </div>
+
+                <div class="category-card-content">
+                    <h3>Gujarati</h3>
+                    <p>Traditional Gujarati food</p>
+                </div>
+            </a>
+
+
+            <a
+                href="menu.html?category=chinese"
+                class="category-card"
+                data-category="chinese"
+            >
+                <div class="category-image-wrapper">
+                    <img
+                        src="images/categories/chinese.png"
+                        alt="Chinese Food"
+                    >
+                </div>
+
+                <div class="category-card-content">
+                    <h3>Chinese</h3>
+                    <p>Popular Chinese favourites</p>
+                </div>
+            </a>
+
+
+            <a
+                href="menu.html?category=healthy"
+                class="category-card"
+                data-category="healthy"
+            >
+                <div class="category-image-wrapper">
+                    <img
+                        src="images/categories/healthy.png"
+                        alt="Healthy Food"
+                    >
+                </div>
+
+                <div class="category-card-content">
+                    <h3>Healthy</h3>
+                    <p>Fresh and healthy meals</p>
+                </div>
+            </a>
+
+
+            <a
+                href="menu.html?category=south-indian"
+                class="category-card"
+                data-category="south-indian"
+            >
+                <div class="category-image-wrapper">
+                    <img
+                        src="images/categories/south-indian.png"
+                        alt="South Indian Food"
+                    >
+                </div>
+
+                <div class="category-card-content">
+                    <h3>South Indian</h3>
+                    <p>Dosa, idli and more</p>
+                </div>
+            </a>
+
+
+            <a
+                href="menu.html?category=burger"
+                class="category-card"
+                data-category="burger"
+            >
+                <div class="category-image-wrapper">
+                    <img
+                        src="images/categories/burger.png"
+                        alt="Burger"
+                    >
+                </div>
+
+                <div class="category-card-content">
+                    <h3>Burger</h3>
+                    <p>Delicious burger choices</p>
+                </div>
+            </a>
+
+
+            <a
+                href="menu.html?category=pizza"
+                class="category-card"
+                data-category="pizza"
+            >
+                <div class="category-image-wrapper">
+                    <img
+                        src="images/categories/pizza.png"
+                        alt="Pizza"
+                    >
+                </div>
+
+                <div class="category-card-content">
+                    <h3>Pizza</h3>
+                    <p>Cheesy pizza favourites</p>
+                </div>
+            </a>
+
+
+            <a
+                href="menu.html?category=dessert"
+                class="category-card"
+                data-category="dessert"
+            >
+                <div class="category-image-wrapper">
+                    <img
+                        src="images/categories/dessert.png"
+                        alt="Dessert"
+                    >
+                </div>
+
+                <div class="category-card-content">
+                    <h3>Dessert</h3>
+                    <p>Sweet treats and desserts</p>
+                </div>
+            </a>
+
+
+            <a
+                href="menu.html?category=beverages"
+                class="category-card"
+                data-category="beverages"
+            >
+                <div class="category-image-wrapper">
+                    <img
+                        src="images/categories/beverages.png"
+                        alt="Beverages"
+                    >
+                </div>
+
+                <div class="category-card-content">
+                    <h3>Beverages</h3>
+                    <p>Refreshing drinks</p>
+                </div>
+            </a>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+    <!-- Popular Food -->
+    <section class="home-section home-popular">
+        <div class="container">
+
+            <div class="home-section-header">
+                <h2 class="home-section-title">
+                    Popular Food
+                </h2>
+
+                <p class="home-section-description">
+                    Discover some of our most exciting food choices.
+                </p>
+            </div>
+
         </div>
     </section>
+
+
+    <!-- Restaurants -->
+    <section class="home-section home-restaurants">
+        <div class="container">
+
+            <div class="home-section-header">
+                <h2 class="home-section-title">
+                    Explore Restaurants
+                </h2>
+
+                <p class="home-section-description">
+                    Discover restaurants and explore their menus.
+                </p>
+            </div>
+
+        </div>
+    </section>
+
 </main>
 
 <footer class="site-footer">
