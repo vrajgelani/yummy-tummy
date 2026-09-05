@@ -10,19 +10,17 @@
         content="width=device-width, initial-scale=1.0"
     >
 
-    <title>Restaurant Details | Yummy Tummy</title>
+    <title>Food Details | Yummy Tummy</title>
 
     <link rel="stylesheet" href="css/variables.css">
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/header.css">
     <link rel="stylesheet" href="css/footer.css">
-    <link rel="stylesheet" href="css/restaurant-details.css">
+    <link rel="stylesheet" href="css/food-details.css">
 
 </head>
 
 <body>
-
-    <!-- Header -->
 
     <header class="site-header">
 
@@ -32,14 +30,11 @@
                 href="index.html"
                 class="header-logo"
             >
-
                 <img
                     src="images/logo/yummy-tummy-logo.png"
                     alt="Yummy Tummy"
                 >
-
             </a>
-
 
             <nav
                 class="header-nav"
@@ -69,7 +64,6 @@
 
             </nav>
 
-
             <div class="header-search">
 
                 <input
@@ -79,7 +73,6 @@
                 >
 
             </div>
-
 
             <div class="header-actions">
 
@@ -106,7 +99,6 @@
 
             </div>
 
-
             <button
                 type="button"
                 class="header-menu-toggle"
@@ -120,26 +112,22 @@
     </header>
 
 
-    <!-- Main Content -->
+    <main class="food-details-main">
 
-    <main class="restaurant-details-main">
-
-        <section class="restaurant-details-section">
+        <section class="food-details-section">
 
             <div class="container">
 
-                <!-- Restaurant Details -->
-
                 <div
-                    class="restaurant-details-card"
-                    id="restaurantDetails"
+                    class="food-details-card"
+                    id="foodDetails"
                 >
 
-                    <div class="restaurant-details-image-wrapper">
+                    <div class="food-details-image-wrapper">
 
                         <img
-                            class="restaurant-details-image"
-                            id="restaurantImage"
+                            id="foodImage"
+                            class="food-details-image"
                             src=""
                             alt=""
                         >
@@ -147,63 +135,64 @@
                     </div>
 
 
-                    <div class="restaurant-details-content">
+                    <div class="food-details-content">
 
                         <p
-                            class="restaurant-details-category"
-                            id="restaurantCategory"
+                            id="foodCategory"
+                            class="food-details-category"
                         ></p>
 
 
                         <h1
-                            class="restaurant-details-title"
-                            id="restaurantName"
+                            id="foodName"
+                            class="food-details-title"
                         ></h1>
 
 
                         <p
-                            class="restaurant-details-description"
-                            id="restaurantDescription"
+                            id="foodDescription"
+                            class="food-details-description"
                         ></p>
 
 
-                        <div class="restaurant-details-info">
+                        <div class="food-details-info">
 
-                            <div class="restaurant-info-item">
+                            <div class="food-info-item">
 
-                                <span class="restaurant-info-label">
-                                    Cuisine
+                                <span class="food-info-label">
+                                    Restaurant
                                 </span>
 
                                 <span
-                                    class="restaurant-info-value"
-                                    id="restaurantCuisine"
+                                    id="foodRestaurant"
+                                    class="food-info-value"
                                 ></span>
 
                             </div>
 
 
-                            <div class="restaurant-info-item">
+                            <div class="food-info-item">
 
-                                <span class="restaurant-info-label">
-                                    Vegetarian
+                                <span class="food-info-label">
+                                    Category
                                 </span>
 
-                                <span class="restaurant-info-value">
-                                    100% Vegetarian
-                                </span>
+                                <span
+                                    id="foodCategoryInfo"
+                                    class="food-info-value"
+                                ></span>
 
                             </div>
 
 
-                            <div class="restaurant-info-item">
+                            <div class="food-info-item">
 
-                                <span class="restaurant-info-label">
-                                    Service
+                                <span class="food-info-label">
+                                    Vegetarian
                                 </span>
 
-                                <span class="restaurant-info-value">
-                                    Food Delivery
+                                <span class="food-info-value">
+                                    100% Vegetarian
                                 </span>
 
                             </div>
@@ -211,130 +200,47 @@
                         </div>
 
 
-                        <!-- Fixed: Restaurant Food Menu Link -->
+                        <div class="food-details-footer">
 
-                        <a
-                            href="#restaurantFoodMenu"
-                            class="restaurant-details-button"
-                            id="viewMenuButton"
-                        >
-                            View Restaurant Menu
-                        </a>
+                            <span
+                                id="foodPrice"
+                                class="food-details-price"
+                            ></span>
+
+                            <button
+                                type="button"
+                                id="addToCartButton"
+                                class="food-details-cart-button"
+                            >
+                                Add to Cart
+                            </button>
+
+                        </div>
 
                     </div>
 
                 </div>
 
 
-                <!-- Restaurant Interior -->
-
-                <section
-                    class="restaurant-interior-section"
-                    id="restaurantMenu"
-                >
-
-                    <div class="restaurant-section-heading">
-
-                        <p class="restaurant-section-label">
-                            INSIDE THE RESTAURANT
-                        </p>
-
-                        <h2 class="restaurant-section-title">
-                            Explore the Restaurant
-                        </h2>
-
-                        <p class="restaurant-section-description">
-                            Take a look inside this restaurant before exploring its menu.
-                        </p>
-
-                    </div>
-
-
-                    <div class="restaurant-interior-card">
-
-                        <img
-                            id="restaurantInteriorImage"
-                            class="restaurant-interior-image"
-                            src=""
-                            alt=""
-                        >
-
-                    </div>
-
-                </section>
-
-
-                <!-- Restaurant Food Menu -->
-
-                <section
-                    class="restaurant-menu-section"
-                    id="restaurantFoodMenu"
-                >
-
-                    <div class="restaurant-section-heading">
-
-                        <p class="restaurant-section-label">
-                            RESTAURANT MENU
-                        </p>
-
-                        <h2 class="restaurant-section-title">
-                            Popular From This Restaurant
-                        </h2>
-
-                        <p class="restaurant-section-description">
-                            Explore delicious food available from this restaurant.
-                        </p>
-
-                    </div>
-
-
-                    <div
-                        class="restaurant-food-grid"
-                        id="restaurantFoodGrid"
-                    >
-                    </div>
-
-
-                    <div
-                        class="restaurant-food-empty"
-                        id="restaurantFoodEmpty"
-                        hidden
-                    >
-
-                        <h2>
-                            No Food Available
-                        </h2>
-
-                        <p>
-                            No food is currently available from this restaurant.
-                        </p>
-
-                    </div>
-
-                </section>
-
-
-                <!-- Restaurant Not Found -->
-
                 <div
-                    class="restaurant-not-found"
-                    id="restaurantNotFound"
+                    id="foodNotFound"
+                    class="food-not-found"
                     hidden
                 >
 
                     <h2>
-                        Restaurant Not Found
+                        Food Not Found
                     </h2>
 
                     <p>
-                        The restaurant you are looking for is unavailable.
+                        The food you are looking for is unavailable.
                     </p>
 
                     <a
-                        href="restaurants.html"
-                        class="restaurant-back-button"
+                        href="menu.html"
+                        class="food-back-button"
                     >
-                        Back to Restaurants
+                        Back to Menu
                     </a>
 
                 </div>
@@ -345,8 +251,6 @@
 
     </main>
 
-
-    <!-- Footer -->
 
     <footer class="site-footer">
 
@@ -362,14 +266,11 @@
                             href="index.html"
                             class="footer-logo"
                         >
-
                             <img
                                 src="images/logo/yummy-tummy-logo.png"
                                 alt="Yummy Tummy"
                             >
-
                         </a>
-
 
                         <p class="footer-description">
                             Yummy Tummy makes it easy to discover
@@ -486,32 +387,6 @@
         </div>
 
 
-        <div class="footer-app">
-
-            <div class="container">
-
-                <div class="footer-app-content">
-
-                    <div class="footer-app-text">
-
-                        <h3 class="footer-app-title">
-                            Great food is always a good idea.
-                        </h3>
-
-                        <p class="footer-app-description">
-                            Explore delicious food and discover
-                            your next favourite meal with Yummy Tummy.
-                        </p>
-
-                    </div>
-
-                </div>
-
-            </div>
-
-        </div>
-
-
         <div class="footer-bottom">
 
             <div class="container">
@@ -521,7 +396,6 @@
                     <p class="footer-copyright">
                         © 2026 Yummy Tummy. All rights reserved.
                     </p>
-
 
                     <div class="footer-bottom-links">
 
@@ -550,11 +424,8 @@
     </footer>
 
 
-    <!-- JavaScript -->
-
     <script src="js/restaurant-foods.js"></script>
-    <script src="js/restaurant-details.js"></script>
-    
+    <script src="js/food-details.js"></script>
 
 </body>
 

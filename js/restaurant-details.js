@@ -1,3 +1,7 @@
+/* =================================
+   RESTAURANT DETAILS
+================================= */
+
 const restaurantDetails =
     document.querySelector("#restaurantDetails");
 
@@ -22,6 +26,10 @@ const restaurantDescription =
 const restaurantCuisine =
     document.querySelector("#restaurantCuisine");
 
+
+/* =================================
+   RESTAURANT DATA
+================================= */
 
 const restaurants = {
 
@@ -100,6 +108,10 @@ const restaurants = {
 };
 
 
+/* =================================
+   GET RESTAURANT ID
+================================= */
+
 function getRestaurantId() {
 
     const params =
@@ -110,37 +122,65 @@ function getRestaurantId() {
 }
 
 
+/* =================================
+   SHOW RESTAURANT
+================================= */
+
 function showRestaurant(restaurant) {
 
-    restaurantDetails.hidden = false;
-    restaurantNotFound.hidden = true;
+    if (restaurantDetails) {
+        restaurantDetails.hidden = false;
+    }
+
+    if (restaurantNotFound) {
+        restaurantNotFound.hidden = true;
+    }
 
 
-    restaurantName.textContent =
-        restaurant.name;
-
-    restaurantCategory.textContent =
-        restaurant.category;
-
-    restaurantDescription.textContent =
-        restaurant.description;
-
-    restaurantCuisine.textContent =
-        restaurant.cuisine;
+    if (restaurantName) {
+        restaurantName.textContent =
+            restaurant.name;
+    }
 
 
-    restaurantImage.src =
-        restaurant.outsideImage;
+    if (restaurantCategory) {
+        restaurantCategory.textContent =
+            restaurant.category;
+    }
 
-    restaurantImage.alt =
-        `${restaurant.name} exterior`;
+
+    if (restaurantDescription) {
+        restaurantDescription.textContent =
+            restaurant.description;
+    }
 
 
-    restaurantInteriorImage.src =
-        restaurant.insideImage;
+    if (restaurantCuisine) {
+        restaurantCuisine.textContent =
+            restaurant.cuisine;
+    }
 
-    restaurantInteriorImage.alt =
-        `${restaurant.name} interior`;
+
+    if (restaurantImage) {
+
+        restaurantImage.src =
+            restaurant.outsideImage;
+
+        restaurantImage.alt =
+            `${restaurant.name} exterior`;
+
+    }
+
+
+    if (restaurantInteriorImage) {
+
+        restaurantInteriorImage.src =
+            restaurant.insideImage;
+
+        restaurantInteriorImage.alt =
+            `${restaurant.name} interior`;
+
+    }
 
 
     document.title =
@@ -149,18 +189,223 @@ function showRestaurant(restaurant) {
 }
 
 
+/* =================================
+   SHOW NOT FOUND
+================================= */
+
 function showNotFound() {
 
-    restaurantDetails.hidden = true;
-    restaurantNotFound.hidden = false;
+    if (restaurantDetails) {
+        restaurantDetails.hidden = true;
+    }
+
+    if (restaurantNotFound) {
+        restaurantNotFound.hidden = false;
+    }
 
 }
 
+
+/* =================================
+   RESTAURANT FOOD ELEMENTS
+================================= */
+
+const restaurantFoodGrid =
+    document.querySelector("#restaurantFoodGrid");
+
+const restaurantFoodEmpty =
+    document.querySelector("#restaurantFoodEmpty");
+
+
+/* =================================
+   DISPLAY RESTAURANT FOODS
+================================= */
+
+function displayRestaurantFoods(restaurantId) {
+
+    /*
+       restaurant-foods.js must be loaded
+       before this file.
+    */
+
+    if (!restaurantFoodGrid) {
+        return;
+    }
+
+
+    restaurantFoodGrid.replaceChildren();
+
+
+    if (
+        typeof restaurantFoods === "undefined" ||
+        !Array.isArray(restaurantFoods)
+    ) {
+
+        if (restaurantFoodEmpty) {
+            restaurantFoodEmpty.hidden = false;
+        }
+
+        return;
+    }
+
+
+    const foods =
+        restaurantFoods.filter(
+            (food) =>
+                food.restaurantId === restaurantId
+        );
+
+
+    if (foods.length === 0) {
+
+        if (restaurantFoodEmpty) {
+            restaurantFoodEmpty.hidden = false;
+        }
+
+        return;
+    }
+
+
+    if (restaurantFoodEmpty) {
+        restaurantFoodEmpty.hidden = true;
+    }
+
+
+    foods.forEach((food) => {
+
+        const card =
+            document.createElement("article");
+
+        card.className =
+            "restaurant-food-card";
+
+
+        const imageWrapper =
+            document.createElement("div");
+
+        imageWrapper.className =
+            "restaurant-food-image-wrapper";
+
+
+        const image =
+            document.createElement("img");
+
+        image.className =
+            "restaurant-food-image";
+
+        image.src =
+            food.image;
+
+        image.alt =
+            food.name;
+
+        image.loading =
+            "lazy";
+
+
+        imageWrapper.appendChild(image);
+
+
+        const content =
+            document.createElement("div");
+
+        content.className =
+            "restaurant-food-content";
+
+
+        const category =
+            document.createElement("p");
+
+        category.className =
+            "restaurant-food-category";
+
+        category.textContent =
+            food.category;
+
+
+        const name =
+            document.createElement("h3");
+
+        name.className =
+            "restaurant-food-name";
+
+        name.textContent =
+            food.name;
+
+
+        const footer =
+            document.createElement("div");
+
+        footer.className =
+            "restaurant-food-footer";
+
+
+        const price =
+            document.createElement("span");
+
+        price.className =
+            "restaurant-food-price";
+
+        price.textContent =
+            `₹${food.price}`;
+
+
+        const button =
+            document.createElement("a");
+
+        button.className =
+            "restaurant-food-button";
+
+        button.href =
+            `food-details.html?food=${encodeURIComponent(food.id)}`;
+
+        button.textContent =
+            "View Food";
+
+
+        footer.append(
+            price,
+            button
+        );
+
+
+        content.append(
+            category,
+            name,
+            footer
+        );
+
+
+        card.append(
+            imageWrapper,
+            content
+        );
+
+
+        restaurantFoodGrid.appendChild(card);
+
+    });
+
+}
+
+
+/* =================================
+   INITIALIZE PAGE
+================================= */
 
 function initializeRestaurantDetails() {
 
     const restaurantId =
         getRestaurantId();
+
+
+    if (!restaurantId) {
+
+        showNotFound();
+
+        return;
+    }
+
 
     const restaurant =
         restaurants[restaurantId];
@@ -176,7 +421,13 @@ function initializeRestaurantDetails() {
 
     showRestaurant(restaurant);
 
+    displayRestaurantFoods(restaurantId);
+
 }
 
+
+/* =================================
+   START
+================================= */
 
 initializeRestaurantDetails();

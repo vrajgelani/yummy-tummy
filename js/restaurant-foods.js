@@ -1,294 +1,241 @@
 const restaurantFoods = [
     {
-        id: "rfood-001",
+        id: "kathiyawadi-undhiyu",
+        restaurantId: "gujarati-thali-house",
         restaurant: "Gujarati Thali House",
         category: "Gujarati",
-        name: "Kathiyawadi Thali",
-        price: 279,
-        description:
-            "A rich Kathiyawadi vegetarian thali with traditional regional flavours.",
-        image:
-            "images/restaurants/foods/gujarati-thali-house/kathiyawadi-thali.png"
+        name: "Kathiyawadi Undhiyu",
+        price: 229,
+        image: "images/restaurants/kathiyawadi-undhiyu.png"
     },
 
     {
-        id: "rfood-002",
+        id: "gujarati-dal-dhokli",
+        restaurantId: "gujarati-thali-house",
         restaurant: "Gujarati Thali House",
         category: "Gujarati",
-        name: "Sev Tameta",
+        name: "Gujarati Dal Dhokli",
+        price: 189,
+        image: "images/restaurants/gujarati-dal-dhokli.png"
+    },
+
+    {
+        id: "sev-tameta-sabzi",
+        restaurantId: "gujarati-thali-house",
+        restaurant: "Gujarati Thali House",
+        category: "Gujarati",
+        name: "Sev Tameta Sabzi",
         price: 159,
-        description:
-            "A classic Gujarati tomato curry finished with crunchy sev.",
-        image:
-            "images/restaurants/foods/gujarati-thali-house/sev-tameta.png"
+        image: "images/restaurants/sev-tameta-sabzi.png"
     },
 
     {
-        id: "rfood-003",
+        id: "mohanthal",
+        restaurantId: "gujarati-thali-house",
         restaurant: "Gujarati Thali House",
         category: "Gujarati",
-        name: "Undhiyu Special",
-        price: 199,
-        description:
-            "Traditional mixed vegetable Undhiyu prepared with Gujarati spices.",
-        image:
-            "images/restaurants/foods/gujarati-thali-house/undhiyu-special.png"
+        name: "Mohanthal",
+        price: 129,
+        image: "images/restaurants/mohanthal.png"
     },
 
     {
-        id: "rfood-004",
-        restaurant: "Gujarati Thali House",
-        category: "Gujarati",
-        name: "Basundi",
-        price: 149,
-        description:
-            "Creamy traditional Gujarati milk dessert with a rich flavour.",
-        image:
-            "images/restaurants/foods/gujarati-thali-house/basundi.png"
-    },
-
-
-    {
-        id: "rfood-005",
-        restaurant: "Chinese Wok House",
-        category: "Chinese",
-        name: "Schezwan Paneer",
-        price: 219,
-        description:
-            "Crispy paneer tossed in a bold vegetarian Schezwan sauce.",
-        image:
-            "images/restaurants/foods/chinese-wok-house/schezwan-paneer.png"
-    },
-
-    {
-        id: "rfood-006",
+        id: "chilli-paneer",
+        restaurantId: "chinese-wok-house",
         restaurant: "Chinese Wok House",
         category: "Chinese",
         name: "Chilli Paneer",
-        price: 229,
-        description:
-            "Tender paneer with fresh vegetables in a spicy Chinese-style sauce.",
-        image:
-            "images/restaurants/foods/chinese-wok-house/chilli-paneer.png"
+        price: 219,
+        image: "images/restaurants/chilli-paneer.png"
     },
 
     {
-        id: "rfood-007",
+        id: "veg-spring-rolls",
+        restaurantId: "chinese-wok-house",
         restaurant: "Chinese Wok House",
         category: "Chinese",
-        name: "Spring Rolls",
-        price: 149,
-        description:
-            "Crispy vegetarian spring rolls filled with fresh vegetables.",
-        image:
-            "images/restaurants/foods/chinese-wok-house/spring-rolls.png"
+        name: "Veg Spring Rolls",
+        price: 169,
+        image: "images/restaurants/veg-spring-rolls.png"
     },
 
     {
-        id: "rfood-008",
+        id: "schezwan-paneer-rice",
+        restaurantId: "chinese-wok-house",
+        restaurant: "Chinese Wok House",
+        category: "Chinese",
+        name: "Schezwan Paneer Rice",
+        price: 199,
+        image: "images/restaurants/schezwan-paneer-rice.png"
+    },
+
+    {
+        id: "honey-chilli-potato",
+        restaurantId: "chinese-wok-house",
         restaurant: "Chinese Wok House",
         category: "Chinese",
         name: "Honey Chilli Potato",
-        price: 189,
-        description:
-            "Crispy potato tossed with a sweet and mildly spicy glaze.",
-        image:
-            "images/restaurants/foods/chinese-wok-house/honey-chilli-potato.png"
+        price: 179,
+        image: "images/restaurants/honey-chilli-potato.png"
     },
 
-
     {
-        id: "rfood-009",
+        id: "mediterranean-veg-bowl",
+        restaurantId: "green-bowl",
         restaurant: "Green Bowl",
         category: "Healthy",
-        name: "Quinoa Veg Bowl",
+        name: "Mediterranean Veg Bowl",
         price: 259,
-        description:
-            "Wholesome quinoa combined with fresh vegetables and nutritious toppings.",
-        image:
-            "images/restaurants/foods/green-bowl/quinoa-veg-bowl.png"
+        image: "images/restaurants/mediterranean-veg-bowl.png"
     },
 
     {
-        id: "rfood-010",
+        id: "quinoa-rainbow-bowl",
+        restaurantId: "green-bowl",
         restaurant: "Green Bowl",
         category: "Healthy",
-        name: "Mediterranean Bowl",
+        name: "Quinoa Rainbow Bowl",
         price: 279,
-        description:
-            "Fresh Mediterranean-inspired vegetarian bowl with colourful ingredients.",
-        image:
-            "images/restaurants/foods/green-bowl/mediterranean-bowl.png"
+        image: "images/restaurants/quinoa-rainbow-bowl.png"
     },
 
     {
-        id: "rfood-011",
-        restaurant: "Green Bowl",
-        category: "Healthy",
-        name: "Sprout Power Bowl",
-        price: 199,
-        description:
-            "Fresh sprouts, vegetables and wholesome ingredients in one bowl.",
-        image:
-            "images/restaurants/foods/green-bowl/sprout-power-bowl.png"
-    },
-
-    {
-        id: "rfood-012",
+        id: "hummus-veg-platter",
+        restaurantId: "green-bowl",
         restaurant: "Green Bowl",
         category: "Healthy",
         name: "Hummus Veg Platter",
-        price: 229,
-        description:
-            "Creamy hummus served with fresh vegetables and wholesome accompaniments.",
-        image:
-            "images/restaurants/foods/green-bowl/hummus-veg-platter.png"
-    },
-
-
-    {
-        id: "rfood-013",
-        restaurant: "South Indian Express",
-        category: "South Indian",
-        name: "Rava Dosa",
-        price: 169,
-        description:
-            "Thin and crispy South Indian rava dosa served with traditional accompaniments.",
-        image:
-            "images/restaurants/foods/south-indian-express/rava-dosa.png"
+        price: 239,
+        image: "images/restaurants/hummus-veg-platter.png"
     },
 
     {
-        id: "rfood-014",
+        id: "date-nut-energy-bites",
+        restaurantId: "green-bowl",
+        restaurant: "Green Bowl",
+        category: "Healthy",
+        name: "Date Nut Energy Bites",
+        price: 149,
+        image: "images/restaurants/date-nut-energy-bites.png"
+    },
+
+    {
+        id: "mysore-masala-dosa",
+        restaurantId: "south-indian-express",
         restaurant: "South Indian Express",
         category: "South Indian",
         name: "Mysore Masala Dosa",
-        price: 189,
-        description:
-            "Crispy dosa layered with spicy Mysore chutney and potato masala.",
-        image:
-            "images/restaurants/foods/south-indian-express/mysore-masala-dosa.png"
+        price: 179,
+        image: "images/restaurants/mysore-masala-dosa.png"
     },
 
     {
-        id: "rfood-015",
+        id: "podi-idli",
+        restaurantId: "south-indian-express",
         restaurant: "South Indian Express",
         category: "South Indian",
-        name: "Pongal",
+        name: "Podi Idli",
         price: 139,
-        description:
-            "Comforting South Indian vegetarian pongal with aromatic spices.",
-        image:
-            "images/restaurants/foods/south-indian-express/pongal.png"
+        image: "images/restaurants/podi-idli.png"
     },
 
     {
-        id: "rfood-016",
+        id: "onion-uttapam",
+        restaurantId: "south-indian-express",
         restaurant: "South Indian Express",
         category: "South Indian",
-        name: "Uttapam",
-        price: 159,
-        description:
-            "Soft South Indian uttapam topped with fresh vegetables.",
-        image:
-            "images/restaurants/foods/south-indian-express/uttapam.png"
+        name: "Onion Uttapam",
+        price: 149,
+        image: "images/restaurants/onion-uttapam.png"
     },
 
+    {
+        id: "filter-coffee-tiramisu",
+        restaurantId: "south-indian-express",
+        restaurant: "South Indian Express",
+        category: "South Indian",
+        name: "Filter Coffee Tiramisu",
+        price: 169,
+        image: "images/restaurants/filter-coffee-tiramisu.png"
+    },
 
     {
-        id: "rfood-017",
+        id: "paneer-tikka-burger",
+        restaurantId: "burger-station",
         restaurant: "Burger Station",
         category: "Burger",
-        name: "Spicy Paneer Burger",
+        name: "Paneer Tikka Burger",
         price: 199,
-        description:
-            "A gourmet vegetarian burger with spicy crispy paneer and fresh toppings.",
-        image:
-            "images/restaurants/foods/burger-station/spicy-paneer-burger.png"
+        image: "images/restaurants/paneer-tikka-burger.png"
     },
 
     {
-        id: "rfood-018",
+        id: "peri-peri-veg-burger",
+        restaurantId: "burger-station",
         restaurant: "Burger Station",
         category: "Burger",
-        name: "Mexican Veg Burger",
+        name: "Peri Peri Veg Burger",
+        price: 189,
+        image: "images/restaurants/peri-peri-veg-burger.png"
+    },
+
+    {
+        id: "mexican-bean-burger",
+        restaurantId: "burger-station",
+        restaurant: "Burger Station",
+        category: "Burger",
+        name: "Mexican Bean Burger",
         price: 209,
-        description:
-            "Mexican-inspired vegetarian burger with fresh crunchy toppings.",
-        image:
-            "images/restaurants/foods/burger-station/mexican-veg-burger.png"
+        image: "images/restaurants/mexican-bean-burger.png"
     },
 
     {
-        id: "rfood-019",
+        id: "salted-caramel-brownie-sundae",
+        restaurantId: "burger-station",
         restaurant: "Burger Station",
         category: "Burger",
-        name: "Peri Peri Burger",
-        price: 219,
-        description:
-            "Crispy vegetarian burger with bold peri peri seasoning.",
-        image:
-            "images/restaurants/foods/burger-station/peri-peri-burger.png"
+        name: "Salted Caramel Brownie Sundae",
+        price: 179,
+        image: "images/restaurants/salted-caramel-brownie-sundae.png"
     },
 
     {
-        id: "rfood-020",
-        restaurant: "Burger Station",
-        category: "Burger",
-        name: "Mushroom Burger",
-        price: 229,
-        description:
-            "Gourmet vegetarian burger featuring seasoned mushrooms and fresh toppings.",
-        image:
-            "images/restaurants/foods/burger-station/mushroom-burger.png"
-    },
-
-
-    {
-        id: "rfood-021",
+        id: "farmhouse-paneer-pizza",
+        restaurantId: "pizza-corner",
         restaurant: "Pizza Corner",
         category: "Pizza",
-        name: "Farmhouse Pizza",
-        price: 249,
-        description:
-            "Loaded vegetarian pizza topped with fresh garden vegetables.",
-        image:
-            "images/restaurants/foods/pizza-corner/farmhouse-pizza.png"
+        name: "Farmhouse Paneer Pizza",
+        price: 299,
+        image: "images/restaurants/farmhouse-paneer-pizza.png"
     },
 
     {
-        id: "rfood-022",
+        id: "pesto-corn-pizza",
+        restaurantId: "pizza-corner",
         restaurant: "Pizza Corner",
         category: "Pizza",
-        name: "Paneer Tikka Pizza",
-        price: 269,
-        description:
-            "Fusion vegetarian pizza topped with flavourful paneer tikka.",
-        image:
-            "images/restaurants/foods/pizza-corner/paneer-tikka-pizza.png"
+        name: "Pesto Corn Pizza",
+        price: 279,
+        image: "images/restaurants/pesto-corn-pizza.png"
     },
 
     {
-        id: "rfood-023",
+        id: "tandoori-veg-pizza",
+        restaurantId: "pizza-corner",
         restaurant: "Pizza Corner",
         category: "Pizza",
-        name: "Corn & Cheese Pizza",
-        price: 239,
-        description:
-            "Creamy cheese pizza topped with sweet corn and fresh ingredients.",
-        image:
-            "images/restaurants/foods/pizza-corner/corn-cheese-pizza.png"
-    },
-
-    {
-        id: "rfood-024",
-        restaurant: "Pizza Corner",
-        category: "Pizza",
-        name: "Mediterranean Pizza",
+        name: "Tandoori Veg Pizza",
         price: 289,
-        description:
-            "Premium vegetarian pizza inspired by Mediterranean flavours.",
-        image:
-            "images/restaurants/foods/pizza-corner/mediterranean-pizza.png"
+        image: "images/restaurants/tandoori-veg-pizza.png"
+    },
+
+    {
+        id: "nutella-hazelnut-pizza",
+        restaurantId: "pizza-corner",
+        restaurant: "Pizza Corner",
+        category: "Pizza",
+        name: "Nutella Hazelnut Pizza",
+        price: 249,
+        image: "images/restaurants/nutella-hazelnut-pizza.png"
     }
 ];
