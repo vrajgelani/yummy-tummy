@@ -5,24 +5,29 @@
 const CART_STORAGE_KEY =
     "yummyTummyCart";
 
-const CART_DELIVERY_CHARGE =
-    40;
+
+const CART_DELIVERY_FEE = 40;
 
 
 const cartItems =
     document.querySelector("#cartItems");
 
+
 const cartEmpty =
     document.querySelector("#cartEmpty");
+
 
 const cartItemCount =
     document.querySelector("#cartItemCount");
 
+
 const cartSubtotal =
     document.querySelector("#cartSubtotal");
 
+
 const cartDelivery =
     document.querySelector("#cartDelivery");
+
 
 const cartTotal =
     document.querySelector("#cartTotal");
@@ -43,9 +48,15 @@ function getCart() {
                 )
             );
 
-        return Array.isArray(cart)
-            ? cart
-            : [];
+
+        if (!Array.isArray(cart)) {
+
+            return [];
+
+        }
+
+
+        return cart;
 
     } catch (error) {
 
@@ -55,7 +66,9 @@ function getCart() {
         );
 
         return [];
+
     }
+
 }
 
 
@@ -65,82 +78,249 @@ function getCart() {
 
 function saveCart(cart) {
 
-    localStorage.setItem(
-        CART_STORAGE_KEY,
-        JSON.stringify(cart)
-    );
+    try {
+
+        localStorage.setItem(
+            CART_STORAGE_KEY,
+            JSON.stringify(cart)
+        );
+
+        return true;
+
+    } catch (error) {
+
+        console.error(
+            "Unable to save cart:",
+            error
+        );
+
+        return false;
+
+    }
+
 }
 
 
 /* =================================
-   DISPLAY CART
+   FORMAT PRICE
 ================================= */
 
-function displayCart() {
+function formatPrice(price) {
 
-    if (!cartItems) {
-        return;
+    return `₹${Number(price) || 0}`;
+
+}
+
+
+/* =================================
+   GET ITEM QUANTITY
+================================= */
+
+function getItemQuantity(item) {
+
+    const quantity =
+        Number(item.quantity);
+
+
+    if (!Number.isFinite(quantity) ||
+        quantity < 1) {
+
+        return 1;
+
     }
 
+
+    return Math.floor(quantity);
+
+}
+
+
+/* =================================
+   GET ITEM PRICE
+================================= */
+
+function getItemPrice(item) {
+
+    const price =
+        Number(item.price);
+
+
+    if (!Number.isFinite(price) ||
+        price < 0) {
+
+        return 0;
+
+    }
+
+
+    return price;
+
+}
+
+
+/* =================================
+   UPDATE CART QUANTITY
+================================= */
+
+function updateCartQuantity(
+    foodId,
+    newQuantity
+) {
 
     const cart =
         getCart();
 
 
-    cartItems.replaceChildren();
-
-
-    if (cart.length === 0) {
-
-        cartItems.hidden =
-            true;
-
-
-        if (cartEmpty) {
-
-            cartEmpty.hidden =
-                false;
-        }
-
-
-        updateSummary(
-            cart
+    const quantity =
+        Math.max(
+            1,
+            Number(newQuantity) || 1
         );
 
+
+    const item =
+        cart.find(
+            (cartItem) =>
+                cartItem.id === foodId
+        );
+
+
+    if (!item) {
+
         return;
+
     }
 
 
-    cartItems.hidden =
-        false;
+    item.quantity =
+        Math.floor(quantity);
 
 
-    if (cartEmpty) {
+    const saved =
+        saveCart(cart);
 
-        cartEmpty.hidden =
-            true;
+
+    if (!saved) {
+
+        return;
+
     }
 
 
-    cart.forEach(
-        (food) => {
+    renderCart();
 
-            const item =
-                createCartItem(
-                    food
-                );
+}
 
-            cartItems.appendChild(
-                item
-            );
 
-        }
+/* =================================
+   INCREASE QUANTITY
+================================= */
+
+function increaseCartQuantity(foodId) {
+
+    const cart =
+        getCart();
+
+
+    const item =
+        cart.find(
+            (cartItem) =>
+                cartItem.id === foodId
+        );
+
+
+    if (!item) {
+
+        return;
+
+    }
+
+
+    const currentQuantity =
+        getItemQuantity(item);
+
+
+    updateCartQuantity(
+        foodId,
+        currentQuantity + 1
     );
 
+}
 
-    updateSummary(
-        cart
+
+/* =================================
+   DECREASE QUANTITY
+================================= */
+
+function decreaseCartQuantity(foodId) {
+
+    const cart =
+        getCart();
+
+
+    const item =
+        cart.find(
+            (cartItem) =>
+                cartItem.id === foodId
+        );
+
+
+    if (!item) {
+
+        return;
+
+    }
+
+
+    const currentQuantity =
+        getItemQuantity(item);
+
+
+    if (currentQuantity <= 1) {
+
+        return;
+
+    }
+
+
+    updateCartQuantity(
+        foodId,
+        currentQuantity - 1
     );
+
+}
+
+
+/* =================================
+   REMOVE CART ITEM
+================================= */
+
+function removeCartItem(foodId) {
+
+    const cart =
+        getCart();
+
+
+    const updatedCart =
+        cart.filter(
+            (item) =>
+                item.id !== foodId
+        );
+
+
+    const saved =
+        saveCart(updatedCart);
+
+
+    if (!saved) {
+
+        return;
+
+    }
+
+
+    renderCart();
+
 }
 
 
@@ -148,12 +328,10 @@ function displayCart() {
    CREATE CART ITEM
 ================================= */
 
-function createCartItem(food) {
+function createCartItem(item) {
 
     const article =
-        document.createElement(
-            "article"
-        );
+        document.createElement("article");
 
 
     article.className =
@@ -161,15 +339,11 @@ function createCartItem(food) {
 
 
     article.dataset.foodId =
-        food.id;
+        item.id;
 
-
-    /* IMAGE */
 
     const imageWrapper =
-        document.createElement(
-            "div"
-        );
+        document.createElement("div");
 
 
     imageWrapper.className =
@@ -177,9 +351,7 @@ function createCartItem(food) {
 
 
     const image =
-        document.createElement(
-            "img"
-        );
+        document.createElement("img");
 
 
     image.className =
@@ -187,11 +359,11 @@ function createCartItem(food) {
 
 
     image.src =
-        food.image;
+        item.image || "";
 
 
     image.alt =
-        food.name;
+        item.name || "Food";
 
 
     imageWrapper.appendChild(
@@ -199,48 +371,16 @@ function createCartItem(food) {
     );
 
 
-    /* CONTENT */
-
     const content =
-        document.createElement(
-            "div"
-        );
+        document.createElement("div");
 
 
     content.className =
         "cart-item-content";
 
 
-    /* DETAILS */
-
-    const details =
-        document.createElement(
-            "div"
-        );
-
-
-    details.className =
-        "cart-item-details";
-
-
-    const category =
-        document.createElement(
-            "span"
-        );
-
-
-    category.className =
-        "cart-item-category";
-
-
-    category.textContent =
-        food.category;
-
-
     const name =
-        document.createElement(
-            "h3"
-        );
+        document.createElement("h2");
 
 
     name.className =
@@ -248,13 +388,11 @@ function createCartItem(food) {
 
 
     name.textContent =
-        food.name;
+        item.name || "Food";
 
 
     const restaurant =
-        document.createElement(
-            "p"
-        );
+        document.createElement("p");
 
 
     restaurant.className =
@@ -262,34 +400,11 @@ function createCartItem(food) {
 
 
     restaurant.textContent =
-        food.restaurant;
+        item.restaurant || "";
 
-
-    details.append(
-        category,
-        name,
-        restaurant
-    );
-
-
-    /* BOTTOM */
-
-    const bottom =
-        document.createElement(
-            "div"
-        );
-
-
-    bottom.className =
-        "cart-item-bottom";
-
-
-    /* PRICE */
 
     const price =
-        document.createElement(
-            "span"
-        );
+        document.createElement("p");
 
 
     price.className =
@@ -297,15 +412,17 @@ function createCartItem(food) {
 
 
     price.textContent =
-        `₹${food.price}`;
+        formatPrice(
+            getItemPrice(item)
+        );
 
 
-    /* QUANTITY */
+    /* =================================
+       QUANTITY
+    ================================= */
 
     const quantityWrapper =
-        document.createElement(
-            "div"
-        );
+        document.createElement("div");
 
 
     quantityWrapper.className =
@@ -313,9 +430,7 @@ function createCartItem(food) {
 
 
     const decreaseButton =
-        document.createElement(
-            "button"
-        );
+        document.createElement("button");
 
 
     decreaseButton.type =
@@ -323,11 +438,7 @@ function createCartItem(food) {
 
 
     decreaseButton.className =
-        "quantity-button";
-
-
-    decreaseButton.dataset.action =
-        "decrease";
+        "cart-quantity-minus";
 
 
     decreaseButton.textContent =
@@ -341,23 +452,19 @@ function createCartItem(food) {
 
 
     const quantityValue =
-        document.createElement(
-            "span"
-        );
+        document.createElement("span");
 
 
     quantityValue.className =
-        "quantity-value";
+        "cart-quantity-value";
 
 
     quantityValue.textContent =
-        food.quantity;
+        getItemQuantity(item);
 
 
     const increaseButton =
-        document.createElement(
-            "button"
-        );
+        document.createElement("button");
 
 
     increaseButton.type =
@@ -365,11 +472,7 @@ function createCartItem(food) {
 
 
     increaseButton.className =
-        "quantity-button";
-
-
-    increaseButton.dataset.action =
-        "increase";
+        "cart-quantity-plus";
 
 
     increaseButton.textContent =
@@ -382,6 +485,30 @@ function createCartItem(food) {
     );
 
 
+    decreaseButton.addEventListener(
+        "click",
+        () => {
+
+            decreaseCartQuantity(
+                item.id
+            );
+
+        }
+    );
+
+
+    increaseButton.addEventListener(
+        "click",
+        () => {
+
+            increaseCartQuantity(
+                item.id
+            );
+
+        }
+    );
+
+
     quantityWrapper.append(
         decreaseButton,
         quantityValue,
@@ -389,12 +516,20 @@ function createCartItem(food) {
     );
 
 
-    /* REMOVE */
+    /* =================================
+       REMOVE
+    ================================= */
+
+    const actions =
+        document.createElement("div");
+
+
+    actions.className =
+        "cart-item-actions";
+
 
     const removeButton =
-        document.createElement(
-            "button"
-        );
+        document.createElement("button");
 
 
     removeButton.type =
@@ -402,27 +537,36 @@ function createCartItem(food) {
 
 
     removeButton.className =
-        "cart-remove-button";
-
-
-    removeButton.dataset.action =
-        "remove";
+        "cart-item-remove";
 
 
     removeButton.textContent =
         "Remove";
 
 
-    bottom.append(
-        price,
-        quantityWrapper,
+    removeButton.addEventListener(
+        "click",
+        () => {
+
+            removeCartItem(
+                item.id
+            );
+
+        }
+    );
+
+
+    actions.appendChild(
         removeButton
     );
 
 
     content.append(
-        details,
-        bottom
+        name,
+        restaurant,
+        price,
+        quantityWrapper,
+        actions
     );
 
 
@@ -433,215 +577,270 @@ function createCartItem(food) {
 
 
     return article;
+
 }
 
 
 /* =================================
-   QUANTITY
+   CALCULATE CART SUBTOTAL
 ================================= */
 
-function updateQuantity(
-    foodId,
-    change
-) {
+function calculateCartSubtotal(cart) {
+
+    return cart.reduce(
+        (total, item) => {
+
+            const price =
+                getItemPrice(item);
+
+
+            const quantity =
+                getItemQuantity(item);
+
+
+            return total +
+                (price * quantity);
+
+        },
+        0
+    );
+
+}
+
+
+/* =================================
+   CALCULATE ITEM COUNT
+================================= */
+
+function calculateCartItemCount(cart) {
+
+    return cart.reduce(
+        (total, item) => {
+
+            return total +
+                getItemQuantity(item);
+
+        },
+        0
+    );
+
+}
+
+
+/* =================================
+   CALCULATE DELIVERY
+================================= */
+
+function calculateDeliveryFee(cart) {
+
+    if (cart.length === 0) {
+
+        return 0;
+
+    }
+
+
+    return CART_DELIVERY_FEE;
+
+}
+
+
+/* =================================
+   UPDATE CART SUMMARY
+================================= */
+
+function updateCartSummary(cart) {
+
+    const itemCount =
+        calculateCartItemCount(
+            cart
+        );
+
+
+    const subtotal =
+        calculateCartSubtotal(
+            cart
+        );
+
+
+    const delivery =
+        calculateDeliveryFee(
+            cart
+        );
+
+
+    const total =
+        subtotal +
+        delivery;
+
+
+    /* =================================
+       ITEM COUNT
+    ================================= */
+
+    if (cartItemCount) {
+
+        cartItemCount.textContent =
+            `${itemCount} ${
+                itemCount === 1
+                    ? "Item"
+                    : "Items"
+            }`;
+
+    }
+
+
+    /* =================================
+       SUBTOTAL
+    ================================= */
+
+    if (cartSubtotal) {
+
+        cartSubtotal.textContent =
+            formatPrice(
+                subtotal
+            );
+
+    }
+
+
+    /* =================================
+       DELIVERY
+    ================================= */
+
+    if (cartDelivery) {
+
+        cartDelivery.textContent =
+            formatPrice(
+                delivery
+            );
+
+    }
+
+
+    /* =================================
+       TOTAL
+    ================================= */
+
+    if (cartTotal) {
+
+        cartTotal.textContent =
+            formatPrice(
+                total
+            );
+
+    }
+
+}
+
+
+/* =================================
+   EMPTY CART STATE
+================================= */
+
+function updateEmptyState(cart) {
+
+    if (!cartEmpty) {
+
+        return;
+
+    }
+
+
+    if (cart.length === 0) {
+
+        cartEmpty.hidden =
+            false;
+
+
+        if (cartItems) {
+
+            cartItems.hidden =
+                true;
+
+        }
+
+        return;
+
+    }
+
+
+    cartEmpty.hidden =
+        true;
+
+
+    if (cartItems) {
+
+        cartItems.hidden =
+            false;
+
+    }
+
+}
+
+
+/* =================================
+   RENDER CART
+================================= */
+
+function renderCart() {
+
+    if (!cartItems) {
+
+        return;
+
+    }
+
 
     const cart =
         getCart();
 
 
-    const food =
-        cart.find(
-            (item) =>
-                item.id === foodId
-        );
+    cartItems.replaceChildren();
 
 
-    if (!food) {
-        return;
-    }
+    cart.forEach(
+        (item) => {
+
+            const cartItem =
+                createCartItem(
+                    item
+                );
 
 
-    food.quantity +=
-        change;
+            cartItems.appendChild(
+                cartItem
+            );
+
+        }
+    );
 
 
-    if (food.quantity < 1) {
-
-        food.quantity = 1;
-    }
-
-
-    saveCart(
+    updateEmptyState(
         cart
     );
 
 
-    displayCart();
-}
-
-
-/* =================================
-   UPDATE SUMMARY
-================================= */
-
-function updateSummary(
-    cart
-) {
-
-    let totalQuantity = 0;
-
-    let subtotal = 0;
-
-
-    cart.forEach(
-        (food) => {
-
-            const quantity =
-                Number(food.quantity) || 1;
-
-            const price =
-                Number(food.price) || 0;
-
-
-            totalQuantity +=
-                quantity;
-
-
-            subtotal +=
-                price * quantity;
-
-        }
+    updateCartSummary(
+        cart
     );
 
-
-    const delivery =
-        subtotal > 0
-            ? CART_DELIVERY_CHARGE
-            : 0;
-
-
-    const total =
-        subtotal + delivery;
-
-
-    if (cartItemCount) {
-
-        cartItemCount.textContent =
-            `${totalQuantity} ${
-                totalQuantity === 1
-                    ? "Item"
-                    : "Items"
-            }`;
-    }
-
-
-    if (cartSubtotal) {
-
-        cartSubtotal.textContent =
-            `₹${subtotal}`;
-    }
-
-
-    if (cartDelivery) {
-
-        cartDelivery.textContent =
-            `₹${delivery}`;
-    }
-
-
-    if (cartTotal) {
-
-        cartTotal.textContent =
-            `₹${total}`;
-    }
 }
 
 
 /* =================================
-   CART CLICK EVENTS
-================================= */
-
-function initializeCartEvents() {
-
-    if (!cartItems) {
-        return;
-    }
-
-
-    cartItems.addEventListener(
-        "click",
-        (event) => {
-
-            const button =
-                event.target.closest(
-                    "button"
-                );
-
-
-            if (!button) {
-                return;
-            }
-
-
-            const item =
-                button.closest(
-                    ".cart-item"
-                );
-
-
-            if (!item) {
-                return;
-            }
-
-
-            const foodId =
-                item.dataset.foodId;
-
-
-            const action =
-                button.dataset.action;
-
-
-            if (
-                action ===
-                "increase"
-            ) {
-
-                updateQuantity(
-                    foodId,
-                    1
-                );
-
-            }
-
-
-            if (
-                action ===
-                "decrease"
-            ) {
-
-                updateQuantity(
-                    foodId,
-                    -1
-                );
-
-            }
-
-        }
-    );
-}
-
-
-/* =================================
-   INITIALIZE
+   INITIALIZE CART
 ================================= */
 
 function initializeCart() {
 
-    displayCart();
+    renderCart();
 
-    initializeCartEvents();
 }
 
+
+/* =================================
+   START
+================================= */
 
 initializeCart();
