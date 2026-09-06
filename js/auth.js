@@ -27,7 +27,6 @@ function getCurrentUser() {
                 )
             );
 
-
         if (
             !user ||
             typeof user !== "object"
@@ -36,7 +35,6 @@ function getCurrentUser() {
             return null;
 
         }
-
 
         return user;
 
@@ -81,7 +79,6 @@ function saveCurrentUser(user) {
         return false;
 
     }
-
 
     try {
 
@@ -131,6 +128,8 @@ function logoutUser() {
             USER_STORAGE_KEY
         );
 
+        updateHeaderUserState();
+
         return true;
 
     } catch (error) {
@@ -156,13 +155,11 @@ function getCurrentUserName() {
     const user =
         getCurrentUser();
 
-
     if (!user) {
 
         return "";
 
     }
-
 
     return (
         user.name ||
@@ -183,13 +180,11 @@ function getCurrentUserEmail() {
     const user =
         getCurrentUser();
 
-
     if (!user) {
 
         return "";
 
     }
-
 
     return user.email || "";
 
@@ -206,7 +201,6 @@ function updateHeaderUserState() {
         document.querySelectorAll(
             ".header-login"
         );
-
 
     const loggedIn =
         isUserLoggedIn();
