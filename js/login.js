@@ -1,243 +1,198 @@
 /* =================================
+   YUMMY TUMMY
    LOGIN
+================================= */
+
+
+/* =================================
+   LOGIN FORM ELEMENTS
 ================================= */
 
 const loginForm =
     document.querySelector("#loginForm");
 
+
 const loginEmail =
     document.querySelector("#loginEmail");
+
 
 const loginPassword =
     document.querySelector("#loginPassword");
 
-const loginEmailError =
-    document.querySelector("#loginEmailError");
-
-const loginPasswordError =
-    document.querySelector("#loginPasswordError");
 
 const loginMessage =
     document.querySelector("#loginMessage");
 
-const passwordToggle =
-    document.querySelector("#passwordToggle");
-
-const forgotPassword =
-    document.querySelector("#forgotPassword");
-
 
 /* =================================
-   CLEAR ERRORS
+   SHOW MESSAGE
 ================================= */
 
-function clearLoginErrors() {
+function showLoginMessage(
+    message,
+    type = "error"
+) {
 
-    if (loginEmailError) {
-        loginEmailError.textContent = "";
+    if (!loginMessage) {
+        return;
     }
 
-    if (loginPasswordError) {
-        loginPasswordError.textContent = "";
-    }
+    loginMessage.textContent =
+        message;
 
-    if (loginMessage) {
-        loginMessage.textContent = "";
-    }
+    loginMessage.classList.remove(
+        "success",
+        "error"
+    );
 
+    loginMessage.classList.add(
+        type
+    );
 }
 
 
 /* =================================
-   VALIDATE LOGIN
+   HANDLE LOGIN
 ================================= */
 
-function validateLogin() {
+function handleLogin(event) {
 
-    clearLoginErrors();
-
-    let isValid = true;
+    event.preventDefault();
 
 
-    const emailValue =
+    const email =
         loginEmail
             ? loginEmail.value.trim()
             : "";
 
 
-    const passwordValue =
+    const password =
         loginPassword
-            ? loginPassword.value
+            ? loginPassword.value.trim()
             : "";
 
 
-    if (!emailValue) {
+    /* =============================
+       VALIDATION
+    ============================= */
 
-        if (loginEmailError) {
-            loginEmailError.textContent =
-                "Please enter your email or mobile number.";
-        }
+    if (!email) {
 
-        isValid = false;
+        showLoginMessage(
+            "Please enter your email."
+        );
 
-    }
-
-
-    if (!passwordValue) {
-
-        if (loginPasswordError) {
-            loginPasswordError.textContent =
-                "Please enter your password.";
-        }
-
-        isValid = false;
-
-    }
-
-
-    if (
-        passwordValue &&
-        passwordValue.length < 6
-    ) {
-
-        if (loginPasswordError) {
-            loginPasswordError.textContent =
-                "Password must contain at least 6 characters.";
-        }
-
-        isValid = false;
-
-    }
-
-
-    return isValid;
-
-}
-
-
-/* =================================
-   PASSWORD TOGGLE
-================================= */
-
-function initializePasswordToggle() {
-
-    if (
-        !passwordToggle ||
-        !loginPassword
-    ) {
         return;
     }
 
 
-    passwordToggle.addEventListener(
-        "click",
+    if (!password) {
+
+        showLoginMessage(
+            "Please enter your password."
+        );
+
+        return;
+    }
+
+
+    /* =============================
+       CREATE USER
+    ============================= */
+
+    const existingUser =
+        typeof getCurrentUser ===
+        "function"
+            ? getCurrentUser()
+            : null;
+
+
+    const user = {
+
+        name:
+            existingUser?.name ||
+            email.split("@")[0],
+
+        email: email
+
+    };
+
+
+    /* =============================
+       CHECK LOGIN FUNCTION
+    ============================= */
+
+    if (
+        typeof loginUser !==
+        "function"
+    ) {
+
+        console.error(
+            "loginUser() is not available."
+        );
+
+        showLoginMessage(
+            "Login system is not available."
+        );
+
+        return;
+    }
+
+
+    /* =============================
+       SAVE USER
+    ============================= */
+
+    const saved =
+        loginUser(user);
+
+
+    if (!saved) {
+
+        showLoginMessage(
+            "Unable to save login information."
+        );
+
+        return;
+    }
+
+
+    /* =============================
+       SUCCESS
+    ============================= */
+
+    showLoginMessage(
+        "Login successful. Redirecting...",
+        "success"
+    );
+
+
+    /* =============================
+       REDIRECT
+    ============================= */
+
+    setTimeout(
         () => {
 
-            const isPassword =
-                loginPassword.type === "password";
+            window.location.href =
+                "index.html";
 
-
-            loginPassword.type =
-                isPassword
-                    ? "text"
-                    : "password";
-
-
-            passwordToggle.textContent =
-                isPassword
-                    ? "Hide"
-                    : "Show";
-
-        }
+        },
+        500
     );
 
 }
 
 
 /* =================================
-   FORGOT PASSWORD
+   LOGIN FORM EVENT
 ================================= */
 
-function initializeForgotPassword() {
-
-    if (!forgotPassword) {
-        return;
-    }
-
-
-    forgotPassword.addEventListener(
-        "click",
-        (event) => {
-
-            event.preventDefault();
-
-
-            if (loginMessage) {
-
-                loginMessage.textContent =
-                    "Password recovery will be available soon.";
-
-            }
-
-        }
-    );
-
-}
-
-
-/* =================================
-   LOGIN SUBMIT
-================================= */
-
-function initializeLoginForm() {
-
-    if (!loginForm) {
-        return;
-    }
-
+if (loginForm) {
 
     loginForm.addEventListener(
         "submit",
-        (event) => {
-
-            event.preventDefault();
-
-
-            const isValid =
-                validateLogin();
-
-
-            if (!isValid) {
-                return;
-            }
-
-
-            if (loginMessage) {
-
-                loginMessage.textContent =
-                    "Login system will be connected in the next authentication part.";
-
-            }
-
-        }
+        handleLogin
     );
 
 }
-
-
-/* =================================
-   INITIALIZE
-================================= */
-
-function initializeLogin() {
-
-    initializePasswordToggle();
-
-    initializeForgotPassword();
-
-    initializeLoginForm();
-
-}
-
-
-initializeLogin();
