@@ -10,9 +10,40 @@ html {
 
 body {
     min-height: 100vh;
-    font-family: Arial, sans-serif;
-    background: #ffffff;
-    color: #222222;
+    font-family: var(--font-family);
+    background: var(--background);
+    color: var(--text-primary);
+    line-height: 1.5;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+button,
+input,
+textarea,
+select {
+    font: inherit;
+}
+
+button {
+    border: none;
+    cursor: pointer;
+}
+
+img {
+    display: block;
+    max-width: 100%;
+}
+
+.container {
+    width: min(
+        calc(100% - (var(--page-padding) * 2)),
+        var(--container-width)
+    );
+    margin-inline: auto;
 }
 
 .page-content {
@@ -20,26 +51,66 @@ body {
     display: flex;
     align-items: center;
     justify-content: center;
-    flex-direction: column;
-    gap: 12px;
-    padding: 20px;
+    padding: var(--space-xl) 0;
     text-align: center;
 }
 
 .page-content h1 {
-    font-size: 42px;
+    margin-bottom: var(--space-sm);
+    color: var(--black);
+    font-size: var(--font-3xl);
+    font-weight: var(--font-bold);
 }
 
 .page-content p {
-    font-size: 18px;
+    margin-bottom: var(--space-lg);
+    color: var(--text-secondary);
+    font-size: var(--font-lg);
+}
+
+.btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 44px;
+    padding: 0 var(--space-lg);
+    border-radius: var(--radius-md);
+    background: var(--primary-color);
+    color: var(--white);
+    font-size: var(--font-md);
+    font-weight: var(--font-semibold);
+    transition:
+        background var(--transition-fast),
+        transform var(--transition-fast),
+        box-shadow var(--transition-fast);
+}
+
+.btn:hover {
+    background: var(--primary-dark);
+    transform: translateY(-1px);
+    box-shadow: var(--shadow-sm);
+}
+
+.btn:focus-visible {
+    outline: 3px solid var(--primary-light);
+    outline-offset: 3px;
 }
 
 @media (max-width: 600px) {
+    :root {
+        --page-padding: 16px;
+    }
+
     .page-content h1 {
-        font-size: 32px;
+        font-size: var(--font-2xl);
     }
 
     .page-content p {
-        font-size: 16px;
+        font-size: var(--font-md);
+    }
+
+    .btn {
+        width: 100%;
+        max-width: 260px;
     }
 }
