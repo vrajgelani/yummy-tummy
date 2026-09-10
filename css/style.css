@@ -114,11 +114,13 @@ ol {
 
 .section {
     padding-top: var(--section-padding);
+
     padding-bottom: var(--section-padding);
 }
 
 .section-heading {
     width: 100%;
+
     max-width: 750px;
 
     margin-inline: auto;
@@ -132,6 +134,7 @@ ol {
     color: var(--primary-color);
 
     font-size: 13px;
+
     font-weight: 700;
 
     text-transform: uppercase;
@@ -145,6 +148,7 @@ ol {
     color: var(--text-color);
 
     font-size: 42px;
+
     font-weight: 800;
 
     line-height: 1.2;
@@ -170,11 +174,13 @@ ol {
     display: inline-flex;
 
     align-items: center;
+
     justify-content: center;
 
     border-radius: var(--small-radius);
 
     font-size: 14px;
+
     font-weight: 700;
 
     transition:
@@ -251,6 +257,7 @@ ol {
 
 .form-group {
     display: flex;
+
     flex-direction: column;
 
     gap: 7px;
@@ -260,6 +267,7 @@ ol {
     color: var(--text-color);
 
     font-size: 14px;
+
     font-weight: 600;
 }
 
@@ -328,28 +336,26 @@ ol {
 }
 
 
-/* =========================
-   LOGO
-========================= */
+/* Logo */
 
 .brand-logo {
     flex-shrink: 0;
 
     display: flex;
+
     align-items: center;
 }
 
 .brand-logo img {
     width: 150px;
+
     height: auto;
 
     object-fit: contain;
 }
 
 
-/* =========================
-   LOCATION
-========================= */
+/* Location */
 
 .header-location {
     flex-shrink: 0;
@@ -365,6 +371,7 @@ ol {
 
 .header-visual {
     width: 24px;
+
     height: 24px;
 
     object-fit: contain;
@@ -374,6 +381,7 @@ ol {
 
 .location-content {
     display: flex;
+
     flex-direction: column;
 
     min-width: 0;
@@ -383,6 +391,7 @@ ol {
     color: #777777;
 
     font-size: 11px;
+
     font-weight: 500;
 }
 
@@ -392,6 +401,7 @@ ol {
     color: var(--text-color);
 
     font-size: 13px;
+
     font-weight: 700;
 
     white-space: nowrap;
@@ -402,9 +412,7 @@ ol {
 }
 
 
-/* =========================
-   SEARCH
-========================= */
+/* Search */
 
 .header-search {
     flex: 1;
@@ -451,9 +459,7 @@ ol {
 }
 
 
-/* =========================
-   NAVIGATION
-========================= */
+/* Navigation */
 
 .main-navigation {
     display: flex;
@@ -471,6 +477,7 @@ ol {
     color: #333333;
 
     font-size: 14px;
+
     font-weight: 600;
 
     transition:
@@ -485,15 +492,13 @@ ol {
     color: var(--primary-color);
 }
 
-
-/* Active underline */
-
 .navigation-link.active::after {
     content: "";
 
     position: absolute;
 
     left: 0;
+
     right: 0;
 
     bottom: -8px;
@@ -506,9 +511,7 @@ ol {
 }
 
 
-/* =========================
-   AUTH
-========================= */
+/* Authentication */
 
 .header-auth {
     display: flex;
@@ -526,6 +529,7 @@ ol {
     color: #333333;
 
     font-size: 14px;
+
     font-weight: 600;
 
     border: 1px solid transparent;
@@ -574,13 +578,19 @@ ol {
 ========================= */
 
 .site-footer {
+    width: 100%;
+
     background-color: var(--secondary-color);
 
     color: var(--white-color);
 }
 
+
+/* Footer Main */
+
 .footer-container {
     padding-top: 55px;
+
     padding-bottom: 50px;
 
     display: grid;
@@ -596,7 +606,12 @@ ol {
     gap: 35px;
 }
 
+
+/* Footer Column */
+
 .footer-column {
+    min-width: 0;
+
     display: flex;
 
     flex-direction: column;
@@ -610,6 +625,7 @@ ol {
     color: var(--white-color);
 
     font-size: 16px;
+
     font-weight: 700;
 }
 
@@ -620,6 +636,8 @@ ol {
 
     font-size: 13px;
 
+    line-height: 1.5;
+
     transition:
         color var(--transition);
 }
@@ -628,17 +646,21 @@ ol {
     color: var(--primary-color);
 }
 
+
+/* Brand */
+
 .footer-brand h2 {
     margin-bottom: 15px;
 
     color: var(--primary-color);
 
     font-size: 25px;
+
     font-weight: 800;
 }
 
 .footer-brand p {
-    max-width: 230px;
+    max-width: 240px;
 
     color: #bdbdbd;
 
@@ -647,23 +669,29 @@ ol {
     line-height: 1.8;
 }
 
+
+/* Contact */
+
 .footer-contact p {
     margin-bottom: 4px;
 
     color: #888888;
 
     font-size: 12px;
+
     font-weight: 600;
 }
 
 .footer-contact a {
     margin-bottom: 15px;
 
+    color: #d1d1d1;
+
     word-break: break-word;
 }
 
 .footer-contact address {
-    max-width: 220px;
+    max-width: 230px;
 
     color: #bdbdbd;
 
@@ -674,8 +702,11 @@ ol {
     line-height: 1.7;
 }
 
+
+/* App */
+
 .footer-app p {
-    max-width: 230px;
+    max-width: 240px;
 
     margin-bottom: 18px;
 
@@ -687,6 +718,8 @@ ol {
 }
 
 .app-badges {
+    width: 100%;
+
     display: flex;
 
     flex-direction: column;
@@ -695,9 +728,17 @@ ol {
 }
 
 .app-badge-placeholder {
-    min-width: 130px;
+    width: 135px;
+
+    min-height: 38px;
 
     padding: 9px 14px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
 
     border: 1px solid #444444;
 
@@ -706,10 +747,14 @@ ol {
     color: #cccccc;
 
     font-size: 12px;
+
     font-weight: 600;
 
     text-align: center;
 }
+
+
+/* Footer Bottom */
 
 .footer-bottom {
     border-top: 1px solid #2f2f2f;
@@ -736,10 +781,14 @@ ol {
 .footer-legal-links {
     display: flex;
 
+    align-items: center;
+
     gap: 20px;
 }
 
 .footer-legal-links a {
+    margin: 0;
+
     color: #888888;
 
     font-size: 12px;
@@ -750,6 +799,18 @@ ol {
 
 .footer-legal-links a:hover {
     color: var(--primary-color);
+}
+
+
+/* =========================
+   LARGE DESKTOP
+========================= */
+
+@media (min-width: 1401px) {
+
+    .footer-container {
+        gap: 45px;
+    }
 }
 
 
@@ -793,7 +854,9 @@ ol {
 
     .footer-container {
         grid-template-columns:
-            repeat(3, 1fr);
+            repeat(3, minmax(0, 1fr));
+
+        gap: 35px;
     }
 }
 
@@ -808,6 +871,7 @@ ol {
         min-height: auto;
 
         padding-top: 15px;
+
         padding-bottom: 15px;
 
         flex-wrap: wrap;
@@ -851,9 +915,23 @@ ol {
 
     .footer-container {
         grid-template-columns:
-            repeat(2, 1fr);
+            repeat(2, minmax(0, 1fr));
 
         gap: 40px;
+
+        padding-top: 45px;
+
+        padding-bottom: 45px;
+    }
+
+    .footer-column {
+        width: 100%;
+    }
+
+    .footer-brand p,
+    .footer-app p,
+    .footer-contact address {
+        max-width: 100%;
     }
 
     .section {
@@ -908,6 +986,7 @@ ol {
         gap: 22px;
 
         padding-top: 4px;
+
         padding-bottom: 6px;
 
         overflow-x: auto;
@@ -931,27 +1010,52 @@ ol {
         height: 44px;
 
         padding-left: 12px;
+
         padding-right: 12px;
     }
+
+
+    /* Footer */
 
     .footer-container {
         grid-template-columns: 1fr;
 
-        padding-top: 40px;
-        padding-bottom: 40px;
+        gap: 32px;
 
-        gap: 30px;
+        padding-top: 40px;
+
+        padding-bottom: 40px;
+    }
+
+    .footer-column {
+        width: 100%;
+    }
+
+    .footer-column h3 {
+        margin-bottom: 12px;
+    }
+
+    .footer-brand h2 {
+        font-size: 23px;
     }
 
     .footer-brand p,
-    .footer-app p {
+    .footer-app p,
+    .footer-contact address {
         max-width: 100%;
+    }
+
+    .app-badges {
+        flex-direction: row;
+
+        flex-wrap: wrap;
     }
 
     .footer-bottom-container {
         min-height: auto;
 
         padding-top: 18px;
+
         padding-bottom: 18px;
 
         flex-direction: column;
@@ -959,6 +1063,14 @@ ol {
         justify-content: center;
 
         text-align: center;
+    }
+
+    .footer-legal-links {
+        flex-wrap: wrap;
+
+        justify-content: center;
+
+        gap: 12px 20px;
     }
 
     .section {
@@ -993,6 +1105,7 @@ ol {
 
     .header-visual {
         width: 21px;
+
         height: 21px;
     }
 
@@ -1030,11 +1143,47 @@ ol {
         font-size: 15px;
     }
 
+    /* Footer */
+
+    .footer-container {
+        gap: 28px;
+
+        padding-top: 35px;
+
+        padding-bottom: 35px;
+    }
+
+    .footer-column h3 {
+        font-size: 15px;
+    }
+
+    .footer-column a,
+    .footer-brand p,
+    .footer-contact address,
+    .footer-app p {
+        font-size: 12px;
+    }
+
+    .footer-contact a {
+        font-size: 13px;
+    }
+
+    .app-badge-placeholder {
+        width: 125px;
+
+        min-height: 36px;
+
+        padding: 8px 10px;
+
+        font-size: 11px;
+    }
+
+    .footer-bottom p,
+    .footer-legal-links a {
+        font-size: 11px;
+    }
+
     .footer-legal-links {
-        flex-direction: column;
-
-        align-items: center;
-
-        gap: 8px;
+        gap: 8px 15px;
     }
 }
