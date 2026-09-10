@@ -2,7 +2,11 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
 
     <meta
         name="description"
@@ -11,25 +15,58 @@
 
     <title>Yummy Tummy</title>
 
-    <link rel="stylesheet" href="css/variables.css">
-    <link rel="stylesheet" href="css/style.css">
-    <link rel="stylesheet" href="css/navbar.css">
-    <link rel="stylesheet" href="css/footer.css">
+    <link
+        rel="stylesheet"
+        href="css/variables.css"
+    >
+
+    <link
+        rel="stylesheet"
+        href="css/style.css"
+    >
+
+    <link
+        rel="stylesheet"
+        href="css/navbar.css"
+    >
+
+    <link
+        rel="stylesheet"
+        href="css/footer.css"
+    >
+
+    <link
+        rel="stylesheet"
+        href="css/home.css"
+    >
 </head>
 
 <body>
 
-    <!-- Header -->
+    <!-- ================================
+         HEADER
+    ================================= -->
 
     <header class="site-header">
-        <nav class="navbar" aria-label="Main navigation">
+
+        <nav
+            class="navbar"
+            aria-label="Main navigation"
+        >
+
             <div class="container navbar-container">
 
-                <a href="index.html" class="brand-logo">
+                <a
+                    href="index.html"
+                    class="brand-logo"
+                >
                     Yummy Tummy
                 </a>
 
-                <div class="nav-menu" id="navMenu">
+                <div
+                    class="nav-menu"
+                    id="navMenu"
+                >
 
                     <a
                         href="index.html"
@@ -100,43 +137,718 @@
                 </div>
 
             </div>
+
         </nav>
+
     </header>
 
 
-    <!-- Main Content -->
+    <!-- ================================
+         MAIN
+    ================================= -->
 
-    <main class="page-content">
+    <main>
 
-        <div class="container">
+        <!-- HERO -->
 
-            <h1>Yummy Tummy</h1>
+        <section class="home-hero">
 
-            <p>
-                Delicious food, happy tummy.
-            </p>
+            <div class="container home-hero-container">
 
-            <a
-                href="menu.html"
-                class="btn"
-            >
-                Explore Food
-            </a>
+                <div class="home-hero-content">
 
-        </div>
+                    <div class="home-hero-badge">
+                        Delicious food. Happy moments.
+                    </div>
+
+                    <h1 class="home-hero-title">
+                        Your cravings,
+                        <br>
+                        our <span>delicious</span>
+                        journey.
+                    </h1>
+
+                    <p class="home-hero-description">
+                        Discover delicious food, explore restaurants,
+                        order your favourite meals, and enjoy every bite
+                        with Yummy Tummy.
+                    </p>
+
+                    <div class="home-hero-actions">
+
+                        <a
+                            href="menu.html"
+                            class="home-hero-primary-btn"
+                        >
+                            Explore Food
+                        </a>
+
+                        <a
+                            href="restaurants.html"
+                            class="home-hero-secondary-btn"
+                        >
+                            Explore Restaurants
+                        </a>
+
+                    </div>
+
+                </div>
+
+
+                <div class="home-hero-visual">
+
+                    <div class="home-hero-image-wrapper">
+
+                        <img
+                            src="assets/banners/hero-food-delivery.png"
+                            alt="Delicious food selection"
+                            class="home-hero-image"
+                        >
+
+                        <div
+                            class="home-hero-image-overlay"
+                            aria-hidden="true"
+                        ></div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- ================================
+             FOOD CATEGORIES
+        ================================= -->
+
+        <section class="food-categories">
+
+            <div class="container">
+
+                <div class="section-heading">
+
+                    <p class="section-eyebrow">
+                        Explore
+                    </p>
+
+                    <h2 class="section-title">
+                        What are you craving?
+                    </h2>
+
+                    <p class="section-description">
+                        Explore our food categories and discover
+                        something delicious for every mood.
+                    </p>
+
+                </div>
+
+
+                <div class="category-grid">
+
+                    <a
+                        href="foods.html?category=starters"
+                        class="category-card"
+                    >
+
+                        <div class="category-image-wrapper">
+
+                            <img
+                                src="assets/categories/starters.png"
+                                alt="Starters"
+                                class="category-image"
+                            >
+
+                        </div>
+
+                        <h3 class="category-name">
+                            Starters
+                        </h3>
+
+                    </a>
+
+
+                    <a
+                        href="foods.html?category=pizza"
+                        class="category-card"
+                    >
+
+                        <div class="category-image-wrapper">
+
+                            <img
+                                src="assets/categories/pizza.png"
+                                alt="Pizza"
+                                class="category-image"
+                            >
+
+                        </div>
+
+                        <h3 class="category-name">
+                            Pizza
+                        </h3>
+
+                    </a>
+
+
+                    <a
+                        href="foods.html?category=burger"
+                        class="category-card"
+                    >
+
+                        <div class="category-image-wrapper">
+
+                            <img
+                                src="assets/categories/burger.png"
+                                alt="Burger"
+                                class="category-image"
+                            >
+
+                        </div>
+
+                        <h3 class="category-name">
+                            Burger
+                        </h3>
+
+                    </a>
+
+
+                    <a
+                        href="foods.html?category=sandwich"
+                        class="category-card"
+                    >
+
+                        <div class="category-image-wrapper">
+
+                            <img
+                                src="assets/categories/sandwich.png"
+                                alt="Sandwich"
+                                class="category-image"
+                            >
+
+                        </div>
+
+                        <h3 class="category-name">
+                            Sandwich
+                        </h3>
+
+                    </a>
+
+
+                    <a
+                        href="foods.html?category=pasta"
+                        class="category-card"
+                    >
+
+                        <div class="category-image-wrapper">
+
+                            <img
+                                src="assets/categories/pasta.png"
+                                alt="Pasta"
+                                class="category-image"
+                            >
+
+                        </div>
+
+                        <h3 class="category-name">
+                            Pasta
+                        </h3>
+
+                    </a>
+
+
+                    <a
+                        href="foods.html?category=indian-main-course"
+                        class="category-card"
+                    >
+
+                        <div class="category-image-wrapper">
+
+                            <img
+                                src="assets/categories/indian-main-course.png"
+                                alt="Indian Main Course"
+                                class="category-image"
+                            >
+
+                        </div>
+
+                        <h3 class="category-name">
+                            Indian Main Course
+                        </h3>
+
+                    </a>
+
+
+                    <a
+                        href="foods.html?category=chinese"
+                        class="category-card"
+                    >
+
+                        <div class="category-image-wrapper">
+
+                            <img
+                                src="assets/categories/chinese.png"
+                                alt="Chinese"
+                                class="category-image"
+                            >
+
+                        </div>
+
+                        <h3 class="category-name">
+                            Chinese
+                        </h3>
+
+                    </a>
+
+
+                    <a
+                        href="foods.html?category=biryani-rice"
+                        class="category-card"
+                    >
+
+                        <div class="category-image-wrapper">
+
+                            <img
+                                src="assets/categories/biryani-rice.png"
+                                alt="Biryani and Rice"
+                                class="category-image"
+                            >
+
+                        </div>
+
+                        <h3 class="category-name">
+                            Biryani &amp; Rice
+                        </h3>
+
+                    </a>
+
+
+                    <a
+                        href="foods.html?category=desserts"
+                        class="category-card"
+                    >
+
+                        <div class="category-image-wrapper">
+
+                            <img
+                                src="assets/categories/desserts.png"
+                                alt="Desserts"
+                                class="category-image"
+                            >
+
+                        </div>
+
+                        <h3 class="category-name">
+                            Desserts
+                        </h3>
+
+                    </a>
+
+
+                    <a
+                        href="foods.html?category=brownies"
+                        class="category-card"
+                    >
+
+                        <div class="category-image-wrapper">
+
+                            <img
+                                src="assets/categories/brownies.png"
+                                alt="Brownies"
+                                class="category-image"
+                            >
+
+                        </div>
+
+                        <h3 class="category-name">
+                            Brownies
+                        </h3>
+
+                    </a>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- ================================
+             POPULAR FOODS
+        ================================= -->
+
+        <section class="popular-foods">
+
+            <div class="container">
+
+                <div class="section-heading popular-foods-heading">
+
+                    <p class="section-eyebrow">
+                        Popular
+                    </p>
+
+                    <h2 class="section-title">
+                        Popular Foods
+                    </h2>
+
+                    <p class="section-description">
+                        Discover some of the food favourites
+                        people love to enjoy.
+                    </p>
+
+                </div>
+
+
+                <div class="popular-food-grid">
+
+
+                    <!-- Food 1 -->
+
+                    <article class="popular-food-card">
+
+                        <a
+                            href="food-details.html"
+                            class="popular-food-image-link"
+                        >
+
+                            <div class="popular-food-image-wrapper">
+
+                                <img
+                                    src="assets/popular/paneer-tikka-platter.png"
+                                    alt="Paneer Tikka Platter"
+                                    class="popular-food-image"
+                                >
+
+                            </div>
+
+                        </a>
+
+                        <div class="popular-food-content">
+
+                            <p class="popular-food-category">
+                                Starters
+                            </p>
+
+                            <h3 class="popular-food-name">
+                                Paneer Tikka Platter
+                            </h3>
+
+                            <div class="popular-food-meta">
+
+                                <span class="popular-food-rating">
+                                    ★ 4.5
+                                </span>
+
+                                <span class="popular-food-price">
+                                    ₹249
+                                </span>
+
+                            </div>
+
+                            <a
+                                href="food-details.html"
+                                class="popular-food-link"
+                            >
+                                View Food
+                            </a>
+
+                        </div>
+
+                    </article>
+
+
+                    <!-- Food 2 -->
+
+                    <article class="popular-food-card">
+
+                        <a
+                            href="food-details.html"
+                            class="popular-food-image-link"
+                        >
+
+                            <div class="popular-food-image-wrapper">
+
+                                <img
+                                    src="assets/popular/farmhouse-pizza.png"
+                                    alt="Farmhouse Pizza"
+                                    class="popular-food-image"
+                                >
+
+                            </div>
+
+                        </a>
+
+                        <div class="popular-food-content">
+
+                            <p class="popular-food-category">
+                                Pizza
+                            </p>
+
+                            <h3 class="popular-food-name">
+                                Farmhouse Pizza
+                            </h3>
+
+                            <div class="popular-food-meta">
+
+                                <span class="popular-food-rating">
+                                    ★ 4.6
+                                </span>
+
+                                <span class="popular-food-price">
+                                    ₹299
+                                </span>
+
+                            </div>
+
+                            <a
+                                href="food-details.html"
+                                class="popular-food-link"
+                            >
+                                View Food
+                            </a>
+
+                        </div>
+
+                    </article>
+
+
+                    <!-- Food 3 -->
+
+                    <article class="popular-food-card">
+
+                        <a
+                            href="food-details.html"
+                            class="popular-food-image-link"
+                        >
+
+                            <div class="popular-food-image-wrapper">
+
+                                <img
+                                    src="assets/popular/classic-chicken-burger.png"
+                                    alt="Classic Chicken Burger"
+                                    class="popular-food-image"
+                                >
+
+                            </div>
+
+                        </a>
+
+                        <div class="popular-food-content">
+
+                            <p class="popular-food-category">
+                                Burger
+                            </p>
+
+                            <h3 class="popular-food-name">
+                                Classic Chicken Burger
+                            </h3>
+
+                            <div class="popular-food-meta">
+
+                                <span class="popular-food-rating">
+                                    ★ 4.5
+                                </span>
+
+                                <span class="popular-food-price">
+                                    ₹229
+                                </span>
+
+                            </div>
+
+                            <a
+                                href="food-details.html"
+                                class="popular-food-link"
+                            >
+                                View Food
+                            </a>
+
+                        </div>
+
+                    </article>
+
+
+                    <!-- Food 4 -->
+
+                    <article class="popular-food-card">
+
+                        <a
+                            href="food-details.html"
+                            class="popular-food-image-link"
+                        >
+
+                            <div class="popular-food-image-wrapper">
+
+                                <img
+                                    src="assets/popular/creamy-alfredo-pasta.png"
+                                    alt="Creamy Alfredo Pasta"
+                                    class="popular-food-image"
+                                >
+
+                            </div>
+
+                        </a>
+
+                        <div class="popular-food-content">
+
+                            <p class="popular-food-category">
+                                Pasta
+                            </p>
+
+                            <h3 class="popular-food-name">
+                                Creamy Alfredo Pasta
+                            </h3>
+
+                            <div class="popular-food-meta">
+
+                                <span class="popular-food-rating">
+                                    ★ 4.6
+                                </span>
+
+                                <span class="popular-food-price">
+                                    ₹279
+                                </span>
+
+                            </div>
+
+                            <a
+                                href="food-details.html"
+                                class="popular-food-link"
+                            >
+                                View Food
+                            </a>
+
+                        </div>
+
+                    </article>
+
+
+                    <!-- Food 5 -->
+
+                    <article class="popular-food-card">
+
+                        <a
+                            href="food-details.html"
+                            class="popular-food-image-link"
+                        >
+
+                            <div class="popular-food-image-wrapper">
+
+                                <img
+                                    src="assets/popular/hyderabadi-chicken-biryani.png"
+                                    alt="Hyderabadi Chicken Biryani"
+                                    class="popular-food-image"
+                                >
+
+                            </div>
+
+                        </a>
+
+                        <div class="popular-food-content">
+
+                            <p class="popular-food-category">
+                                Biryani &amp; Rice
+                            </p>
+
+                            <h3 class="popular-food-name">
+                                Hyderabadi Chicken Biryani
+                            </h3>
+
+                            <div class="popular-food-meta">
+
+                                <span class="popular-food-rating">
+                                    ★ 4.7
+                                </span>
+
+                                <span class="popular-food-price">
+                                    ₹329
+                                </span>
+
+                            </div>
+
+                            <a
+                                href="food-details.html"
+                                class="popular-food-link"
+                            >
+                                View Food
+                            </a>
+
+                        </div>
+
+                    </article>
+
+
+                    <!-- Food 6 -->
+
+                    <article class="popular-food-card">
+
+                        <a
+                            href="food-details.html"
+                            class="popular-food-image-link"
+                        >
+
+                            <div class="popular-food-image-wrapper">
+
+                                <img
+                                    src="assets/popular/chocolate-lava-cake.png"
+                                    alt="Chocolate Lava Cake"
+                                    class="popular-food-image"
+                                >
+
+                            </div>
+
+                        </a>
+
+                        <div class="popular-food-content">
+
+                            <p class="popular-food-category">
+                                Desserts
+                            </p>
+
+                            <h3 class="popular-food-name">
+                                Chocolate Lava Cake
+                            </h3>
+
+                            <div class="popular-food-meta">
+
+                                <span class="popular-food-rating">
+                                    ★ 4.5
+                                </span>
+
+                                <span class="popular-food-price">
+                                    ₹189
+                                </span>
+
+                            </div>
+
+                            <a
+                                href="food-details.html"
+                                class="popular-food-link"
+                            >
+                                View Food
+                            </a>
+
+                        </div>
+
+                    </article>
+
+                </div>
+
+            </div>
+
+        </section>
 
     </main>
 
 
-    <!-- Footer -->
+    <!-- ================================
+         FOOTER
+    ================================= -->
 
     <footer class="site-footer">
 
         <div class="container footer-container">
 
             <div class="footer-grid">
-
-                <!-- Brand -->
 
                 <div class="footer-brand">
 
@@ -152,8 +864,6 @@
 
                 </div>
 
-
-                <!-- Yummy Tummy Links -->
 
                 <div class="footer-column">
 
@@ -194,8 +904,6 @@
 
                 </div>
 
-
-                <!-- Customer -->
 
                 <div class="footer-column">
 
@@ -245,8 +953,6 @@
 
                 </div>
 
-
-                <!-- Contact -->
 
                 <div class="footer-column">
 
@@ -317,8 +1023,6 @@
             </div>
 
 
-            <!-- App Section -->
-
             <div class="footer-app-section">
 
                 <h2 class="footer-app-title">
@@ -331,8 +1035,6 @@
 
             </div>
 
-
-            <!-- Bottom -->
 
             <div class="footer-bottom">
 
