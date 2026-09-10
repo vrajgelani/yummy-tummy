@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
 
@@ -20,17 +21,150 @@
 
 <body>
 
-    <main class="main-content">
+    <!-- =========================
+         HEADER
+    ========================== -->
 
-        <h1>Yummy Tummy</h1>
+    <header class="site-header">
 
-        <p>
-            Food Delivery & Restaurant Table Booking
-        </p>
+        <div class="header-container">
+
+            <!-- Logo -->
+
+            <a
+                href="index.html"
+                class="brand-logo"
+                aria-label="Yummy Tummy Home"
+            >
+                <img
+                    src="assets/images/logo/yummy-tummy-logo.png"
+                    alt="Yummy Tummy"
+                >
+            </a>
+
+
+            <!-- Location -->
+
+            <div class="header-location">
+
+                <img
+                    src="assets/images/logo/location.png"
+                    alt=""
+                    class="header-visual"
+                >
+
+                <div class="location-content">
+                    <span class="location-label">
+                        Deliver to
+                    </span>
+
+                    <span class="location-value">
+                        Select Location
+                    </span>
+                </div>
+
+            </div>
+
+
+            <!-- Search -->
+
+            <form
+                class="header-search"
+                action="#"
+                method="get"
+            >
+
+                <img
+                    src="assets/images/logo/search.png"
+                    alt=""
+                    class="header-visual"
+                >
+
+                <input
+                    type="search"
+                    name="search"
+                    placeholder="Search for food or restaurants"
+                    aria-label="Search for food or restaurants"
+                >
+
+            </form>
+
+
+            <!-- Navigation -->
+
+            <nav
+                class="main-navigation"
+                aria-label="Main Navigation"
+            >
+
+                <a href="index.html">
+                    Home
+                </a>
+
+                <a href="menu.html">
+                    Menu
+                </a>
+
+                <a href="restaurants.html">
+                    Restaurants
+                </a>
+
+                <a href="wishlist.html">
+                    Wishlist
+                </a>
+
+                <a href="cart.html">
+                    Cart
+                </a>
+
+            </nav>
+
+
+            <!-- Authentication -->
+
+            <div class="header-auth">
+
+                <a href="login.html">
+                    Login
+                </a>
+
+                <a
+                    href="register.html"
+                    class="register-button"
+                >
+                    Register
+                </a>
+
+            </div>
+
+        </div>
+
+    </header>
+
+
+    <!-- =========================
+         MAIN
+    ========================== -->
+
+    <main>
+
+        <section class="main-content">
+
+            <h1>
+                Yummy Tummy
+            </h1>
+
+            <p>
+                Food Delivery & Restaurant Table Booking
+            </p>
+
+        </section>
 
     </main>
+
 
     <script src="js/main.js"></script>
 
 </body>
+
 </html>
