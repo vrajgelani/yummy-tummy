@@ -1,0 +1,255 @@
+/* =========================================
+   YUMMY TUMMY - HOME MENU
+   ========================================= */
+
+.home-menu-section {
+    padding: 80px 0;
+    background: var(--light-background);
+}
+
+.home-menu-header {
+    text-align: center;
+    margin-bottom: 45px;
+}
+
+.home-menu-header .section-label {
+    display: inline-block;
+    margin-bottom: 10px;
+    color: var(--primary-color);
+    font-size: 14px;
+    font-weight: 700;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+}
+
+.home-menu-header h2 {
+    margin: 0 0 12px;
+    color: var(--secondary-color);
+    font-size: 38px;
+    line-height: 1.2;
+    font-weight: 800;
+}
+
+.home-menu-header p {
+    max-width: 650px;
+    margin: 0 auto;
+    color: var(--muted-text-color);
+    font-size: 16px;
+    line-height: 1.7;
+}
+
+.home-menu-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 22px;
+}
+
+.home-menu-card {
+    overflow: hidden;
+    background: var(--white-color);
+    border: 1px solid var(--border-color);
+    border-radius: 18px;
+    box-shadow: 0 7px 22px rgba(0, 0, 0, 0.05);
+    transition:
+        transform 0.3s ease,
+        box-shadow 0.3s ease,
+        border-color 0.3s ease;
+}
+
+.home-menu-card:hover {
+    transform: translateY(-7px);
+    border-color: rgba(255, 107, 0, 0.3);
+    box-shadow: 0 16px 35px rgba(0, 0, 0, 0.11);
+}
+
+.home-menu-image {
+    position: relative;
+    height: 190px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    background: #fff7f0;
+}
+
+.home-menu-image::before {
+    content: "";
+    position: absolute;
+    width: 145px;
+    height: 145px;
+    border-radius: 50%;
+    background: rgba(255, 107, 0, 0.08);
+}
+
+.home-menu-image img {
+    position: relative;
+    z-index: 1;
+    width: 86%;
+    height: 86%;
+    object-fit: contain;
+    transition: transform 0.35s ease;
+}
+
+.home-menu-card:hover .home-menu-image img {
+    transform: scale(1.07);
+}
+
+.home-menu-content {
+    padding: 18px;
+}
+
+.home-menu-category {
+    margin-bottom: 6px;
+    color: var(--primary-color);
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.8px;
+    text-transform: uppercase;
+}
+
+.home-menu-name {
+    min-height: 50px;
+    margin: 0 0 13px;
+    color: var(--secondary-color);
+    font-size: 17px;
+    line-height: 1.45;
+    font-weight: 750;
+}
+
+.home-menu-meta {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 10px;
+}
+
+.home-menu-rating {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    color: var(--text-color);
+    font-size: 13px;
+    font-weight: 700;
+}
+
+.home-menu-star {
+    color: #f5a623;
+}
+
+.home-menu-price {
+    color: var(--secondary-color);
+    font-size: 17px;
+    font-weight: 800;
+}
+
+.home-menu-footer {
+    display: flex;
+    justify-content: center;
+    margin-top: 42px;
+}
+
+.home-menu-button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 180px;
+    min-height: 50px;
+    padding: 12px 24px;
+    border-radius: 10px;
+    background: var(--primary-color);
+    color: var(--white-color);
+    font-size: 15px;
+    font-weight: 700;
+    text-decoration: none;
+    transition:
+        background 0.3s ease,
+        transform 0.3s ease;
+}
+
+.home-menu-button:hover {
+    background: var(--primary-dark);
+    transform: translateY(-2px);
+}
+
+
+/* =========================================
+   TABLET
+   ========================================= */
+
+@media (max-width: 1000px) {
+    .home-menu-section {
+        padding: 65px 0;
+    }
+
+    .home-menu-header h2 {
+        font-size: 32px;
+    }
+
+    .home-menu-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 22px;
+    }
+
+    .home-menu-image {
+        height: 220px;
+    }
+}
+
+
+/* =========================================
+   MOBILE
+   ========================================= */
+
+@media (max-width: 700px) {
+    .home-menu-section {
+        padding: 55px 0;
+    }
+
+    .home-menu-header {
+        margin-bottom: 32px;
+    }
+
+    .home-menu-header h2 {
+        font-size: 28px;
+    }
+
+    .home-menu-header p {
+        font-size: 14px;
+    }
+
+    .home-menu-grid {
+        grid-template-columns: 1fr;
+        gap: 18px;
+    }
+
+    .home-menu-image {
+        height: 230px;
+    }
+}
+
+
+/* =========================================
+   SMALL MOBILE
+   ========================================= */
+
+@media (max-width: 480px) {
+    .home-menu-section {
+        padding: 45px 0;
+    }
+
+    .home-menu-header h2 {
+        font-size: 25px;
+    }
+
+    .home-menu-image {
+        height: 210px;
+    }
+
+    .home-menu-content {
+        padding: 17px;
+    }
+
+    .home-menu-button {
+        width: 100%;
+    }
+}

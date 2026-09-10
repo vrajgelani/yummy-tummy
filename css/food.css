@@ -1,0 +1,230 @@
+/* =========================================
+   YUMMY TUMMY - FOOD DETAILS
+   ========================================= */
+
+.food-breadcrumb-section {
+    padding: 20px 0;
+    border-bottom: 1px solid var(--border-color);
+    background: var(--white-color);
+}
+
+.food-breadcrumb {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 9px;
+    font-size: 14px;
+}
+
+.food-breadcrumb a {
+    color: var(--primary-color);
+    font-weight: 700;
+    text-decoration: none;
+}
+
+.food-breadcrumb span {
+    color: var(--muted-text-color);
+}
+
+
+.food-details-section {
+    padding: 75px 0;
+    background: var(--light-background);
+}
+
+.food-details-card {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 55px;
+    align-items: center;
+    padding: 35px;
+    border: 1px solid var(--border-color);
+    border-radius: 25px;
+    background: var(--white-color);
+    box-shadow: 0 12px 35px rgba(0, 0, 0, 0.07);
+}
+
+
+.food-details-image {
+    min-height: 480px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 20px;
+    background: #fff7f0;
+    overflow: hidden;
+}
+
+.food-details-image img {
+    width: 90%;
+    height: 90%;
+    object-fit: contain;
+}
+
+
+.food-details-category {
+    color: var(--primary-color);
+    font-size: 13px;
+    font-weight: 800;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+}
+
+.food-details-content h1 {
+    margin: 12px 0 15px;
+    color: var(--secondary-color);
+    font-size: 42px;
+    line-height: 1.2;
+}
+
+
+.food-details-rating {
+    margin-bottom: 20px;
+    color: #f5a623;
+    font-size: 16px;
+    font-weight: 800;
+}
+
+
+.food-details-description {
+    max-width: 600px;
+    color: var(--muted-text-color);
+    font-size: 16px;
+    line-height: 1.8;
+}
+
+
+.food-details-price {
+    margin: 25px 0;
+    color: var(--secondary-color);
+    font-size: 30px;
+    font-weight: 850;
+}
+
+
+.food-details-actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+}
+
+
+.food-action-button,
+.food-secondary-button {
+    min-height: 50px;
+    padding: 12px 24px;
+    border-radius: 10px;
+    font-size: 15px;
+    font-weight: 800;
+    cursor: pointer;
+    transition: 0.3s ease;
+}
+
+
+.food-action-button {
+    border: 2px solid var(--primary-color);
+    background: var(--primary-color);
+    color: var(--white-color);
+}
+
+.food-action-button:hover {
+    background: var(--primary-dark);
+    border-color: var(--primary-dark);
+}
+
+
+.food-secondary-button {
+    border: 2px solid var(--border-color);
+    background: var(--white-color);
+    color: var(--secondary-color);
+}
+
+.food-secondary-button:hover {
+    border-color: var(--primary-color);
+    color: var(--primary-color);
+}
+
+
+.food-details-info {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 12px;
+    margin-top: 30px;
+    padding-top: 25px;
+    border-top: 1px solid var(--border-color);
+}
+
+
+.food-info-item {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+.food-info-item strong {
+    color: var(--secondary-color);
+    font-size: 13px;
+}
+
+.food-info-item span {
+    color: var(--muted-text-color);
+    font-size: 13px;
+}
+
+
+@media (max-width: 1000px) {
+
+    .food-details-card {
+        grid-template-columns: 1fr;
+        gap: 35px;
+    }
+
+    .food-details-image {
+        min-height: 400px;
+    }
+
+}
+
+
+@media (max-width: 700px) {
+
+    .food-details-section {
+        padding: 50px 0;
+    }
+
+    .food-details-card {
+        padding: 20px;
+        border-radius: 18px;
+    }
+
+    .food-details-image {
+        min-height: 300px;
+    }
+
+    .food-details-content h1 {
+        font-size: 31px;
+    }
+
+    .food-details-price {
+        font-size: 26px;
+    }
+
+    .food-details-info {
+        grid-template-columns: 1fr;
+    }
+
+}
+
+
+@media (max-width: 480px) {
+
+    .food-details-actions {
+        flex-direction: column;
+    }
+
+    .food-action-button,
+    .food-secondary-button {
+        width: 100%;
+    }
+
+}
