@@ -33,8 +33,13 @@ textarea {
     font: inherit;
 }
 
+
+/* ================================
+   HERO SECTION
+================================ */
+
 .hero-section {
-    min-height: 560px;
+    min-height: 580px;
     display: flex;
     align-items: center;
     background:
@@ -51,8 +56,8 @@ textarea {
 }
 
 .hero-content {
-    max-width: 700px;
-    padding: 80px 0;
+    max-width: 720px;
+    padding: 90px 0;
 }
 
 .hero-label,
@@ -77,7 +82,7 @@ textarea {
 }
 
 .hero-description {
-    max-width: 600px;
+    max-width: 620px;
     margin-bottom: 32px;
     color: var(--text-secondary);
     font-size: 18px;
@@ -122,7 +127,12 @@ textarea {
     transform: translateY(-2px);
 }
 
-.content-section {
+
+/* ================================
+   COMMON SECTION
+================================ */
+
+.home-section {
     padding: 90px 0;
 }
 
@@ -132,7 +142,17 @@ textarea {
 }
 
 .section-heading {
-    max-width: 650px;
+    max-width: 680px;
+    margin-bottom: 38px;
+}
+
+.section-heading-row {
+    max-width: none;
+
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    gap: 30px;
 }
 
 .section-heading h2 {
@@ -144,4 +164,333 @@ textarea {
 .section-heading > p:last-child {
     color: var(--text-secondary);
     font-size: 17px;
+}
+
+.section-action {
+    flex-shrink: 0;
+    color: var(--primary-color);
+    font-size: 14px;
+    font-weight: 700;
+}
+
+.section-action:hover {
+    text-decoration: underline;
+}
+
+
+/* ================================
+   CATEGORY SECTION
+================================ */
+
+.categories-section {
+    background: var(--background-primary);
+}
+
+.category-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+}
+
+.category-card {
+    overflow: hidden;
+    border: 1px solid var(--border-color);
+    border-radius: var(--radius-medium);
+    background: var(--background-primary);
+    box-shadow: var(--shadow-small);
+    transition: var(--transition);
+}
+
+.category-card:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--shadow-medium);
+}
+
+.category-image-placeholder {
+    height: 170px;
+    background: var(--background-secondary);
+}
+
+.category-content {
+    padding: 20px;
+}
+
+.category-content h3 {
+    margin-bottom: 7px;
+    font-size: 19px;
+}
+
+.category-content p {
+    margin-bottom: 15px;
+    color: var(--text-secondary);
+    font-size: 14px;
+}
+
+.category-link {
+    color: var(--primary-color);
+    font-size: 14px;
+    font-weight: 700;
+}
+
+
+/* ================================
+   POPULAR FOOD
+================================ */
+
+.popular-food-section {
+    background: var(--background-secondary);
+}
+
+.food-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+}
+
+.food-card {
+    overflow: hidden;
+    border: 1px solid var(--border-color);
+    border-radius: var(--radius-medium);
+    background: var(--background-primary);
+    box-shadow: var(--shadow-small);
+    transition: var(--transition);
+}
+
+.food-card:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--shadow-medium);
+}
+
+.food-image-placeholder {
+    height: 220px;
+    background: var(--background-secondary);
+}
+
+.food-card-content {
+    padding: 20px;
+}
+
+.food-category {
+    margin-bottom: 5px;
+    color: var(--primary-color);
+    font-size: 12px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.8px;
+}
+
+.food-card-content h3 {
+    margin-bottom: 7px;
+    font-size: 20px;
+}
+
+.food-description {
+    margin-bottom: 18px;
+    color: var(--text-secondary);
+    font-size: 14px;
+}
+
+.food-card-bottom {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 15px;
+}
+
+.food-price {
+    font-size: 18px;
+    font-weight: 800;
+}
+
+.details-button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 40px;
+    padding: 0 15px;
+    border-radius: var(--radius-small);
+    color: var(--text-light);
+    background: var(--primary-color);
+    font-size: 13px;
+    font-weight: 700;
+    transition: var(--transition);
+}
+
+.details-button:hover {
+    background: var(--primary-dark);
+}
+
+
+/* ================================
+   RESTAURANTS
+================================ */
+
+.restaurant-section {
+    background: var(--background-primary);
+}
+
+.restaurant-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+}
+
+.restaurant-card {
+    overflow: hidden;
+    border: 1px solid var(--border-color);
+    border-radius: var(--radius-medium);
+    background: var(--background-primary);
+    box-shadow: var(--shadow-small);
+    transition: var(--transition);
+}
+
+.restaurant-card:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--shadow-medium);
+}
+
+.restaurant-image-placeholder {
+    height: 230px;
+    background: var(--background-secondary);
+}
+
+.restaurant-card-content {
+    padding: 22px;
+}
+
+.restaurant-location {
+    margin-bottom: 6px;
+    color: var(--primary-color);
+    font-size: 12px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.8px;
+}
+
+.restaurant-card-content h3 {
+    margin-bottom: 8px;
+    font-size: 21px;
+}
+
+.restaurant-description {
+    min-height: 48px;
+    margin-bottom: 18px;
+    color: var(--text-secondary);
+    font-size: 14px;
+}
+
+
+/* ================================
+   BOOKING HIGHLIGHT
+================================ */
+
+.booking-highlight-section {
+    padding: 90px 0;
+    background: var(--background-secondary);
+}
+
+.booking-highlight {
+    min-height: 320px;
+    display: flex;
+    align-items: center;
+
+    padding: 50px;
+    border-radius: var(--radius-large);
+    background: var(--background-primary);
+    box-shadow: var(--shadow-medium);
+}
+
+.booking-highlight-content {
+    max-width: 650px;
+}
+
+.booking-highlight-content h2 {
+    margin-bottom: 15px;
+    font-size: 40px;
+    line-height: 1.2;
+}
+
+.booking-highlight-content p:not(.section-label) {
+    margin-bottom: 25px;
+    color: var(--text-secondary);
+    font-size: 16px;
+}
+
+
+/* ================================
+   RESPONSIVE CONTENT
+================================ */
+
+@media (max-width: 1000px) {
+
+    .category-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .food-grid,
+    .restaurant-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+
+@media (max-width: 700px) {
+
+    .section-heading-row {
+        align-items: flex-start;
+        flex-direction: column;
+    }
+
+    .section-heading h2 {
+        font-size: 30px;
+    }
+
+    .booking-highlight {
+        padding: 35px 25px;
+    }
+
+    .booking-highlight-content h2 {
+        font-size: 30px;
+    }
+}
+
+
+@media (max-width: 520px) {
+
+    .hero-content {
+        padding: 65px 0;
+    }
+
+    .hero-content h1 {
+        font-size: 40px;
+    }
+
+    .hero-description {
+        font-size: 16px;
+    }
+
+    .hero-actions {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .primary-button,
+    .secondary-button {
+        width: 100%;
+    }
+
+    .category-grid,
+    .food-grid,
+    .restaurant-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .home-section,
+    .booking-highlight-section {
+        padding: 65px 0;
+    }
+
+    .booking-highlight {
+        min-height: auto;
+    }
 }
