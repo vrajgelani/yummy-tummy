@@ -1,0 +1,45 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    min-height: 100vh;
+    font-family: Arial, sans-serif;
+    background: #ffffff;
+    color: #222222;
+}
+
+.page-content {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 12px;
+    padding: 20px;
+    text-align: center;
+}
+
+.page-content h1 {
+    font-size: 42px;
+}
+
+.page-content p {
+    font-size: 18px;
+}
+
+@media (max-width: 600px) {
+    .page-content h1 {
+        font-size: 32px;
+    }
+
+    .page-content p {
+        font-size: 16px;
+    }
+}
