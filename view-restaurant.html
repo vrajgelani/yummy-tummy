@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>View Restaurant | Yummy Tummy</title>
+
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+    <header class="site-header">
+        <div class="header-container">
+
+            <a href="index.html" class="header-logo-link">
+                <img
+                    src="images/logo/yummy-tummy-logo.png"
+                    alt="Yummy Tummy"
+                    class="header-logo"
+                >
+            </a>
+
+            <nav class="main-navigation">
+                <a href="index.html">Home</a>
+                <a href="menu.html">Menu</a>
+                <a href="restaurants.html">Restaurants</a>
+            </nav>
+
+            <div class="header-search">
+                <input
+                    type="search"
+                    id="headerSearch"
+                    placeholder="Search food or restaurant"
+                    aria-label="Search food or restaurant"
+                >
+            </div>
+
+            <div class="header-actions">
+
+                <a href="wishlist.html" id="wishlistLink">
+                    Wishlist
+                </a>
+
+                <a href="cart.html" id="cartLink">
+                    Cart
+                </a>
+
+                <a href="login.html" id="loginLink">
+                    Login
+                </a>
+
+                <a href="register.html" id="registerLink">
+                    Register
+                </a>
+
+                <a href="profile.html" id="profileLink" hidden>
+                    Profile
+                </a>
+
+            </div>
+
+        </div>
+    </header>
+
+
+    <main class="view-restaurant-page">
+
+        <section class="view-restaurant-hero">
+            <div class="container">
+
+                <p class="view-restaurant-breadcrumb">
+                    Home / Restaurants / View Restaurant
+                </p>
+
+                <h1>Restaurant Details</h1>
+
+                <p>
+                    Explore the restaurant, timings and regional dining experience.
+                </p>
+
+            </div>
+        </section>
+
+
+        <section class="view-restaurant-section">
+            <div class="container">
+
+                <div id="restaurantDetailsCard" class="restaurant-details-card">
+
+                    <div class="restaurant-interior-container">
+                        <img
+                            id="restaurantInteriorImage"
+                            src="images/restaurants/rajasthani-rasoi-inside.png"
+                            alt="Restaurant Interior"
+                            class="restaurant-interior-image"
+                        >
+                    </div>
+
+
+                    <div class="restaurant-details-content">
+
+                        <p
+                            id="viewRestaurantCuisine"
+                            class="view-restaurant-cuisine"
+                        >
+                            Restaurant Cuisine
+                        </p>
+
+                        <h2 id="viewRestaurantName">
+                            Restaurant Name
+                        </h2>
+
+                        <p
+                            id="viewRestaurantDescription"
+                            class="view-restaurant-description"
+                        >
+                            Restaurant description.
+                        </p>
+
+
+                        <div class="restaurant-detail-grid">
+
+                            <div class="restaurant-detail-item">
+                                <span class="restaurant-detail-label">
+                                    Location
+                                </span>
+
+                                <strong id="viewRestaurantLocation">
+                                    Location
+                                </strong>
+                            </div>
+
+
+                            <div class="restaurant-detail-item">
+                                <span class="restaurant-detail-label">
+                                    Rating
+                                </span>
+
+                                <strong id="viewRestaurantRating">
+                                    0.0
+                                </strong>
+                            </div>
+
+
+                            <div class="restaurant-detail-item">
+                                <span class="restaurant-detail-label">
+                                    Opening Time
+                                </span>
+
+                                <strong id="viewRestaurantOpeningTime">
+                                    -
+                                </strong>
+                            </div>
+
+
+                            <div class="restaurant-detail-item">
+                                <span class="restaurant-detail-label">
+                                    Closing Time
+                                </span>
+
+                                <strong id="viewRestaurantClosingTime">
+                                    -
+                                </strong>
+                            </div>
+
+                        </div>
+
+
+                        <div class="restaurant-address-box">
+
+                            <span class="restaurant-detail-label">
+                                Full Address
+                            </span>
+
+                            <p id="viewRestaurantAddress">
+                                Address
+                            </p>
+
+                        </div>
+
+
+                        <div class="restaurant-detail-actions">
+
+                            <a
+                                href="book-table.html"
+                                id="bookTableButton"
+                                class="primary-button"
+                            >
+                                Book Table
+                            </a>
+
+                            <a
+                                href="restaurants.html"
+                                class="secondary-button"
+                            >
+                                Back to Restaurants
+                            </a>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <section
+                    id="invalidRestaurantState"
+                    class="invalid-restaurant-state"
+                    hidden
+                >
+
+                    <h2>Restaurant Not Found</h2>
+
+                    <p>
+                        The restaurant you are looking for could not be found.
+                    </p>
+
+                    <a
+                        href="restaurants.html"
+                        class="primary-button"
+                    >
+                        Explore Restaurants
+                    </a>
+
+                </section>
+
+            </div>
+        </section>
+
+    </main>
+
+
+    <footer class="site-footer">
+
+        <div class="footer-container">
+
+            <div class="footer-brand">
+
+                <img
+                    src="images/logo/yummy-tummy-logo.png"
+                    alt="Yummy Tummy"
+                    class="footer-logo"
+                >
+
+                <p>
+                    Delicious vegetarian food and memorable dining experiences.
+                </p>
+
+            </div>
+
+
+            <div class="footer-column">
+
+                <h3>Quick Links</h3>
+
+                <a href="index.html">Home</a>
+                <a href="menu.html">Menu</a>
+                <a href="restaurants.html">Restaurants</a>
+
+            </div>
+
+
+            <div class="footer-column">
+
+                <h3>Customer</h3>
+
+                <a href="wishlist.html">Wishlist</a>
+                <a href="cart.html">Cart</a>
+                <a href="orders.html">Orders</a>
+
+            </div>
+
+
+            <div class="footer-column">
+
+                <h3>Account</h3>
+
+                <a href="login.html">Login</a>
+                <a href="register.html">Register</a>
+                <a href="profile.html">Profile</a>
+
+            </div>
+
+        </div>
+
+
+        <div class="footer-bottom">
+
+            <p>
+                © 2026 Yummy Tummy. All rights reserved.
+            </p>
+
+        </div>
+
+    </footer>
+
+
+    <script src="js/restaurant-data.js"></script>
+    <script src="js/main.js"></script>
+
+</body>
+</html>
