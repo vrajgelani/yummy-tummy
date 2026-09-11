@@ -703,12 +703,13 @@ main {
 
 /* =========================================================
    FOOD CATEGORIES
+   PREMIUM SECTION
    ========================================================= */
 
 .categories-section {
     width: 100%;
 
-    padding: 80px 0;
+    padding: 82px 0 90px;
 
     background: var(--white-color);
 }
@@ -725,10 +726,10 @@ main {
    SECTION HEADING
    ========================================================= */
 
-.section-heading {
-    max-width: 650px;
+.categories-heading {
+    max-width: 720px;
 
-    margin-bottom: 42px;
+    margin-bottom: 44px;
 }
 
 
@@ -737,35 +738,37 @@ main {
 
     color: var(--primary-color);
 
-    font-size: 13px;
+    font-size: 12px;
 
     font-weight: 800;
 
-    letter-spacing: 1px;
+    letter-spacing: 1.4px;
 
     text-transform: uppercase;
 }
 
 
 .section-title {
-    margin: 0 0 12px;
+    margin: 0 0 13px;
 
     color: var(--secondary-color);
 
-    font-size: clamp(30px, 4vw, 42px);
+    font-size: clamp(32px, 4vw, 44px);
 
-    line-height: 1.15;
+    line-height: 1.12;
 
     font-weight: 800;
 
-    letter-spacing: -1px;
+    letter-spacing: -1.3px;
 }
 
 
 .section-description {
+    max-width: 600px;
+
     margin: 0;
 
-    color: var(--text-color);
+    color: #707070;
 
     font-size: 15px;
 
@@ -783,7 +786,7 @@ main {
     grid-template-columns:
         repeat(5, minmax(0, 1fr));
 
-    gap: 22px;
+    gap: 20px;
 }
 
 
@@ -796,9 +799,9 @@ main {
 
     min-width: 0;
 
-    padding: 14px;
+    padding: 12px;
 
-    background: var(--white-color);
+    background: #ffffff;
 
     border: 1px solid #eeeeee;
 
@@ -807,7 +810,9 @@ main {
     text-decoration: none;
 
     box-shadow:
-        0 5px 20px rgba(31, 31, 31, 0.05);
+        0 5px 18px rgba(31, 31, 31, 0.045);
+
+    transform: translateY(0);
 
     transition:
         transform 0.25s ease,
@@ -817,21 +822,23 @@ main {
 
 
 .category-card:hover {
-    transform: translateY(-6px);
+    transform: translateY(-7px);
 
     border-color:
         rgba(255, 107, 0, 0.25);
 
     box-shadow:
-        0 16px 32px rgba(31, 31, 31, 0.10);
+        0 18px 36px rgba(31, 31, 31, 0.11);
 }
 
 
 /* =========================================================
-   CATEGORY IMAGE
+   CATEGORY IMAGE WRAPPER
    ========================================================= */
 
 .category-image-wrapper {
+    position: relative;
+
     width: 100%;
 
     aspect-ratio: 1 / 1;
@@ -848,13 +855,43 @@ main {
     background:
         linear-gradient(
             145deg,
-            #fff5eb,
-            #fffaf5
+            #fff8f2 0%,
+            #fff2e7 100%
         );
 }
 
 
+/* =========================================================
+   IMAGE DECORATIVE ELEMENT
+   ========================================================= */
+
+.category-image-wrapper::after {
+    content: "";
+
+    position: absolute;
+
+    width: 70%;
+
+    aspect-ratio: 1 / 1;
+
+    border-radius: 50%;
+
+    background:
+        rgba(255, 107, 0, 0.055);
+
+    z-index: 0;
+}
+
+
+/* =========================================================
+   CATEGORY IMAGE
+   ========================================================= */
+
 .category-image {
+    position: relative;
+
+    z-index: 1;
+
     display: block;
 
     width: 88%;
@@ -868,16 +905,16 @@ main {
 
 
 .category-card:hover .category-image {
-    transform: scale(1.06);
+    transform: scale(1.07);
 }
 
 
 /* =========================================================
-   CATEGORY NAME
+   CATEGORY CONTENT
    ========================================================= */
 
 .category-content {
-    padding: 16px 4px 5px;
+    padding: 15px 5px 6px;
 
     text-align: center;
 }
@@ -888,11 +925,19 @@ main {
 
     color: var(--secondary-color);
 
-    font-size: 16px;
+    font-size: 15px;
 
-    line-height: 1.3;
+    line-height: 1.35;
 
     font-weight: 800;
+
+    transition:
+        color 0.2s ease;
+}
+
+
+.category-card:hover .category-name {
+    color: var(--primary-color);
 }
 
 
@@ -900,10 +945,25 @@ main {
    TABLET
    ========================================================= */
 
+@media (max-width: 1100px) {
+
+    .categories-grid {
+        grid-template-columns:
+            repeat(4, minmax(0, 1fr));
+    }
+
+}
+
+
 @media (max-width: 992px) {
 
     .categories-section {
-        padding: 65px 0;
+        padding: 68px 0 75px;
+    }
+
+
+    .categories-container {
+        width: min(100% - 40px, 800px);
     }
 
 
@@ -924,7 +984,7 @@ main {
 @media (max-width: 768px) {
 
     .categories-section {
-        padding: 55px 0;
+        padding: 55px 0 65px;
     }
 
 
@@ -933,10 +993,16 @@ main {
     }
 
 
-    .section-heading {
+    .categories-heading {
         margin-bottom: 30px;
 
         text-align: center;
+    }
+
+
+    .section-description {
+        margin-left: auto;
+        margin-right: auto;
     }
 
 
@@ -951,7 +1017,12 @@ main {
     .category-card {
         padding: 10px;
 
-        border-radius: 14px;
+        border-radius: 15px;
+    }
+
+
+    .category-image-wrapper {
+        border-radius: 12px;
     }
 
 
@@ -985,6 +1056,8 @@ main {
 
     .category-card {
         padding: 8px;
+
+        border-radius: 13px;
     }
 
 
