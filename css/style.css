@@ -2494,3 +2494,141 @@ input {
         gap: 30px;
     }
 }
+
+/* =========================
+   RESTAURANT MENU
+========================= */
+
+.restaurant-menu-section {
+    padding: 20px 0 60px;
+}
+
+.restaurant-menu-heading {
+    margin-bottom: 30px;
+}
+
+.restaurant-menu-label {
+    margin-bottom: 6px;
+    color: darkorange;
+    font-size: 14px;
+    font-weight: 700;
+    text-transform: uppercase;
+}
+
+.restaurant-menu-heading h2 {
+    margin-bottom: 8px;
+    font-size: 32px;
+}
+
+.restaurant-menu-heading p {
+    color: dimgray;
+}
+
+.restaurant-menu-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+}
+
+.restaurant-menu-card {
+    overflow: hidden;
+    background-color: white;
+    border: 1px solid gainsboro;
+    border-radius: 16px;
+    box-shadow: 0 7px 22px lightgray;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.restaurant-menu-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 11px 26px darkgray;
+}
+
+.restaurant-menu-image-container {
+    width: 100%;
+    aspect-ratio: 16 / 10;
+    overflow: hidden;
+    background-color: whitesmoke;
+}
+
+.restaurant-menu-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.restaurant-menu-card-content {
+    padding: 20px;
+}
+
+.restaurant-menu-category {
+    margin-bottom: 5px;
+    color: darkorange;
+    font-size: 13px;
+    font-weight: 700;
+}
+
+.restaurant-menu-name {
+    margin-bottom: 12px;
+    font-size: 19px;
+}
+
+.restaurant-menu-meta {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 16px;
+}
+
+.restaurant-menu-rating {
+    font-weight: 700;
+}
+
+.restaurant-menu-price {
+    font-size: 17px;
+}
+
+.restaurant-menu-view-link {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    min-height: 42px;
+    padding: 9px 15px;
+    border: 1px solid darkorange;
+    border-radius: 8px;
+    color: darkorange;
+    font-size: 14px;
+    font-weight: 700;
+    transition: all 0.2s ease;
+}
+
+.restaurant-menu-view-link:hover {
+    background-color: darkorange;
+    color: white;
+}
+
+
+@media (max-width: 900px) {
+
+    .restaurant-menu-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+
+@media (max-width: 600px) {
+
+    .restaurant-menu-section {
+        padding: 10px 0 40px;
+    }
+
+    .restaurant-menu-heading h2 {
+        font-size: 27px;
+    }
+
+    .restaurant-menu-grid {
+        grid-template-columns: 1fr;
+    }
+}

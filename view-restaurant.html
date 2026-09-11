@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -11,95 +12,164 @@
 
 <body>
 
+    <!-- =========================
+         HEADER
+    ========================== -->
+
     <header class="site-header">
+
         <div class="header-container">
 
             <a href="index.html" class="header-logo-link">
+
                 <img
                     src="images/logo/yummy-tummy-logo.png"
                     alt="Yummy Tummy"
                     class="header-logo"
                 >
+
             </a>
 
+
             <nav class="main-navigation">
-                <a href="index.html">Home</a>
-                <a href="menu.html">Menu</a>
-                <a href="restaurants.html">Restaurants</a>
+
+                <a href="index.html">
+                    Home
+                </a>
+
+                <a href="menu.html">
+                    Menu
+                </a>
+
+                <a href="restaurants.html">
+                    Restaurants
+                </a>
+
             </nav>
 
+
             <div class="header-search">
+
                 <input
                     type="search"
                     id="headerSearch"
                     placeholder="Search food or restaurant"
                     aria-label="Search food or restaurant"
                 >
+
             </div>
+
 
             <div class="header-actions">
 
-                <a href="wishlist.html" id="wishlistLink">
+                <a
+                    href="wishlist.html"
+                    id="wishlistLink"
+                >
                     Wishlist
                 </a>
 
-                <a href="cart.html" id="cartLink">
+                <a
+                    href="cart.html"
+                    id="cartLink"
+                >
                     Cart
                 </a>
 
-                <a href="login.html" id="loginLink">
+                <a
+                    href="login.html"
+                    id="loginLink"
+                >
                     Login
                 </a>
 
-                <a href="register.html" id="registerLink">
+                <a
+                    href="register.html"
+                    id="registerLink"
+                >
                     Register
                 </a>
 
-                <a href="profile.html" id="profileLink" hidden>
+                <a
+                    href="profile.html"
+                    id="profileLink"
+                    hidden
+                >
                     Profile
                 </a>
 
             </div>
 
         </div>
+
     </header>
 
 
+    <!-- =========================
+         MAIN
+    ========================== -->
+
     <main class="view-restaurant-page">
 
+
+        <!-- =========================
+             RESTAURANT HERO
+        ========================== -->
+
         <section class="view-restaurant-hero">
+
             <div class="container">
 
                 <p class="view-restaurant-breadcrumb">
                     Home / Restaurants / View Restaurant
                 </p>
 
-                <h1>Restaurant Details</h1>
+                <h1>
+                    Restaurant Details
+                </h1>
 
                 <p>
                     Explore the restaurant, timings and regional dining experience.
                 </p>
 
             </div>
+
         </section>
 
 
+        <!-- =========================
+             RESTAURANT DETAILS
+        ========================== -->
+
         <section class="view-restaurant-section">
+
             <div class="container">
 
-                <div id="restaurantDetailsCard" class="restaurant-details-card">
+
+                <div
+                    id="restaurantDetailsCard"
+                    class="restaurant-details-card"
+                >
+
+
+                    <!-- RESTAURANT INTERIOR IMAGE -->
 
                     <div class="restaurant-interior-container">
+
                         <img
                             id="restaurantInteriorImage"
                             src="images/restaurants/rajasthani-rasoi-inside.png"
                             alt="Restaurant Interior"
                             class="restaurant-interior-image"
                         >
+
                     </div>
 
 
+                    <!-- RESTAURANT INFORMATION -->
+
                     <div class="restaurant-details-content">
+
 
                         <p
                             id="viewRestaurantCuisine"
@@ -108,9 +178,11 @@
                             Restaurant Cuisine
                         </p>
 
+
                         <h2 id="viewRestaurantName">
                             Restaurant Name
                         </h2>
+
 
                         <p
                             id="viewRestaurantDescription"
@@ -120,9 +192,13 @@
                         </p>
 
 
+                        <!-- DETAILS GRID -->
+
                         <div class="restaurant-detail-grid">
 
+
                             <div class="restaurant-detail-item">
+
                                 <span class="restaurant-detail-label">
                                     Location
                                 </span>
@@ -130,10 +206,12 @@
                                 <strong id="viewRestaurantLocation">
                                     Location
                                 </strong>
+
                             </div>
 
 
                             <div class="restaurant-detail-item">
+
                                 <span class="restaurant-detail-label">
                                     Rating
                                 </span>
@@ -141,10 +219,12 @@
                                 <strong id="viewRestaurantRating">
                                     0.0
                                 </strong>
+
                             </div>
 
 
                             <div class="restaurant-detail-item">
+
                                 <span class="restaurant-detail-label">
                                     Opening Time
                                 </span>
@@ -152,10 +232,12 @@
                                 <strong id="viewRestaurantOpeningTime">
                                     -
                                 </strong>
+
                             </div>
 
 
                             <div class="restaurant-detail-item">
+
                                 <span class="restaurant-detail-label">
                                     Closing Time
                                 </span>
@@ -163,10 +245,14 @@
                                 <strong id="viewRestaurantClosingTime">
                                     -
                                 </strong>
+
                             </div>
+
 
                         </div>
 
+
+                        <!-- FULL ADDRESS -->
 
                         <div class="restaurant-address-box">
 
@@ -181,7 +267,10 @@
                         </div>
 
 
+                        <!-- ACTION BUTTONS -->
+
                         <div class="restaurant-detail-actions">
+
 
                             <a
                                 href="book-table.html"
@@ -191,6 +280,7 @@
                                 Book Table
                             </a>
 
+
                             <a
                                 href="restaurants.html"
                                 class="secondary-button"
@@ -198,12 +288,518 @@
                                 Back to Restaurants
                             </a>
 
+
                         </div>
+
 
                     </div>
 
                 </div>
 
+
+                <!-- =========================
+                     RESTAURANT MENU
+                ========================== -->
+
+                <section class="restaurant-menu-section">
+
+
+                    <div class="container">
+
+
+                        <div class="restaurant-menu-heading">
+
+                            <p class="restaurant-menu-label">
+                                Our Menu
+                            </p>
+
+                            <h2 id="restaurantMenuTitle">
+                                Restaurant Menu
+                            </h2>
+
+                            <p>
+                                Explore delicious vegetarian dishes prepared with regional flavors.
+                            </p>
+
+                        </div>
+
+
+                        <div
+                            id="restaurantMenuGrid"
+                            class="restaurant-menu-grid"
+                        >
+
+
+                            <!-- FOOD 01 -->
+
+                            <article
+                                class="restaurant-menu-card"
+                                data-menu-food-id="0"
+                            >
+
+                                <div class="restaurant-menu-image-container">
+
+                                    <img
+                                        class="restaurant-menu-image"
+                                        src=""
+                                        alt=""
+                                    >
+
+                                </div>
+
+
+                                <div class="restaurant-menu-card-content">
+
+                                    <p class="restaurant-menu-category"></p>
+
+                                    <h3 class="restaurant-menu-name"></h3>
+
+
+                                    <div class="restaurant-menu-meta">
+
+                                        <span class="restaurant-menu-rating"></span>
+
+                                        <strong class="restaurant-menu-price"></strong>
+
+                                    </div>
+
+
+                                    <a
+                                        href="food-details.html"
+                                        class="restaurant-menu-view-link"
+                                    >
+                                        View Food
+                                    </a>
+
+                                </div>
+
+                            </article>
+
+
+                            <!-- FOOD 02 -->
+
+                            <article
+                                class="restaurant-menu-card"
+                                data-menu-food-id="1"
+                            >
+
+                                <div class="restaurant-menu-image-container">
+
+                                    <img
+                                        class="restaurant-menu-image"
+                                        src=""
+                                        alt=""
+                                    >
+
+                                </div>
+
+
+                                <div class="restaurant-menu-card-content">
+
+                                    <p class="restaurant-menu-category"></p>
+
+                                    <h3 class="restaurant-menu-name"></h3>
+
+
+                                    <div class="restaurant-menu-meta">
+
+                                        <span class="restaurant-menu-rating"></span>
+
+                                        <strong class="restaurant-menu-price"></strong>
+
+                                    </div>
+
+
+                                    <a
+                                        href="food-details.html"
+                                        class="restaurant-menu-view-link"
+                                    >
+                                        View Food
+                                    </a>
+
+                                </div>
+
+                            </article>
+
+
+                            <!-- FOOD 03 -->
+
+                            <article
+                                class="restaurant-menu-card"
+                                data-menu-food-id="2"
+                            >
+
+                                <div class="restaurant-menu-image-container">
+
+                                    <img
+                                        class="restaurant-menu-image"
+                                        src=""
+                                        alt=""
+                                    >
+
+                                </div>
+
+
+                                <div class="restaurant-menu-card-content">
+
+                                    <p class="restaurant-menu-category"></p>
+
+                                    <h3 class="restaurant-menu-name"></h3>
+
+
+                                    <div class="restaurant-menu-meta">
+
+                                        <span class="restaurant-menu-rating"></span>
+
+                                        <strong class="restaurant-menu-price"></strong>
+
+                                    </div>
+
+
+                                    <a
+                                        href="food-details.html"
+                                        class="restaurant-menu-view-link"
+                                    >
+                                        View Food
+                                    </a>
+
+                                </div>
+
+                            </article>
+
+
+                            <!-- FOOD 04 -->
+
+                            <article
+                                class="restaurant-menu-card"
+                                data-menu-food-id="3"
+                            >
+
+                                <div class="restaurant-menu-image-container">
+
+                                    <img
+                                        class="restaurant-menu-image"
+                                        src=""
+                                        alt=""
+                                    >
+
+                                </div>
+
+
+                                <div class="restaurant-menu-card-content">
+
+                                    <p class="restaurant-menu-category"></p>
+
+                                    <h3 class="restaurant-menu-name"></h3>
+
+
+                                    <div class="restaurant-menu-meta">
+
+                                        <span class="restaurant-menu-rating"></span>
+
+                                        <strong class="restaurant-menu-price"></strong>
+
+                                    </div>
+
+
+                                    <a
+                                        href="food-details.html"
+                                        class="restaurant-menu-view-link"
+                                    >
+                                        View Food
+                                    </a>
+
+                                </div>
+
+                            </article>
+
+
+                            <!-- FOOD 05 -->
+
+                            <article
+                                class="restaurant-menu-card"
+                                data-menu-food-id="4"
+                            >
+
+                                <div class="restaurant-menu-image-container">
+
+                                    <img
+                                        class="restaurant-menu-image"
+                                        src=""
+                                        alt=""
+                                    >
+
+                                </div>
+
+
+                                <div class="restaurant-menu-card-content">
+
+                                    <p class="restaurant-menu-category"></p>
+
+                                    <h3 class="restaurant-menu-name"></h3>
+
+
+                                    <div class="restaurant-menu-meta">
+
+                                        <span class="restaurant-menu-rating"></span>
+
+                                        <strong class="restaurant-menu-price"></strong>
+
+                                    </div>
+
+
+                                    <a
+                                        href="food-details.html"
+                                        class="restaurant-menu-view-link"
+                                    >
+                                        View Food
+                                    </a>
+
+                                </div>
+
+                            </article>
+
+
+                            <!-- FOOD 06 -->
+
+                            <article
+                                class="restaurant-menu-card"
+                                data-menu-food-id="5"
+                            >
+
+                                <div class="restaurant-menu-image-container">
+
+                                    <img
+                                        class="restaurant-menu-image"
+                                        src=""
+                                        alt=""
+                                    >
+
+                                </div>
+
+
+                                <div class="restaurant-menu-card-content">
+
+                                    <p class="restaurant-menu-category"></p>
+
+                                    <h3 class="restaurant-menu-name"></h3>
+
+
+                                    <div class="restaurant-menu-meta">
+
+                                        <span class="restaurant-menu-rating"></span>
+
+                                        <strong class="restaurant-menu-price"></strong>
+
+                                    </div>
+
+
+                                    <a
+                                        href="food-details.html"
+                                        class="restaurant-menu-view-link"
+                                    >
+                                        View Food
+                                    </a>
+
+                                </div>
+
+                            </article>
+
+
+                            <!-- FOOD 07 -->
+
+                            <article
+                                class="restaurant-menu-card"
+                                data-menu-food-id="6"
+                            >
+
+                                <div class="restaurant-menu-image-container">
+
+                                    <img
+                                        class="restaurant-menu-image"
+                                        src=""
+                                        alt=""
+                                    >
+
+                                </div>
+
+
+                                <div class="restaurant-menu-card-content">
+
+                                    <p class="restaurant-menu-category"></p>
+
+                                    <h3 class="restaurant-menu-name"></h3>
+
+
+                                    <div class="restaurant-menu-meta">
+
+                                        <span class="restaurant-menu-rating"></span>
+
+                                        <strong class="restaurant-menu-price"></strong>
+
+                                    </div>
+
+
+                                    <a
+                                        href="food-details.html"
+                                        class="restaurant-menu-view-link"
+                                    >
+                                        View Food
+                                    </a>
+
+                                </div>
+
+                            </article>
+
+
+                            <!-- FOOD 08 -->
+
+                            <article
+                                class="restaurant-menu-card"
+                                data-menu-food-id="7"
+                            >
+
+                                <div class="restaurant-menu-image-container">
+
+                                    <img
+                                        class="restaurant-menu-image"
+                                        src=""
+                                        alt=""
+                                    >
+
+                                </div>
+
+
+                                <div class="restaurant-menu-card-content">
+
+                                    <p class="restaurant-menu-category"></p>
+
+                                    <h3 class="restaurant-menu-name"></h3>
+
+
+                                    <div class="restaurant-menu-meta">
+
+                                        <span class="restaurant-menu-rating"></span>
+
+                                        <strong class="restaurant-menu-price"></strong>
+
+                                    </div>
+
+
+                                    <a
+                                        href="food-details.html"
+                                        class="restaurant-menu-view-link"
+                                    >
+                                        View Food
+                                    </a>
+
+                                </div>
+
+                            </article>
+
+
+                            <!-- FOOD 09 -->
+
+                            <article
+                                class="restaurant-menu-card"
+                                data-menu-food-id="8"
+                            >
+
+                                <div class="restaurant-menu-image-container">
+
+                                    <img
+                                        class="restaurant-menu-image"
+                                        src=""
+                                        alt=""
+                                    >
+
+                                </div>
+
+
+                                <div class="restaurant-menu-card-content">
+
+                                    <p class="restaurant-menu-category"></p>
+
+                                    <h3 class="restaurant-menu-name"></h3>
+
+
+                                    <div class="restaurant-menu-meta">
+
+                                        <span class="restaurant-menu-rating"></span>
+
+                                        <strong class="restaurant-menu-price"></strong>
+
+                                    </div>
+
+
+                                    <a
+                                        href="food-details.html"
+                                        class="restaurant-menu-view-link"
+                                    >
+                                        View Food
+                                    </a>
+
+                                </div>
+
+                            </article>
+
+
+                            <!-- FOOD 10 -->
+
+                            <article
+                                class="restaurant-menu-card"
+                                data-menu-food-id="9"
+                            >
+
+                                <div class="restaurant-menu-image-container">
+
+                                    <img
+                                        class="restaurant-menu-image"
+                                        src=""
+                                        alt=""
+                                    >
+
+                                </div>
+
+
+                                <div class="restaurant-menu-card-content">
+
+                                    <p class="restaurant-menu-category"></p>
+
+                                    <h3 class="restaurant-menu-name"></h3>
+
+
+                                    <div class="restaurant-menu-meta">
+
+                                        <span class="restaurant-menu-rating"></span>
+
+                                        <strong class="restaurant-menu-price"></strong>
+
+                                    </div>
+
+
+                                    <a
+                                        href="food-details.html"
+                                        class="restaurant-menu-view-link"
+                                    >
+                                        View Food
+                                    </a>
+
+                                </div>
+
+                            </article>
+
+
+                        </div>
+
+                    </div>
+
+                </section>
+
+
+                <!-- =========================
+                     INVALID RESTAURANT
+                ========================== -->
 
                 <section
                     id="invalidRestaurantState"
@@ -211,7 +807,9 @@
                     hidden
                 >
 
-                    <h2>Restaurant Not Found</h2>
+                    <h2>
+                        Restaurant Not Found
+                    </h2>
 
                     <p>
                         The restaurant you are looking for could not be found.
@@ -226,15 +824,23 @@
 
                 </section>
 
+
             </div>
+
         </section>
 
     </main>
 
 
+    <!-- =========================
+         FOOTER
+    ========================== -->
+
     <footer class="site-footer">
 
+
         <div class="footer-container">
+
 
             <div class="footer-brand">
 
@@ -253,35 +859,66 @@
 
             <div class="footer-column">
 
-                <h3>Quick Links</h3>
+                <h3>
+                    Quick Links
+                </h3>
 
-                <a href="index.html">Home</a>
-                <a href="menu.html">Menu</a>
-                <a href="restaurants.html">Restaurants</a>
+                <a href="index.html">
+                    Home
+                </a>
+
+                <a href="menu.html">
+                    Menu
+                </a>
+
+                <a href="restaurants.html">
+                    Restaurants
+                </a>
 
             </div>
 
 
             <div class="footer-column">
 
-                <h3>Customer</h3>
+                <h3>
+                    Customer
+                </h3>
 
-                <a href="wishlist.html">Wishlist</a>
-                <a href="cart.html">Cart</a>
-                <a href="orders.html">Orders</a>
+                <a href="wishlist.html">
+                    Wishlist
+                </a>
+
+                <a href="cart.html">
+                    Cart
+                </a>
+
+                <a href="orders.html">
+                    Orders
+                </a>
 
             </div>
 
 
             <div class="footer-column">
 
-                <h3>Account</h3>
+                <h3>
+                    Account
+                </h3>
 
-                <a href="login.html">Login</a>
-                <a href="register.html">Register</a>
-                <a href="profile.html">Profile</a>
+                <a href="login.html">
+                    Login
+                </a>
+
+                <a href="register.html">
+                    Register
+                </a>
+
+                <a href="profile.html">
+                    Profile
+                </a>
 
             </div>
+
 
         </div>
 
@@ -294,11 +931,20 @@
 
         </div>
 
+
     </footer>
 
 
+    <!-- =========================
+         JAVASCRIPT
+    ========================== -->
+
     <script src="js/restaurant-data.js"></script>
+
+    <script src="js/restaurant-menu-data.js"></script>
+
     <script src="js/main.js"></script>
 
 </body>
+
 </html>

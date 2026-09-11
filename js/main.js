@@ -125,9 +125,8 @@ function initializeMenuFilters(foodCards) {
             if (normalizedCategory === "all") {
                 resultsTitle.textContent = "All Foods";
             } else {
-                resultsTitle.textContent = getCategoryTitle(
-                    normalizedCategory
-                );
+                resultsTitle.textContent =
+                    getCategoryTitle(normalizedCategory);
             }
         }
 
@@ -142,7 +141,10 @@ function initializeMenuFilters(foodCards) {
             if (normalizedCategory === "all") {
                 url.searchParams.delete("category");
             } else {
-                url.searchParams.set("category", normalizedCategory);
+                url.searchParams.set(
+                    "category",
+                    normalizedCategory
+                );
             }
 
             window.history.pushState(
@@ -165,8 +167,11 @@ function initializeMenuFilters(foodCards) {
         });
     });
 
-    const params = new URLSearchParams(window.location.search);
-    const categoryFromUrl = params.get("category");
+    const params =
+        new URLSearchParams(window.location.search);
+
+    const categoryFromUrl =
+        params.get("category");
 
     if (
         categoryFromUrl &&
@@ -178,9 +183,8 @@ function initializeMenuFilters(foodCards) {
     }
 
     window.addEventListener("popstate", function () {
-        const currentParams = new URLSearchParams(
-            window.location.search
-        );
+        const currentParams =
+            new URLSearchParams(window.location.search);
 
         const currentCategory =
             currentParams.get("category");
@@ -189,9 +193,15 @@ function initializeMenuFilters(foodCards) {
             currentCategory &&
             isValidMenuCategory(currentCategory)
         ) {
-            applyCategory(currentCategory, false);
+            applyCategory(
+                currentCategory,
+                false
+            );
         } else {
-            applyCategory("all", false);
+            applyCategory(
+                "all",
+                false
+            );
         }
     });
 }
@@ -360,7 +370,9 @@ function initializeRestaurantSearch() {
                 ).toLowerCase();
 
             const shouldShow =
-                searchableText.includes(searchTerm);
+                searchableText.includes(
+                    searchTerm
+                );
 
             card.hidden = !shouldShow;
 
@@ -545,6 +557,150 @@ function initializeViewRestaurantPage() {
     document.title =
         restaurant.name +
         " | Yummy Tummy";
+
+    initializeRestaurantMenu(
+        restaurant
+    );
+}
+
+
+/* =========================
+   RESTAURANT MENU
+========================= */
+
+function initializeRestaurantMenu(restaurant) {
+    const restaurantMenuGrid =
+        document.getElementById(
+            "restaurantMenuGrid"
+        );
+
+    const restaurantMenuTitle =
+        document.getElementById(
+            "restaurantMenuTitle"
+        );
+
+    if (!restaurantMenuGrid) {
+        return;
+    }
+
+    if (
+        typeof restaurantMenuData ===
+        "undefined"
+    ) {
+        return;
+    }
+
+    const restaurantMenu =
+        restaurantMenuData[
+            restaurant.id
+        ];
+
+    if (
+        !restaurantMenu ||
+        !restaurantMenu.length
+    ) {
+        restaurantMenuGrid.hidden = true;
+        return;
+    }
+
+    const menuCards = Array.from(
+        restaurantMenuGrid.querySelectorAll(
+            ".restaurant-menu-card"
+        )
+    );
+
+    if (!menuCards.length) {
+        return;
+    }
+
+    menuCards.forEach(function (card) {
+        const foodIndex =
+            Number(card.dataset.menuFoodId);
+
+        const food =
+            restaurantMenu[foodIndex];
+
+        if (!food) {
+            card.hidden = true;
+            return;
+        }
+
+        const image =
+            card.querySelector(
+                ".restaurant-menu-image"
+            );
+
+        const category =
+            card.querySelector(
+                ".restaurant-menu-category"
+            );
+
+        const name =
+            card.querySelector(
+                ".restaurant-menu-name"
+            );
+
+        const rating =
+            card.querySelector(
+                ".restaurant-menu-rating"
+            );
+
+        const price =
+            card.querySelector(
+                ".restaurant-menu-price"
+            );
+
+        const viewLink =
+            card.querySelector(
+                ".restaurant-menu-view-link"
+            );
+
+        if (image) {
+            image.src = food.image;
+            image.alt =
+                food.name +
+                " at " +
+                restaurant.name;
+        }
+
+        if (category) {
+            category.textContent =
+                food.category;
+        }
+
+        if (name) {
+            name.textContent =
+                food.name;
+        }
+
+        if (rating) {
+            rating.textContent =
+                food.rating.toFixed(1);
+        }
+
+        if (price) {
+            price.textContent =
+                "₹" + food.price;
+        }
+
+        if (viewLink) {
+            viewLink.href =
+                "food-details.html?food=" +
+                encodeURIComponent(food.id) +
+                "&restaurant=" +
+                encodeURIComponent(
+                    restaurant.id
+                );
+        }
+
+        card.hidden = false;
+    });
+
+    if (restaurantMenuTitle) {
+        restaurantMenuTitle.textContent =
+            restaurant.name +
+            " Menu";
+    }
 }
 
 
@@ -558,6 +714,11 @@ function showInvalidRestaurant() {
             "restaurantDetailsCard"
         );
 
+    const restaurantMenuSection =
+        document.querySelector(
+            ".restaurant-menu-section"
+        );
+
     const invalidState =
         document.getElementById(
             "invalidRestaurantState"
@@ -565,6 +726,10 @@ function showInvalidRestaurant() {
 
     if (restaurantDetailsCard) {
         restaurantDetailsCard.hidden = true;
+    }
+
+    if (restaurantMenuSection) {
+        restaurantMenuSection.hidden = true;
     }
 
     if (invalidState) {
