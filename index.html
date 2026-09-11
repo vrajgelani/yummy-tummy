@@ -4,65 +4,56 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Yummy Tummy | Delicious Food</title>
+    <title>Yummy Tummy</title>
 
     <link rel="stylesheet" href="css/style.css">
 </head>
 
 <body>
 
+    <!-- ==================== HEADER ==================== -->
     <header class="site-header">
         <div class="header-container">
 
-            <a class="brand-logo" href="index.html" aria-label="Yummy Tummy Home">
-                <img
-                    src="images/logo/yummy-tummy-logo.png"
-                    alt="Yummy Tummy"
-                >
+            <a href="index.html" class="brand-logo">
+                <img src="images/logo/yummy-tummy-logo.png" alt="Yummy Tummy Logo">
             </a>
 
-            <nav class="main-navigation" aria-label="Main Navigation">
+            <nav class="main-navigation">
                 <a href="index.html" class="nav-link active">Home</a>
                 <a href="menu.html" class="nav-link">Menu</a>
                 <a href="restaurants.html" class="nav-link">Restaurants</a>
             </nav>
 
             <div class="header-search">
-                <label for="header-search-input" class="search-label">
-                    Search
-                </label>
-
                 <input
                     type="search"
-                    id="header-search-input"
-                    name="header-search"
+                    id="headerSearch"
                     placeholder="Search food or restaurant"
-                    autocomplete="off"
+                    aria-label="Search food or restaurant"
                 >
             </div>
 
             <div class="header-actions">
 
                 <a href="wishlist.html" class="header-action">
-                    Wishlist
+                    <span>Wishlist</span>
                 </a>
 
                 <a href="cart.html" class="header-action">
-                    Cart
+                    <span>Cart</span>
                 </a>
 
-                <div class="guest-actions">
-                    <a href="login.html" class="header-action login-button">
-                        Login
-                    </a>
+                <a href="login.html" class="header-action login-link">
+                    <span>Login</span>
+                </a>
 
-                    <a href="register.html" class="header-action register-button">
-                        Register
-                    </a>
-                </div>
+                <a href="register.html" class="header-action register-link">
+                    <span>Register</span>
+                </a>
 
-                <a href="profile.html" class="header-action profile-button">
-                    Profile
+                <a href="profile.html" class="header-action profile-link hidden">
+                    <span>Profile</span>
                 </a>
 
             </div>
@@ -70,55 +61,45 @@
         </div>
     </header>
 
-    <main class="page-content">
 
+    <!-- ==================== MAIN CONTENT ==================== -->
+    <main>
+
+        <!-- ==================== HERO SECTION ==================== -->
         <section class="hero-section">
+
             <div class="hero-container">
 
                 <div class="hero-content">
-                    <p class="hero-label">
-                        YUMMY TUMMY
-                    </p>
+
+                    <p class="hero-label">WELCOME TO YUMMY TUMMY</p>
 
                     <h1>
                         Delicious Food,
-                        <span>Happy Moments</span>
+                        <span>Happy Tummy.</span>
                     </h1>
 
                     <p class="hero-description">
-                        Discover delicious vegetarian food and explore
-                        memorable dining experiences from restaurants
-                        you will love.
+                        Discover delicious vegetarian food from restaurants
+                        around you and enjoy a better dining experience.
                     </p>
 
-                    <div class="hero-actions">
-                        <a
-                            href="restaurants.html"
-                            class="primary-button hero-button"
-                        >
-                            Explore Restaurants
-                        </a>
-                    </div>
+                    <a href="restaurants.html" class="primary-button">
+                        Explore Restaurants
+                    </a>
 
                     <div class="hero-search">
-                        <label
-                            for="hero-search-input"
-                            class="hero-search-label"
-                        >
-                            Search food or restaurant
-                        </label>
-
                         <input
                             type="search"
-                            id="hero-search-input"
-                            name="hero-search"
-                            placeholder="Search food or restaurant"
-                            autocomplete="off"
+                            id="heroSearch"
+                            placeholder="Search for food or restaurants"
+                            aria-label="Search for food or restaurants"
                         >
                     </div>
+
                 </div>
 
-                <div class="hero-image-wrapper">
+                <div class="hero-image-container">
                     <img
                         src="images/hero/yummy-tummy-hero.png"
                         alt="Delicious vegetarian food"
@@ -127,296 +108,478 @@
                 </div>
 
             </div>
+
         </section>
 
-        <section class="menu-category-section">
-            <div class="container">
+
+        <!-- ==================== MENU CATEGORIES ==================== -->
+        <section class="menu-categories-section">
+
+            <div class="section-container">
 
                 <div class="section-heading">
-                    <p class="section-label">
-                        EXPLORE OUR MENU
-                    </p>
+                    <p class="section-label">EXPLORE</p>
 
-                    <h2>
-                        Choose Your Favourite Category
-                    </h2>
+                    <h2>Food Categories</h2>
 
                     <p>
-                        Explore delicious vegetarian food from
-                        different categories.
+                        Choose your favorite category and discover delicious
+                        vegetarian food.
                     </p>
                 </div>
 
                 <div class="category-grid">
 
-                    <a
-                        href="menu.html?category=starters"
-                        class="category-card"
-                    >
-                        <div class="category-image-wrapper">
+                    <a href="menu.html?category=starters" class="category-card">
+                        <div class="category-image-container">
                             <img
                                 src="images/categories/starters.png"
                                 alt="Starters"
-                                class="category-image"
                             >
                         </div>
-
-                        <div class="category-content">
-                            <h3>Starters</h3>
-                            <p>Vegetarian starters</p>
-                        </div>
+                        <h3>Starters</h3>
                     </a>
 
-                    <a
-                        href="menu.html?category=pizza"
-                        class="category-card"
-                    >
-                        <div class="category-image-wrapper">
+                    <a href="menu.html?category=pizza" class="category-card">
+                        <div class="category-image-container">
                             <img
                                 src="images/categories/pizza.png"
                                 alt="Pizza"
-                                class="category-image"
                             >
                         </div>
-
-                        <div class="category-content">
-                            <h3>Pizza</h3>
-                            <p>Fresh vegetarian pizzas</p>
-                        </div>
+                        <h3>Pizza</h3>
                     </a>
 
-                    <a
-                        href="menu.html?category=burger"
-                        class="category-card"
-                    >
-                        <div class="category-image-wrapper">
+                    <a href="menu.html?category=burger" class="category-card">
+                        <div class="category-image-container">
                             <img
                                 src="images/categories/burger.png"
                                 alt="Burger"
-                                class="category-image"
                             >
                         </div>
-
-                        <div class="category-content">
-                            <h3>Burger</h3>
-                            <p>Delicious vegetarian burgers</p>
-                        </div>
+                        <h3>Burger</h3>
                     </a>
 
-                    <a
-                        href="menu.html?category=sandwich"
-                        class="category-card"
-                    >
-                        <div class="category-image-wrapper">
+                    <a href="menu.html?category=sandwich" class="category-card">
+                        <div class="category-image-container">
                             <img
                                 src="images/categories/sandwich.png"
                                 alt="Sandwich"
-                                class="category-image"
                             >
                         </div>
-
-                        <div class="category-content">
-                            <h3>Sandwich</h3>
-                            <p>Fresh vegetarian sandwiches</p>
-                        </div>
+                        <h3>Sandwich</h3>
                     </a>
 
-                    <a
-                        href="menu.html?category=pasta"
-                        class="category-card"
-                    >
-                        <div class="category-image-wrapper">
+                    <a href="menu.html?category=pasta" class="category-card">
+                        <div class="category-image-container">
                             <img
                                 src="images/categories/pasta.png"
                                 alt="Pasta"
-                                class="category-image"
                             >
                         </div>
-
-                        <div class="category-content">
-                            <h3>Pasta</h3>
-                            <p>Rich vegetarian pasta</p>
-                        </div>
+                        <h3>Pasta</h3>
                     </a>
 
-                    <a
-                        href="menu.html?category=chinese"
-                        class="category-card"
-                    >
-                        <div class="category-image-wrapper">
+                    <a href="menu.html?category=chinese" class="category-card">
+                        <div class="category-image-container">
                             <img
                                 src="images/categories/chinese.png"
                                 alt="Chinese"
-                                class="category-image"
                             >
                         </div>
-
-                        <div class="category-content">
-                            <h3>Chinese</h3>
-                            <p>Vegetarian Chinese favourites</p>
-                        </div>
+                        <h3>Chinese</h3>
                     </a>
 
-                    <a
-                        href="menu.html?category=south-indian"
-                        class="category-card"
-                    >
-                        <div class="category-image-wrapper">
+                    <a href="menu.html?category=south-indian" class="category-card">
+                        <div class="category-image-container">
                             <img
                                 src="images/categories/south-indian.png"
                                 alt="South Indian"
-                                class="category-image"
                             >
                         </div>
-
-                        <div class="category-content">
-                            <h3>South Indian</h3>
-                            <p>Traditional vegetarian flavours</p>
-                        </div>
+                        <h3>South Indian</h3>
                     </a>
 
-                    <a
-                        href="menu.html?category=gujarati"
-                        class="category-card"
-                    >
-                        <div class="category-image-wrapper">
+                    <a href="menu.html?category=gujarati" class="category-card">
+                        <div class="category-image-container">
                             <img
                                 src="images/categories/gujarati.png"
                                 alt="Gujarati"
-                                class="category-image"
                             >
                         </div>
-
-                        <div class="category-content">
-                            <h3>Gujarati</h3>
-                            <p>Authentic Gujarati vegetarian food</p>
-                        </div>
+                        <h3>Gujarati</h3>
                     </a>
 
-                    <a
-                        href="menu.html?category=biryani"
-                        class="category-card"
-                    >
-                        <div class="category-image-wrapper">
+                    <a href="menu.html?category=biryani" class="category-card">
+                        <div class="category-image-container">
                             <img
                                 src="images/categories/biryani.png"
                                 alt="Biryani"
-                                class="category-image"
                             >
                         </div>
-
-                        <div class="category-content">
-                            <h3>Biryani</h3>
-                            <p>Flavourful vegetarian biryani</p>
-                        </div>
+                        <h3>Biryani</h3>
                     </a>
 
-                    <a
-                        href="menu.html?category=desserts"
-                        class="category-card"
-                    >
-                        <div class="category-image-wrapper">
+                    <a href="menu.html?category=desserts" class="category-card">
+                        <div class="category-image-container">
                             <img
                                 src="images/categories/desserts.png"
                                 alt="Desserts"
-                                class="category-image"
                             >
                         </div>
-
-                        <div class="category-content">
-                            <h3>Desserts</h3>
-                            <p>Sweet vegetarian treats</p>
-                        </div>
+                        <h3>Desserts</h3>
                     </a>
 
                 </div>
 
             </div>
+
         </section>
 
-        <section class="home-placeholder-section">
-            <div class="container">
 
-                <p class="home-placeholder-label">
-                    MORE DELICIOUS EXPERIENCES COMING NEXT
-                </p>
+        <!-- ==================== POPULAR FOOD ==================== -->
+        <section class="popular-food-section">
 
-                <h2>
-                    Explore food, restaurants and dining experiences
-                </h2>
+            <div class="section-container">
+
+                <div class="section-heading">
+
+                    <p class="section-label">MUST TRY</p>
+
+                    <h2>Popular Food</h2>
+
+                    <p>
+                        Discover some of our most loved vegetarian food choices.
+                    </p>
+
+                </div>
+
+
+                <div class="popular-food-grid">
+
+                    <!-- Food 1 -->
+                    <article class="popular-food-card">
+
+                        <div class="popular-food-image-container">
+
+                            <img
+                                src="images/popular-foods/paneer-kebab.png"
+                                alt="Paneer Kebab"
+                            >
+
+                        </div>
+
+                        <div class="popular-food-content">
+
+                            <p class="food-category">
+                                Starter
+                            </p>
+
+                            <h3>Paneer Kebab</h3>
+
+                            <div class="food-meta">
+                                <span>4.8 Rating</span>
+                                <span>₹249</span>
+                            </div>
+
+                            <a
+                                href="food-details.html?food=paneer-kebab"
+                                class="secondary-button"
+                            >
+                                View Food
+                            </a>
+
+                        </div>
+
+                    </article>
+
+
+                    <!-- Food 2 -->
+                    <article class="popular-food-card">
+
+                        <div class="popular-food-image-container">
+
+                            <img
+                                src="images/popular-foods/cheese-burst-pizza.png"
+                                alt="Cheese Burst Pizza"
+                            >
+
+                        </div>
+
+                        <div class="popular-food-content">
+
+                            <p class="food-category">
+                                Pizza
+                            </p>
+
+                            <h3>Cheese Burst Pizza</h3>
+
+                            <div class="food-meta">
+                                <span>4.9 Rating</span>
+                                <span>₹329</span>
+                            </div>
+
+                            <a
+                                href="food-details.html?food=cheese-burst-pizza"
+                                class="secondary-button"
+                            >
+                                View Food
+                            </a>
+
+                        </div>
+
+                    </article>
+
+
+                    <!-- Food 3 -->
+                    <article class="popular-food-card">
+
+                        <div class="popular-food-image-container">
+
+                            <img
+                                src="images/popular-foods/peri-peri-burger.png"
+                                alt="Peri Peri Burger"
+                            >
+
+                        </div>
+
+                        <div class="popular-food-content">
+
+                            <p class="food-category">
+                                Burger
+                            </p>
+
+                            <h3>Peri Peri Burger</h3>
+
+                            <div class="food-meta">
+                                <span>4.7 Rating</span>
+                                <span>₹219</span>
+                            </div>
+
+                            <a
+                                href="food-details.html?food=peri-peri-burger"
+                                class="secondary-button"
+                            >
+                                View Food
+                            </a>
+
+                        </div>
+
+                    </article>
+
+
+                    <!-- Food 4 -->
+                    <article class="popular-food-card">
+
+                        <div class="popular-food-image-container">
+
+                            <img
+                                src="images/popular-foods/paneer-club-sandwich.png"
+                                alt="Paneer Club Sandwich"
+                            >
+
+                        </div>
+
+                        <div class="popular-food-content">
+
+                            <p class="food-category">
+                                Sandwich
+                            </p>
+
+                            <h3>Paneer Club Sandwich</h3>
+
+                            <div class="food-meta">
+                                <span>4.6 Rating</span>
+                                <span>₹229</span>
+                            </div>
+
+                            <a
+                                href="food-details.html?food=paneer-club-sandwich"
+                                class="secondary-button"
+                            >
+                                View Food
+                            </a>
+
+                        </div>
+
+                    </article>
+
+
+                    <!-- Food 5 -->
+                    <article class="popular-food-card">
+
+                        <div class="popular-food-image-container">
+
+                            <img
+                                src="images/popular-foods/mexican-pasta.png"
+                                alt="Mexican Pasta"
+                            >
+
+                        </div>
+
+                        <div class="popular-food-content">
+
+                            <p class="food-category">
+                                Pasta
+                            </p>
+
+                            <h3>Mexican Pasta</h3>
+
+                            <div class="food-meta">
+                                <span>4.8 Rating</span>
+                                <span>₹279</span>
+                            </div>
+
+                            <a
+                                href="food-details.html?food=mexican-pasta"
+                                class="secondary-button"
+                            >
+                                View Food
+                            </a>
+
+                        </div>
+
+                    </article>
+
+
+                    <!-- Food 6 -->
+                    <article class="popular-food-card">
+
+                        <div class="popular-food-image-container">
+
+                            <img
+                                src="images/popular-foods/royal-kheer.png"
+                                alt="Royal Kheer"
+                            >
+
+                        </div>
+
+                        <div class="popular-food-content">
+
+                            <p class="food-category">
+                                Dessert
+                            </p>
+
+                            <h3>Royal Kheer</h3>
+
+                            <div class="food-meta">
+                                <span>4.9 Rating</span>
+                                <span>₹159</span>
+                            </div>
+
+                            <a
+                                href="food-details.html?food=royal-kheer"
+                                class="secondary-button"
+                            >
+                                View Food
+                            </a>
+
+                        </div>
+
+                    </article>
+
+                </div>
 
             </div>
+
+        </section>
+
+
+        <!-- ==================== PLACEHOLDER ==================== -->
+        <section class="home-placeholder-section">
+
+            <div class="section-container">
+
+                <div class="placeholder-content">
+
+                    <p class="section-label">COMING NEXT</p>
+
+                    <h2>More Delicious Experiences</h2>
+
+                    <p>
+                        More restaurant and food experiences will be added
+                        step by step.
+                    </p>
+
+                </div>
+
+            </div>
+
         </section>
 
     </main>
 
+
+    <!-- ==================== FOOTER ==================== -->
     <footer class="site-footer">
+
         <div class="footer-container">
 
             <div class="footer-brand">
-                <a href="index.html" class="footer-logo">
-                    <img
-                        src="images/logo/yummy-tummy-logo.png"
-                        alt="Yummy Tummy"
-                    >
-                </a>
+
+                <img
+                    src="images/logo/yummy-tummy-logo.png"
+                    alt="Yummy Tummy Logo"
+                >
 
                 <p>
-                    Discover delicious vegetarian food and memorable
-                    dining experiences with Yummy Tummy.
+                    Delicious vegetarian food,
+                    better dining experiences.
                 </p>
+
             </div>
 
-            <div class="footer-column">
-                <h2>Quick Links</h2>
 
-                <nav class="footer-links" aria-label="Quick Links">
+            <div class="footer-links">
+
+                <div class="footer-column">
+
+                    <h3>Quick Links</h3>
+
                     <a href="index.html">Home</a>
                     <a href="menu.html">Menu</a>
                     <a href="restaurants.html">Restaurants</a>
-                </nav>
-            </div>
 
-            <div class="footer-column">
-                <h2>Customer</h2>
+                </div>
 
-                <nav class="footer-links" aria-label="Customer Links">
-                    <a href="profile.html">Profile</a>
+
+                <div class="footer-column">
+
+                    <h3>Customer</h3>
+
                     <a href="wishlist.html">Wishlist</a>
                     <a href="cart.html">Cart</a>
-                    <a href="orders.html">My Orders</a>
-                </nav>
-            </div>
+                    <a href="profile.html">Profile</a>
 
-            <div class="footer-column">
-                <h2>Contact</h2>
-
-                <div class="footer-contact">
-                    <p>Customer Support</p>
-
-                    <p>
-                        Available for food and booking assistance
-                    </p>
                 </div>
+
+
+                <div class="footer-column">
+
+                    <h3>Account</h3>
+
+                    <a href="login.html">Login</a>
+                    <a href="register.html">Register</a>
+
+                </div>
+
             </div>
 
         </div>
+
 
         <div class="footer-bottom">
-            <div class="footer-bottom-container">
 
-                <p>
-                    © 2026 Yummy Tummy. All rights reserved.
-                </p>
+            <p>
+                © 2026 Yummy Tummy. All Rights Reserved.
+            </p>
 
-                <p>
-                    Vegetarian Food &amp; Dining
-                </p>
-
-            </div>
         </div>
+
     </footer>
 
+
     <script src="js/main.js"></script>
+
 </body>
 </html>
