@@ -2904,3 +2904,473 @@ input {
         font-size: 12px;
     }
 }
+
+/* ========================================
+   BOOKING ACTION AREA
+======================================== */
+
+.booking-action-area {
+    margin-top: 30px;
+    padding: 24px;
+    border: 1px solid lightgray;
+    border-radius: 12px;
+    text-align: center;
+    background-color: white;
+}
+
+.selected-table-text {
+    margin-bottom: 18px;
+    font-weight: 600;
+}
+
+.primary-button,
+.secondary-button {
+    display: inline-block;
+    padding: 12px 24px;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: 600;
+    cursor: pointer;
+    border: none;
+}
+
+.primary-button {
+    background-color: orange;
+    color: white;
+}
+
+.primary-button:hover {
+    background-color: darkorange;
+}
+
+.secondary-button {
+    margin-left: 10px;
+    background-color: white;
+    color: orange;
+    border: 1px solid orange;
+}
+
+.secondary-button:hover {
+    background-color: orange;
+    color: white;
+}
+
+
+/* ========================================
+   LOGIN REQUIRED STATE
+======================================== */
+
+.login-required-state,
+.booking-success-state,
+.invalid-booking-state {
+    max-width: 700px;
+    margin: 60px auto;
+    padding: 40px 24px;
+    text-align: center;
+    background-color: white;
+    border: 1px solid lightgray;
+    border-radius: 14px;
+}
+
+.login-required-state h1,
+.booking-success-state h1,
+.invalid-booking-state h1 {
+    margin-bottom: 15px;
+}
+
+.login-required-state p,
+.booking-success-state p,
+.invalid-booking-state p {
+    margin-bottom: 15px;
+}
+
+
+/* ========================================
+   BOOKING SUCCESS
+======================================== */
+
+.booking-success-state {
+    border-top: 5px solid green;
+}
+
+.booking-success-state h1 {
+    color: green;
+}
+
+.booking-success-state span {
+    font-weight: 700;
+}
+
+
+/* ========================================
+   BOOK TABLE PAGE
+======================================== */
+
+.book-table-page {
+    min-height: 70vh;
+}
+
+.booking-content {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 50px 0;
+}
+
+.booking-restaurant-card,
+.booking-timing-section,
+.table-status-section,
+.table-booking-section {
+    margin-top: 30px;
+    padding: 25px;
+    background-color: white;
+    border: 1px solid lightgray;
+    border-radius: 14px;
+}
+
+.booking-restaurant-info h2 {
+    margin-bottom: 10px;
+}
+
+.booking-restaurant-info p {
+    margin: 7px 0;
+}
+
+.booking-timing-section p {
+    margin: 8px 0;
+}
+
+.booking-timing-section span,
+.booking-restaurant-info span {
+    font-weight: 700;
+}
+
+
+/* ========================================
+   TABLE STATUS LEGEND
+======================================== */
+
+.table-status-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 25px;
+    margin-top: 20px;
+}
+
+.table-status-item {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.status-box {
+    width: 20px;
+    height: 20px;
+    display: inline-block;
+    border-radius: 4px;
+}
+
+.available-status {
+    background-color: green;
+}
+
+.booked-status {
+    background-color: grey;
+}
+
+.selected-status {
+    background-color: yellow;
+    border: 1px solid orange;
+}
+
+
+/* ========================================
+   TABLE GRID
+======================================== */
+
+.restaurant-table-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 18px;
+    margin-top: 25px;
+}
+
+.restaurant-table {
+    min-height: 80px;
+    padding: 15px;
+    border: 2px solid green;
+    border-radius: 10px;
+    font-weight: 700;
+}
+
+.restaurant-table.table-available {
+    background-color: green;
+    color: white;
+    border-color: green;
+    cursor: pointer;
+}
+
+.restaurant-table.table-available:hover {
+    transform: translateY(-3px);
+}
+
+.restaurant-table.table-booked {
+    background-color: grey;
+    color: white;
+    border-color: grey;
+    cursor: not-allowed;
+    opacity: 0.8;
+}
+
+.restaurant-table.table-selected {
+    background-color: yellow;
+    color: black;
+    border-color: orange;
+    cursor: pointer;
+    transform: translateY(-3px);
+}
+
+.restaurant-table:disabled {
+    pointer-events: none;
+}
+
+
+/* ========================================
+   TABLE SELECTION MESSAGE
+======================================== */
+
+.table-selection-message {
+    margin-top: 10px;
+}
+
+.selected-table-text {
+    min-height: 24px;
+}
+
+
+/* ========================================
+   RESPONSIVE TABLE BOOKING
+======================================== */
+
+@media (max-width: 900px) {
+
+    .restaurant-table-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+}
+
+
+@media (max-width: 600px) {
+
+    .restaurant-table-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .table-status-list {
+        flex-direction: column;
+        gap: 12px;
+    }
+
+    .booking-action-area {
+        padding: 18px;
+    }
+
+    .primary-button,
+    .secondary-button {
+        width: 100%;
+        margin: 6px 0;
+        text-align: center;
+    }
+
+}
+
+/* ========================================
+   COMMON HEADER LOGO FIX
+======================================== */
+
+.site-header {
+    width: 100%;
+}
+
+.header-container {
+    width: 90%;
+    max-width: 1400px;
+    margin: 0 auto;
+    min-height: 90px;
+    display: flex;
+    align-items: center;
+    gap: 30px;
+}
+
+.logo-link {
+    display: flex;
+    align-items: center;
+    flex-shrink: 0;
+}
+
+.site-logo {
+    width: 190px;
+    height: auto;
+    max-height: 75px;
+    object-fit: contain;
+    display: block;
+}
+
+
+/* ========================================
+   HEADER NAVIGATION
+======================================== */
+
+.main-navigation {
+    display: flex;
+    align-items: center;
+    gap: 25px;
+    flex-shrink: 0;
+}
+
+.main-navigation a {
+    text-decoration: none;
+    color: black;
+    font-weight: 600;
+    white-space: nowrap;
+}
+
+
+/* ========================================
+   HEADER SEARCH
+======================================== */
+
+.header-search {
+    flex: 1;
+    min-width: 150px;
+}
+
+.header-search input {
+    width: 100%;
+    box-sizing: border-box;
+}
+
+
+/* ========================================
+   HEADER ACTIONS
+======================================== */
+
+.header-actions {
+    display: flex;
+    align-items: center;
+    gap: 18px;
+    flex-shrink: 0;
+}
+
+.header-link {
+    text-decoration: none;
+    color: black;
+    font-weight: 600;
+    white-space: nowrap;
+}
+
+
+/* ========================================
+   COMMON FOOTER
+======================================== */
+
+.site-footer {
+    width: 100%;
+    margin-top: 50px;
+}
+
+.footer-container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.footer-logo {
+    width: 150px;
+    height: auto;
+    max-height: 60px;
+    object-fit: contain;
+    display: block;
+}
+
+
+/* ========================================
+   MOBILE HEADER
+======================================== */
+
+@media (max-width: 1000px) {
+
+    .header-container {
+        flex-wrap: wrap;
+        padding: 15px 0;
+    }
+
+    .site-logo {
+        width: 160px;
+        max-height: 65px;
+    }
+
+    .header-search {
+        order: 3;
+        flex-basis: 100%;
+    }
+
+}
+
+
+/* ========================================
+   SMALL SCREEN
+======================================== */
+
+@media (max-width: 700px) {
+
+    .header-container {
+        width: 92%;
+        gap: 15px;
+    }
+
+    .site-logo {
+        width: 140px;
+        max-height: 55px;
+    }
+
+    .main-navigation {
+        gap: 12px;
+    }
+
+    .main-navigation a,
+    .header-link {
+        font-size: 14px;
+    }
+
+    .header-actions {
+        gap: 10px;
+        flex-wrap: wrap;
+    }
+
+}
+
+
+/* ========================================
+   VERY SMALL SCREEN
+======================================== */
+
+@media (max-width: 500px) {
+
+    .site-logo {
+        width: 120px;
+        max-height: 50px;
+    }
+
+    .main-navigation {
+        width: 100%;
+        justify-content: center;
+    }
+
+    .header-actions {
+        width: 100%;
+        justify-content: center;
+    }
+
+}
