@@ -1,0 +1,882 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>Restaurants - Yummy Tummy</title>
+
+    <link
+        rel="stylesheet"
+        href="css/style.css"
+    >
+
+</head>
+
+
+<body>
+
+    <!-- ==================== HEADER ==================== -->
+
+    <header class="site-header">
+
+        <div class="header-container">
+
+            <a
+                href="index.html"
+                class="brand-logo"
+            >
+                <img
+                    src="images/logo/yummy-tummy-logo.png"
+                    alt="Yummy Tummy Logo"
+                >
+            </a>
+
+
+            <nav class="main-navigation">
+
+                <a
+                    href="index.html"
+                    class="nav-link"
+                >
+                    Home
+                </a>
+
+                <a
+                    href="menu.html"
+                    class="nav-link"
+                >
+                    Menu
+                </a>
+
+                <a
+                    href="restaurants.html"
+                    class="nav-link active"
+                >
+                    Restaurants
+                </a>
+
+            </nav>
+
+
+            <div class="header-search">
+
+                <input
+                    type="search"
+                    id="headerSearch"
+                    placeholder="Search food or restaurant"
+                    aria-label="Search food or restaurant"
+                >
+
+            </div>
+
+
+            <div class="header-actions">
+
+                <a
+                    href="wishlist.html"
+                    class="header-action"
+                >
+                    Wishlist
+                </a>
+
+                <a
+                    href="cart.html"
+                    class="header-action"
+                >
+                    Cart
+                </a>
+
+                <a
+                    href="login.html"
+                    class="header-action login-link"
+                >
+                    Login
+                </a>
+
+                <a
+                    href="register.html"
+                    class="header-action register-link"
+                >
+                    Register
+                </a>
+
+                <a
+                    href="profile.html"
+                    class="header-action profile-link hidden"
+                >
+                    Profile
+                </a>
+
+            </div>
+
+        </div>
+
+    </header>
+
+
+    <!-- ==================== MAIN ==================== -->
+
+    <main>
+
+        <!-- ==================== RESTAURANT HERO ==================== -->
+
+        <section class="restaurants-page-hero">
+
+            <div class="section-container">
+
+                <div class="restaurants-page-heading">
+
+                    <p class="section-label">
+                        YUMMY TUMMY RESTAURANTS
+                    </p>
+
+                    <h1>
+                        Explore Restaurants
+                    </h1>
+
+                    <p>
+                        Discover vegetarian restaurants and
+                        regional cuisines from across India.
+                    </p>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- ==================== RESTAURANT CONTENT ==================== -->
+
+        <section class="restaurants-content-section">
+
+            <div class="section-container">
+
+                <div class="restaurants-results-heading">
+
+                    <div>
+
+                        <p class="section-label">
+                            OUR RESTAURANTS
+                        </p>
+
+                        <h2>
+                            Vegetarian Restaurants
+                        </h2>
+
+                    </div>
+
+
+                    <p class="restaurants-results-count">
+                        12 Restaurants
+                    </p>
+
+                </div>
+
+
+                <!-- ==================== RESTAURANT GRID ==================== -->
+
+                <div
+                    class="restaurants-grid"
+                    id="restaurantGrid"
+                >
+
+                    <!-- Restaurant 1 -->
+
+                    <article class="restaurant-card">
+
+                        <a
+                            href="view-restaurant.html?restaurant=rajasthani-rasoi"
+                            class="restaurant-card-link"
+                        >
+
+                            <div class="restaurant-image-container">
+
+                                <img
+                                    src="images/restaurants/rajasthani-rasoi-outside.png"
+                                    alt="Rajasthani Rasoi exterior"
+                                    class="restaurant-image"
+                                >
+
+                            </div>
+
+
+                            <div class="restaurant-card-content">
+
+                                <h3>
+                                    Rajasthani Rasoi
+                                </h3>
+
+                                <p class="restaurant-cuisine">
+                                    Rajasthani Vegetarian
+                                </p>
+
+                                <p
+                                    class="restaurant-cuisine"
+                                    data-rating-id="rajasthani-rasoi"
+                                >
+                                    Rating: --
+                                </p>
+
+                                <p class="restaurant-location">
+                                    Rajasthan
+                                </p>
+
+                            </div>
+
+                        </a>
+
+                    </article>
+
+
+                    <!-- Restaurant 2 -->
+
+                    <article class="restaurant-card">
+
+                        <a
+                            href="view-restaurant.html?restaurant=gujarati-thali-house"
+                            class="restaurant-card-link"
+                        >
+
+                            <div class="restaurant-image-container">
+
+                                <img
+                                    src="images/restaurants/gujarati-thali-house-outside.png"
+                                    alt="Gujarati Thali House exterior"
+                                    class="restaurant-image"
+                                >
+
+                            </div>
+
+
+                            <div class="restaurant-card-content">
+
+                                <h3>
+                                    Gujarati Thali House
+                                </h3>
+
+                                <p class="restaurant-cuisine">
+                                    Gujarati Vegetarian
+                                </p>
+
+                                <p
+                                    class="restaurant-cuisine"
+                                    data-rating-id="gujarati-thali-house"
+                                >
+                                    Rating: --
+                                </p>
+
+                                <p class="restaurant-location">
+                                    Gujarat
+                                </p>
+
+                            </div>
+
+                        </a>
+
+                    </article>
+
+
+                    <!-- Restaurant 3 -->
+
+                    <article class="restaurant-card">
+
+                        <a
+                            href="view-restaurant.html?restaurant=punjabi-zaika"
+                            class="restaurant-card-link"
+                        >
+
+                            <div class="restaurant-image-container">
+
+                                <img
+                                    src="images/restaurants/punjabi-zaika-outside.png"
+                                    alt="Punjabi Zaika exterior"
+                                    class="restaurant-image"
+                                >
+
+                            </div>
+
+
+                            <div class="restaurant-card-content">
+
+                                <h3>
+                                    Punjabi Zaika
+                                </h3>
+
+                                <p class="restaurant-cuisine">
+                                    Punjabi Vegetarian
+                                </p>
+
+                                <p
+                                    class="restaurant-cuisine"
+                                    data-rating-id="punjabi-zaika"
+                                >
+                                    Rating: --
+                                </p>
+
+                                <p class="restaurant-location">
+                                    Punjab
+                                </p>
+
+                            </div>
+
+                        </a>
+
+                    </article>
+
+
+                    <!-- Restaurant 4 -->
+
+                    <article class="restaurant-card">
+
+                        <a
+                            href="view-restaurant.html?restaurant=bengal-bhojan"
+                            class="restaurant-card-link"
+                        >
+
+                            <div class="restaurant-image-container">
+
+                                <img
+                                    src="images/restaurants/bengal-bhojan-outside.png"
+                                    alt="Bengal Bhojan exterior"
+                                    class="restaurant-image"
+                                >
+
+                            </div>
+
+
+                            <div class="restaurant-card-content">
+
+                                <h3>
+                                    Bengal Bhojan
+                                </h3>
+
+                                <p class="restaurant-cuisine">
+                                    Bengali Vegetarian
+                                </p>
+
+                                <p
+                                    class="restaurant-cuisine"
+                                    data-rating-id="bengal-bhojan"
+                                >
+                                    Rating: --
+                                </p>
+
+                                <p class="restaurant-location">
+                                    West Bengal
+                                </p>
+
+                            </div>
+
+                        </a>
+
+                    </article>
+
+
+                    <!-- Restaurant 5 -->
+
+                    <article class="restaurant-card">
+
+                        <a
+                            href="view-restaurant.html?restaurant=south-spice-kitchen"
+                            class="restaurant-card-link"
+                        >
+
+                            <div class="restaurant-image-container">
+
+                                <img
+                                    src="images/restaurants/south-spice-kitchen-outside.png"
+                                    alt="South Spice Kitchen exterior"
+                                    class="restaurant-image"
+                                >
+
+                            </div>
+
+
+                            <div class="restaurant-card-content">
+
+                                <h3>
+                                    South Spice Kitchen
+                                </h3>
+
+                                <p class="restaurant-cuisine">
+                                    South Indian Vegetarian
+                                </p>
+
+                                <p
+                                    class="restaurant-cuisine"
+                                    data-rating-id="south-spice-kitchen"
+                                >
+                                    Rating: --
+                                </p>
+
+                                <p class="restaurant-location">
+                                    South India
+                                </p>
+
+                            </div>
+
+                        </a>
+
+                    </article>
+
+
+                    <!-- Restaurant 6 -->
+
+                    <article class="restaurant-card">
+
+                        <a
+                            href="view-restaurant.html?restaurant=maharashtra-tadka"
+                            class="restaurant-card-link"
+                        >
+
+                            <div class="restaurant-image-container">
+
+                                <img
+                                    src="images/restaurants/maharashtra-tadka-outside.png"
+                                    alt="Maharashtra Tadka exterior"
+                                    class="restaurant-image"
+                                >
+
+                            </div>
+
+
+                            <div class="restaurant-card-content">
+
+                                <h3>
+                                    Maharashtra Tadka
+                                </h3>
+
+                                <p class="restaurant-cuisine">
+                                    Maharashtrian Vegetarian
+                                </p>
+
+                                <p
+                                    class="restaurant-cuisine"
+                                    data-rating-id="maharashtra-tadka"
+                                >
+                                    Rating: --
+                                </p>
+
+                                <p class="restaurant-location">
+                                    Maharashtra
+                                </p>
+
+                            </div>
+
+                        </a>
+
+                    </article>
+
+
+                    <!-- Restaurant 7 -->
+
+                    <article class="restaurant-card">
+
+                        <a
+                            href="view-restaurant.html?restaurant=kashmir-valley-kitchen"
+                            class="restaurant-card-link"
+                        >
+
+                            <div class="restaurant-image-container">
+
+                                <img
+                                    src="images/restaurants/kashmir-valley-kitchen-outside.png"
+                                    alt="Kashmir Valley Kitchen exterior"
+                                    class="restaurant-image"
+                                >
+
+                            </div>
+
+
+                            <div class="restaurant-card-content">
+
+                                <h3>
+                                    Kashmir Valley Kitchen
+                                </h3>
+
+                                <p class="restaurant-cuisine">
+                                    Kashmiri Vegetarian
+                                </p>
+
+                                <p
+                                    class="restaurant-cuisine"
+                                    data-rating-id="kashmir-valley-kitchen"
+                                >
+                                    Rating: --
+                                </p>
+
+                                <p class="restaurant-location">
+                                    Kashmir
+                                </p>
+
+                            </div>
+
+                        </a>
+
+                    </article>
+
+
+                    <!-- Restaurant 8 -->
+
+                    <article class="restaurant-card">
+
+                        <a
+                            href="view-restaurant.html?restaurant=awadhi-dastarkhwan"
+                            class="restaurant-card-link"
+                        >
+
+                            <div class="restaurant-image-container">
+
+                                <img
+                                    src="images/restaurants/awadhi-dastarkhwan-outside.png"
+                                    alt="Awadhi Dastarkhwan exterior"
+                                    class="restaurant-image"
+                                >
+
+                            </div>
+
+
+                            <div class="restaurant-card-content">
+
+                                <h3>
+                                    Awadhi Dastarkhwan
+                                </h3>
+
+                                <p class="restaurant-cuisine">
+                                    Awadhi Vegetarian
+                                </p>
+
+                                <p
+                                    class="restaurant-cuisine"
+                                    data-rating-id="awadhi-dastarkhwan"
+                                >
+                                    Rating: --
+                                </p>
+
+                                <p class="restaurant-location">
+                                    Lucknow
+                                </p>
+
+                            </div>
+
+                        </a>
+
+                    </article>
+
+
+                    <!-- Restaurant 9 -->
+
+                    <article class="restaurant-card">
+
+                        <a
+                            href="view-restaurant.html?restaurant=hyderabadi-nizams-kitchen"
+                            class="restaurant-card-link"
+                        >
+
+                            <div class="restaurant-image-container">
+
+                                <img
+                                    src="images/restaurants/hyderabadi-nizams-kitchen-outside.png"
+                                    alt="Hyderabadi Nizam's Kitchen exterior"
+                                    class="restaurant-image"
+                                >
+
+                            </div>
+
+
+                            <div class="restaurant-card-content">
+
+                                <h3>
+                                    Hyderabadi Nizam's Kitchen
+                                </h3>
+
+                                <p class="restaurant-cuisine">
+                                    Hyderabadi Vegetarian
+                                </p>
+
+                                <p
+                                    class="restaurant-cuisine"
+                                    data-rating-id="hyderabadi-nizams-kitchen"
+                                >
+                                    Rating: --
+                                </p>
+
+                                <p class="restaurant-location">
+                                    Hyderabad
+                                </p>
+
+                            </div>
+
+                        </a>
+
+                    </article>
+
+
+                    <!-- Restaurant 10 -->
+
+                    <article class="restaurant-card">
+
+                        <a
+                            href="view-restaurant.html?restaurant=goan-coastal-bites"
+                            class="restaurant-card-link"
+                        >
+
+                            <div class="restaurant-image-container">
+
+                                <img
+                                    src="images/restaurants/goan-coastal-bites-outside.png"
+                                    alt="Goan Coastal Bites exterior"
+                                    class="restaurant-image"
+                                >
+
+                            </div>
+
+
+                            <div class="restaurant-card-content">
+
+                                <h3>
+                                    Goan Coastal Bites
+                                </h3>
+
+                                <p class="restaurant-cuisine">
+                                    Goan Vegetarian
+                                </p>
+
+                                <p
+                                    class="restaurant-cuisine"
+                                    data-rating-id="goan-coastal-bites"
+                                >
+                                    Rating: --
+                                </p>
+
+                                <p class="restaurant-location">
+                                    Goa
+                                </p>
+
+                            </div>
+
+                        </a>
+
+                    </article>
+
+
+                    <!-- Restaurant 11 -->
+
+                    <article class="restaurant-card">
+
+                        <a
+                            href="view-restaurant.html?restaurant=kerala-coconut-kitchen"
+                            class="restaurant-card-link"
+                        >
+
+                            <div class="restaurant-image-container">
+
+                                <img
+                                    src="images/restaurants/kerala-coconut-kitchen-outside.png"
+                                    alt="Kerala Coconut Kitchen exterior"
+                                    class="restaurant-image"
+                                >
+
+                            </div>
+
+
+                            <div class="restaurant-card-content">
+
+                                <h3>
+                                    Kerala Coconut Kitchen
+                                </h3>
+
+                                <p class="restaurant-cuisine">
+                                    Kerala Vegetarian
+                                </p>
+
+                                <p
+                                    class="restaurant-cuisine"
+                                    data-rating-id="kerala-coconut-kitchen"
+                                >
+                                    Rating: --
+                                </p>
+
+                                <p class="restaurant-location">
+                                    Kerala
+                                </p>
+
+                            </div>
+
+                        </a>
+
+                    </article>
+
+
+                    <!-- Restaurant 12 -->
+
+                    <article class="restaurant-card">
+
+                        <a
+                            href="view-restaurant.html?restaurant=bihar-swad-ghar"
+                            class="restaurant-card-link"
+                        >
+
+                            <div class="restaurant-image-container">
+
+                                <img
+                                    src="images/restaurants/bihar-swad-ghar-outside.png"
+                                    alt="Bihar Swad Ghar exterior"
+                                    class="restaurant-image"
+                                >
+
+                            </div>
+
+
+                            <div class="restaurant-card-content">
+
+                                <h3>
+                                    Bihar Swad Ghar
+                                </h3>
+
+                                <p class="restaurant-cuisine">
+                                    Bihari Vegetarian
+                                </p>
+
+                                <p
+                                    class="restaurant-cuisine"
+                                    data-rating-id="bihar-swad-ghar"
+                                >
+                                    Rating: --
+                                </p>
+
+                                <p class="restaurant-location">
+                                    Bihar
+                                </p>
+
+                            </div>
+
+                        </a>
+
+                    </article>
+
+                </div>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <!-- ==================== FOOTER ==================== -->
+
+    <footer class="site-footer">
+
+        <div class="footer-container">
+
+            <div class="footer-brand">
+
+                <img
+                    src="images/logo/yummy-tummy-logo.png"
+                    alt="Yummy Tummy Logo"
+                >
+
+                <p>
+                    Delicious vegetarian food,
+                    better dining experiences.
+                </p>
+
+            </div>
+
+
+            <div class="footer-links">
+
+                <div class="footer-column">
+
+                    <h3>
+                        Quick Links
+                    </h3>
+
+                    <a href="index.html">
+                        Home
+                    </a>
+
+                    <a href="menu.html">
+                        Menu
+                    </a>
+
+                    <a href="restaurants.html">
+                        Restaurants
+                    </a>
+
+                </div>
+
+
+                <div class="footer-column">
+
+                    <h3>
+                        Customer
+                    </h3>
+
+                    <a href="wishlist.html">
+                        Wishlist
+                    </a>
+
+                    <a href="cart.html">
+                        Cart
+                    </a>
+
+                    <a href="profile.html">
+                        Profile
+                    </a>
+
+                </div>
+
+
+                <div class="footer-column">
+
+                    <h3>
+                        Account
+                    </h3>
+
+                    <a href="login.html">
+                        Login
+                    </a>
+
+                    <a href="register.html">
+                        Register
+                    </a>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <div class="footer-bottom">
+
+            <p>
+                © 2026 Yummy Tummy. All Rights Reserved.
+            </p>
+
+        </div>
+
+    </footer>
+
+
+    <!-- ==================== JAVASCRIPT ==================== -->
+
+    <script src="js/menu-data.js"></script>
+
+    <script src="js/restaurant-data.js"></script>
+
+    <script src="js/main.js"></script>
+
+</body>
+
+</html>
