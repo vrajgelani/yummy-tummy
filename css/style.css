@@ -1457,3 +1457,112 @@ input {
     }
 
 }
+
+/* =========================================================
+   RESTAURANT SEARCH
+   ========================================================= */
+
+.restaurant-search-section {
+    margin-bottom: 40px;
+    padding: 30px;
+    background-color: floralwhite;
+    border: 1px solid gainsboro;
+    border-radius: 18px;
+}
+
+
+.restaurant-search-heading {
+    margin-bottom: 20px;
+}
+
+
+.restaurant-search-heading h2 {
+    margin-bottom: 8px;
+}
+
+
+.restaurant-search-heading p {
+    margin-bottom: 0;
+}
+
+
+.restaurant-search-box {
+    width: 100%;
+}
+
+
+.restaurant-search-box label {
+    display: block;
+    margin-bottom: 8px;
+    font-size: 14px;
+    font-weight: 600;
+    color: dimgray;
+}
+
+
+.restaurant-search-box input {
+    width: 100%;
+    min-height: 52px;
+    padding: 14px 18px;
+    border: 1px solid lightgray;
+    border-radius: 10px;
+    background-color: white;
+    color: black;
+    font-size: 16px;
+    outline: none;
+    transition: border-color 0.2s ease,
+                box-shadow 0.2s ease;
+}
+
+
+.restaurant-search-box input:focus {
+    border-color: darkorange;
+    box-shadow: 0 0 0 3px floralwhite;
+}
+
+
+.restaurants-empty-state {
+    grid-column: 1 / -1;
+    padding: 60px 20px;
+    text-align: center;
+    border: 1px solid gainsboro;
+    border-radius: 18px;
+    background-color: whitesmoke;
+}
+
+
+.restaurants-empty-state h3 {
+    margin-bottom: 10px;
+    color: black;
+}
+
+
+.restaurants-empty-state p {
+    margin-bottom: 0;
+    color: dimgray;
+}
+
+
+.restaurants-empty-state.hidden {
+    display: none;
+}
+
+
+/* =========================================================
+   RESTAURANT SEARCH RESPONSIVE
+   ========================================================= */
+
+@media (max-width: 600px) {
+
+    .restaurant-search-section {
+        padding: 22px;
+        margin-bottom: 30px;
+    }
+
+
+    .restaurant-search-box input {
+        min-height: 48px;
+        font-size: 15px;
+    }
+
+}

@@ -159,6 +159,51 @@
 
             <div class="section-container">
 
+
+                <!-- ==================== SEARCH ==================== -->
+
+                <div class="restaurant-search-section">
+
+                    <div class="restaurant-search-heading">
+
+                        <p class="section-label">
+                            FIND YOUR RESTAURANT
+                        </p>
+
+                        <h2>
+                            Search Restaurants
+                        </h2>
+
+                        <p>
+                            Search by restaurant name,
+                            cuisine or location.
+                        </p>
+
+                    </div>
+
+
+                    <div class="restaurant-search-box">
+
+                        <label
+                            for="restaurantSearch"
+                        >
+                            Restaurant Search
+                        </label>
+
+                        <input
+                            type="search"
+                            id="restaurantSearch"
+                            placeholder="Search restaurant, cuisine or location"
+                            autocomplete="off"
+                        >
+
+                    </div>
+
+                </div>
+
+
+                <!-- ==================== RESULTS HEADING ==================== -->
+
                 <div class="restaurants-results-heading">
 
                     <div>
@@ -167,14 +212,17 @@
                             OUR RESTAURANTS
                         </p>
 
-                        <h2>
+                        <h2 id="restaurantResultsTitle">
                             Vegetarian Restaurants
                         </h2>
 
                     </div>
 
 
-                    <p class="restaurants-results-count">
+                    <p
+                        class="restaurants-results-count"
+                        id="restaurantResultsCount"
+                    >
                         12 Restaurants
                     </p>
 
@@ -190,7 +238,10 @@
 
                     <!-- Restaurant 1 -->
 
-                    <article class="restaurant-card">
+                    <article
+                        class="restaurant-card"
+                        data-restaurant-id="rajasthani-rasoi"
+                    >
 
                         <a
                             href="view-restaurant.html?restaurant=rajasthani-rasoi"
@@ -238,7 +289,10 @@
 
                     <!-- Restaurant 2 -->
 
-                    <article class="restaurant-card">
+                    <article
+                        class="restaurant-card"
+                        data-restaurant-id="gujarati-thali-house"
+                    >
 
                         <a
                             href="view-restaurant.html?restaurant=gujarati-thali-house"
@@ -286,7 +340,10 @@
 
                     <!-- Restaurant 3 -->
 
-                    <article class="restaurant-card">
+                    <article
+                        class="restaurant-card"
+                        data-restaurant-id="punjabi-zaika"
+                    >
 
                         <a
                             href="view-restaurant.html?restaurant=punjabi-zaika"
@@ -334,7 +391,10 @@
 
                     <!-- Restaurant 4 -->
 
-                    <article class="restaurant-card">
+                    <article
+                        class="restaurant-card"
+                        data-restaurant-id="bengal-bhojan"
+                    >
 
                         <a
                             href="view-restaurant.html?restaurant=bengal-bhojan"
@@ -382,7 +442,10 @@
 
                     <!-- Restaurant 5 -->
 
-                    <article class="restaurant-card">
+                    <article
+                        class="restaurant-card"
+                        data-restaurant-id="south-spice-kitchen"
+                    >
 
                         <a
                             href="view-restaurant.html?restaurant=south-spice-kitchen"
@@ -430,7 +493,10 @@
 
                     <!-- Restaurant 6 -->
 
-                    <article class="restaurant-card">
+                    <article
+                        class="restaurant-card"
+                        data-restaurant-id="maharashtra-tadka"
+                    >
 
                         <a
                             href="view-restaurant.html?restaurant=maharashtra-tadka"
@@ -478,7 +544,10 @@
 
                     <!-- Restaurant 7 -->
 
-                    <article class="restaurant-card">
+                    <article
+                        class="restaurant-card"
+                        data-restaurant-id="kashmir-valley-kitchen"
+                    >
 
                         <a
                             href="view-restaurant.html?restaurant=kashmir-valley-kitchen"
@@ -526,7 +595,10 @@
 
                     <!-- Restaurant 8 -->
 
-                    <article class="restaurant-card">
+                    <article
+                        class="restaurant-card"
+                        data-restaurant-id="awadhi-dastarkhwan"
+                    >
 
                         <a
                             href="view-restaurant.html?restaurant=awadhi-dastarkhwan"
@@ -574,7 +646,10 @@
 
                     <!-- Restaurant 9 -->
 
-                    <article class="restaurant-card">
+                    <article
+                        class="restaurant-card"
+                        data-restaurant-id="hyderabadi-nizams-kitchen"
+                    >
 
                         <a
                             href="view-restaurant.html?restaurant=hyderabadi-nizams-kitchen"
@@ -622,7 +697,10 @@
 
                     <!-- Restaurant 10 -->
 
-                    <article class="restaurant-card">
+                    <article
+                        class="restaurant-card"
+                        data-restaurant-id="goan-coastal-bites"
+                    >
 
                         <a
                             href="view-restaurant.html?restaurant=goan-coastal-bites"
@@ -670,7 +748,10 @@
 
                     <!-- Restaurant 11 -->
 
-                    <article class="restaurant-card">
+                    <article
+                        class="restaurant-card"
+                        data-restaurant-id="kerala-coconut-kitchen"
+                    >
 
                         <a
                             href="view-restaurant.html?restaurant=kerala-coconut-kitchen"
@@ -718,7 +799,10 @@
 
                     <!-- Restaurant 12 -->
 
-                    <article class="restaurant-card">
+                    <article
+                        class="restaurant-card"
+                        data-restaurant-id="bihar-swad-ghar"
+                    >
 
                         <a
                             href="view-restaurant.html?restaurant=bihar-swad-ghar"
@@ -762,6 +846,25 @@
                         </a>
 
                     </article>
+
+
+                    <!-- ==================== EMPTY STATE ==================== -->
+
+                    <div
+                        class="restaurants-empty-state hidden"
+                        id="restaurantEmptyState"
+                    >
+
+                        <h3>
+                            No Restaurants Found
+                        </h3>
+
+                        <p>
+                            Try searching with another restaurant
+                            name, cuisine or location.
+                        </p>
+
+                    </div>
 
                 </div>
 

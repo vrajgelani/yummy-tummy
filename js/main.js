@@ -282,4 +282,128 @@ function initializeRestaurantPage() {
             "Rating: " +
             restaurant.rating;
     });
+
+
+    initializeRestaurantSearch(
+        restaurantGrid
+    );
+}
+
+
+function initializeRestaurantSearch(restaurantGrid) {
+    const searchInput =
+        document.getElementById("restaurantSearch");
+
+    const resultCount =
+        document.getElementById(
+            "restaurantResultsCount"
+        );
+
+    const resultTitle =
+        document.getElementById(
+            "restaurantResultsTitle"
+        );
+
+    const emptyState =
+        document.getElementById(
+            "restaurantEmptyState"
+        );
+
+
+    if (!searchInput) {
+        return;
+    }
+
+
+    const restaurantCards =
+        restaurantGrid.querySelectorAll(
+            ".restaurant-card"
+        );
+
+
+    function filterRestaurants() {
+        const searchValue =
+            searchInput.value
+                .trim()
+                .toLowerCase();
+
+
+        let visibleCount = 0;
+
+
+        restaurantCards.forEach(function (card) {
+            const restaurantId =
+                card.dataset.restaurantId;
+
+
+            const restaurant =
+                restaurantData.find(function (item) {
+                    return item.id === restaurantId;
+                });
+
+
+            if (!restaurant) {
+                card.hidden = true;
+                return;
+            }
+
+
+            const searchableText =
+                (
+                    restaurant.name +
+                    " " +
+                    restaurant.cuisine +
+                    " " +
+                    restaurant.location
+                ).toLowerCase();
+
+
+            const matches =
+                searchValue === "" ||
+                searchableText.includes(searchValue);
+
+
+            card.hidden = !matches;
+
+
+            if (matches) {
+                visibleCount++;
+            }
+        });
+
+
+        if (resultCount) {
+            resultCount.textContent =
+                visibleCount +
+                " Restaurants";
+        }
+
+
+        if (resultTitle) {
+            if (searchValue === "") {
+                resultTitle.textContent =
+                    "Vegetarian Restaurants";
+            } else {
+                resultTitle.textContent =
+                    "Search Results";
+            }
+        }
+
+
+        if (emptyState) {
+            emptyState.classList.toggle(
+                "hidden",
+                visibleCount !== 0
+            );
+        }
+    }
+
+
+    searchInput.addEventListener(
+        "input",
+        filterRestaurants
+    );
+
+
+    filterRestaurants();
 }
