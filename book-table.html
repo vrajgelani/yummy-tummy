@@ -1,0 +1,693 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Book Table | Yummy Tummy</title>
+
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+    <!-- =========================
+         HEADER
+    ========================== -->
+
+    <header class="site-header">
+
+        <div class="header-container">
+
+            <a href="index.html" class="header-logo-link">
+
+                <img
+                    src="images/logo/yummy-tummy-logo.png"
+                    alt="Yummy Tummy"
+                    class="header-logo"
+                >
+
+            </a>
+
+
+            <nav class="main-navigation">
+
+                <a href="index.html">
+                    Home
+                </a>
+
+                <a href="menu.html">
+                    Menu
+                </a>
+
+                <a href="restaurants.html">
+                    Restaurants
+                </a>
+
+            </nav>
+
+
+            <div class="header-search">
+
+                <input
+                    type="search"
+                    id="headerSearch"
+                    placeholder="Search food or restaurant"
+                    aria-label="Search food or restaurant"
+                >
+
+            </div>
+
+
+            <div class="header-actions">
+
+                <a
+                    href="wishlist.html"
+                    id="wishlistLink"
+                >
+                    Wishlist
+                </a>
+
+                <a
+                    href="cart.html"
+                    id="cartLink"
+                >
+                    Cart
+                </a>
+
+                <a
+                    href="login.html"
+                    id="loginLink"
+                >
+                    Login
+                </a>
+
+                <a
+                    href="register.html"
+                    id="registerLink"
+                >
+                    Register
+                </a>
+
+                <a
+                    href="profile.html"
+                    id="profileLink"
+                    hidden
+                >
+                    Profile
+                </a>
+
+            </div>
+
+        </div>
+
+    </header>
+
+
+    <!-- =========================
+         MAIN
+    ========================== -->
+
+    <main class="book-table-page">
+
+
+        <!-- =========================
+             HERO
+        ========================== -->
+
+        <section class="book-table-hero">
+
+            <div class="container">
+
+                <p class="book-table-breadcrumb">
+                    Home / Restaurants / Book Table
+                </p>
+
+                <h1>
+                    Book Your Table
+                </h1>
+
+                <p>
+                    Select an available table and reserve your dining experience.
+                </p>
+
+            </div>
+
+        </section>
+
+
+        <!-- =========================
+             RESTAURANT SUMMARY
+        ========================== -->
+
+        <section class="book-table-section">
+
+            <div class="container">
+
+
+                <div
+                    id="bookingRestaurantCard"
+                    class="booking-restaurant-card"
+                >
+
+                    <div class="booking-restaurant-content">
+
+                        <p
+                            id="bookingRestaurantCuisine"
+                            class="booking-restaurant-cuisine"
+                        >
+                            Restaurant Cuisine
+                        </p>
+
+                        <h2 id="bookingRestaurantName">
+                            Restaurant Name
+                        </h2>
+
+                        <p
+                            id="bookingRestaurantLocation"
+                            class="booking-restaurant-location"
+                        >
+                            Location
+                        </p>
+
+                    </div>
+
+
+                    <div class="booking-restaurant-timing">
+
+                        <span>
+                            Opening Time
+                        </span>
+
+                        <strong id="bookingOpeningTime">
+                            -
+                        </strong>
+
+
+                        <span>
+                            Closing Time
+                        </span>
+
+                        <strong id="bookingClosingTime">
+                            -
+                        </strong>
+
+                    </div>
+
+                </div>
+
+
+                <!-- =========================
+                     BOOKING INSTRUCTIONS
+                ========================== -->
+
+                <div class="booking-instructions">
+
+                    <h2>
+                        Choose Your Table
+                    </h2>
+
+                    <p>
+                        Green tables are available. Grey tables are already booked.
+                        Your selected table will be highlighted during the booking process.
+                    </p>
+
+                </div>
+
+
+                <!-- =========================
+                     TABLE STATUS LEGEND
+                ========================== -->
+
+                <div class="table-status-legend">
+
+                    <div class="table-status-item">
+
+                        <span class="table-status-box available-status"></span>
+
+                        <span>
+                            Available
+                        </span>
+
+                    </div>
+
+
+                    <div class="table-status-item">
+
+                        <span class="table-status-box booked-status"></span>
+
+                        <span>
+                            Booked
+                        </span>
+
+                    </div>
+
+
+                    <div class="table-status-item">
+
+                        <span class="table-status-box selected-status"></span>
+
+                        <span>
+                            Selected
+                        </span>
+
+                    </div>
+
+                </div>
+
+
+                <!-- =========================
+                     TABLE LAYOUT
+                ========================== -->
+
+                <div
+                    id="restaurantTableLayout"
+                    class="restaurant-table-layout"
+                >
+
+
+                    <!-- TABLE 01 -->
+
+                    <button
+                        type="button"
+                        class="restaurant-table"
+                        data-table-index="1"
+                        hidden
+                    >
+                        <span class="restaurant-table-number">
+                            Table 1
+                        </span>
+
+                        <span class="restaurant-table-status">
+                            Available
+                        </span>
+                    </button>
+
+
+                    <!-- TABLE 02 -->
+
+                    <button
+                        type="button"
+                        class="restaurant-table"
+                        data-table-index="2"
+                        hidden
+                    >
+                        <span class="restaurant-table-number">
+                            Table 2
+                        </span>
+
+                        <span class="restaurant-table-status">
+                            Available
+                        </span>
+                    </button>
+
+
+                    <!-- TABLE 03 -->
+
+                    <button
+                        type="button"
+                        class="restaurant-table"
+                        data-table-index="3"
+                        hidden
+                    >
+                        <span class="restaurant-table-number">
+                            Table 3
+                        </span>
+
+                        <span class="restaurant-table-status">
+                            Available
+                        </span>
+                    </button>
+
+
+                    <!-- TABLE 04 -->
+
+                    <button
+                        type="button"
+                        class="restaurant-table"
+                        data-table-index="4"
+                        hidden
+                    >
+                        <span class="restaurant-table-number">
+                            Table 4
+                        </span>
+
+                        <span class="restaurant-table-status">
+                            Available
+                        </span>
+                    </button>
+
+
+                    <!-- TABLE 05 -->
+
+                    <button
+                        type="button"
+                        class="restaurant-table"
+                        data-table-index="5"
+                        hidden
+                    >
+                        <span class="restaurant-table-number">
+                            Table 5
+                        </span>
+
+                        <span class="restaurant-table-status">
+                            Available
+                        </span>
+                    </button>
+
+
+                    <!-- TABLE 06 -->
+
+                    <button
+                        type="button"
+                        class="restaurant-table"
+                        data-table-index="6"
+                        hidden
+                    >
+                        <span class="restaurant-table-number">
+                            Table 6
+                        </span>
+
+                        <span class="restaurant-table-status">
+                            Available
+                        </span>
+                    </button>
+
+
+                    <!-- TABLE 07 -->
+
+                    <button
+                        type="button"
+                        class="restaurant-table"
+                        data-table-index="7"
+                        hidden
+                    >
+                        <span class="restaurant-table-number">
+                            Table 7
+                        </span>
+
+                        <span class="restaurant-table-status">
+                            Available
+                        </span>
+                    </button>
+
+
+                    <!-- TABLE 08 -->
+
+                    <button
+                        type="button"
+                        class="restaurant-table"
+                        data-table-index="8"
+                        hidden
+                    >
+                        <span class="restaurant-table-number">
+                            Table 8
+                        </span>
+
+                        <span class="restaurant-table-status">
+                            Available
+                        </span>
+                    </button>
+
+
+                    <!-- TABLE 09 -->
+
+                    <button
+                        type="button"
+                        class="restaurant-table"
+                        data-table-index="9"
+                        hidden
+                    >
+                        <span class="restaurant-table-number">
+                            Table 9
+                        </span>
+
+                        <span class="restaurant-table-status">
+                            Available
+                        </span>
+                    </button>
+
+
+                    <!-- TABLE 10 -->
+
+                    <button
+                        type="button"
+                        class="restaurant-table"
+                        data-table-index="10"
+                        hidden
+                    >
+                        <span class="restaurant-table-number">
+                            Table 10
+                        </span>
+
+                        <span class="restaurant-table-status">
+                            Available
+                        </span>
+                    </button>
+
+
+                    <!-- TABLE 11 -->
+
+                    <button
+                        type="button"
+                        class="restaurant-table"
+                        data-table-index="11"
+                        hidden
+                    >
+                        <span class="restaurant-table-number">
+                            Table 11
+                        </span>
+
+                        <span class="restaurant-table-status">
+                            Available
+                        </span>
+                    </button>
+
+
+                    <!-- TABLE 12 -->
+
+                    <button
+                        type="button"
+                        class="restaurant-table"
+                        data-table-index="12"
+                        hidden
+                    >
+                        <span class="restaurant-table-number">
+                            Table 12
+                        </span>
+
+                        <span class="restaurant-table-status">
+                            Available
+                        </span>
+                    </button>
+
+
+                    <!-- TABLE 13 -->
+
+                    <button
+                        type="button"
+                        class="restaurant-table"
+                        data-table-index="13"
+                        hidden
+                    >
+                        <span class="restaurant-table-number">
+                            Table 13
+                        </span>
+
+                        <span class="restaurant-table-status">
+                            Available
+                        </span>
+                    </button>
+
+
+                    <!-- TABLE 14 -->
+
+                    <button
+                        type="button"
+                        class="restaurant-table"
+                        data-table-index="14"
+                        hidden
+                    >
+                        <span class="restaurant-table-number">
+                            Table 14
+                        </span>
+
+                        <span class="restaurant-table-status">
+                            Available
+                        </span>
+                    </button>
+
+
+                    <!-- TABLE 15 -->
+
+                    <button
+                        type="button"
+                        class="restaurant-table"
+                        data-table-index="15"
+                        hidden
+                    >
+                        <span class="restaurant-table-number">
+                            Table 15
+                        </span>
+
+                        <span class="restaurant-table-status">
+                            Available
+                        </span>
+                    </button>
+
+
+                </div>
+
+
+                <!-- =========================
+                     NO RESTAURANT
+                ========================== -->
+
+                <section
+                    id="invalidBookingRestaurantState"
+                    class="invalid-booking-state"
+                    hidden
+                >
+
+                    <h2>
+                        Restaurant Not Found
+                    </h2>
+
+                    <p>
+                        We could not find the restaurant for this table booking.
+                    </p>
+
+                    <a
+                        href="restaurants.html"
+                        class="primary-button"
+                    >
+                        Explore Restaurants
+                    </a>
+
+                </section>
+
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <!-- =========================
+         FOOTER
+    ========================== -->
+
+    <footer class="site-footer">
+
+        <div class="footer-container">
+
+
+            <div class="footer-brand">
+
+                <img
+                    src="images/logo/yummy-tummy-logo.png"
+                    alt="Yummy Tummy"
+                    class="footer-logo"
+                >
+
+                <p>
+                    Delicious vegetarian food and memorable dining experiences.
+                </p>
+
+            </div>
+
+
+            <div class="footer-column">
+
+                <h3>
+                    Quick Links
+                </h3>
+
+                <a href="index.html">
+                    Home
+                </a>
+
+                <a href="menu.html">
+                    Menu
+                </a>
+
+                <a href="restaurants.html">
+                    Restaurants
+                </a>
+
+            </div>
+
+
+            <div class="footer-column">
+
+                <h3>
+                    Customer
+                </h3>
+
+                <a href="wishlist.html">
+                    Wishlist
+                </a>
+
+                <a href="cart.html">
+                    Cart
+                </a>
+
+                <a href="orders.html">
+                    Orders
+                </a>
+
+            </div>
+
+
+            <div class="footer-column">
+
+                <h3>
+                    Account
+                </h3>
+
+                <a href="login.html">
+                    Login
+                </a>
+
+                <a href="register.html">
+                    Register
+                </a>
+
+                <a href="profile.html">
+                    Profile
+                </a>
+
+            </div>
+
+
+        </div>
+
+
+        <div class="footer-bottom">
+
+            <p>
+                © 2026 Yummy Tummy. All rights reserved.
+            </p>
+
+        </div>
+
+    </footer>
+
+
+    <!-- =========================
+         JAVASCRIPT
+    ========================== -->
+
+    <script src="js/restaurant-data.js"></script>
+
+    <script src="js/restaurant-menu-data.js"></script>
+
+    <script src="js/table-data.js"></script>
+    
+    <script src="js/main.js"></script>
+
+</body>
+
+</html>

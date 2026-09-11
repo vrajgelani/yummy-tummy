@@ -2632,3 +2632,275 @@ input {
         grid-template-columns: 1fr;
     }
 }
+
+/* =========================
+   TABLE BOOKING PAGE
+========================= */
+
+.book-table-page {
+    min-height: 500px;
+}
+
+.book-table-hero {
+    padding: 70px 0;
+    background-color: floralwhite;
+    border-bottom: 1px solid gainsboro;
+}
+
+.book-table-breadcrumb {
+    margin-bottom: 12px;
+    color: dimgray;
+    font-size: 14px;
+}
+
+.book-table-hero h1 {
+    margin-bottom: 10px;
+    font-size: 42px;
+}
+
+.book-table-hero > .container > p:last-child {
+    color: dimgray;
+}
+
+.book-table-section {
+    padding: 60px 0;
+}
+
+.booking-restaurant-card {
+    display: flex;
+    justify-content: space-between;
+    gap: 30px;
+    margin-bottom: 40px;
+    padding: 30px;
+    background-color: white;
+    border: 1px solid gainsboro;
+    border-radius: 18px;
+    box-shadow: 0 8px 25px lightgray;
+}
+
+.booking-restaurant-content {
+    flex: 1;
+}
+
+.booking-restaurant-cuisine {
+    margin-bottom: 6px;
+    color: darkorange;
+    font-size: 14px;
+    font-weight: 700;
+}
+
+.booking-restaurant-content h2 {
+    margin-bottom: 8px;
+    font-size: 30px;
+}
+
+.booking-restaurant-location {
+    margin-bottom: 0;
+    color: dimgray;
+}
+
+.booking-restaurant-timing {
+    min-width: 210px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 8px 20px;
+    align-content: center;
+    padding-left: 30px;
+    border-left: 1px solid gainsboro;
+}
+
+.booking-restaurant-timing span {
+    color: dimgray;
+    font-size: 13px;
+}
+
+.booking-restaurant-timing strong {
+    color: black;
+    font-size: 14px;
+}
+
+.booking-instructions {
+    margin-bottom: 25px;
+}
+
+.booking-instructions h2 {
+    margin-bottom: 8px;
+    font-size: 28px;
+}
+
+.booking-instructions p {
+    color: dimgray;
+}
+
+.table-status-legend {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 24px;
+    margin-bottom: 30px;
+    padding: 18px 20px;
+    background-color: whitesmoke;
+    border: 1px solid gainsboro;
+    border-radius: 12px;
+}
+
+.table-status-item {
+    display: flex;
+    align-items: center;
+    gap: 9px;
+    font-size: 14px;
+    font-weight: 600;
+}
+
+.table-status-box {
+    width: 22px;
+    height: 22px;
+    display: inline-block;
+    border: 1px solid dimgray;
+    border-radius: 5px;
+}
+
+.available-status {
+    background-color: green;
+}
+
+.booked-status {
+    background-color: grey;
+}
+
+.selected-status {
+    background-color: yellow;
+}
+
+.restaurant-table-layout {
+    min-height: 400px;
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 24px;
+    padding: 35px;
+    background-color: floralwhite;
+    border: 1px solid gainsboro;
+    border-radius: 20px;
+}
+
+.restaurant-table {
+    min-height: 115px;
+    padding: 20px;
+    border: 2px solid green;
+    border-radius: 14px;
+    background-color: green;
+    color: white;
+    cursor: pointer;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.restaurant-table:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 18px lightgray;
+}
+
+.restaurant-table[hidden] {
+    display: none;
+}
+
+.restaurant-table-number {
+    display: block;
+    margin-bottom: 7px;
+    font-size: 17px;
+    font-weight: 700;
+}
+
+.restaurant-table-status {
+    display: block;
+    font-size: 13px;
+    font-weight: 600;
+}
+
+.invalid-booking-state {
+    padding: 70px 25px;
+    text-align: center;
+    background-color: whitesmoke;
+    border: 1px solid gainsboro;
+    border-radius: 18px;
+}
+
+.invalid-booking-state h2 {
+    margin-bottom: 10px;
+}
+
+.invalid-booking-state p {
+    margin-bottom: 25px;
+    color: dimgray;
+}
+
+
+@media (max-width: 900px) {
+
+    .restaurant-table-layout {
+        grid-template-columns: repeat(3, 1fr);
+        padding: 25px;
+    }
+
+    .booking-restaurant-card {
+        flex-direction: column;
+    }
+
+    .booking-restaurant-timing {
+        min-width: 0;
+        padding-top: 20px;
+        padding-left: 0;
+        border-top: 1px solid gainsboro;
+        border-left: 0;
+    }
+}
+
+
+@media (max-width: 600px) {
+
+    .book-table-hero {
+        padding: 50px 0;
+    }
+
+    .book-table-hero h1 {
+        font-size: 32px;
+    }
+
+    .book-table-section {
+        padding: 40px 0;
+    }
+
+    .booking-restaurant-card {
+        padding: 22px;
+    }
+
+    .booking-restaurant-content h2 {
+        font-size: 25px;
+    }
+
+    .booking-restaurant-timing {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .table-status-legend {
+        gap: 15px;
+    }
+
+    .restaurant-table-layout {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 14px;
+        padding: 18px;
+    }
+
+    .restaurant-table {
+        min-height: 100px;
+        padding: 15px;
+    }
+
+    .restaurant-table-number {
+        font-size: 15px;
+    }
+
+    .restaurant-table-status {
+        font-size: 12px;
+    }
+}
