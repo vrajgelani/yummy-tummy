@@ -700,3 +700,296 @@ main {
     }
 
 }
+
+/* =========================================================
+   FOOD CATEGORIES
+   ========================================================= */
+
+.categories-section {
+    width: 100%;
+
+    padding: 80px 0;
+
+    background: var(--white-color);
+}
+
+
+.categories-container {
+    width: min(1200px, calc(100% - 40px));
+
+    margin: 0 auto;
+}
+
+
+/* =========================================================
+   SECTION HEADING
+   ========================================================= */
+
+.section-heading {
+    max-width: 650px;
+
+    margin-bottom: 42px;
+}
+
+
+.section-eyebrow {
+    margin: 0 0 10px;
+
+    color: var(--primary-color);
+
+    font-size: 13px;
+
+    font-weight: 800;
+
+    letter-spacing: 1px;
+
+    text-transform: uppercase;
+}
+
+
+.section-title {
+    margin: 0 0 12px;
+
+    color: var(--secondary-color);
+
+    font-size: clamp(30px, 4vw, 42px);
+
+    line-height: 1.15;
+
+    font-weight: 800;
+
+    letter-spacing: -1px;
+}
+
+
+.section-description {
+    margin: 0;
+
+    color: var(--text-color);
+
+    font-size: 15px;
+
+    line-height: 1.7;
+}
+
+
+/* =========================================================
+   CATEGORY GRID
+   ========================================================= */
+
+.categories-grid {
+    display: grid;
+
+    grid-template-columns:
+        repeat(5, minmax(0, 1fr));
+
+    gap: 22px;
+}
+
+
+/* =========================================================
+   CATEGORY CARD
+   ========================================================= */
+
+.category-card {
+    display: block;
+
+    min-width: 0;
+
+    padding: 14px;
+
+    background: var(--white-color);
+
+    border: 1px solid #eeeeee;
+
+    border-radius: 18px;
+
+    text-decoration: none;
+
+    box-shadow:
+        0 5px 20px rgba(31, 31, 31, 0.05);
+
+    transition:
+        transform 0.25s ease,
+        box-shadow 0.25s ease,
+        border-color 0.25s ease;
+}
+
+
+.category-card:hover {
+    transform: translateY(-6px);
+
+    border-color:
+        rgba(255, 107, 0, 0.25);
+
+    box-shadow:
+        0 16px 32px rgba(31, 31, 31, 0.10);
+}
+
+
+/* =========================================================
+   CATEGORY IMAGE
+   ========================================================= */
+
+.category-image-wrapper {
+    width: 100%;
+
+    aspect-ratio: 1 / 1;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    overflow: hidden;
+
+    border-radius: 14px;
+
+    background:
+        linear-gradient(
+            145deg,
+            #fff5eb,
+            #fffaf5
+        );
+}
+
+
+.category-image {
+    display: block;
+
+    width: 88%;
+    height: 88%;
+
+    object-fit: contain;
+
+    transition:
+        transform 0.3s ease;
+}
+
+
+.category-card:hover .category-image {
+    transform: scale(1.06);
+}
+
+
+/* =========================================================
+   CATEGORY NAME
+   ========================================================= */
+
+.category-content {
+    padding: 16px 4px 5px;
+
+    text-align: center;
+}
+
+
+.category-name {
+    margin: 0;
+
+    color: var(--secondary-color);
+
+    font-size: 16px;
+
+    line-height: 1.3;
+
+    font-weight: 800;
+}
+
+
+/* =========================================================
+   TABLET
+   ========================================================= */
+
+@media (max-width: 992px) {
+
+    .categories-section {
+        padding: 65px 0;
+    }
+
+
+    .categories-grid {
+        grid-template-columns:
+            repeat(3, minmax(0, 1fr));
+
+        gap: 18px;
+    }
+
+}
+
+
+/* =========================================================
+   MOBILE
+   ========================================================= */
+
+@media (max-width: 768px) {
+
+    .categories-section {
+        padding: 55px 0;
+    }
+
+
+    .categories-container {
+        width: min(100% - 30px, 600px);
+    }
+
+
+    .section-heading {
+        margin-bottom: 30px;
+
+        text-align: center;
+    }
+
+
+    .categories-grid {
+        grid-template-columns:
+            repeat(2, minmax(0, 1fr));
+
+        gap: 14px;
+    }
+
+
+    .category-card {
+        padding: 10px;
+
+        border-radius: 14px;
+    }
+
+
+    .category-content {
+        padding-top: 12px;
+    }
+
+
+    .category-name {
+        font-size: 14px;
+    }
+
+}
+
+
+/* =========================================================
+   SMALL MOBILE
+   ========================================================= */
+
+@media (max-width: 420px) {
+
+    .categories-container {
+        width: calc(100% - 24px);
+    }
+
+
+    .categories-grid {
+        gap: 10px;
+    }
+
+
+    .category-card {
+        padding: 8px;
+    }
+
+
+    .category-name {
+        font-size: 13px;
+    }
+
+}
