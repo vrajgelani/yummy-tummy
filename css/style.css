@@ -1,0 +1,374 @@
+:root {
+    --primary-color: #ff6b00;
+    --primary-dark: #e85f00;
+    --secondary-color: #111111;
+    --white-color: #ffffff;
+    --light-color: #f7f7f7;
+    --text-color: #222222;
+    --muted-color: #666666;
+    --border-color: #e5e5e5;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    min-height: 100vh;
+    background-color: var(--light-color);
+    color: var(--text-color);
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+button,
+input {
+    font: inherit;
+}
+
+.site-header {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    width: 100%;
+    background-color: var(--white-color);
+    border-bottom: 1px solid var(--border-color);
+}
+
+.header-container {
+    width: min(1400px, 100%);
+    min-height: 82px;
+    margin: 0 auto;
+    padding: 12px 30px;
+    display: flex;
+    align-items: center;
+    gap: 28px;
+}
+
+.brand-logo {
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+}
+
+.brand-logo img {
+    display: block;
+    width: 145px;
+    height: auto;
+    max-height: 55px;
+    object-fit: contain;
+}
+
+.main-navigation {
+    display: flex;
+    align-items: center;
+    gap: 24px;
+    flex-shrink: 0;
+}
+
+.nav-link {
+    position: relative;
+    padding: 8px 2px;
+    color: var(--text-color);
+    font-size: 15px;
+    font-weight: 600;
+    transition: color 0.2s ease;
+}
+
+.nav-link:hover,
+.nav-link.active {
+    color: var(--primary-color);
+}
+
+.nav-link.active::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    height: 2px;
+    background-color: var(--primary-color);
+    border-radius: 2px;
+}
+
+.header-search {
+    flex: 1;
+    min-width: 180px;
+    max-width: 420px;
+    margin-left: auto;
+}
+
+.search-label {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border: 0;
+}
+
+.header-search input {
+    width: 100%;
+    height: 44px;
+    padding: 0 16px;
+    border: 1px solid var(--border-color);
+    border-radius: 10px;
+    outline: none;
+    background-color: var(--light-color);
+    color: var(--text-color);
+    transition:
+        border-color 0.2s ease,
+        background-color 0.2s ease;
+}
+
+.header-search input::placeholder {
+    color: #888888;
+}
+
+.header-search input:focus {
+    border-color: var(--primary-color);
+    background-color: var(--white-color);
+}
+
+.header-actions {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    flex-shrink: 0;
+}
+
+.header-action {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 40px;
+    padding: 8px 12px;
+    color: var(--text-color);
+    font-size: 14px;
+    font-weight: 600;
+    border-radius: 8px;
+    transition:
+        color 0.2s ease,
+        background-color 0.2s ease;
+}
+
+.header-action:hover {
+    color: var(--primary-color);
+    background-color: #fff4ec;
+}
+
+.register-button {
+    color: var(--white-color);
+    background-color: var(--primary-color);
+}
+
+.register-button:hover {
+    color: var(--white-color);
+    background-color: var(--primary-dark);
+}
+
+.guest-actions {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+}
+
+.profile-button {
+    display: none;
+}
+
+.page-content {
+    min-height: calc(100vh - 82px);
+}
+
+.welcome-section {
+    min-height: calc(100vh - 82px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 40px 20px;
+    text-align: center;
+}
+
+.container {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.welcome-section .container {
+    max-width: 700px;
+    padding: 50px 30px;
+    background-color: var(--white-color);
+    border: 1px solid var(--border-color);
+    border-radius: 20px;
+}
+
+.brand-label {
+    margin-bottom: 15px;
+    color: var(--primary-color);
+    font-size: 16px;
+    font-weight: 700;
+    letter-spacing: 3px;
+}
+
+.welcome-section h1 {
+    margin-bottom: 18px;
+    color: var(--secondary-color);
+    font-size: 42px;
+    line-height: 1.2;
+}
+
+.welcome-text {
+    color: var(--muted-color);
+    font-size: 18px;
+    line-height: 1.6;
+}
+
+@media (max-width: 1100px) {
+    .header-container {
+        gap: 18px;
+        padding: 12px 20px;
+    }
+
+    .main-navigation {
+        gap: 16px;
+    }
+
+    .header-action {
+        padding: 8px 9px;
+    }
+
+    .brand-logo img {
+        width: 130px;
+    }
+}
+
+@media (max-width: 900px) {
+    .header-container {
+        flex-wrap: wrap;
+        padding: 14px 20px;
+    }
+
+    .main-navigation {
+        order: 3;
+        width: 100%;
+        justify-content: center;
+        padding-top: 4px;
+    }
+
+    .header-search {
+        max-width: none;
+    }
+
+    .header-actions {
+        margin-left: auto;
+    }
+}
+
+@media (max-width: 650px) {
+    .header-container {
+        min-height: auto;
+        padding: 12px 15px;
+        gap: 12px;
+    }
+
+    .brand-logo img {
+        width: 115px;
+        max-height: 45px;
+    }
+
+    .header-search {
+        order: 2;
+        flex-basis: 100%;
+        margin-left: 0;
+    }
+
+    .header-actions {
+        gap: 4px;
+    }
+
+    .header-action {
+        min-height: 36px;
+        padding: 7px 8px;
+        font-size: 13px;
+    }
+
+    .main-navigation {
+        order: 3;
+        gap: 18px;
+        overflow-x: auto;
+        justify-content: flex-start;
+        padding-bottom: 2px;
+    }
+
+    .nav-link {
+        white-space: nowrap;
+    }
+
+    .welcome-section {
+        padding: 25px 15px;
+    }
+
+    .welcome-section .container {
+        padding: 40px 20px;
+        border-radius: 16px;
+    }
+
+    .welcome-section h1 {
+        font-size: 32px;
+    }
+
+    .welcome-text {
+        font-size: 16px;
+    }
+}
+
+@media (max-width: 480px) {
+    .header-container {
+        padding: 10px 12px;
+    }
+
+    .brand-logo img {
+        width: 105px;
+    }
+
+    .header-actions {
+        gap: 2px;
+    }
+
+    .header-action {
+        padding: 6px;
+        font-size: 12px;
+    }
+
+    .main-navigation {
+        gap: 15px;
+    }
+
+    .nav-link {
+        font-size: 13px;
+    }
+
+    .welcome-section h1 {
+        font-size: 28px;
+    }
+
+    .brand-label {
+        font-size: 14px;
+        letter-spacing: 2px;
+    }
+}
