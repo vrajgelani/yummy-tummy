@@ -1,15 +1,15 @@
 :root {
-    --primary-color: #ff6b00;
-    --primary-dark: #e85f00;
-    --secondary-color: #111111;
-    --white-color: #ffffff;
-    --light-color: #f7f7f7;
-    --text-color: #222222;
-    --muted-color: #666666;
-    --border-color: #e5e5e5;
+    --primary-color: orange;
+    --primary-dark: darkorange;
+    --secondary-color: black;
+    --white-color: white;
+    --light-color: whitesmoke;
+    --text-color: #222;
+    --muted-color: dimgray;
+    --border-color: lightgray;
     --footer-background: #151515;
-    --footer-text: #dddddd;
-    --footer-muted: #999999;
+    --footer-text: gainsboro;
+    --footer-muted: gray;
 }
 
 * {
@@ -27,6 +27,7 @@ body {
     background-color: var(--light-color);
     color: var(--text-color);
     font-family: Arial, Helvetica, sans-serif;
+    line-height: 1.5;
 }
 
 a {
@@ -35,9 +36,29 @@ a {
 }
 
 button,
-input {
+input,
+select,
+textarea {
     font: inherit;
 }
+
+button {
+    cursor: pointer;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+.container {
+    width: min(1200px, 100%);
+    margin: 0 auto;
+    padding-left: 20px;
+    padding-right: 20px;
+}
+
+/* Common Header */
 
 .site-header {
     position: sticky;
@@ -59,9 +80,9 @@ input {
 }
 
 .brand-logo {
-    flex-shrink: 0;
     display: flex;
     align-items: center;
+    flex-shrink: 0;
 }
 
 .brand-logo img {
@@ -138,7 +159,7 @@ input {
 }
 
 .header-search input::placeholder {
-    color: #888888;
+    color: var(--muted-color);
 }
 
 .header-search input:focus {
@@ -170,7 +191,7 @@ input {
 
 .header-action:hover {
     color: var(--primary-color);
-    background-color: #fff4ec;
+    background-color: floralwhite;
 }
 
 .register-button {
@@ -193,6 +214,8 @@ input {
     display: none;
 }
 
+/* Common Page */
+
 .page-content {
     min-height: calc(100vh - 82px);
 }
@@ -202,19 +225,14 @@ input {
     display: flex;
     align-items: center;
     justify-content: center;
-    padding: 40px 20px;
+    padding: 60px 20px;
     text-align: center;
-}
-
-.container {
-    width: 100%;
-    max-width: 1200px;
-    margin: 0 auto;
 }
 
 .welcome-section .container {
     max-width: 700px;
-    padding: 50px 30px;
+    padding-top: 50px;
+    padding-bottom: 50px;
     background-color: var(--white-color);
     border: 1px solid var(--border-color);
     border-radius: 20px;
@@ -241,7 +259,7 @@ input {
     line-height: 1.6;
 }
 
-/* Footer */
+/* Common Footer */
 
 .site-footer {
     width: 100%;
@@ -338,6 +356,54 @@ input {
     color: var(--footer-muted);
     font-size: 12px;
     line-height: 1.5;
+}
+
+/* Common Button */
+
+.primary-button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 44px;
+    padding: 10px 20px;
+    border: 1px solid var(--primary-color);
+    border-radius: 8px;
+    background-color: var(--primary-color);
+    color: var(--white-color);
+    font-size: 14px;
+    font-weight: 700;
+    transition:
+        background-color 0.2s ease,
+        border-color 0.2s ease;
+}
+
+.primary-button:hover {
+    background-color: var(--primary-dark);
+    border-color: var(--primary-dark);
+}
+
+.secondary-button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 44px;
+    padding: 10px 20px;
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    background-color: var(--white-color);
+    color: var(--text-color);
+    font-size: 14px;
+    font-weight: 700;
+    transition:
+        color 0.2s ease,
+        border-color 0.2s ease,
+        background-color 0.2s ease;
+}
+
+.secondary-button:hover {
+    color: var(--primary-color);
+    border-color: var(--primary-color);
+    background-color: floralwhite;
 }
 
 /* Tablet */
