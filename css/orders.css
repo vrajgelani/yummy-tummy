@@ -561,3 +561,26 @@
     }
 
 }
+
+/* =========================================================
+   HIDDEN ORDER ELEMENTS FIX
+   ========================================================= */
+
+.order-card[hidden] {
+    display: none !important;
+}
+
+
+.order-card-items[hidden] {
+    display: none !important;
+}
+
+
+.order-item-preview[hidden] {
+    display: none !important;
+}
+
+
+.orders-empty-state[hidden] {
+    display: none !important;
+}

@@ -1,0 +1,1057 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <meta
+        name="description"
+        content="Manage your saved delivery addresses on Yummy Tummy."
+    >
+
+    <title>My Addresses | Yummy Tummy</title>
+
+    <link
+        rel="stylesheet"
+        href="css/style.css"
+    >
+
+    <link
+        rel="stylesheet"
+        href="css/responsive.css"
+    >
+
+    <link
+        rel="stylesheet"
+        href="css/address.css"
+    >
+</head>
+
+<body>
+
+    <!-- ==================== HEADER ==================== -->
+
+    <header class="site-header">
+
+        <div class="header-container">
+
+            <a
+                href="index.html"
+                class="brand-logo"
+            >
+                <img
+                    src="images/logo/yummy-tummy-logo.png"
+                    alt="Yummy Tummy Logo"
+                >
+            </a>
+
+
+            <nav
+                class="main-navigation"
+                aria-label="Main Navigation"
+            >
+
+                <a
+                    href="index.html"
+                    class="nav-link"
+                >
+                    Home
+                </a>
+
+                <a
+                    href="menu.html"
+                    class="nav-link"
+                >
+                    Menu
+                </a>
+
+                <a
+                    href="restaurants.html"
+                    class="nav-link"
+                >
+                    Restaurants
+                </a>
+
+            </nav>
+
+
+            <div class="header-search">
+
+                <input
+                    type="search"
+                    id="headerSearch"
+                    placeholder="Search food or restaurant"
+                    aria-label="Search food or restaurant"
+                    autocomplete="off"
+                >
+
+            </div>
+
+
+            <div class="header-actions">
+
+                <a
+                    href="wishlist.html"
+                    class="header-action"
+                >
+                    Wishlist
+                </a>
+
+                <a
+                    href="cart.html"
+                    class="header-action"
+                >
+                    Cart
+                </a>
+
+                <a
+                    href="login.html"
+                    class="header-action login-link"
+                >
+                    Login
+                </a>
+
+                <a
+                    href="register.html"
+                    class="header-action register-link"
+                >
+                    Register
+                </a>
+
+                <a
+                    href="profile.html"
+                    class="header-action profile-link hidden"
+                >
+                    Profile
+                </a>
+
+            </div>
+
+        </div>
+
+    </header>
+
+
+    <!-- ==================== MAIN ==================== -->
+
+    <main>
+
+        <section class="address-page">
+
+            <div class="address-container">
+
+                <!-- ==================== PAGE HEADING ==================== -->
+
+                <div class="address-page-heading">
+
+                    <p class="address-eyebrow">
+                        Yummy Tummy
+                    </p>
+
+                    <h1>
+                        My Addresses
+                    </h1>
+
+                    <p class="address-subtitle">
+                        Manage your saved delivery addresses.
+                    </p>
+
+                </div>
+
+
+                <!-- ==================== ADDRESS TOOLBAR ==================== -->
+
+                <section class="address-toolbar">
+
+                    <div class="address-toolbar-content">
+
+                        <div>
+
+                            <h2>
+                                Saved Addresses
+                            </h2>
+
+                            <p id="addressCount">
+                                0 Addresses
+                            </p>
+
+                        </div>
+
+
+                        <button
+                            type="button"
+                            class="address-add-button"
+                            id="addAddressButton"
+                        >
+                            Add New Address
+                        </button>
+
+                    </div>
+
+                </section>
+
+
+                <!-- ==================== ADD ADDRESS FORM ==================== -->
+
+                <section
+                    class="address-form-section"
+                    id="addressFormSection"
+                    hidden
+                >
+
+                    <div class="address-form-container">
+
+                        <div class="address-form-heading">
+
+                            <p class="address-eyebrow">
+                                Delivery Details
+                            </p>
+
+                            <h2>
+                                Add New Address
+                            </h2>
+
+                            <p>
+                                Enter your delivery details below.
+                            </p>
+
+                        </div>
+
+
+                        <form
+                            id="addressForm"
+                            class="address-form"
+                            novalidate
+                        >
+
+                            <!-- ==================== ADDRESS LABEL ==================== -->
+
+                            <div class="address-form-group">
+
+                                <label
+                                    for="addressLabel"
+                                >
+                                    Address Type
+                                </label>
+
+                                <select
+                                    id="addressLabel"
+                                    name="addressLabel"
+                                    required
+                                >
+                                    <option value="">
+                                        Select Address Type
+                                    </option>
+
+                                    <option value="Home">
+                                        Home
+                                    </option>
+
+                                    <option value="Work">
+                                        Work
+                                    </option>
+
+                                    <option value="Other">
+                                        Other
+                                    </option>
+                                </select>
+
+                            </div>
+
+
+                            <!-- ==================== NAME ==================== -->
+
+                            <div class="address-form-group">
+
+                                <label
+                                    for="addressName"
+                                >
+                                    Full Name
+                                </label>
+
+                                <input
+                                    type="text"
+                                    id="addressName"
+                                    name="addressName"
+                                    placeholder="Enter full name"
+                                    autocomplete="name"
+                                    required
+                                >
+
+                            </div>
+
+
+                            <!-- ==================== MOBILE ==================== -->
+
+                            <div class="address-form-group">
+
+                                <label
+                                    for="addressMobile"
+                                >
+                                    Mobile Number
+                                </label>
+
+                                <input
+                                    type="tel"
+                                    id="addressMobile"
+                                    name="addressMobile"
+                                    placeholder="Enter 10 digit mobile number"
+                                    inputmode="numeric"
+                                    maxlength="10"
+                                    autocomplete="tel"
+                                    required
+                                >
+
+                            </div>
+
+
+                            <!-- ==================== HOUSE ==================== -->
+
+                            <div class="address-form-group">
+
+                                <label
+                                    for="addressHouse"
+                                >
+                                    House / Flat / Building
+                                </label>
+
+                                <input
+                                    type="text"
+                                    id="addressHouse"
+                                    name="addressHouse"
+                                    placeholder="House / Flat / Building"
+                                    required
+                                >
+
+                            </div>
+
+
+                            <!-- ==================== AREA ==================== -->
+
+                            <div class="address-form-group">
+
+                                <label
+                                    for="addressArea"
+                                >
+                                    Area / Street
+                                </label>
+
+                                <input
+                                    type="text"
+                                    id="addressArea"
+                                    name="addressArea"
+                                    placeholder="Area / Street"
+                                    required
+                                >
+
+                            </div>
+
+
+                            <!-- ==================== CITY ==================== -->
+
+                            <div class="address-form-group">
+
+                                <label
+                                    for="addressCity"
+                                >
+                                    City
+                                </label>
+
+                                <input
+                                    type="text"
+                                    id="addressCity"
+                                    name="addressCity"
+                                    placeholder="Enter city"
+                                    autocomplete="address-level2"
+                                    required
+                                >
+
+                            </div>
+
+
+                            <!-- ==================== STATE ==================== -->
+
+                            <div class="address-form-group">
+
+                                <label
+                                    for="addressState"
+                                >
+                                    State
+                                </label>
+
+                                <input
+                                    type="text"
+                                    id="addressState"
+                                    name="addressState"
+                                    placeholder="Enter state"
+                                    autocomplete="address-level1"
+                                    required
+                                >
+
+                            </div>
+
+
+                            <!-- ==================== PINCODE ==================== -->
+
+                            <div class="address-form-group">
+
+                                <label
+                                    for="addressPincode"
+                                >
+                                    Pincode
+                                </label>
+
+                                <input
+                                    type="text"
+                                    id="addressPincode"
+                                    name="addressPincode"
+                                    placeholder="Enter 6 digit pincode"
+                                    inputmode="numeric"
+                                    maxlength="6"
+                                    autocomplete="postal-code"
+                                    required
+                                >
+
+                            </div>
+
+
+                            <!-- ==================== FORM ACTIONS ==================== -->
+
+                            <div class="address-form-actions">
+
+                                <button
+                                    type="submit"
+                                    class="address-save-button"
+                                    id="saveAddressButton"
+                                >
+                                    Save Address
+                                </button>
+
+                                <button
+                                    type="button"
+                                    class="address-cancel-button"
+                                    id="cancelAddressButton"
+                                >
+                                    Cancel
+                                </button>
+
+                            </div>
+
+                        </form>
+
+                    </div>
+
+                </section>
+
+
+                <!-- ==================== ADDRESS CONTENT ==================== -->
+
+                <section
+                    class="address-content"
+                    aria-live="polite"
+                >
+
+                    <div
+                        class="address-grid"
+                        id="addressGrid"
+                    >
+
+                        <!-- ==================== ADDRESS CARD 1 ==================== -->
+
+                        <article
+                            class="address-card"
+                            hidden
+                        >
+
+                            <div class="address-card-content">
+
+                                <div class="address-card-top">
+
+                                    <div>
+
+                                        <p
+                                            class="address-card-label"
+                                            data-address-label
+                                        >
+                                            Home
+                                        </p>
+
+                                        <h3
+                                            data-address-name
+                                        >
+                                            Address Name
+                                        </h3>
+
+                                    </div>
+
+                                </div>
+
+
+                                <p
+                                    class="address-card-line"
+                                    data-address-line
+                                >
+                                    Address Line
+                                </p>
+
+                                <p
+                                    class="address-card-line"
+                                    data-address-city
+                                >
+                                    City
+                                </p>
+
+                                <p
+                                    class="address-card-line"
+                                    data-address-state
+                                >
+                                    State
+                                </p>
+
+                                <p
+                                    class="address-card-line"
+                                    data-address-pincode
+                                >
+                                    Pincode
+                                </p>
+
+                                <p
+                                    class="address-card-line"
+                                    data-address-mobile
+                                >
+                                    Mobile
+                                </p>
+
+
+                                <div class="address-card-actions">
+
+                                    <button
+                                        type="button"
+                                        class="address-select-button"
+                                        data-address-select
+                                    >
+                                        Select
+                                    </button>
+
+                                    <button
+                                        type="button"
+                                        class="address-edit-button"
+                                        data-address-edit
+                                    >
+                                        Edit
+                                    </button>
+
+                                    <button
+                                        type="button"
+                                        class="address-delete-button"
+                                        data-address-delete
+                                    >
+                                        Delete
+                                    </button>
+
+                                </div>
+
+                            </div>
+
+                        </article>
+
+
+                        <!-- ==================== ADDRESS CARD 2 ==================== -->
+
+                        <article
+                            class="address-card"
+                            hidden
+                        >
+
+                            <div class="address-card-content">
+
+                                <div class="address-card-top">
+
+                                    <div>
+
+                                        <p
+                                            class="address-card-label"
+                                            data-address-label
+                                        >
+                                            Home
+                                        </p>
+
+                                        <h3
+                                            data-address-name
+                                        >
+                                            Address Name
+                                        </h3>
+
+                                    </div>
+
+                                </div>
+
+
+                                <p
+                                    class="address-card-line"
+                                    data-address-line
+                                >
+                                    Address Line
+                                </p>
+
+                                <p
+                                    class="address-card-line"
+                                    data-address-city
+                                >
+                                    City
+                                </p>
+
+                                <p
+                                    class="address-card-line"
+                                    data-address-state
+                                >
+                                    State
+                                </p>
+
+                                <p
+                                    class="address-card-line"
+                                    data-address-pincode
+                                >
+                                    Pincode
+                                </p>
+
+                                <p
+                                    class="address-card-line"
+                                    data-address-mobile
+                                >
+                                    Mobile
+                                </p>
+
+
+                                <div class="address-card-actions">
+
+                                    <button
+                                        type="button"
+                                        class="address-select-button"
+                                        data-address-select
+                                    >
+                                        Select
+                                    </button>
+
+                                    <button
+                                        type="button"
+                                        class="address-edit-button"
+                                        data-address-edit
+                                    >
+                                        Edit
+                                    </button>
+
+                                    <button
+                                        type="button"
+                                        class="address-delete-button"
+                                        data-address-delete
+                                    >
+                                        Delete
+                                    </button>
+
+                                </div>
+
+                            </div>
+
+                        </article>
+
+
+                        <!-- ==================== ADDRESS CARD 3 ==================== -->
+
+                        <article
+                            class="address-card"
+                            hidden
+                        >
+
+                            <div class="address-card-content">
+
+                                <div class="address-card-top">
+
+                                    <div>
+
+                                        <p
+                                            class="address-card-label"
+                                            data-address-label
+                                        >
+                                            Home
+                                        </p>
+
+                                        <h3
+                                            data-address-name
+                                        >
+                                            Address Name
+                                        </h3>
+
+                                    </div>
+
+                                </div>
+
+
+                                <p
+                                    class="address-card-line"
+                                    data-address-line
+                                >
+                                    Address Line
+                                </p>
+
+                                <p
+                                    class="address-card-line"
+                                    data-address-city
+                                >
+                                    City
+                                </p>
+
+                                <p
+                                    class="address-card-line"
+                                    data-address-state
+                                >
+                                    State
+                                </p>
+
+                                <p
+                                    class="address-card-line"
+                                    data-address-pincode
+                                >
+                                    Pincode
+                                </p>
+
+                                <p
+                                    class="address-card-line"
+                                    data-address-mobile
+                                >
+                                    Mobile
+                                </p>
+
+
+                                <div class="address-card-actions">
+
+                                    <button
+                                        type="button"
+                                        class="address-select-button"
+                                        data-address-select
+                                    >
+                                        Select
+                                    </button>
+
+                                    <button
+                                        type="button"
+                                        class="address-edit-button"
+                                        data-address-edit
+                                    >
+                                        Edit
+                                    </button>
+
+                                    <button
+                                        type="button"
+                                        class="address-delete-button"
+                                        data-address-delete
+                                    >
+                                        Delete
+                                    </button>
+
+                                </div>
+
+                            </div>
+
+                        </article>
+
+
+                        <!-- ==================== ADDRESS CARD 4 ==================== -->
+
+                        <article
+                            class="address-card"
+                            hidden
+                        >
+
+                            <div class="address-card-content">
+
+                                <div class="address-card-top">
+
+                                    <div>
+
+                                        <p
+                                            class="address-card-label"
+                                            data-address-label
+                                        >
+                                            Home
+                                        </p>
+
+                                        <h3
+                                            data-address-name
+                                        >
+                                            Address Name
+                                        </h3>
+
+                                    </div>
+
+                                </div>
+
+
+                                <p
+                                    class="address-card-line"
+                                    data-address-line
+                                >
+                                    Address Line
+                                </p>
+
+                                <p
+                                    class="address-card-line"
+                                    data-address-city
+                                >
+                                    City
+                                </p>
+
+                                <p
+                                    class="address-card-line"
+                                    data-address-state
+                                >
+                                    State
+                                </p>
+
+                                <p
+                                    class="address-card-line"
+                                    data-address-pincode
+                                >
+                                    Pincode
+                                </p>
+
+                                <p
+                                    class="address-card-line"
+                                    data-address-mobile
+                                >
+                                    Mobile
+                                </p>
+
+
+                                <div class="address-card-actions">
+
+                                    <button
+                                        type="button"
+                                        class="address-select-button"
+                                        data-address-select
+                                    >
+                                        Select
+                                    </button>
+
+                                    <button
+                                        type="button"
+                                        class="address-edit-button"
+                                        data-address-edit
+                                    >
+                                        Edit
+                                    </button>
+
+                                    <button
+                                        type="button"
+                                        class="address-delete-button"
+                                        data-address-delete
+                                    >
+                                        Delete
+                                    </button>
+
+                                </div>
+
+                            </div>
+
+                        </article>
+
+                    </div>
+
+
+                    <!-- ==================== EMPTY STATE ==================== -->
+
+                    <div
+                        class="address-empty-state"
+                        id="addressEmptyState"
+                    >
+
+                        <h2>
+                            No Saved Addresses
+                        </h2>
+
+                        <p>
+                            Add your delivery address to make
+                            checkout faster and easier.
+                        </p>
+
+                        <button
+                            type="button"
+                            class="address-empty-button"
+                            id="emptyAddAddressButton"
+                        >
+                            Add New Address
+                        </button>
+
+                    </div>
+
+                </section>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <!-- ==================== FOOTER ==================== -->
+
+    <footer class="site-footer">
+
+        <div class="footer-container">
+
+            <div class="footer-brand">
+
+                <a
+                    href="index.html"
+                    class="footer-brand-link"
+                >
+
+                    <img
+                        src="images/logo/yummy-tummy-logo.png"
+                        alt="Yummy Tummy Logo"
+                        class="footer-logo"
+                    >
+
+                </a>
+
+                <p class="footer-description">
+                    Delicious vegetarian food and restaurant table
+                    booking, all in one place.
+                </p>
+
+            </div>
+
+
+            <div class="footer-links">
+
+                <div class="footer-column">
+
+                    <h3 class="footer-title">
+                        Quick Links
+                    </h3>
+
+                    <a
+                        href="index.html"
+                        class="footer-link"
+                    >
+                        Home
+                    </a>
+
+                    <a
+                        href="menu.html"
+                        class="footer-link"
+                    >
+                        Menu
+                    </a>
+
+                    <a
+                        href="restaurants.html"
+                        class="footer-link"
+                    >
+                        Restaurants
+                    </a>
+
+                </div>
+
+
+                <div class="footer-column">
+
+                    <h3 class="footer-title">
+                        Customer
+                    </h3>
+
+                    <a
+                        href="wishlist.html"
+                        class="footer-link"
+                    >
+                        Wishlist
+                    </a>
+
+                    <a
+                        href="cart.html"
+                        class="footer-link"
+                    >
+                        Cart
+                    </a>
+
+                    <a
+                        href="profile.html"
+                        class="footer-link"
+                    >
+                        Profile
+                    </a>
+
+                    <a
+                        href="orders.html"
+                        class="footer-link"
+                    >
+                        My Orders
+                    </a>
+
+                </div>
+
+
+                <div class="footer-column">
+
+                    <h3 class="footer-title">
+                        Account
+                    </h3>
+
+                    <a
+                        href="login.html"
+                        class="footer-link"
+                    >
+                        Login
+                    </a>
+
+                    <a
+                        href="register.html"
+                        class="footer-link"
+                    >
+                        Register
+                    </a>
+
+                </div>
+
+
+                <div class="footer-column">
+
+                    <h3 class="footer-title">
+                        Yummy Tummy
+                    </h3>
+
+                    <p class="footer-information-text">
+                        Discover vegetarian food, restaurants and
+                        table booking with Yummy Tummy.
+                    </p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <div class="footer-bottom">
+
+            <p class="copyright-text">
+                © 2026 Yummy Tummy. All rights reserved.
+            </p>
+
+        </div>
+
+    </footer>
+
+
+    <!-- ==================== SCRIPTS ==================== -->
+
+    <script src="js/auth.js"></script>
+    <script src="js/address.js"></script>
+    <script src="js/main.js"></script>
+
+</body>
+</html>

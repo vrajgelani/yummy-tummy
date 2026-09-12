@@ -10,41 +10,21 @@
         content="width=device-width, initial-scale=1.0"
     >
 
-    <meta
-        name="description"
-        content="View detailed vegetarian food information, add food to cart, and save food to wishlist on Yummy Tummy."
-    >
-
     <title>Food Details | Yummy Tummy</title>
-
-
-    <!-- =====================================================
-         MAIN CSS
-    ====================================================== -->
 
     <link
         rel="stylesheet"
         href="css/style.css"
     >
 
-
-    <!-- =====================================================
-         FOOD DETAILS CSS
-    ====================================================== -->
+    <link
+        rel="stylesheet"
+        href="css/responsive.css"
+    >
 
     <link
         rel="stylesheet"
         href="css/food-details.css"
-    >
-
-
-    <!-- =====================================================
-         RESPONSIVE CSS
-    ====================================================== -->
-
-    <link
-        rel="stylesheet"
-        href="css/responsive.css"
     >
 
 </head>
@@ -52,201 +32,151 @@
 
 <body>
 
+    <!-- ==================== HEADER ==================== -->
 
-    <!-- =====================================================
-         HEADER
-    ====================================================== -->
+    <!-- ==================== HEADER ==================== -->
 
-    <header class="site-header">
+<header class="site-header">
 
-        <div class="header-container">
+    <div class="header-container">
+
+        <a
+            href="index.html"
+            class="brand-logo"
+        >
+            <img
+                src="images/logo/yummy-tummy-logo.png"
+                alt="Yummy Tummy Logo"
+            >
+        </a>
 
 
-            <!-- =================================================
-                 LOGO
-            ================================================== -->
+        <nav class="main-navigation">
 
             <a
                 href="index.html"
-                class="brand-logo"
-                aria-label="Yummy Tummy Home"
+                class="nav-link"
             >
-
-                <img
-                    src="images/logo/yummy-tummy-logo.png"
-                    alt="Yummy Tummy Logo"
-                >
-
+                Home
             </a>
 
-
-            <!-- =================================================
-                 MAIN NAVIGATION
-            ================================================== -->
-
-            <nav
-                class="main-navigation"
-                aria-label="Main Navigation"
+            <a
+                href="menu.html"
+                class="nav-link"
             >
+                Menu
+            </a>
 
-                <a
-                    href="index.html"
-                    class="nav-link"
-                >
-                    Home
-                </a>
+            <a
+                href="restaurants.html"
+                class="nav-link"
+            >
+                Restaurants
+            </a>
 
-
-                <a
-                    href="menu.html"
-                    class="nav-link"
-                >
-                    Menu
-                </a>
+        </nav>
 
 
-                <a
-                    href="restaurants.html"
-                    class="nav-link"
-                >
-                    Restaurants
-                </a>
+        <div class="header-search">
 
-            </nav>
-
-
-            <!-- =================================================
-                 HEADER SEARCH
-            ================================================== -->
-
-            <div class="header-search">
-
-                <input
-                    type="search"
-                    id="headerSearch"
-                    placeholder="Search food or restaurant"
-                    aria-label="Search food or restaurant"
-                    autocomplete="off"
-                >
-
-            </div>
-
-
-            <!-- =================================================
-                 HEADER ACTIONS
-            ================================================== -->
-
-            <div class="header-actions">
-
-
-                <!-- WISHLIST -->
-
-                <a
-                    href="wishlist.html"
-                    class="header-action"
-                >
-                    Wishlist
-                </a>
-
-
-                <!-- CART -->
-
-                <a
-                    href="cart.html"
-                    class="header-action"
-                >
-                    Cart
-                </a>
-
-
-                <!-- LOGIN -->
-
-                <a
-                    href="login.html"
-                    class="header-action login-link"
-                >
-                    Login
-                </a>
-
-
-                <!-- REGISTER -->
-
-                <a
-                    href="register.html"
-                    class="header-action register-link"
-                >
-                    Register
-                </a>
-
-
-                <!-- PROFILE -->
-
-                <a
-                    href="profile.html"
-                    class="header-action profile-link hidden"
-                >
-                    Profile
-                </a>
-
-            </div>
+            <input
+                type="search"
+                id="headerSearch"
+                placeholder="Search food or restaurant"
+                aria-label="Search food or restaurant"
+                autocomplete="off"
+            >
 
         </div>
 
-    </header>
+
+        <div class="header-actions">
+
+            <a
+                href="wishlist.html"
+                class="header-action wishlist-link"
+            >
+                Wishlist
+            </a>
 
 
+            <a
+                href="cart.html"
+                class="header-action cart-link"
+            >
+                Cart
+            </a>
 
-    <!-- =====================================================
-         MAIN
-    ====================================================== -->
 
-    <main>
+            <a
+                href="login.html"
+                class="header-action login-link"
+                id="loginHeaderLink"
+            >
+                Login
+            </a>
 
 
-        <!-- =================================================
-             FOOD DETAILS PAGE
-        ================================================== -->
+            <a
+                href="register.html"
+                class="header-action register-link"
+                id="registerHeaderLink"
+            >
+                Register
+            </a>
+
+
+            <a
+                href="profile.html"
+                class="header-action profile-link"
+                id="profileHeaderLink"
+                hidden
+            >
+                Profile
+            </a>
+
+        </div>
+
+    </div>
+
+</header>
+
+
+    <!-- ==================== MAIN ==================== -->
+
+    <main class="food-details-main">
 
         <section
-            class="food-details-page"
-            aria-labelledby="foodDetailsName"
+            class="food-details-section"
+            id="foodDetailsSection"
         >
 
-            <div class="section-container">
+            <div class="container">
 
-
-                <!-- =================================================
-                     BACK BUTTON
-                ================================================== -->
+                <!-- Back Button -->
 
                 <div class="food-details-back">
 
-                    <button
-                        type="button"
+                    <a
+                        href="menu.html"
                         id="foodBackButton"
                         class="food-back-button"
                     >
-                        Back
-                    </button>
+                        Back to Menu
+                    </a>
 
                 </div>
 
 
+                <!-- Food Details Card -->
 
-                <!-- =================================================
-                     FOOD DETAILS
-                ================================================== -->
-
-                <section
-                    id="foodDetailsSection"
-                    class="food-details-section"
-                    aria-live="polite"
+                <article
+                    class="food-details-card"
+                    id="foodDetails"
+                    hidden
                 >
 
-
-                    <!-- =================================================
-                         FOOD IMAGE
-                    ================================================== -->
+                    <!-- FOOD IMAGE -->
 
                     <div class="food-details-image-wrapper">
 
@@ -254,153 +184,149 @@
                             id="foodDetailsImage"
                             class="food-details-image"
                             src=""
-                            alt="Food"
+                            alt=""
                         >
 
                     </div>
 
 
-
-                    <!-- =================================================
-                         FOOD CONTENT
-                    ================================================== -->
+                    <!-- FOOD CONTENT -->
 
                     <div class="food-details-content">
-
-
-                        <!-- CATEGORY -->
 
                         <p
                             id="foodDetailsCategory"
                             class="food-details-category"
                         >
-                            Food Category
                         </p>
 
 
-                        <!-- FOOD NAME -->
-
-                        <h1 id="foodDetailsName">
-                            Food Name
+                        <h1
+                            id="foodDetailsName"
+                            class="food-details-title"
+                        >
                         </h1>
 
 
-                        <!-- RATING -->
+                        <div class="food-details-rating-row">
 
-                        <p
-                            id="foodDetailsRating"
-                            class="food-details-rating"
-                        >
-                            0.0
-                        </p>
+                            <span
+                                id="foodDetailsRating"
+                                class="food-details-rating"
+                            >
+                            </span>
 
+                            <span class="food-vegetarian-badge">
+                                100% Vegetarian
+                            </span>
 
-                        <!-- PRICE -->
-
-                        <p
-                            id="foodDetailsPrice"
-                            class="food-details-price"
-                        >
-                            ₹0
-                        </p>
+                        </div>
 
 
+                        <div class="food-details-price-box">
 
-                        <!-- =================================================
-                             DESCRIPTION
-                        ================================================== -->
+                            <span
+                                id="foodDetailsPrice"
+                                class="food-details-price"
+                            >
+                            </span>
 
-                        <div class="food-details-description">
+                        </div>
+
+
+                        <div class="food-details-description-box">
 
                             <h2>
                                 About This Food
                             </h2>
 
-                            <p id="foodDetailsDescription">
-                                Delicious vegetarian food prepared with quality ingredients.
+                            <p
+                                id="foodDetailsDescription"
+                            >
                             </p>
 
                         </div>
 
 
+                        <!-- RESTAURANT INFORMATION -->
 
-                        <!-- =================================================
-                             RESTAURANT INFORMATION
-                        ================================================== -->
-
-                        <div class="food-restaurant-info">
+                        <div class="food-restaurant-box">
 
                             <h2>
                                 Restaurant Information
                             </h2>
 
 
-                            <p>
+                            <div class="food-restaurant-grid">
 
-                                <strong>
-                                    Restaurant:
-                                </strong>
+                                <div class="food-restaurant-item">
 
-                                <span id="foodDetailsRestaurantName">
-                                    Not Available
-                                </span>
+                                    <span class="food-restaurant-label">
+                                        Restaurant
+                                    </span>
 
-                            </p>
+                                    <strong
+                                        id="foodDetailsRestaurantName"
+                                        class="food-restaurant-value"
+                                    >
+                                        Yummy Tummy
+                                    </strong>
 
-
-                            <p>
-
-                                <strong>
-                                    Cuisine:
-                                </strong>
-
-                                <span id="foodDetailsRestaurantCuisine">
-                                    Not Available
-                                </span>
-
-                            </p>
+                                </div>
 
 
-                            <p>
+                                <div class="food-restaurant-item">
 
-                                <strong>
-                                    Location:
-                                </strong>
+                                    <span class="food-restaurant-label">
+                                        Cuisine
+                                    </span>
 
-                                <span id="foodDetailsRestaurantLocation">
-                                    Not Available
-                                </span>
+                                    <strong
+                                        id="foodDetailsRestaurantCuisine"
+                                        class="food-restaurant-value"
+                                    >
+                                        Vegetarian
+                                    </strong>
 
-                            </p>
+                                </div>
+
+
+                                <div class="food-restaurant-item">
+
+                                    <span class="food-restaurant-label">
+                                        Location
+                                    </span>
+
+                                    <strong
+                                        id="foodDetailsRestaurantLocation"
+                                        class="food-restaurant-value"
+                                    >
+                                        Available on Yummy Tummy
+                                    </strong>
+
+                                </div>
+
+                            </div>
 
                         </div>
 
 
-
-                        <!-- =================================================
-                             FOOD ACTIONS
-                        ================================================== -->
+                        <!-- ACTION BUTTONS -->
 
                         <div class="food-details-actions">
-
-
-                            <!-- ADD TO CART -->
 
                             <button
                                 type="button"
                                 id="foodAddCartButton"
-                                class="food-action-button"
+                                class="food-action-button food-cart-button"
                             >
                                 Add to Cart
                             </button>
 
-
-                            <!-- WISHLIST -->
-
                             <button
                                 type="button"
                                 id="foodWishlistButton"
-                                class="food-action-button"
+                                class="food-action-button food-wishlist-button"
                             >
                                 Add to Wishlist
                             </button>
@@ -409,19 +335,15 @@
 
                     </div>
 
-                </section>
+                </article>
 
 
+                <!-- INVALID FOOD -->
 
-                <!-- =================================================
-                     INVALID FOOD STATE
-                ================================================== -->
-
-                <section
+                <div
                     id="foodInvalidState"
                     class="food-invalid-state"
                     hidden
-                    aria-live="assertive"
                 >
 
                     <h2>
@@ -429,18 +351,17 @@
                     </h2>
 
                     <p>
-                        The requested food is not available.
+                        The selected food is not available.
                     </p>
-
 
                     <a
                         href="menu.html"
-                        class="food-back-link"
+                        class="food-back-button"
                     >
-                        Explore Menu
+                        Back to Menu
                     </a>
 
-                </section>
+                </div>
 
             </div>
 
@@ -449,182 +370,140 @@
     </main>
 
 
-
-    <!-- =====================================================
-         FOOTER
-    ====================================================== -->
+    <!-- ==================== FOOTER ==================== -->
 
     <footer class="site-footer">
 
-        <div class="footer-container">
+        <div class="footer-main">
+
+            <div class="container">
+
+                <div class="footer-grid">
+
+                    <div class="footer-brand">
+
+                        <a
+                            href="index.html"
+                            class="footer-logo"
+                        >
+
+                            <img
+                                src="images/logo/yummy-tummy-logo.png"
+                                alt="Yummy Tummy"
+                            >
+
+                        </a>
 
 
-            <!-- =================================================
-                 FOOTER BRAND
-            ================================================== -->
+                        <p class="footer-description">
+                            Yummy Tummy makes it easy to discover
+                            delicious vegetarian food and explore
+                            restaurants from one place.
+                        </p>
 
-            <div class="footer-brand">
-
-                <a
-                    href="index.html"
-                    class="footer-brand-link"
-                    aria-label="Yummy Tummy Home"
-                >
-
-                    <img
-                        src="images/logo/yummy-tummy-logo.png"
-                        alt="Yummy Tummy Logo"
-                        class="footer-logo"
-                    >
-
-                </a>
+                    </div>
 
 
-                <p class="footer-description">
-                    Delicious vegetarian food and restaurant
-                    table booking, all in one place.
-                </p>
+                    <div class="footer-column">
 
-            </div>
+                        <h3 class="footer-title">
+                            Quick Links
+                        </h3>
 
+                        <nav class="footer-links">
 
+                            <a
+                                href="index.html"
+                                class="footer-link"
+                            >
+                                Home
+                            </a>
 
-            <!-- =================================================
-                 FOOTER LINKS
-            ================================================== -->
+                            <a
+                                href="menu.html"
+                                class="footer-link"
+                            >
+                                Menu
+                            </a>
 
-            <div class="footer-links">
+                            <a
+                                href="restaurants.html"
+                                class="footer-link"
+                            >
+                                Restaurants
+                            </a>
 
+                        </nav>
 
-                <!-- =================================================
-                     QUICK LINKS
-                ================================================== -->
-
-                <div class="footer-column">
-
-                    <h3 class="footer-title">
-                        Quick Links
-                    </h3>
-
-
-                    <a
-                        href="index.html"
-                        class="footer-link"
-                    >
-                        Home
-                    </a>
-
-
-                    <a
-                        href="menu.html"
-                        class="footer-link"
-                    >
-                        Menu
-                    </a>
+                    </div>
 
 
-                    <a
-                        href="restaurants.html"
-                        class="footer-link"
-                    >
-                        Restaurants
-                    </a>
+                    <div class="footer-column">
 
-                </div>
+                        <h3 class="footer-title">
+                            Customer
+                        </h3>
 
+                        <nav class="footer-links">
 
+                            <a
+                                href="wishlist.html"
+                                class="footer-link"
+                            >
+                                Wishlist
+                            </a>
 
-                <!-- =================================================
-                     CUSTOMER
-                ================================================== -->
+                            <a
+                                href="cart.html"
+                                class="footer-link"
+                            >
+                                My Cart
+                            </a>
 
-                <div class="footer-column">
+                            <a
+                                href="orders.html"
+                                class="footer-link"
+                            >
+                                My Orders
+                            </a>
 
-                    <h3 class="footer-title">
-                        Customer
-                    </h3>
+                            <a
+                                href="profile.html"
+                                class="footer-link"
+                            >
+                                Profile
+                            </a>
 
+                        </nav>
 
-                    <a
-                        href="wishlist.html"
-                        class="footer-link"
-                    >
-                        Wishlist
-                    </a>
-
-
-                    <a
-                        href="cart.html"
-                        class="footer-link"
-                    >
-                        Cart
-                    </a>
-
-
-                    <a
-                        href="profile.html"
-                        class="footer-link"
-                    >
-                        Profile
-                    </a>
+                    </div>
 
 
-                    <a
-                        href="orders.html"
-                        class="footer-link"
-                    >
-                        My Orders
-                    </a>
+                    <div class="footer-column">
 
-                </div>
+                        <h3 class="footer-title">
+                            Account
+                        </h3>
 
+                        <nav class="footer-links">
 
+                            <a
+                                href="login.html"
+                                class="footer-link"
+                            >
+                                Login
+                            </a>
 
-                <!-- =================================================
-                     ACCOUNT
-                ================================================== -->
+                            <a
+                                href="register.html"
+                                class="footer-link"
+                            >
+                                Register
+                            </a>
 
-                <div class="footer-column">
+                        </nav>
 
-                    <h3 class="footer-title">
-                        Account
-                    </h3>
-
-
-                    <a
-                        href="login.html"
-                        class="footer-link"
-                    >
-                        Login
-                    </a>
-
-
-                    <a
-                        href="register.html"
-                        class="footer-link"
-                    >
-                        Register
-                    </a>
-
-                </div>
-
-
-
-                <!-- =================================================
-                     INFORMATION
-                ================================================== -->
-
-                <div class="footer-column">
-
-                    <h3 class="footer-title">
-                        Yummy Tummy
-                    </h3>
-
-
-                    <p class="footer-information-text">
-                        Discover vegetarian food, restaurants
-                        and table booking with Yummy Tummy.
-                    </p>
+                    </div>
 
                 </div>
 
@@ -633,67 +512,56 @@
         </div>
 
 
-
-        <!-- =================================================
-             FOOTER BOTTOM
-        ================================================== -->
-
         <div class="footer-bottom">
 
-            <p class="copyright-text">
-                © 2026 Yummy Tummy. All rights reserved.
-            </p>
+            <div class="container">
+
+                <div class="footer-bottom-content">
+
+                    <p class="footer-copyright">
+                        © 2026 Yummy Tummy. All rights reserved.
+                    </p>
+
+                    <div class="footer-bottom-links">
+
+                        <a
+                            href="#"
+                            class="footer-bottom-link"
+                        >
+                            Privacy Policy
+                        </a>
+
+                        <a
+                            href="#"
+                            class="footer-bottom-link"
+                        >
+                            Terms & Conditions
+                        </a>
+
+                    </div>
+
+                </div>
+
+            </div>
 
         </div>
 
     </footer>
 
 
-
-    <!-- =====================================================
-         JAVASCRIPT
-    ====================================================== -->
-
-
-    <!-- FOOD DATA -->
+    <!-- ==================== JAVASCRIPT ==================== -->
 
     <script src="js/menu-data.js"></script>
 
-
-    <!-- RESTAURANT DATA -->
-
     <script src="js/restaurant-data.js"></script>
-
-
-    <!-- RESTAURANT MENU DATA -->
 
     <script src="js/restaurant-menu-data.js"></script>
 
-
-    <!-- AUTHENTICATION -->
-
     <script src="js/auth.js"></script>
-
-
-    <!-- GLOBAL SEARCH -->
-
-    <script src="js/global-search.js"></script>
-
-
-    <!-- FOOD DETAILS -->
 
     <script src="js/food-details.js"></script>
 
-
-    <!-- FOOD ACTIONS -->
-
-    <script src="js/food-actions.js"></script>
-
-
-    <!-- MAIN JAVASCRIPT -->
-
     <script src="js/main.js"></script>
-
 
 </body>
 

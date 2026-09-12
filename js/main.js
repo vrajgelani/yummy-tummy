@@ -29,44 +29,87 @@ function initializeMenuPage() {
 
     setupMenuFoodCards(cards);
 
-    const searchInput = document.getElementById("headerSearch");
-    const filterButtons = document.querySelectorAll(".menu-filter-button");
+    const searchInput =
+        document.getElementById("headerSearch");
 
-    let currentCategory = getCategoryFromURL();
-    let currentSearch = getSearchFromURL();
+    const filterButtons =
+        document.querySelectorAll(
+            ".menu-filter-button"
+        );
+
+    let currentCategory =
+        getCategoryFromURL();
+
+    let currentSearch =
+        getSearchFromURL();
 
     function applyMenuFilter() {
         let visibleCount = 0;
 
         cards.forEach(function (card) {
-            const categoryElement = card.querySelector(
-                "[data-food-category]"
-            );
 
-            const nameElement = card.querySelector(
-                "[data-food-name]"
-            );
+            const categoryElement =
+                card.querySelector(
+                    "[data-food-category]"
+                );
 
-            const category = categoryElement
-                ? categoryElement.textContent.trim().toLowerCase()
-                : "";
+            const nameElement =
+                card.querySelector(
+                    "[data-food-name]"
+                );
 
-            const name = nameElement
-                ? nameElement.textContent.trim().toLowerCase()
-                : "";
+            const category =
+                categoryElement
+                    ? categoryElement
+                        .textContent
+                        .trim()
+                        .toLowerCase()
+                    : "";
 
+            /*
+             * ADDED FIX
+             *
+             * Example:
+             * South Indian
+             *      ↓
+             * south-indian
+             *
+             * URL:
+             * category=south-indian
+             */
+            const normalizedCategory =
+                normalizeCategory(category);
+
+            const name =
+                nameElement
+                    ? nameElement
+                        .textContent
+                        .trim()
+                        .toLowerCase()
+                    : "";
+
+            /*
+             * ORIGINAL CATEGORY MATCH
+             * + NORMALIZED CATEGORY MATCH ADDED
+             */
             const categoryMatch =
                 currentCategory === "all" ||
-                category === currentCategory;
+                category === currentCategory ||
+                normalizedCategory ===
+                    currentCategory;
 
             const searchMatch =
                 currentSearch === "" ||
-                name.includes(currentSearch);
+                name.includes(
+                    currentSearch
+                );
 
             const shouldShow =
-                categoryMatch && searchMatch;
+                categoryMatch &&
+                searchMatch;
 
-            card.hidden = !shouldShow;
+            card.hidden =
+                !shouldShow;
 
             if (shouldShow) {
                 visibleCount++;
@@ -89,49 +132,76 @@ function initializeMenuPage() {
         );
     }
 
-    filterButtons.forEach(function (button) {
-        button.addEventListener("click", function () {
-            const category =
-                button.getAttribute("data-category") || "all";
+    filterButtons.forEach(
+        function (button) {
 
-            currentCategory =
-                normalizeCategory(category);
+            button.addEventListener(
+                "click",
+                function () {
 
-            updateURL(
-                currentCategory,
-                currentSearch
+                    const category =
+                        button.getAttribute(
+                            "data-category"
+                        ) || "all";
+
+                    currentCategory =
+                        normalizeCategory(
+                            category
+                        );
+
+                    updateURL(
+                        currentCategory,
+                        currentSearch
+                    );
+
+                    applyMenuFilter();
+                }
             );
-
-            applyMenuFilter();
-        });
-    });
+        }
+    );
 
     if (searchInput) {
-        searchInput.addEventListener("input", function () {
-            currentSearch =
-                searchInput.value.trim().toLowerCase();
 
-            updateURL(
-                currentCategory,
-                currentSearch
-            );
+        searchInput.addEventListener(
+            "input",
+            function () {
 
-            applyMenuFilter();
-        });
+                currentSearch =
+                    searchInput.value
+                        .trim()
+                        .toLowerCase();
 
-        searchInput.value = currentSearch;
+                updateURL(
+                    currentCategory,
+                    currentSearch
+                );
+
+                applyMenuFilter();
+            }
+        );
+
+        searchInput.value =
+            currentSearch;
     }
 
-    window.addEventListener("popstate", function () {
-        currentCategory = getCategoryFromURL();
-        currentSearch = getSearchFromURL();
+    window.addEventListener(
+        "popstate",
+        function () {
 
-        if (searchInput) {
-            searchInput.value = currentSearch;
+            currentCategory =
+                getCategoryFromURL();
+
+            currentSearch =
+                getSearchFromURL();
+
+            if (searchInput) {
+                searchInput.value =
+                    currentSearch;
+            }
+
+            applyMenuFilter();
         }
-
-        applyMenuFilter();
-    });
+    );
 
     applyMenuFilter();
 }
@@ -719,50 +789,159 @@ function initializeViewRestaurantPage() {
    RESTAURANT MENU
 ========================================================= */
 
-function initializeRestaurantMenu(
-    restaurant
-) {
+function initializeRestaurantMenu(restaurant) {
+    if (!restaurant) {
+        return;
+    }
+
+    /*
+       SUPPORT BOTH MENU CONTAINERS
+
+       New:
+       #restaurantMenuGrid
+
+       Existing:
+       #restaurantFoodList
+    */
+
     const grid =
         document.getElementById(
             "restaurantMenuGrid"
+        ) ||
+        document.getElementById(
+            "restaurantFoodList"
         );
 
     if (!grid) {
         return;
     }
 
-    const cards =
-        Array.from(
+    /*
+       SUPPORT BOTH CARD CLASSES
+
+       New:
+       .restaurant-menu-card
+
+       Existing:
+       .food-card
+    */
+
+    let cards = Array.from(
+        grid.querySelectorAll(
+            ".restaurant-menu-card"
+        )
+    );
+
+    if (cards.length === 0) {
+        cards = Array.from(
             grid.querySelectorAll(
-                ".restaurant-menu-card"
+                ".food-card"
             )
         );
+    }
+
+    if (cards.length === 0) {
+        return;
+    }
+
+    /*
+       CHECK RESTAURANT MENU DATA
+    */
 
     if (
         typeof restaurantMenuData ===
             "undefined" ||
-        !Array.isArray(
-            restaurantMenuData
-        )
+        !restaurantMenuData
     ) {
         return;
     }
 
-    const restaurantMenu =
-        restaurantMenuData.find(
-            function (item) {
-                return (
-                    item.restaurantId ===
-                    restaurant.id
-                );
-            }
-        );
+    let foods = [];
+
+    /*
+       FORMAT 1
+
+       restaurantMenuData = [
+           {
+               restaurantId: "...",
+               foods: [...]
+           }
+       ]
+    */
 
     if (
-        !restaurantMenu ||
-        !Array.isArray(
-            restaurantMenu.foods
+        Array.isArray(
+            restaurantMenuData
         )
+    ) {
+        const restaurantMenu =
+            restaurantMenuData.find(
+                function (item) {
+                    return (
+                        item &&
+                        item.restaurantId ===
+                            restaurant.id
+                    );
+                }
+            );
+
+        if (
+            restaurantMenu &&
+            Array.isArray(
+                restaurantMenu.foods
+            )
+        ) {
+            foods =
+                restaurantMenu.foods;
+        }
+    }
+
+    /*
+       FORMAT 2
+
+       restaurantMenuData = {
+           "rajasthani-rasoi": [...]
+       }
+    */
+
+    if (
+        !foods.length &&
+        typeof restaurantMenuData ===
+            "object" &&
+        !Array.isArray(
+            restaurantMenuData
+        )
+    ) {
+        const restaurantMenu =
+            restaurantMenuData[
+                restaurant.id
+            ];
+
+        if (
+            Array.isArray(
+                restaurantMenu
+            )
+        ) {
+            foods =
+                restaurantMenu;
+        } else if (
+            restaurantMenu &&
+            Array.isArray(
+                restaurantMenu.foods
+            )
+        ) {
+            foods =
+                restaurantMenu.foods;
+        }
+    }
+
+    /*
+       NO FOOD DATA
+    */
+
+    if (
+        !Array.isArray(foods) ||
+        foods.length === 0
     ) {
         cards.forEach(
             function (card) {
@@ -773,10 +952,14 @@ function initializeRestaurantMenu(
         return;
     }
 
+    /*
+       SHOW FOOD CARDS
+    */
+
     cards.forEach(
         function (card, index) {
             const food =
-                restaurantMenu.foods[index];
+                foods[index];
 
             if (!food) {
                 card.hidden = true;
@@ -785,58 +968,253 @@ function initializeRestaurantMenu(
 
             card.hidden = false;
 
-            setElementAttribute(
-                card,
-                ".restaurant-menu-image",
-                "src",
-                food.image
-            );
+            /*
+               IMAGE
 
-            setElementAttribute(
-                card,
-                ".restaurant-menu-image",
-                "alt",
-                food.name
-            );
+               Supports:
+               .restaurant-menu-image
+               .food-image
+            */
 
-            setText(
-                null,
-                food.category,
-                card,
-                ".restaurant-menu-category"
-            );
+            const image =
+                card.querySelector(
+                    ".restaurant-menu-image"
+                ) ||
+                card.querySelector(
+                    ".food-image"
+                ) ||
+                card.querySelector(
+                    "img"
+                );
 
-            setText(
-                null,
-                food.name,
-                card,
-                ".restaurant-menu-name"
-            );
+            /*
+               CATEGORY
 
-            setText(
-                null,
-                food.rating,
-                card,
-                ".restaurant-menu-rating"
-            );
+               Supports:
+               .restaurant-menu-category
+               .food-category
+            */
 
-            setText(
-                null,
-                "₹" + food.price,
-                card,
-                ".restaurant-menu-price"
-            );
+            const category =
+                card.querySelector(
+                    ".restaurant-menu-category"
+                ) ||
+                card.querySelector(
+                    ".food-category"
+                );
+
+            /*
+               NAME
+
+               Supports:
+               .restaurant-menu-name
+               .food-card-content h3
+            */
+
+            const name =
+                card.querySelector(
+                    ".restaurant-menu-name"
+                ) ||
+                card.querySelector(
+                    ".food-card-content h3"
+                );
+
+            /*
+               DESCRIPTION
+
+               Existing food card supports
+               .food-description
+            */
+
+            const description =
+                card.querySelector(
+                    ".restaurant-menu-description"
+                ) ||
+                card.querySelector(
+                    ".food-description"
+                );
+
+            /*
+               RATING
+
+               Supports:
+               .restaurant-menu-rating
+               .food-rating
+            */
+
+            const rating =
+                card.querySelector(
+                    ".restaurant-menu-rating"
+                ) ||
+                card.querySelector(
+                    ".food-rating"
+                );
+
+            /*
+               PRICE
+
+               Supports:
+               .restaurant-menu-price
+               .food-price
+            */
+
+            const price =
+                card.querySelector(
+                    ".restaurant-menu-price"
+                ) ||
+                card.querySelector(
+                    ".food-price"
+                );
+
+            /*
+               VIEW FOOD
+
+               Supports:
+               .restaurant-menu-link
+               .view-food-button
+               .view-food-link
+            */
 
             const link =
                 card.querySelector(
                     ".restaurant-menu-link"
+                ) ||
+                card.querySelector(
+                    ".view-food-button"
+                ) ||
+                card.querySelector(
+                    ".view-food-link"
+                ) ||
+                card.querySelector(
+                    "a"
                 );
+
+            /*
+               SET IMAGE
+            */
+
+            if (image) {
+                image.src =
+                    food.image || "";
+
+                image.alt =
+                    food.name ||
+                    "Vegetarian Food";
+
+                image.loading =
+                    "lazy";
+
+                image.onerror =
+                    function () {
+                        image.onerror =
+                            null;
+
+                        /*
+                           If exact image from
+                           restaurant-menu-data.js
+                           is unavailable,
+                           try ID based image.
+                        */
+
+                        if (
+                            food.id
+                        ) {
+                            image.src =
+                                "images/restaurant-food/" +
+                                restaurant.id +
+                                "/" +
+                                food.id +
+                                ".png";
+                        }
+                    };
+            }
+
+            /*
+               SET CATEGORY
+            */
+
+            if (category) {
+                category.textContent =
+                    food.category ||
+                    "Food";
+            }
+
+            /*
+               SET NAME
+            */
+
+            if (name) {
+                name.textContent =
+                    food.name ||
+                    "Food Name";
+            }
+
+            /*
+               SET DESCRIPTION
+            */
+
+            if (description) {
+                description.textContent =
+                    food.description ||
+                    "Delicious vegetarian food prepared with quality ingredients and authentic flavours.";
+            }
+
+            /*
+               SET RATING
+            */
+
+            if (rating) {
+                const foodRating =
+                    Number(
+                        food.rating
+                    );
+
+                if (
+                    !Number.isNaN(
+                        foodRating
+                    )
+                ) {
+                    rating.textContent =
+                        foodRating.toFixed(
+                            1
+                        );
+                } else {
+                    rating.textContent =
+                        "0.0";
+                }
+            }
+
+            /*
+               SET PRICE
+            */
+
+            if (price) {
+                price.textContent =
+                    "₹" +
+                    (
+                        food.price ||
+                        0
+                    );
+            }
+
+            /*
+               SET FOOD ID
+            */
+
+            card.setAttribute(
+                "data-food-id",
+                food.id || ""
+            );
+
+            /*
+               VIEW FOOD LINK
+            */
 
             if (link) {
                 link.href =
                     "food-details.html?food=" +
                     encodeURIComponent(
-                        food.id
+                        food.id || ""
                     ) +
                     "&restaurant=" +
                     encodeURIComponent(
@@ -845,6 +1223,21 @@ function initializeRestaurantMenu(
             }
         }
     );
+
+    /*
+       UPDATE MENU COUNT
+    */
+
+    const menuCount =
+        document.getElementById(
+            "menuItemCount"
+        );
+
+    if (menuCount) {
+        menuCount.textContent =
+            foods.length +
+            " Items";
+    }
 }
 
 
