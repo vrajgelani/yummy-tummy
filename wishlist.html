@@ -1,0 +1,826 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <meta
+        name="description"
+        content="View and manage your saved vegetarian foods on Yummy Tummy."
+    >
+
+    <title>Wishlist | Yummy Tummy</title>
+
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/wishlist.css">
+</head>
+
+<body>
+
+    <!-- ==================== HEADER ==================== -->
+
+    <header class="site-header">
+
+        <div class="header-container">
+
+            <a
+                href="index.html"
+                class="brand-logo"
+            >
+                <img
+                    src="images/logo/yummy-tummy-logo.png"
+                    alt="Yummy Tummy Logo"
+                >
+            </a>
+
+
+            <nav
+                class="main-navigation"
+                aria-label="Main Navigation"
+            >
+
+                <a
+                    href="index.html"
+                    class="nav-link"
+                >
+                    Home
+                </a>
+
+                <a
+                    href="menu.html"
+                    class="nav-link"
+                >
+                    Menu
+                </a>
+
+                <a
+                    href="restaurants.html"
+                    class="nav-link"
+                >
+                    Restaurants
+                </a>
+
+            </nav>
+
+
+            <div class="header-search">
+
+                <input
+                    type="search"
+                    id="headerSearch"
+                    placeholder="Search food or restaurant"
+                    aria-label="Search food or restaurant"
+                >
+
+            </div>
+
+
+            <div class="header-actions">
+
+                <a
+                    href="wishlist.html"
+                    class="header-action"
+                >
+                    Wishlist
+                </a>
+
+                <a
+                    href="cart.html"
+                    class="header-action"
+                >
+                    Cart
+                </a>
+
+                <a
+                    href="login.html"
+                    class="header-action login-link"
+                >
+                    Login
+                </a>
+
+                <a
+                    href="register.html"
+                    class="header-action register-link"
+                >
+                    Register
+                </a>
+
+                <a
+                    href="profile.html"
+                    class="header-action profile-link hidden"
+                >
+                    Profile
+                </a>
+
+            </div>
+
+        </div>
+
+    </header>
+
+
+    <!-- ==================== MAIN ==================== -->
+
+    <main>
+
+        <section class="wishlist-page">
+
+            <div class="wishlist-container">
+
+                <!-- ==================== PAGE HEADING ==================== -->
+
+                <div class="wishlist-page-heading">
+
+                    <p class="wishlist-eyebrow">
+                        Yummy Tummy
+                    </p>
+
+                    <h1>
+                        My Wishlist
+                    </h1>
+
+                    <p class="wishlist-subtitle">
+                        Save your favourite vegetarian foods
+                        and enjoy them anytime.
+                    </p>
+
+                </div>
+
+
+                <!-- ==================== WISHLIST CONTENT ==================== -->
+
+                <section
+                    class="wishlist-content"
+                    aria-live="polite"
+                >
+
+                    <div class="wishlist-results-heading">
+
+                        <h2>
+                            Saved Foods
+                        </h2>
+
+                        <p id="wishlistCount">
+                            0 Foods
+                        </p>
+
+                    </div>
+
+
+                    <!-- ==================== FOOD GRID ==================== -->
+
+                    <div
+                        id="wishlistFoodGrid"
+                        class="wishlist-food-grid"
+                    >
+
+                        <!-- Food Card 1 -->
+
+                        <article
+                            class="wishlist-food-card"
+                            data-wishlist-food-id="wishlist-01"
+                            hidden
+                        >
+
+                            <div class="wishlist-food-image-wrapper">
+
+                                <img
+                                    src=""
+                                    alt="Wishlist Food"
+                                    class="wishlist-food-image"
+                                    data-wishlist-image
+                                >
+
+                            </div>
+
+
+                            <div class="wishlist-food-content">
+
+                                <p
+                                    class="wishlist-food-category"
+                                    data-wishlist-category
+                                >
+                                    Category
+                                </p>
+
+                                <h3
+                                    class="wishlist-food-name"
+                                    data-wishlist-name
+                                >
+                                    Food Name
+                                </h3>
+
+                                <p
+                                    class="wishlist-food-rating"
+                                    data-wishlist-rating
+                                >
+                                    Rating
+                                </p>
+
+                                <p
+                                    class="wishlist-food-price"
+                                    data-wishlist-price
+                                >
+                                    ₹0
+                                </p>
+
+
+                                <div class="wishlist-food-actions">
+
+                                    <a
+                                        href="food-details.html"
+                                        class="wishlist-view-button"
+                                        data-wishlist-view
+                                    >
+                                        View Food
+                                    </a>
+
+                                    <button
+                                        type="button"
+                                        class="wishlist-remove-button"
+                                        data-wishlist-remove
+                                    >
+                                        Remove
+                                    </button>
+
+                                </div>
+
+                            </div>
+
+                        </article>
+
+
+                        <!-- Food Card 2 -->
+
+                        <article
+                            class="wishlist-food-card"
+                            data-wishlist-food-id="wishlist-02"
+                            hidden
+                        >
+
+                            <div class="wishlist-food-image-wrapper">
+
+                                <img
+                                    src=""
+                                    alt="Wishlist Food"
+                                    class="wishlist-food-image"
+                                    data-wishlist-image
+                                >
+
+                            </div>
+
+
+                            <div class="wishlist-food-content">
+
+                                <p
+                                    class="wishlist-food-category"
+                                    data-wishlist-category
+                                >
+                                    Category
+                                </p>
+
+                                <h3
+                                    class="wishlist-food-name"
+                                    data-wishlist-name
+                                >
+                                    Food Name
+                                </h3>
+
+                                <p
+                                    class="wishlist-food-rating"
+                                    data-wishlist-rating
+                                >
+                                    Rating
+                                </p>
+
+                                <p
+                                    class="wishlist-food-price"
+                                    data-wishlist-price
+                                >
+                                    ₹0
+                                </p>
+
+
+                                <div class="wishlist-food-actions">
+
+                                    <a
+                                        href="food-details.html"
+                                        class="wishlist-view-button"
+                                        data-wishlist-view
+                                    >
+                                        View Food
+                                    </a>
+
+                                    <button
+                                        type="button"
+                                        class="wishlist-remove-button"
+                                        data-wishlist-remove
+                                    >
+                                        Remove
+                                    </button>
+
+                                </div>
+
+                            </div>
+
+                        </article>
+
+
+                        <!-- Food Card 3 -->
+
+                        <article
+                            class="wishlist-food-card"
+                            data-wishlist-food-id="wishlist-03"
+                            hidden
+                        >
+
+                            <div class="wishlist-food-image-wrapper">
+
+                                <img
+                                    src=""
+                                    alt="Wishlist Food"
+                                    class="wishlist-food-image"
+                                    data-wishlist-image
+                                >
+
+                            </div>
+
+
+                            <div class="wishlist-food-content">
+
+                                <p
+                                    class="wishlist-food-category"
+                                    data-wishlist-category
+                                >
+                                    Category
+                                </p>
+
+                                <h3
+                                    class="wishlist-food-name"
+                                    data-wishlist-name
+                                >
+                                    Food Name
+                                </h3>
+
+                                <p
+                                    class="wishlist-food-rating"
+                                    data-wishlist-rating
+                                >
+                                    Rating
+                                </p>
+
+                                <p
+                                    class="wishlist-food-price"
+                                    data-wishlist-price
+                                >
+                                    ₹0
+                                </p>
+
+
+                                <div class="wishlist-food-actions">
+
+                                    <a
+                                        href="food-details.html"
+                                        class="wishlist-view-button"
+                                        data-wishlist-view
+                                    >
+                                        View Food
+                                    </a>
+
+                                    <button
+                                        type="button"
+                                        class="wishlist-remove-button"
+                                        data-wishlist-remove
+                                    >
+                                        Remove
+                                    </button>
+
+                                </div>
+
+                            </div>
+
+                        </article>
+
+
+                        <!-- Food Card 4 -->
+
+                        <article
+                            class="wishlist-food-card"
+                            data-wishlist-food-id="wishlist-04"
+                            hidden
+                        >
+
+                            <div class="wishlist-food-image-wrapper">
+
+                                <img
+                                    src=""
+                                    alt="Wishlist Food"
+                                    class="wishlist-food-image"
+                                    data-wishlist-image
+                                >
+
+                            </div>
+
+
+                            <div class="wishlist-food-content">
+
+                                <p
+                                    class="wishlist-food-category"
+                                    data-wishlist-category
+                                >
+                                    Category
+                                </p>
+
+                                <h3
+                                    class="wishlist-food-name"
+                                    data-wishlist-name
+                                >
+                                    Food Name
+                                </h3>
+
+                                <p
+                                    class="wishlist-food-rating"
+                                    data-wishlist-rating
+                                >
+                                    Rating
+                                </p>
+
+                                <p
+                                    class="wishlist-food-price"
+                                    data-wishlist-price
+                                >
+                                    ₹0
+                                </p>
+
+
+                                <div class="wishlist-food-actions">
+
+                                    <a
+                                        href="food-details.html"
+                                        class="wishlist-view-button"
+                                        data-wishlist-view
+                                    >
+                                        View Food
+                                    </a>
+
+                                    <button
+                                        type="button"
+                                        class="wishlist-remove-button"
+                                        data-wishlist-remove
+                                    >
+                                        Remove
+                                    </button>
+
+                                </div>
+
+                            </div>
+
+                        </article>
+
+
+                        <!-- Food Card 5 -->
+
+                        <article
+                            class="wishlist-food-card"
+                            data-wishlist-food-id="wishlist-05"
+                            hidden
+                        >
+
+                            <div class="wishlist-food-image-wrapper">
+
+                                <img
+                                    src=""
+                                    alt="Wishlist Food"
+                                    class="wishlist-food-image"
+                                    data-wishlist-image
+                                >
+
+                            </div>
+
+
+                            <div class="wishlist-food-content">
+
+                                <p
+                                    class="wishlist-food-category"
+                                    data-wishlist-category
+                                >
+                                    Category
+                                </p>
+
+                                <h3
+                                    class="wishlist-food-name"
+                                    data-wishlist-name
+                                >
+                                    Food Name
+                                </h3>
+
+                                <p
+                                    class="wishlist-food-rating"
+                                    data-wishlist-rating
+                                >
+                                    Rating
+                                </p>
+
+                                <p
+                                    class="wishlist-food-price"
+                                    data-wishlist-price
+                                >
+                                    ₹0
+                                </p>
+
+
+                                <div class="wishlist-food-actions">
+
+                                    <a
+                                        href="food-details.html"
+                                        class="wishlist-view-button"
+                                        data-wishlist-view
+                                    >
+                                        View Food
+                                    </a>
+
+                                    <button
+                                        type="button"
+                                        class="wishlist-remove-button"
+                                        data-wishlist-remove
+                                    >
+                                        Remove
+                                    </button>
+
+                                </div>
+
+                            </div>
+
+                        </article>
+
+
+                        <!-- Food Card 6 -->
+
+                        <article
+                            class="wishlist-food-card"
+                            data-wishlist-food-id="wishlist-06"
+                            hidden
+                        >
+
+                            <div class="wishlist-food-image-wrapper">
+
+                                <img
+                                    src=""
+                                    alt="Wishlist Food"
+                                    class="wishlist-food-image"
+                                    data-wishlist-image
+                                >
+
+                            </div>
+
+
+                            <div class="wishlist-food-content">
+
+                                <p
+                                    class="wishlist-food-category"
+                                    data-wishlist-category
+                                >
+                                    Category
+                                </p>
+
+                                <h3
+                                    class="wishlist-food-name"
+                                    data-wishlist-name
+                                >
+                                    Food Name
+                                </h3>
+
+                                <p
+                                    class="wishlist-food-rating"
+                                    data-wishlist-rating
+                                >
+                                    Rating
+                                </p>
+
+                                <p
+                                    class="wishlist-food-price"
+                                    data-wishlist-price
+                                >
+                                    ₹0
+                                </p>
+
+
+                                <div class="wishlist-food-actions">
+
+                                    <a
+                                        href="food-details.html"
+                                        class="wishlist-view-button"
+                                        data-wishlist-view
+                                    >
+                                        View Food
+                                    </a>
+
+                                    <button
+                                        type="button"
+                                        class="wishlist-remove-button"
+                                        data-wishlist-remove
+                                    >
+                                        Remove
+                                    </button>
+
+                                </div>
+
+                            </div>
+
+                        </article>
+
+                    </div>
+
+
+                    <!-- ==================== EMPTY STATE ==================== -->
+
+                    <div
+                        id="wishlistEmptyState"
+                        class="wishlist-empty-state"
+                    >
+
+                        <h2>
+                            Your Wishlist is Empty
+                        </h2>
+
+                        <p>
+                            Save your favourite vegetarian foods
+                            to find them here later.
+                        </p>
+
+                        <a
+                            href="menu.html"
+                            class="wishlist-explore-button"
+                        >
+                            Explore Menu
+                        </a>
+
+                    </div>
+
+                </section>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <!-- ==================== FOOTER ==================== -->
+
+    <footer class="site-footer">
+
+        <div class="footer-container">
+
+            <div class="footer-brand">
+
+                <a
+                    href="index.html"
+                    class="footer-brand-link"
+                >
+
+                    <img
+                        src="images/logo/yummy-tummy-logo.png"
+                        alt="Yummy Tummy Logo"
+                        class="footer-logo"
+                    >
+
+                </a>
+
+                <p class="footer-description">
+                    Delicious vegetarian food and restaurant table
+                    booking, all in one place.
+                </p>
+
+            </div>
+
+
+            <div class="footer-links">
+
+                <div class="footer-column">
+
+                    <h3 class="footer-title">
+                        Quick Links
+                    </h3>
+
+                    <a
+                        href="index.html"
+                        class="footer-link"
+                    >
+                        Home
+                    </a>
+
+                    <a
+                        href="menu.html"
+                        class="footer-link"
+                    >
+                        Menu
+                    </a>
+
+                    <a
+                        href="restaurants.html"
+                        class="footer-link"
+                    >
+                        Restaurants
+                    </a>
+
+                </div>
+
+
+                <div class="footer-column">
+
+                    <h3 class="footer-title">
+                        Customer
+                    </h3>
+
+                    <a
+                        href="wishlist.html"
+                        class="footer-link"
+                    >
+                        Wishlist
+                    </a>
+
+                    <a
+                        href="cart.html"
+                        class="footer-link"
+                    >
+                        Cart
+                    </a>
+
+                    <a
+                        href="profile.html"
+                        class="footer-link"
+                    >
+                        Profile
+                    </a>
+
+                    <a
+                        href="orders.html"
+                        class="footer-link"
+                    >
+                        My Orders
+                    </a>
+
+                </div>
+
+
+                <div class="footer-column">
+
+                    <h3 class="footer-title">
+                        Account
+                    </h3>
+
+                    <a
+                        href="login.html"
+                        class="footer-link"
+                    >
+                        Login
+                    </a>
+
+                    <a
+                        href="register.html"
+                        class="footer-link"
+                    >
+                        Register
+                    </a>
+
+                </div>
+
+
+                <div class="footer-column">
+
+                    <h3 class="footer-title">
+                        Yummy Tummy
+                    </h3>
+
+                    <p class="footer-information-text">
+                        Discover vegetarian food, restaurants and
+                        table booking with Yummy Tummy.
+                    </p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <div class="footer-bottom">
+
+            <p class="copyright-text">
+                © 2026 Yummy Tummy. All rights reserved.
+            </p>
+
+        </div>
+
+    </footer>
+
+
+    <script src="js/auth.js"></script>
+    <script src="js/main.js"></script>
+
+</body>
+</html>
