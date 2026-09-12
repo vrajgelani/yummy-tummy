@@ -1,0 +1,1192 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <meta
+        name="description"
+        content="View and manage your selected vegetarian foods on Yummy Tummy."
+    >
+
+    <title>Cart | Yummy Tummy</title>
+
+    <link
+        rel="stylesheet"
+        href="css/style.css"
+    >
+
+    <link
+        rel="stylesheet"
+        href="css/cart.css"
+    >
+
+</head>
+
+<body>
+
+    <!-- ==================== HEADER ==================== -->
+
+    <header class="site-header">
+
+        <div class="header-container">
+
+            <a
+                href="index.html"
+                class="brand-logo"
+            >
+
+                <img
+                    src="images/logo/yummy-tummy-logo.png"
+                    alt="Yummy Tummy Logo"
+                >
+
+            </a>
+
+
+            <nav
+                class="main-navigation"
+                aria-label="Main Navigation"
+            >
+
+                <a
+                    href="index.html"
+                    class="nav-link"
+                >
+                    Home
+                </a>
+
+                <a
+                    href="menu.html"
+                    class="nav-link"
+                >
+                    Menu
+                </a>
+
+                <a
+                    href="restaurants.html"
+                    class="nav-link"
+                >
+                    Restaurants
+                </a>
+
+            </nav>
+
+
+            <div class="header-search">
+
+                <input
+                    type="search"
+                    id="headerSearch"
+                    placeholder="Search food or restaurant"
+                    aria-label="Search food or restaurant"
+                >
+
+            </div>
+
+
+            <div class="header-actions">
+
+                <a
+                    href="wishlist.html"
+                    class="header-action"
+                >
+                    Wishlist
+                </a>
+
+                <a
+                    href="cart.html"
+                    class="header-action"
+                >
+                    Cart
+                </a>
+
+                <a
+                    href="login.html"
+                    class="header-action login-link"
+                >
+                    Login
+                </a>
+
+                <a
+                    href="register.html"
+                    class="header-action register-link"
+                >
+                    Register
+                </a>
+
+                <a
+                    href="profile.html"
+                    class="header-action profile-link hidden"
+                >
+                    Profile
+                </a>
+
+            </div>
+
+        </div>
+
+    </header>
+
+
+    <!-- ==================== MAIN ==================== -->
+
+    <main>
+
+        <section class="cart-page">
+
+            <div class="cart-container">
+
+                <!-- ==================== PAGE HEADING ==================== -->
+
+                <div class="cart-page-heading">
+
+                    <p class="cart-eyebrow">
+                        Yummy Tummy
+                    </p>
+
+                    <h1>
+                        My Cart
+                    </h1>
+
+                    <p class="cart-subtitle">
+                        Review your selected vegetarian foods
+                        before checkout.
+                    </p>
+
+                </div>
+
+
+                <!-- ==================== CART CONTENT ==================== -->
+
+                <section
+                    class="cart-content"
+                    aria-live="polite"
+                >
+
+                    <div class="cart-layout">
+
+                        <!-- ==================== CART ITEMS ==================== -->
+
+                        <div class="cart-items-section">
+
+                            <div class="cart-items-heading">
+
+                                <h2>
+                                    Your Items
+                                </h2>
+
+                                <p id="cartItemCount">
+                                    0 Items
+                                </p>
+
+                            </div>
+
+
+                            <div
+                                id="cartItemsList"
+                                class="cart-items-list"
+                            >
+
+                                <!-- ==================== CART ITEM 1 ==================== -->
+
+                                <article
+                                    class="cart-item"
+                                    data-cart-item-id="cart-01"
+                                    hidden
+                                >
+
+                                    <div class="cart-item-image-wrapper">
+
+                                        <img
+                                            src=""
+                                            alt="Cart Food"
+                                            class="cart-item-image"
+                                            data-cart-image
+                                        >
+
+                                    </div>
+
+
+                                    <div class="cart-item-information">
+
+                                        <p
+                                            class="cart-item-category"
+                                            data-cart-category
+                                        >
+                                            Category
+                                        </p>
+
+                                        <h3
+                                            class="cart-item-name"
+                                            data-cart-name
+                                        >
+                                            Food Name
+                                        </h3>
+
+                                        <p
+                                            class="cart-item-price"
+                                            data-cart-price
+                                        >
+                                            ₹0
+                                        </p>
+
+                                    </div>
+
+
+                                    <div class="cart-item-quantity">
+
+                                        <span class="cart-quantity-label">
+                                            Quantity
+                                        </span>
+
+                                        <div class="cart-quantity-controls">
+
+                                            <button
+                                                type="button"
+                                                class="cart-quantity-button"
+                                                data-cart-decrease
+                                            >
+                                                −
+                                            </button>
+
+                                            <span
+                                                class="cart-quantity-value"
+                                                data-cart-quantity
+                                            >
+                                                1
+                                            </span>
+
+                                            <button
+                                                type="button"
+                                                class="cart-quantity-button"
+                                                data-cart-increase
+                                            >
+                                                +
+                                            </button>
+
+                                        </div>
+
+                                    </div>
+
+
+                                    <div class="cart-item-total">
+
+                                        <span class="cart-total-label">
+                                            Item Total
+                                        </span>
+
+                                        <strong
+                                            data-cart-total
+                                        >
+                                            ₹0
+                                        </strong>
+
+                                    </div>
+
+
+                                    <div class="cart-item-actions">
+
+                                        <a
+                                            href="food-details.html"
+                                            class="cart-view-button"
+                                            data-cart-view
+                                        >
+                                            View Food
+                                        </a>
+
+                                        <button
+                                            type="button"
+                                            class="cart-remove-button"
+                                            data-cart-remove
+                                        >
+                                            Remove
+                                        </button>
+
+                                    </div>
+
+                                </article>
+
+
+                                <!-- ==================== CART ITEM 2 ==================== -->
+
+                                <article
+                                    class="cart-item"
+                                    data-cart-item-id="cart-02"
+                                    hidden
+                                >
+
+                                    <div class="cart-item-image-wrapper">
+
+                                        <img
+                                            src=""
+                                            alt="Cart Food"
+                                            class="cart-item-image"
+                                            data-cart-image
+                                        >
+
+                                    </div>
+
+
+                                    <div class="cart-item-information">
+
+                                        <p
+                                            class="cart-item-category"
+                                            data-cart-category
+                                        >
+                                            Category
+                                        </p>
+
+                                        <h3
+                                            class="cart-item-name"
+                                            data-cart-name
+                                        >
+                                            Food Name
+                                        </h3>
+
+                                        <p
+                                            class="cart-item-price"
+                                            data-cart-price
+                                        >
+                                            ₹0
+                                        </p>
+
+                                    </div>
+
+
+                                    <div class="cart-item-quantity">
+
+                                        <span class="cart-quantity-label">
+                                            Quantity
+                                        </span>
+
+                                        <div class="cart-quantity-controls">
+
+                                            <button
+                                                type="button"
+                                                class="cart-quantity-button"
+                                                data-cart-decrease
+                                            >
+                                                −
+                                            </button>
+
+                                            <span
+                                                class="cart-quantity-value"
+                                                data-cart-quantity
+                                            >
+                                                1
+                                            </span>
+
+                                            <button
+                                                type="button"
+                                                class="cart-quantity-button"
+                                                data-cart-increase
+                                            >
+                                                +
+                                            </button>
+
+                                        </div>
+
+                                    </div>
+
+
+                                    <div class="cart-item-total">
+
+                                        <span class="cart-total-label">
+                                            Item Total
+                                        </span>
+
+                                        <strong
+                                            data-cart-total
+                                        >
+                                            ₹0
+                                        </strong>
+
+                                    </div>
+
+
+                                    <div class="cart-item-actions">
+
+                                        <a
+                                            href="food-details.html"
+                                            class="cart-view-button"
+                                            data-cart-view
+                                        >
+                                            View Food
+                                        </a>
+
+                                        <button
+                                            type="button"
+                                            class="cart-remove-button"
+                                            data-cart-remove
+                                        >
+                                            Remove
+                                        </button>
+
+                                    </div>
+
+                                </article>
+
+
+                                <!-- ==================== CART ITEM 3 ==================== -->
+
+                                <article
+                                    class="cart-item"
+                                    data-cart-item-id="cart-03"
+                                    hidden
+                                >
+
+                                    <div class="cart-item-image-wrapper">
+
+                                        <img
+                                            src=""
+                                            alt="Cart Food"
+                                            class="cart-item-image"
+                                            data-cart-image
+                                        >
+
+                                    </div>
+
+
+                                    <div class="cart-item-information">
+
+                                        <p
+                                            class="cart-item-category"
+                                            data-cart-category
+                                        >
+                                            Category
+                                        </p>
+
+                                        <h3
+                                            class="cart-item-name"
+                                            data-cart-name
+                                        >
+                                            Food Name
+                                        </h3>
+
+                                        <p
+                                            class="cart-item-price"
+                                            data-cart-price
+                                        >
+                                            ₹0
+                                        </p>
+
+                                    </div>
+
+
+                                    <div class="cart-item-quantity">
+
+                                        <span class="cart-quantity-label">
+                                            Quantity
+                                        </span>
+
+                                        <div class="cart-quantity-controls">
+
+                                            <button
+                                                type="button"
+                                                class="cart-quantity-button"
+                                                data-cart-decrease
+                                            >
+                                                −
+                                            </button>
+
+                                            <span
+                                                class="cart-quantity-value"
+                                                data-cart-quantity
+                                            >
+                                                1
+                                            </span>
+
+                                            <button
+                                                type="button"
+                                                class="cart-quantity-button"
+                                                data-cart-increase
+                                            >
+                                                +
+                                            </button>
+
+                                        </div>
+
+                                    </div>
+
+
+                                    <div class="cart-item-total">
+
+                                        <span class="cart-total-label">
+                                            Item Total
+                                        </span>
+
+                                        <strong
+                                            data-cart-total
+                                        >
+                                            ₹0
+                                        </strong>
+
+                                    </div>
+
+
+                                    <div class="cart-item-actions">
+
+                                        <a
+                                            href="food-details.html"
+                                            class="cart-view-button"
+                                            data-cart-view
+                                        >
+                                            View Food
+                                        </a>
+
+                                        <button
+                                            type="button"
+                                            class="cart-remove-button"
+                                            data-cart-remove
+                                        >
+                                            Remove
+                                        </button>
+
+                                    </div>
+
+                                </article>
+
+
+                                <!-- ==================== CART ITEM 4 ==================== -->
+
+                                <article
+                                    class="cart-item"
+                                    data-cart-item-id="cart-04"
+                                    hidden
+                                >
+
+                                    <div class="cart-item-image-wrapper">
+
+                                        <img
+                                            src=""
+                                            alt="Cart Food"
+                                            class="cart-item-image"
+                                            data-cart-image
+                                        >
+
+                                    </div>
+
+
+                                    <div class="cart-item-information">
+
+                                        <p
+                                            class="cart-item-category"
+                                            data-cart-category
+                                        >
+                                            Category
+                                        </p>
+
+                                        <h3
+                                            class="cart-item-name"
+                                            data-cart-name
+                                        >
+                                            Food Name
+                                        </h3>
+
+                                        <p
+                                            class="cart-item-price"
+                                            data-cart-price
+                                        >
+                                            ₹0
+                                        </p>
+
+                                    </div>
+
+
+                                    <div class="cart-item-quantity">
+
+                                        <span class="cart-quantity-label">
+                                            Quantity
+                                        </span>
+
+                                        <div class="cart-quantity-controls">
+
+                                            <button
+                                                type="button"
+                                                class="cart-quantity-button"
+                                                data-cart-decrease
+                                            >
+                                                −
+                                            </button>
+
+                                            <span
+                                                class="cart-quantity-value"
+                                                data-cart-quantity
+                                            >
+                                                1
+                                            </span>
+
+                                            <button
+                                                type="button"
+                                                class="cart-quantity-button"
+                                                data-cart-increase
+                                            >
+                                                +
+                                            </button>
+
+                                        </div>
+
+                                    </div>
+
+
+                                    <div class="cart-item-total">
+
+                                        <span class="cart-total-label">
+                                            Item Total
+                                        </span>
+
+                                        <strong
+                                            data-cart-total
+                                        >
+                                            ₹0
+                                        </strong>
+
+                                    </div>
+
+
+                                    <div class="cart-item-actions">
+
+                                        <a
+                                            href="food-details.html"
+                                            class="cart-view-button"
+                                            data-cart-view
+                                        >
+                                            View Food
+                                        </a>
+
+                                        <button
+                                            type="button"
+                                            class="cart-remove-button"
+                                            data-cart-remove
+                                        >
+                                            Remove
+                                        </button>
+
+                                    </div>
+
+                                </article>
+
+
+                                <!-- ==================== CART ITEM 5 ==================== -->
+
+                                <article
+                                    class="cart-item"
+                                    data-cart-item-id="cart-05"
+                                    hidden
+                                >
+
+                                    <div class="cart-item-image-wrapper">
+
+                                        <img
+                                            src=""
+                                            alt="Cart Food"
+                                            class="cart-item-image"
+                                            data-cart-image
+                                        >
+
+                                    </div>
+
+
+                                    <div class="cart-item-information">
+
+                                        <p
+                                            class="cart-item-category"
+                                            data-cart-category
+                                        >
+                                            Category
+                                        </p>
+
+                                        <h3
+                                            class="cart-item-name"
+                                            data-cart-name
+                                        >
+                                            Food Name
+                                        </h3>
+
+                                        <p
+                                            class="cart-item-price"
+                                            data-cart-price
+                                        >
+                                            ₹0
+                                        </p>
+
+                                    </div>
+
+
+                                    <div class="cart-item-quantity">
+
+                                        <span class="cart-quantity-label">
+                                            Quantity
+                                        </span>
+
+                                        <div class="cart-quantity-controls">
+
+                                            <button
+                                                type="button"
+                                                class="cart-quantity-button"
+                                                data-cart-decrease
+                                            >
+                                                −
+                                            </button>
+
+                                            <span
+                                                class="cart-quantity-value"
+                                                data-cart-quantity
+                                            >
+                                                1
+                                            </span>
+
+                                            <button
+                                                type="button"
+                                                class="cart-quantity-button"
+                                                data-cart-increase
+                                            >
+                                                +
+                                            </button>
+
+                                        </div>
+
+                                    </div>
+
+
+                                    <div class="cart-item-total">
+
+                                        <span class="cart-total-label">
+                                            Item Total
+                                        </span>
+
+                                        <strong
+                                            data-cart-total
+                                        >
+                                            ₹0
+                                        </strong>
+
+                                    </div>
+
+
+                                    <div class="cart-item-actions">
+
+                                        <a
+                                            href="food-details.html"
+                                            class="cart-view-button"
+                                            data-cart-view
+                                        >
+                                            View Food
+                                        </a>
+
+                                        <button
+                                            type="button"
+                                            class="cart-remove-button"
+                                            data-cart-remove
+                                        >
+                                            Remove
+                                        </button>
+
+                                    </div>
+
+                                </article>
+
+
+                                <!-- ==================== CART ITEM 6 ==================== -->
+
+                                <article
+                                    class="cart-item"
+                                    data-cart-item-id="cart-06"
+                                    hidden
+                                >
+
+                                    <div class="cart-item-image-wrapper">
+
+                                        <img
+                                            src=""
+                                            alt="Cart Food"
+                                            class="cart-item-image"
+                                            data-cart-image
+                                        >
+
+                                    </div>
+
+
+                                    <div class="cart-item-information">
+
+                                        <p
+                                            class="cart-item-category"
+                                            data-cart-category
+                                        >
+                                            Category
+                                        </p>
+
+                                        <h3
+                                            class="cart-item-name"
+                                            data-cart-name
+                                        >
+                                            Food Name
+                                        </h3>
+
+                                        <p
+                                            class="cart-item-price"
+                                            data-cart-price
+                                        >
+                                            ₹0
+                                        </p>
+
+                                    </div>
+
+
+                                    <div class="cart-item-quantity">
+
+                                        <span class="cart-quantity-label">
+                                            Quantity
+                                        </span>
+
+                                        <div class="cart-quantity-controls">
+
+                                            <button
+                                                type="button"
+                                                class="cart-quantity-button"
+                                                data-cart-decrease
+                                            >
+                                                −
+                                            </button>
+
+                                            <span
+                                                class="cart-quantity-value"
+                                                data-cart-quantity
+                                            >
+                                                1
+                                            </span>
+
+                                            <button
+                                                type="button"
+                                                class="cart-quantity-button"
+                                                data-cart-increase
+                                            >
+                                                +
+                                            </button>
+
+                                        </div>
+
+                                    </div>
+
+
+                                    <div class="cart-item-total">
+
+                                        <span class="cart-total-label">
+                                            Item Total
+                                        </span>
+
+                                        <strong
+                                            data-cart-total
+                                        >
+                                            ₹0
+                                        </strong>
+
+                                    </div>
+
+
+                                    <div class="cart-item-actions">
+
+                                        <a
+                                            href="food-details.html"
+                                            class="cart-view-button"
+                                            data-cart-view
+                                        >
+                                            View Food
+                                        </a>
+
+                                        <button
+                                            type="button"
+                                            class="cart-remove-button"
+                                            data-cart-remove
+                                        >
+                                            Remove
+                                        </button>
+
+                                    </div>
+
+                                </article>
+
+                            </div>
+
+
+                            <!-- ==================== EMPTY CART ==================== -->
+
+                            <div
+                                id="cartEmptyState"
+                                class="cart-empty-state"
+                            >
+
+                                <h2>
+                                    Your Cart is Empty
+                                </h2>
+
+                                <p>
+                                    Add your favourite vegetarian
+                                    foods to your cart and they
+                                    will appear here.
+                                </p>
+
+                                <a
+                                    href="menu.html"
+                                    class="cart-explore-button"
+                                >
+                                    Explore Menu
+                                </a>
+
+                            </div>
+
+                        </div>
+
+
+                        <!-- ==================== CART SUMMARY ==================== -->
+
+                        <aside
+                            class="cart-summary"
+                            aria-labelledby="cartSummaryTitle"
+                        >
+
+                            <div class="cart-summary-heading">
+
+                                <h2 id="cartSummaryTitle">
+                                    Cart Summary
+                                </h2>
+
+                            </div>
+
+
+                            <div class="cart-summary-row">
+
+                                <span>
+                                    Subtotal
+                                </span>
+
+                                <strong id="cartSubtotal">
+                                    ₹0
+                                </strong>
+
+                            </div>
+
+
+                            <div class="cart-summary-row">
+
+                                <span>
+                                    Delivery Fee
+                                </span>
+
+                                <strong id="cartDeliveryFee">
+                                    ₹0
+                                </strong>
+
+                            </div>
+
+
+                            <div class="cart-summary-divider">
+                            </div>
+
+
+                            <div class="cart-summary-total">
+
+                                <span>
+                                    Grand Total
+                                </span>
+
+                                <strong id="cartGrandTotal">
+                                    ₹0
+                                </strong>
+
+                            </div>
+
+
+                            <a
+                                href="checkout.html"
+                                id="cartCheckoutButton"
+                                class="cart-checkout-button"
+                            >
+                                Proceed to Checkout
+                            </a>
+
+
+                            <a
+                                href="menu.html"
+                                class="cart-continue-button"
+                            >
+                                Continue Shopping
+                            </a>
+
+                        </aside>
+
+                    </div>
+
+                </section>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <!-- ==================== FOOTER ==================== -->
+
+    <footer class="site-footer">
+
+        <div class="footer-container">
+
+            <div class="footer-brand">
+
+                <a
+                    href="index.html"
+                    class="footer-brand-link"
+                >
+
+                    <img
+                        src="images/logo/yummy-tummy-logo.png"
+                        alt="Yummy Tummy Logo"
+                        class="footer-logo"
+                    >
+
+                </a>
+
+                <p class="footer-description">
+                    Delicious vegetarian food and restaurant table
+                    booking, all in one place.
+                </p>
+
+            </div>
+
+
+            <div class="footer-links">
+
+                <div class="footer-column">
+
+                    <h3 class="footer-title">
+                        Quick Links
+                    </h3>
+
+                    <a
+                        href="index.html"
+                        class="footer-link"
+                    >
+                        Home
+                    </a>
+
+                    <a
+                        href="menu.html"
+                        class="footer-link"
+                    >
+                        Menu
+                    </a>
+
+                    <a
+                        href="restaurants.html"
+                        class="footer-link"
+                    >
+                        Restaurants
+                    </a>
+
+                </div>
+
+
+                <div class="footer-column">
+
+                    <h3 class="footer-title">
+                        Customer
+                    </h3>
+
+                    <a
+                        href="wishlist.html"
+                        class="footer-link"
+                    >
+                        Wishlist
+                    </a>
+
+                    <a
+                        href="cart.html"
+                        class="footer-link"
+                    >
+                        Cart
+                    </a>
+
+                    <a
+                        href="profile.html"
+                        class="footer-link"
+                    >
+                        Profile
+                    </a>
+
+                    <a
+                        href="orders.html"
+                        class="footer-link"
+                    >
+                        My Orders
+                    </a>
+
+                </div>
+
+
+                <div class="footer-column">
+
+                    <h3 class="footer-title">
+                        Account
+                    </h3>
+
+                    <a
+                        href="login.html"
+                        class="footer-link"
+                    >
+                        Login
+                    </a>
+
+                    <a
+                        href="register.html"
+                        class="footer-link"
+                    >
+                        Register
+                    </a>
+
+                </div>
+
+
+                <div class="footer-column">
+
+                    <h3 class="footer-title">
+                        Yummy Tummy
+                    </h3>
+
+                    <p class="footer-information-text">
+                        Discover vegetarian food, restaurants and
+                        table booking with Yummy Tummy.
+                    </p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <div class="footer-bottom">
+
+            <p class="copyright-text">
+                © 2026 Yummy Tummy. All rights reserved.
+            </p>
+
+        </div>
+
+    </footer>
+
+
+    <script src="js/menu-data.js"></script>
+    <script src="js/restaurant-menu-data.js"></script>
+    <script src="js/auth.js"></script>
+    <script src="js/cart.js"></script>
+    <script src="js/main.js"></script>
+
+</body>
+</html>
