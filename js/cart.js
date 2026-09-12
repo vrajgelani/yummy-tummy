@@ -1,7 +1,7 @@
-/* ==================================================
-   YUMMY TUMMY
-   CART DATA, DISPLAY, ACTIONS AND SUMMARY
-   ================================================== */
+ /* ==================================================
+    YUMMY TUMMY
+    CART DATA, DISPLAY, ACTIONS AND SUMMARY
+    ================================================== */
 
 
 /* ==================== POPULAR FOOD DATA ==================== */
@@ -321,7 +321,10 @@ function calculateCartSubtotal(cartItems) {
             }
 
 
-            return subtotal + (price * quantity);
+            return (
+                subtotal +
+                (price * quantity)
+            );
 
         },
         0
@@ -340,13 +343,10 @@ function calculateDeliveryFee(cartItems) {
 
 
     const subtotal =
-        calculateCartSubtotal(cartItems);
+        calculateCartSubtotal(
+            cartItems
+        );
 
-
-    /*
-       Free delivery for orders of ₹500
-       or more.
-    */
 
     if (subtotal >= 500) {
         return 0;
@@ -393,7 +393,8 @@ function updateCartSummary(cartItems) {
 
 
     const grandTotal =
-        subtotal + deliveryFee;
+        subtotal +
+        deliveryFee;
 
 
     if (subtotalElement) {
@@ -783,7 +784,9 @@ function changeCartQuantity(
         Math.floor(newQuantity);
 
 
-    saveCart(cart);
+    saveCart(
+        cart
+    );
 
 
     displayCartItems();
@@ -836,7 +839,265 @@ function removeCartItem(foodId) {
 }
 
 
-/* ==================== CHECKOUT PROTECTION ==================== */
+/* ==================================================
+   CHECKOUT PAGE
+   ================================================== */
+
+
+/* ==================== UPDATE CHECKOUT ITEMS ==================== */
+
+function updateCheckoutItems() {
+
+    const checkoutItemsList =
+        document.getElementById(
+            "checkoutItemsList"
+        );
+
+
+    if (!checkoutItemsList) {
+        return;
+    }
+
+
+    const checkoutCards =
+        checkoutItemsList.querySelectorAll(
+            ".checkout-item"
+        );
+
+
+    const emptyState =
+        document.getElementById(
+            "checkoutEmptyState"
+        );
+
+
+    const checkoutItems =
+        prepareCartItems();
+
+
+    checkoutCards.forEach((card) => {
+
+        card.hidden = true;
+
+    });
+
+
+    checkoutItems
+        .slice(0, checkoutCards.length)
+        .forEach((cartItem, index) => {
+
+            const card =
+                checkoutCards[index];
+
+
+            if (!card) {
+                return;
+            }
+
+
+            const food =
+                cartItem.food;
+
+
+            const quantity =
+                cartItem.quantity;
+
+
+            const image =
+                card.querySelector(
+                    "[data-checkout-image]"
+                );
+
+
+            const category =
+                card.querySelector(
+                    "[data-checkout-category]"
+                );
+
+
+            const name =
+                card.querySelector(
+                    "[data-checkout-name]"
+                );
+
+
+            const quantityElement =
+                card.querySelector(
+                    "[data-checkout-quantity]"
+                );
+
+
+            const price =
+                card.querySelector(
+                    "[data-checkout-price]"
+                );
+
+
+            if (image) {
+
+                image.src =
+                    food.image || "";
+
+
+                image.alt =
+                    food.name || "Food";
+
+            }
+
+
+            if (category) {
+
+                category.textContent =
+                    food.category || "Food";
+
+            }
+
+
+            if (name) {
+
+                name.textContent =
+                    food.name || "Food";
+
+            }
+
+
+            if (quantityElement) {
+
+                quantityElement.textContent =
+                    `Quantity: ${quantity}`;
+
+            }
+
+
+            if (price) {
+
+                const itemTotal =
+                    Number(food.price) *
+                    quantity;
+
+
+                price.textContent =
+                    formatCartPrice(
+                        itemTotal
+                    );
+
+            }
+
+
+            card.hidden = false;
+
+        });
+
+
+    if (emptyState) {
+
+        emptyState.hidden =
+            checkoutItems.length !== 0;
+
+    }
+
+
+    updateCheckoutSummary(
+        checkoutItems
+    );
+
+}
+
+
+/* ==================== UPDATE CHECKOUT SUMMARY ==================== */
+
+function updateCheckoutSummary(
+    checkoutItems
+) {
+
+    const subtotalElement =
+        document.getElementById(
+            "checkoutSubtotal"
+        );
+
+
+    const deliveryFeeElement =
+        document.getElementById(
+            "checkoutDeliveryFee"
+        );
+
+
+    const grandTotalElement =
+        document.getElementById(
+            "checkoutGrandTotal"
+        );
+
+
+    const subtotal =
+        calculateCartSubtotal(
+            checkoutItems
+        );
+
+
+    const deliveryFee =
+        calculateDeliveryFee(
+            checkoutItems
+        );
+
+
+    const grandTotal =
+        subtotal +
+        deliveryFee;
+
+
+    if (subtotalElement) {
+
+        subtotalElement.textContent =
+            formatCartPrice(
+                subtotal
+            );
+
+    }
+
+
+    if (deliveryFeeElement) {
+
+        deliveryFeeElement.textContent =
+            formatCartPrice(
+                deliveryFee
+            );
+
+    }
+
+
+    if (grandTotalElement) {
+
+        grandTotalElement.textContent =
+            formatCartPrice(
+                grandTotal
+            );
+
+    }
+
+}
+
+
+/* ==================== INITIALIZE CHECKOUT PAGE ==================== */
+
+function initializeCheckoutPage() {
+
+    const checkoutItemsList =
+        document.getElementById(
+            "checkoutItemsList"
+        );
+
+
+    if (!checkoutItemsList) {
+        return;
+    }
+
+
+    updateCheckoutItems();
+
+}
+
+
+/* ==================== INITIALIZE CHECKOUT BUTTON ==================== */
 
 function initializeCheckoutButton() {
 
@@ -935,5 +1196,11 @@ function initializeCartPage() {
 
 document.addEventListener(
     "DOMContentLoaded",
-    initializeCartPage
+    function () {
+
+        initializeCartPage();
+
+        initializeCheckoutPage();
+
+    }
 );
