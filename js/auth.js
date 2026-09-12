@@ -45,7 +45,8 @@ function saveRegisteredUsers(users) {
 
 
 function getCurrentUser() {
-    const currentUser = localStorage.getItem("yummyTummyUser");
+    const currentUser =
+        localStorage.getItem("yummyTummyUser");
 
     if (!currentUser) {
         return null;
@@ -213,7 +214,6 @@ function initializeLoginForm() {
 
             let isValid = true;
 
-
             if (!email) {
                 emailError.textContent =
                     "Please enter your email address.";
@@ -226,7 +226,6 @@ function initializeLoginForm() {
                 isValid = false;
             }
 
-
             if (!password) {
                 passwordError.textContent =
                     "Please enter your password.";
@@ -234,11 +233,9 @@ function initializeLoginForm() {
                 isValid = false;
             }
 
-
             if (!isValid) {
                 return;
             }
-
 
             const users =
                 getRegisteredUsers();
@@ -251,14 +248,12 @@ function initializeLoginForm() {
                     );
                 });
 
-
             if (!matchingUser) {
                 message.textContent =
                     "Invalid email or password.";
 
                 return;
             }
-
 
             setUserLoggedIn(matchingUser);
 
@@ -317,7 +312,6 @@ function initializeRegisterForm() {
                     "registerConfirmPassword"
                 );
 
-
             const nameError =
                 document.getElementById(
                     "registerNameError"
@@ -348,7 +342,6 @@ function initializeRegisterForm() {
                     "registerMessage"
                 );
 
-
             const name =
                 nameInput.value.trim();
 
@@ -366,7 +359,6 @@ function initializeRegisterForm() {
             const confirmPassword =
                 confirmPasswordInput.value;
 
-
             nameError.textContent = "";
             emailError.textContent = "";
             mobileError.textContent = "";
@@ -374,9 +366,7 @@ function initializeRegisterForm() {
             confirmPasswordError.textContent = "";
             message.textContent = "";
 
-
             let isValid = true;
-
 
             if (!name) {
                 nameError.textContent =
@@ -390,7 +380,6 @@ function initializeRegisterForm() {
                 isValid = false;
             }
 
-
             if (!email) {
                 emailError.textContent =
                     "Please enter your email address.";
@@ -402,7 +391,6 @@ function initializeRegisterForm() {
 
                 isValid = false;
             }
-
 
             if (!mobile) {
                 mobileError.textContent =
@@ -416,7 +404,6 @@ function initializeRegisterForm() {
                 isValid = false;
             }
 
-
             if (!password) {
                 passwordError.textContent =
                     "Please create a password.";
@@ -429,14 +416,12 @@ function initializeRegisterForm() {
                 isValid = false;
             }
 
-
             if (!confirmPassword) {
                 confirmPasswordError.textContent =
                     "Please confirm your password.";
 
                 isValid = false;
             }
-
 
             if (
                 confirmPassword &&
@@ -448,21 +433,17 @@ function initializeRegisterForm() {
                 isValid = false;
             }
 
-
             if (!isValid) {
                 return;
             }
 
-
             const users =
                 getRegisteredUsers();
-
 
             const existingUser =
                 users.find(function (user) {
                     return user.email === email;
                 });
-
 
             if (existingUser) {
                 message.textContent =
@@ -471,7 +452,6 @@ function initializeRegisterForm() {
                 return;
             }
 
-
             const newUser = {
                 id: Date.now().toString(),
                 name: name,
@@ -479,7 +459,6 @@ function initializeRegisterForm() {
                 mobile: mobile,
                 password: password
             };
-
 
             users.push(newUser);
 
@@ -491,7 +470,6 @@ function initializeRegisterForm() {
 
             message.textContent =
                 "Registration successful.";
-
 
             window.setTimeout(
                 function () {
@@ -514,6 +492,15 @@ function initializeLogoutLinks() {
             "click",
             function (event) {
                 event.preventDefault();
+
+                const shouldLogout =
+                    window.confirm(
+                        "Are you sure you want to logout?"
+                    );
+
+                if (!shouldLogout) {
+                    return;
+                }
 
                 logoutUser();
             }
