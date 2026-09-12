@@ -3495,3 +3495,234 @@ input {
     }
 
 }
+
+/* ==================================================
+   YUMMY TUMMY
+   DAY 16 - PART 1
+   UI / UX POLISH
+   ================================================== */
+
+
+/* ==================================================
+   GLOBAL INTERACTION
+   ================================================== */
+
+a,
+button,
+input,
+select,
+textarea {
+    transition:
+        background-color 0.2s ease,
+        color 0.2s ease,
+        border-color 0.2s ease,
+        box-shadow 0.2s ease,
+        transform 0.2s ease;
+}
+
+
+/* ==================================================
+   COMMON BUTTON POLISH
+   ================================================== */
+
+button,
+.button,
+.menu-food-button,
+.restaurant-button,
+.food-action-button,
+.checkout-button,
+.profile-logout-button {
+    cursor: pointer;
+}
+
+
+/* ==================================================
+   CARD POLISH
+   ================================================== */
+
+.menu-food-card,
+.restaurant-card,
+.food-card,
+.profile-card,
+.cart-item,
+.checkout-item,
+.wishlist-food-card,
+.restaurant-detail-card {
+    overflow: hidden;
+}
+
+
+/* ==================================================
+   FOOD CARD
+   ================================================== */
+
+.menu-food-card:hover,
+.food-card:hover,
+.wishlist-food-card:hover {
+    transform: translateY(-4px);
+}
+
+
+/* ==================================================
+   RESTAURANT CARD
+   ================================================== */
+
+.restaurant-card:hover {
+    transform: translateY(-4px);
+}
+
+
+/* ==================================================
+   CARD IMAGE
+   ================================================== */
+
+.menu-food-card img,
+.restaurant-card img,
+.food-card img,
+.wishlist-food-card img {
+    transition: transform 0.3s ease;
+}
+
+.menu-food-card:hover img,
+.restaurant-card:hover img,
+.food-card:hover img,
+.wishlist-food-card:hover img {
+    transform: scale(1.03);
+}
+
+
+/* ==================================================
+   SEARCH INPUTS
+   ================================================== */
+
+.header-search input,
+.restaurant-search-box input,
+input[type="search"],
+input[type="text"],
+input[type="email"],
+input[type="tel"],
+input[type="password"] {
+    outline: none;
+}
+
+.header-search input:focus,
+.restaurant-search-box input:focus,
+input[type="search"]:focus,
+input[type="text"]:focus,
+input[type="email"]:focus,
+input[type="tel"]:focus,
+input[type="password"]:focus {
+    border-color: orange;
+    box-shadow: 0 0 0 3px lightyellow;
+}
+
+
+/* ==================================================
+   FILTER BUTTONS
+   ================================================== */
+
+.menu-filter-button:hover {
+    transform: translateY(-1px);
+}
+
+.menu-filter-button:focus-visible {
+    outline: 2px solid orange;
+    outline-offset: 2px;
+}
+
+
+/* ==================================================
+   LINKS
+   ================================================== */
+
+.nav-link:focus-visible,
+.header-action:focus-visible,
+.footer-column a:focus-visible,
+.restaurant-card-link:focus-visible,
+.menu-food-button:focus-visible {
+    outline: 2px solid orange;
+    outline-offset: 3px;
+}
+
+
+/* ==================================================
+   BUTTON FOCUS
+   ================================================== */
+
+button:focus-visible,
+.button:focus-visible,
+.checkout-button:focus-visible,
+.profile-logout-button:focus-visible {
+    outline: 2px solid orange;
+    outline-offset: 3px;
+}
+
+
+/* ==================================================
+   IMAGE RENDERING
+   ================================================== */
+
+img {
+    max-width: 100%;
+}
+
+
+/* ==================================================
+   EMPTY STATES
+   ================================================== */
+
+.menu-empty-state,
+.restaurants-empty-state,
+.wishlist-empty-state,
+.cart-empty-state,
+.checkout-empty-state,
+.food-invalid-state {
+    border-radius: 12px;
+}
+
+
+/* ==================================================
+   SECTION LABEL
+   ================================================== */
+
+.section-label {
+    letter-spacing: 1px;
+}
+
+
+/* ==================================================
+   RESULTS COUNT
+   ================================================== */
+
+.menu-results-count,
+.restaurants-results-count {
+    white-space: nowrap;
+}
+
+
+/* ==================================================
+   DISABLED ELEMENTS
+   ================================================== */
+
+button:disabled,
+input:disabled {
+    cursor: not-allowed;
+}
+
+
+/* ==================================================
+   REDUCED MOTION
+   ================================================== */
+
+@media (prefers-reduced-motion: reduce) {
+
+    *,
+    *::before,
+    *::after {
+        scroll-behavior: auto !important;
+        transition-duration: 0.01ms !important;
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+    }
+
+}
