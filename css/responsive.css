@@ -1,0 +1,358 @@
+/* ==================================================
+   YUMMY TUMMY
+   RESPONSIVE STYLES
+   DAY 15 - PART 2
+   ================================================== */
+
+
+/* ==================================================
+   TABLET
+   ================================================== */
+
+@media (max-width: 1024px) {
+
+    .header-container {
+        gap: 18px;
+        padding: 16px 24px;
+    }
+
+    .brand-logo {
+        flex-shrink: 0;
+    }
+
+    .brand-logo img {
+        max-width: 150px;
+        height: auto;
+    }
+
+    .main-navigation {
+        gap: 14px;
+        flex-wrap: wrap;
+    }
+
+    .nav-link {
+        white-space: nowrap;
+    }
+
+    .header-search {
+        flex: 1;
+        max-width: 260px;
+        min-width: 180px;
+    }
+
+    .header-search input {
+        width: 100%;
+    }
+
+    .header-actions {
+        gap: 8px;
+        flex-wrap: wrap;
+    }
+
+    .header-action {
+        white-space: nowrap;
+    }
+
+}
+
+
+/* ==================================================
+   MOBILE
+   ================================================== */
+
+@media (max-width: 768px) {
+
+    html,
+    body {
+        width: 100%;
+        max-width: 100%;
+        overflow-x: hidden;
+    }
+
+
+    /* ==================== HEADER ==================== */
+
+    .site-header {
+        width: 100%;
+        position: relative;
+    }
+
+    .header-container {
+        width: 100%;
+        max-width: 100%;
+        padding: 14px 18px;
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        justify-content: space-between;
+        gap: 12px;
+        box-sizing: border-box;
+    }
+
+
+    /* ==================== LOGO ==================== */
+
+    .brand-logo {
+        display: flex;
+        align-items: center;
+        flex-shrink: 0;
+        max-width: 48%;
+    }
+
+    .brand-logo img {
+        display: block;
+        width: auto;
+        max-width: 145px;
+        height: auto;
+    }
+
+
+    /* ==================== NAVIGATION ==================== */
+
+    .main-navigation {
+        order: 3;
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-wrap: wrap;
+        gap: 8px 16px;
+        padding: 4px 0;
+        box-sizing: border-box;
+    }
+
+    .nav-link {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        padding: 6px 4px;
+        white-space: nowrap;
+        font-size: 14px;
+    }
+
+
+    /* ==================== SEARCH ==================== */
+
+    .header-search {
+        order: 2;
+        flex: 1;
+        width: auto;
+        min-width: 180px;
+        max-width: none;
+        margin: 0;
+    }
+
+    .header-search input {
+        display: block;
+        width: 100%;
+        min-height: 42px;
+        box-sizing: border-box;
+    }
+
+
+    /* ==================== HEADER ACTIONS ==================== */
+
+    .header-actions {
+        order: 4;
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-wrap: wrap;
+        gap: 8px;
+        box-sizing: border-box;
+    }
+
+    .header-action {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        min-height: 38px;
+        padding: 7px 12px;
+        white-space: nowrap;
+        box-sizing: border-box;
+    }
+
+
+    /* ==================== COMMON CONTAINER ==================== */
+
+    .section-container {
+        width: 92%;
+        max-width: 100%;
+        margin-left: auto;
+        margin-right: auto;
+        box-sizing: border-box;
+    }
+
+
+    /* ==================== FOOTER ==================== */
+
+    .footer-container {
+        width: 92%;
+        max-width: 100%;
+        margin-left: auto;
+        margin-right: auto;
+        box-sizing: border-box;
+    }
+
+}
+
+
+/* ==================================================
+   SMALL MOBILE
+   ================================================== */
+
+@media (max-width: 480px) {
+
+    .header-container {
+        padding: 12px 14px;
+        gap: 10px;
+    }
+
+
+    /* ==================== LOGO ==================== */
+
+    .brand-logo {
+        max-width: 44%;
+    }
+
+    .brand-logo img {
+        max-width: 125px;
+    }
+
+
+    /* ==================== SEARCH ==================== */
+
+    .header-search {
+        width: 100%;
+        min-width: 100%;
+        flex-basis: 100%;
+        order: 3;
+    }
+
+    .header-search input {
+        width: 100%;
+        min-height: 42px;
+    }
+
+
+    /* ==================== NAVIGATION ==================== */
+
+    .main-navigation {
+        order: 4;
+        gap: 6px 12px;
+        padding-top: 2px;
+    }
+
+    .nav-link {
+        font-size: 13px;
+        padding: 6px 3px;
+    }
+
+
+    /* ==================== ACTIONS ==================== */
+
+    .header-actions {
+        order: 5;
+        gap: 6px;
+    }
+
+    .header-action {
+        min-height: 36px;
+        padding: 6px 9px;
+        font-size: 12px;
+    }
+
+
+    /* ==================== CONTAINER ==================== */
+
+    .section-container,
+    .footer-container {
+        width: 94%;
+    }
+
+}
+
+
+/* ==================================================
+   EXTRA SMALL MOBILE
+   ================================================== */
+
+@media (max-width: 360px) {
+
+    .header-container {
+        padding: 10px 12px;
+        gap: 9px;
+    }
+
+
+    /* ==================== LOGO ==================== */
+
+    .brand-logo {
+        width: 100%;
+        max-width: 100%;
+        justify-content: center;
+    }
+
+    .brand-logo img {
+        max-width: 115px;
+    }
+
+
+    /* ==================== SEARCH ==================== */
+
+    .header-search {
+        width: 100%;
+        min-width: 100%;
+    }
+
+
+    /* ==================== NAVIGATION ==================== */
+
+    .main-navigation {
+        width: 100%;
+        gap: 4px 10px;
+    }
+
+    .nav-link {
+        font-size: 12px;
+    }
+
+
+    /* ==================== ACTIONS ==================== */
+
+    .header-actions {
+        width: 100%;
+        gap: 5px;
+    }
+
+    .header-action {
+        flex: 1;
+        min-width: 0;
+        padding: 6px 5px;
+        font-size: 11px;
+    }
+
+}
+
+
+/* ==================================================
+   LANDSCAPE MOBILE
+   ================================================== */
+
+@media (max-width: 768px) and (orientation: landscape) {
+
+    .header-container {
+        padding-top: 10px;
+        padding-bottom: 10px;
+    }
+
+    .main-navigation {
+        gap: 6px 18px;
+    }
+
+    .header-actions {
+        gap: 6px;
+    }
+
+}
