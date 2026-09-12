@@ -3374,3 +3374,124 @@ input {
     }
 
 }
+
+/* ========================================
+   BOOKING CONFIRMATION
+======================================== */
+
+.booking-confirmation-card {
+    max-width: 650px;
+    margin: 30px auto;
+    padding: 25px;
+    background-color: white;
+    border: 1px solid lightgray;
+    border-radius: 14px;
+    text-align: left;
+}
+
+.confirmation-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+    padding: 16px 0;
+    border-bottom: 1px solid lightgray;
+}
+
+.confirmation-row:last-child {
+    border-bottom: none;
+}
+
+.confirmation-row span {
+    color: dimgray;
+}
+
+.confirmation-row strong {
+    color: black;
+    text-align: right;
+}
+
+.confirmation-actions {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-top: 25px;
+}
+
+
+/* ========================================
+   BOOKING SUCCESS UPDATE
+======================================== */
+
+.booking-success-state {
+    max-width: 800px;
+    margin: 60px auto;
+    padding: 45px 25px;
+    text-align: center;
+    background-color: white;
+    border: 1px solid lightgray;
+    border-top: 5px solid green;
+    border-radius: 14px;
+}
+
+.booking-success-state h1 {
+    margin-bottom: 15px;
+    color: green;
+}
+
+.booking-success-state > p {
+    margin-bottom: 12px;
+}
+
+
+/* ========================================
+   BOOKING BUTTON
+======================================== */
+
+.booking-action-area {
+    margin-top: 30px;
+    padding: 24px;
+    text-align: center;
+    background-color: white;
+    border: 1px solid lightgray;
+    border-radius: 12px;
+}
+
+.booking-action-area .primary-button {
+    border: none;
+}
+
+
+/* ========================================
+   MOBILE CONFIRMATION
+======================================== */
+
+@media (max-width: 600px) {
+
+    .booking-confirmation-card {
+        padding: 18px;
+    }
+
+    .confirmation-row {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 6px;
+    }
+
+    .confirmation-row strong {
+        text-align: left;
+    }
+
+    .confirmation-actions {
+        flex-direction: column;
+    }
+
+    .confirmation-actions .primary-button,
+    .confirmation-actions .secondary-button {
+        width: 100%;
+        margin: 0;
+        text-align: center;
+    }
+
+}

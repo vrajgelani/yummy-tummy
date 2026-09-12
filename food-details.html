@@ -1,0 +1,503 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>
+        Food Details | Yummy Tummy
+    </title>
+
+    <link
+        rel="stylesheet"
+        href="css/style.css"
+    >
+
+    <link
+        rel="stylesheet"
+        href="css/food-details.css"
+    >
+
+</head>
+
+
+<body>
+
+
+    <!-- ========================================
+         HEADER
+    ========================================= -->
+
+    <header class="site-header">
+
+        <div class="header-container">
+
+
+            <!-- LOGO -->
+
+            <a
+                href="index.html"
+                class="logo-link"
+            >
+
+                <img
+                    src="images/logo/yummy-tummy-logo.png"
+                    alt="Yummy Tummy"
+                    class="site-logo"
+                >
+
+            </a>
+
+
+            <!-- NAVIGATION -->
+
+            <nav class="main-navigation">
+
+                <a href="index.html">
+                    Home
+                </a>
+
+                <a href="menu.html">
+                    Menu
+                </a>
+
+                <a href="restaurants.html">
+                    Restaurants
+                </a>
+
+            </nav>
+
+
+            <!-- SEARCH -->
+
+            <div class="header-search">
+
+                <input
+                    type="search"
+                    id="headerSearch"
+                    placeholder="Search food or restaurant"
+                    aria-label="Search food or restaurant"
+                >
+
+            </div>
+
+
+            <!-- HEADER ACTIONS -->
+
+            <div class="header-actions">
+
+                <a
+                    href="wishlist.html"
+                    class="header-link"
+                >
+                    Wishlist
+                </a>
+
+                <a
+                    href="cart.html"
+                    class="header-link"
+                >
+                    Cart
+                </a>
+
+                <a
+                    href="login.html"
+                    class="header-link"
+                    id="loginHeaderLink"
+                >
+                    Login
+                </a>
+
+                <a
+                    href="register.html"
+                    class="header-link"
+                    id="registerHeaderLink"
+                >
+                    Register
+                </a>
+
+                <a
+                    href="profile.html"
+                    class="header-link"
+                    id="profileHeaderLink"
+                    hidden
+                >
+                    Profile
+                </a>
+
+            </div>
+
+        </div>
+
+    </header>
+
+
+    <!-- ========================================
+         MAIN
+    ========================================= -->
+
+    <main class="food-details-page">
+
+
+        <!-- ====================================
+             FOOD DETAILS
+        ===================================== -->
+
+        <section
+            class="food-details-section"
+            id="foodDetailsSection"
+        >
+
+            <div class="food-details-container">
+
+
+                <!-- BREADCRUMB -->
+
+                <div class="food-details-breadcrumb">
+
+                    <a href="index.html">
+                        Home
+                    </a>
+
+                    <span>
+                        /
+                    </span>
+
+                    <a href="menu.html">
+                        Menu
+                    </a>
+
+                    <span>
+                        /
+                    </span>
+
+                    <span id="foodBreadcrumbName">
+                        Food Details
+                    </span>
+
+                </div>
+
+
+                <!-- FOOD DETAILS CARD -->
+
+                <div class="food-details-card">
+
+
+                    <!-- FOOD IMAGE -->
+
+                    <div class="food-details-image-wrapper">
+
+                        <img
+                            src="images/menu-foods/starter-01.png"
+                            alt="Food"
+                            class="food-details-image"
+                            id="foodDetailsImage"
+                        >
+
+                    </div>
+
+
+                    <!-- FOOD INFORMATION -->
+
+                    <div class="food-details-content">
+
+
+                        <p
+                            class="food-details-category"
+                            id="foodDetailsCategory"
+                        >
+                            Vegetarian Food
+                        </p>
+
+
+                        <h1
+                            class="food-details-name"
+                            id="foodDetailsName"
+                        >
+                            Food Name
+                        </h1>
+
+
+                        <div class="food-details-rating">
+
+                            <span>
+                                Rating:
+                            </span>
+
+                            <strong
+                                id="foodDetailsRating"
+                            >
+                                0.0
+                            </strong>
+
+                        </div>
+
+
+                        <p
+                            class="food-details-description"
+                            id="foodDetailsDescription"
+                        >
+                            Delicious vegetarian food prepared
+                            with fresh ingredients and rich flavours.
+                        </p>
+
+
+                        <div class="food-details-price-area">
+
+                            <span>
+                                Price
+                            </span>
+
+                            <strong
+                                id="foodDetailsPrice"
+                            >
+                                ₹0
+                            </strong>
+
+                        </div>
+
+
+                        <!-- RESTAURANT INFO -->
+
+                        <div class="food-details-restaurant">
+
+                            <p class="food-details-restaurant-label">
+                                Available From
+                            </p>
+
+                            <h2
+                                id="foodDetailsRestaurantName"
+                            >
+                                Yummy Tummy Restaurant
+                            </h2>
+
+                            <p
+                                id="foodDetailsRestaurantCuisine"
+                            >
+                                Vegetarian Restaurant
+                            </p>
+
+                            <p
+                                id="foodDetailsRestaurantLocation"
+                            >
+                                India
+                            </p>
+
+                        </div>
+
+
+                        <!-- ACTIONS -->
+
+                        <div class="food-details-actions">
+
+                            <button
+                                type="button"
+                                class="food-add-cart-button"
+                                id="foodAddCartButton"
+                            >
+                                Add to Cart
+                            </button>
+
+
+                            <button
+                                type="button"
+                                class="food-wishlist-button"
+                                id="foodWishlistButton"
+                            >
+                                Add to Wishlist
+                            </button>
+
+                        </div>
+
+
+                        <!-- BACK BUTTON -->
+
+                        <div class="food-details-back">
+
+                            <a
+                                href="menu.html"
+                                class="food-back-button"
+                                id="foodBackButton"
+                            >
+                                Back to Menu
+                            </a>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- ====================================
+             INVALID FOOD
+        ===================================== -->
+
+        <section
+            class="food-invalid-state"
+            id="foodInvalidState"
+            hidden
+        >
+
+            <div class="food-invalid-content">
+
+                <p class="section-label">
+                    YUMMY TUMMY
+                </p>
+
+                <h1>
+                    Food Not Found
+                </h1>
+
+                <p>
+                    The food item you are looking for
+                    is not available.
+                </p>
+
+                <a
+                    href="menu.html"
+                    class="food-back-button"
+                >
+                    Explore Menu
+                </a>
+
+            </div>
+
+        </section>
+
+
+    </main>
+
+
+    <!-- ========================================
+         FOOTER
+    ========================================= -->
+
+    <footer class="site-footer">
+
+        <div class="footer-container">
+
+
+            <!-- FOOTER BRAND -->
+
+            <div class="footer-brand">
+
+                <img
+                    src="images/logo/yummy-tummy-logo.png"
+                    alt="Yummy Tummy"
+                    class="footer-logo"
+                >
+
+                <p>
+                    Delicious vegetarian food,
+                    better dining experiences.
+                </p>
+
+            </div>
+
+
+            <!-- FOOTER LINKS -->
+
+            <div class="footer-links">
+
+                <div class="footer-column">
+
+                    <h3>
+                        Quick Links
+                    </h3>
+
+                    <a href="index.html">
+                        Home
+                    </a>
+
+                    <a href="menu.html">
+                        Menu
+                    </a>
+
+                    <a href="restaurants.html">
+                        Restaurants
+                    </a>
+
+                </div>
+
+
+                <div class="footer-column">
+
+                    <h3>
+                        Customer
+                    </h3>
+
+                    <a href="wishlist.html">
+                        Wishlist
+                    </a>
+
+                    <a href="cart.html">
+                        Cart
+                    </a>
+
+                    <a href="orders.html">
+                        Orders
+                    </a>
+
+                </div>
+
+
+                <div class="footer-column">
+
+                    <h3>
+                        Account
+                    </h3>
+
+                    <a href="login.html">
+                        Login
+                    </a>
+
+                    <a href="register.html">
+                        Register
+                    </a>
+
+                    <a href="profile.html">
+                        Profile
+                    </a>
+
+                </div>
+
+            </div>
+
+
+        </div>
+
+
+        <!-- FOOTER BOTTOM -->
+
+        <div class="footer-bottom">
+
+            <p>
+                © 2026 Yummy Tummy.
+                All Rights Reserved.
+            </p>
+
+        </div>
+
+    </footer>
+
+
+    <!-- ========================================
+         JAVASCRIPT
+    ========================================= -->
+
+    <script src="js/main.js"></script>
+
+</body>
+
+</html>
