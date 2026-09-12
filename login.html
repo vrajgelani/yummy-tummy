@@ -12,10 +12,10 @@
 
     <meta
         name="description"
-        content="View detailed food information, add food to cart, and save food to wishlist on Yummy Tummy."
+        content="Login to your Yummy Tummy customer account."
     >
 
-    <title>Food Details | Yummy Tummy</title>
+    <title>Login | Yummy Tummy</title>
 
     <!-- Main CSS -->
     <link
@@ -23,10 +23,10 @@
         href="css/style.css"
     >
 
-    <!-- Food Details CSS -->
+    <!-- Login CSS -->
     <link
         rel="stylesheet"
-        href="css/food-details.css"
+        href="css/login.css"
     >
 
 </head>
@@ -59,7 +59,7 @@
             </a>
 
 
-            <!-- MAIN NAVIGATION -->
+            <!-- NAVIGATION -->
 
             <nav
                 class="main-navigation"
@@ -109,8 +109,6 @@
             <div class="header-actions">
 
 
-                <!-- WISHLIST -->
-
                 <a
                     href="wishlist.html"
                     class="header-action"
@@ -118,8 +116,6 @@
                     Wishlist
                 </a>
 
-
-                <!-- CART -->
 
                 <a
                     href="cart.html"
@@ -129,8 +125,6 @@
                 </a>
 
 
-                <!-- LOGIN -->
-
                 <a
                     href="login.html"
                     class="header-action login-link"
@@ -139,8 +133,6 @@
                 </a>
 
 
-                <!-- REGISTER -->
-
                 <a
                     href="register.html"
                     class="header-action register-link"
@@ -148,8 +140,6 @@
                     Register
                 </a>
 
-
-                <!-- PROFILE -->
 
                 <a
                     href="profile.html"
@@ -175,220 +165,149 @@
 
 
         <!-- =================================================
-             FOOD DETAILS HERO
+             LOGIN SECTION
         ================================================== -->
 
-        <section class="food-details-page">
+        <section class="login-page">
 
-            <div class="section-container">
-
-
-                <!-- BACK BUTTON -->
-
-                <div class="food-details-back">
-
-                    <button
-                        type="button"
-                        id="foodBackButton"
-                        class="food-back-button"
-                    >
-                        Back
-                    </button>
-
-                </div>
+            <div class="login-container">
 
 
-                <!-- =================================================
-                     FOOD DETAILS SECTION
-                ================================================== -->
+                <!-- LOGIN CARD -->
 
-                <section
-                    id="foodDetailsSection"
-                    class="food-details-section"
-                    aria-live="polite"
-                >
+                <div class="login-card">
 
 
-                    <!-- FOOD IMAGE -->
+                    <!-- LOGIN HEADING -->
 
-                    <div class="food-details-image-wrapper">
+                    <div class="login-heading">
 
-                        <img
-                            src=""
-                            alt="Food"
-                            id="foodDetailsImage"
-                            class="food-details-image"
-                        >
-
-                    </div>
-
-
-                    <!-- FOOD INFORMATION -->
-
-                    <div class="food-details-content">
-
-
-                        <!-- CATEGORY -->
-
-                        <p
-                            id="foodDetailsCategory"
-                            class="food-details-category"
-                        >
-                            Food Category
+                        <p class="login-label">
+                            WELCOME BACK
                         </p>
 
-
-                        <!-- FOOD NAME -->
-
-                        <h1 id="foodDetailsName">
-                            Food Name
+                        <h1>
+                            Login to Yummy Tummy
                         </h1>
 
-
-                        <!-- RATING -->
-
-                        <p
-                            id="foodDetailsRating"
-                            class="food-details-rating"
-                        >
-                            Rating
+                        <p>
+                            Login to continue ordering food,
+                            saving favourites and booking tables.
                         </p>
-
-
-                        <!-- PRICE -->
-
-                        <p
-                            id="foodDetailsPrice"
-                            class="food-details-price"
-                        >
-                            ₹0
-                        </p>
-
-
-                        <!-- DESCRIPTION -->
-
-                        <div class="food-details-description">
-
-                            <h2>
-                                About This Food
-                            </h2>
-
-                            <p id="foodDetailsDescription">
-                                Delicious vegetarian food from Yummy Tummy.
-                            </p>
-
-                        </div>
-
-
-                        <!-- RESTAURANT INFORMATION -->
-
-                        <div class="food-restaurant-info">
-
-                            <h2>
-                                Restaurant Information
-                            </h2>
-
-
-                            <p>
-                                <strong>
-                                    Restaurant:
-                                </strong>
-
-                                <span id="foodDetailsRestaurantName">
-                                    Not Available
-                                </span>
-
-                            </p>
-
-
-                            <p>
-                                <strong>
-                                    Cuisine:
-                                </strong>
-
-                                <span id="foodDetailsRestaurantCuisine">
-                                    Not Available
-                                </span>
-
-                            </p>
-
-
-                            <p>
-                                <strong>
-                                    Location:
-                                </strong>
-
-                                <span id="foodDetailsRestaurantLocation">
-                                    Not Available
-                                </span>
-
-                            </p>
-
-                        </div>
-
-
-                        <!-- FOOD ACTIONS -->
-
-                        <div class="food-details-actions">
-
-
-                            <!-- ADD TO CART -->
-
-                            <button
-                                type="button"
-                                id="foodAddCartButton"
-                                class="food-action-button"
-                            >
-                                Add to Cart
-                            </button>
-
-
-                            <!-- WISHLIST -->
-
-                            <button
-                                type="button"
-                                id="foodWishlistButton"
-                                class="food-action-button"
-                            >
-                                Add to Wishlist
-                            </button>
-
-                        </div>
-
 
                     </div>
 
 
-                </section>
+                    <!-- LOGIN FORM -->
 
-
-
-                <!-- =================================================
-                     INVALID FOOD STATE
-                ================================================== -->
-
-                <section
-                    id="foodInvalidState"
-                    class="food-invalid-state"
-                    hidden
-                >
-
-                    <h2>
-                        Food Not Found
-                    </h2>
-
-                    <p>
-                        The requested food is not available.
-                    </p>
-
-                    <a
-                        href="menu.html"
-                        class="food-back-link"
+                    <form
+                        id="loginForm"
+                        class="login-form"
+                        novalidate
                     >
-                        Explore Menu
-                    </a>
 
-                </section>
+
+                        <!-- EMAIL -->
+
+                        <div class="login-form-group">
+
+                            <label
+                                for="loginEmail"
+                            >
+                                Email Address
+                            </label>
+
+                            <input
+                                type="email"
+                                id="loginEmail"
+                                name="email"
+                                placeholder="Enter your email address"
+                                autocomplete="email"
+                                required
+                            >
+
+                            <p
+                                id="loginEmailError"
+                                class="login-error"
+                                hidden
+                            >
+                                Please enter a valid email address.
+                            </p>
+
+                        </div>
+
+
+                        <!-- PASSWORD -->
+
+                        <div class="login-form-group">
+
+                            <label
+                                for="loginPassword"
+                            >
+                                Password
+                            </label>
+
+                            <input
+                                type="password"
+                                id="loginPassword"
+                                name="password"
+                                placeholder="Enter your password"
+                                autocomplete="current-password"
+                                required
+                            >
+
+                            <p
+                                id="loginPasswordError"
+                                class="login-error"
+                                hidden
+                            >
+                                Please enter your password.
+                            </p>
+
+                        </div>
+
+
+                        <!-- LOGIN MESSAGE -->
+
+                        <p
+                            id="loginMessage"
+                            class="login-message"
+                            role="alert"
+                            hidden
+                        >
+                        </p>
+
+
+                        <!-- LOGIN BUTTON -->
+
+                        <button
+                            type="submit"
+                            id="loginButton"
+                            class="login-submit-button"
+                        >
+                            Login
+                        </button>
+
+
+                    </form>
+
+
+                    <!-- REGISTER LINK -->
+
+                    <div class="login-register-link">
+
+                        <p>
+                            Don't have an account?
+                        </p>
+
+                        <a href="register.html">
+                            Create Account
+                        </a>
+
+                    </div>
+
+
+                </div>
 
 
             </div>
@@ -585,30 +504,6 @@
 
 
     </footer>
-
-
-
-    <!-- =====================================================
-         JAVASCRIPT
-    ====================================================== -->
-
-    <!-- Food Data -->
-    <script src="js/menu-data.js"></script>
-
-    <!-- Restaurant Data -->
-    <script src="js/restaurant-data.js"></script>
-
-    <!-- Restaurant Menu Data -->
-    <script src="js/restaurant-menu-data.js"></script>
-
-    <!-- Food Details -->
-    <script src="js/food-details.js"></script>
-
-    <!-- Food Actions -->
-    <script src="js/food-actions.js"></script>
-
-    <!-- Main JavaScript -->
-    <script src="js/main.js"></script>
 
 
 </body>
