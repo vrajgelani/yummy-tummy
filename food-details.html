@@ -12,21 +12,39 @@
 
     <meta
         name="description"
-        content="View detailed food information, add food to cart, and save food to wishlist on Yummy Tummy."
+        content="View detailed vegetarian food information, add food to cart, and save food to wishlist on Yummy Tummy."
     >
 
     <title>Food Details | Yummy Tummy</title>
 
-    <!-- Main CSS -->
+
+    <!-- =====================================================
+         MAIN CSS
+    ====================================================== -->
+
     <link
         rel="stylesheet"
         href="css/style.css"
     >
 
-    <!-- Food Details CSS -->
+
+    <!-- =====================================================
+         FOOD DETAILS CSS
+    ====================================================== -->
+
     <link
         rel="stylesheet"
         href="css/food-details.css"
+    >
+
+
+    <!-- =====================================================
+         RESPONSIVE CSS
+    ====================================================== -->
+
+    <link
+        rel="stylesheet"
+        href="css/responsive.css"
     >
 
 </head>
@@ -44,11 +62,14 @@
         <div class="header-container">
 
 
-            <!-- LOGO -->
+            <!-- =================================================
+                 LOGO
+            ================================================== -->
 
             <a
                 href="index.html"
                 class="brand-logo"
+                aria-label="Yummy Tummy Home"
             >
 
                 <img
@@ -59,7 +80,9 @@
             </a>
 
 
-            <!-- MAIN NAVIGATION -->
+            <!-- =================================================
+                 MAIN NAVIGATION
+            ================================================== -->
 
             <nav
                 class="main-navigation"
@@ -73,12 +96,14 @@
                     Home
                 </a>
 
+
                 <a
                     href="menu.html"
                     class="nav-link"
                 >
                     Menu
                 </a>
+
 
                 <a
                     href="restaurants.html"
@@ -90,7 +115,9 @@
             </nav>
 
 
-            <!-- HEADER SEARCH -->
+            <!-- =================================================
+                 HEADER SEARCH
+            ================================================== -->
 
             <div class="header-search">
 
@@ -99,12 +126,15 @@
                     id="headerSearch"
                     placeholder="Search food or restaurant"
                     aria-label="Search food or restaurant"
+                    autocomplete="off"
                 >
 
             </div>
 
 
-            <!-- HEADER ACTIONS -->
+            <!-- =================================================
+                 HEADER ACTIONS
+            ================================================== -->
 
             <div class="header-actions">
 
@@ -160,7 +190,6 @@
 
             </div>
 
-
         </div>
 
     </header>
@@ -175,15 +204,20 @@
 
 
         <!-- =================================================
-             FOOD DETAILS HERO
+             FOOD DETAILS PAGE
         ================================================== -->
 
-        <section class="food-details-page">
+        <section
+            class="food-details-page"
+            aria-labelledby="foodDetailsName"
+        >
 
             <div class="section-container">
 
 
-                <!-- BACK BUTTON -->
+                <!-- =================================================
+                     BACK BUTTON
+                ================================================== -->
 
                 <div class="food-details-back">
 
@@ -198,8 +232,9 @@
                 </div>
 
 
+
                 <!-- =================================================
-                     FOOD DETAILS SECTION
+                     FOOD DETAILS
                 ================================================== -->
 
                 <section
@@ -209,21 +244,26 @@
                 >
 
 
-                    <!-- FOOD IMAGE -->
+                    <!-- =================================================
+                         FOOD IMAGE
+                    ================================================== -->
 
                     <div class="food-details-image-wrapper">
 
                         <img
-                            src=""
-                            alt="Food"
                             id="foodDetailsImage"
                             class="food-details-image"
+                            src=""
+                            alt="Food"
                         >
 
                     </div>
 
 
-                    <!-- FOOD INFORMATION -->
+
+                    <!-- =================================================
+                         FOOD CONTENT
+                    ================================================== -->
 
                     <div class="food-details-content">
 
@@ -251,7 +291,7 @@
                             id="foodDetailsRating"
                             class="food-details-rating"
                         >
-                            Rating
+                            0.0
                         </p>
 
 
@@ -265,7 +305,10 @@
                         </p>
 
 
-                        <!-- DESCRIPTION -->
+
+                        <!-- =================================================
+                             DESCRIPTION
+                        ================================================== -->
 
                         <div class="food-details-description">
 
@@ -274,13 +317,16 @@
                             </h2>
 
                             <p id="foodDetailsDescription">
-                                Delicious vegetarian food from Yummy Tummy.
+                                Delicious vegetarian food prepared with quality ingredients.
                             </p>
 
                         </div>
 
 
-                        <!-- RESTAURANT INFORMATION -->
+
+                        <!-- =================================================
+                             RESTAURANT INFORMATION
+                        ================================================== -->
 
                         <div class="food-restaurant-info">
 
@@ -290,6 +336,7 @@
 
 
                             <p>
+
                                 <strong>
                                     Restaurant:
                                 </strong>
@@ -302,6 +349,7 @@
 
 
                             <p>
+
                                 <strong>
                                     Cuisine:
                                 </strong>
@@ -314,6 +362,7 @@
 
 
                             <p>
+
                                 <strong>
                                     Location:
                                 </strong>
@@ -327,7 +376,10 @@
                         </div>
 
 
-                        <!-- FOOD ACTIONS -->
+
+                        <!-- =================================================
+                             FOOD ACTIONS
+                        ================================================== -->
 
                         <div class="food-details-actions">
 
@@ -355,9 +407,7 @@
 
                         </div>
 
-
                     </div>
-
 
                 </section>
 
@@ -371,6 +421,7 @@
                     id="foodInvalidState"
                     class="food-invalid-state"
                     hidden
+                    aria-live="assertive"
                 >
 
                     <h2>
@@ -381,6 +432,7 @@
                         The requested food is not available.
                     </p>
 
+
                     <a
                         href="menu.html"
                         class="food-back-link"
@@ -390,11 +442,9 @@
 
                 </section>
 
-
             </div>
 
         </section>
-
 
     </main>
 
@@ -409,13 +459,16 @@
         <div class="footer-container">
 
 
-            <!-- FOOTER BRAND -->
+            <!-- =================================================
+                 FOOTER BRAND
+            ================================================== -->
 
             <div class="footer-brand">
 
                 <a
                     href="index.html"
                     class="footer-brand-link"
+                    aria-label="Yummy Tummy Home"
                 >
 
                     <img
@@ -436,12 +489,16 @@
 
 
 
-            <!-- FOOTER LINKS -->
+            <!-- =================================================
+                 FOOTER LINKS
+            ================================================== -->
 
             <div class="footer-links">
 
 
-                <!-- QUICK LINKS -->
+                <!-- =================================================
+                     QUICK LINKS
+                ================================================== -->
 
                 <div class="footer-column">
 
@@ -477,7 +534,9 @@
 
 
 
-                <!-- CUSTOMER -->
+                <!-- =================================================
+                     CUSTOMER
+                ================================================== -->
 
                 <div class="footer-column">
 
@@ -521,7 +580,9 @@
 
 
 
-                <!-- ACCOUNT -->
+                <!-- =================================================
+                     ACCOUNT
+                ================================================== -->
 
                 <div class="footer-column">
 
@@ -549,7 +610,9 @@
 
 
 
-                <!-- INFORMATION -->
+                <!-- =================================================
+                     INFORMATION
+                ================================================== -->
 
                 <div class="footer-column">
 
@@ -565,15 +628,15 @@
 
                 </div>
 
-
             </div>
-
 
         </div>
 
 
 
-        <!-- FOOTER BOTTOM -->
+        <!-- =================================================
+             FOOTER BOTTOM
+        ================================================== -->
 
         <div class="footer-bottom">
 
@@ -583,7 +646,6 @@
 
         </div>
 
-
     </footer>
 
 
@@ -592,22 +654,44 @@
          JAVASCRIPT
     ====================================================== -->
 
-    <!-- Food Data -->
+
+    <!-- FOOD DATA -->
+
     <script src="js/menu-data.js"></script>
 
-    <!-- Restaurant Data -->
+
+    <!-- RESTAURANT DATA -->
+
     <script src="js/restaurant-data.js"></script>
 
-    <!-- Restaurant Menu Data -->
+
+    <!-- RESTAURANT MENU DATA -->
+
     <script src="js/restaurant-menu-data.js"></script>
 
-    <!-- Food Details -->
+
+    <!-- AUTHENTICATION -->
+
+    <script src="js/auth.js"></script>
+
+
+    <!-- GLOBAL SEARCH -->
+
+    <script src="js/global-search.js"></script>
+
+
+    <!-- FOOD DETAILS -->
+
     <script src="js/food-details.js"></script>
 
-    <!-- Food Actions -->
+
+    <!-- FOOD ACTIONS -->
+
     <script src="js/food-actions.js"></script>
 
-    <!-- Main JavaScript -->
+
+    <!-- MAIN JAVASCRIPT -->
+
     <script src="js/main.js"></script>
 
 

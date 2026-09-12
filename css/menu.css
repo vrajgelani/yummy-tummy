@@ -1,0 +1,654 @@
+/* =========================================================
+   YUMMY TUMMY
+   PROFESSIONAL MENU PAGE
+   ========================================================= */
+
+.menu-page {
+    background-color: whitesmoke;
+    min-height: 100vh;
+}
+
+
+/* =========================================================
+   MENU HERO
+   ========================================================= */
+
+.menu-hero {
+    position: relative;
+    overflow: hidden;
+    padding: 80px 20px;
+    background:
+        linear-gradient(
+            135deg,
+            darkorange,
+            orange,
+            orangered
+        );
+}
+
+.menu-hero::before {
+    content: "";
+    position: absolute;
+    width: 280px;
+    height: 280px;
+    border-radius: 50%;
+    background-color: rgba(255, 255, 255, 0.12);
+    top: -120px;
+    right: 8%;
+}
+
+.menu-hero::after {
+    content: "";
+    position: absolute;
+    width: 180px;
+    height: 180px;
+    border-radius: 50%;
+    background-color: rgba(255, 255, 255, 0.10);
+    bottom: -80px;
+    left: 8%;
+}
+
+.menu-hero-content {
+    position: relative;
+    z-index: 1;
+    max-width: 1100px;
+    margin: 0 auto;
+    text-align: center;
+    color: white;
+}
+
+.menu-eyebrow {
+    margin: 0 0 12px;
+    font-size: 14px;
+    font-weight: 800;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: white;
+}
+
+.menu-hero h1 {
+    margin: 0;
+    font-size: clamp(38px, 5vw, 64px);
+    line-height: 1.05;
+    font-weight: 900;
+    color: white;
+}
+
+.menu-hero-content > p:last-child {
+    max-width: 680px;
+    margin: 20px auto 0;
+    font-size: 18px;
+    line-height: 1.7;
+    color: white;
+}
+
+
+/* =========================================================
+   MENU CONTAINER
+   ========================================================= */
+
+.menu-container {
+    width: min(1180px, calc(100% - 40px));
+    margin: 0 auto;
+}
+
+
+/* =========================================================
+   CATEGORY SECTION
+   ========================================================= */
+
+.menu-filter-section {
+    position: relative;
+    z-index: 2;
+    margin-top: -35px;
+    margin-bottom: 55px;
+}
+
+.menu-filter-section .menu-container {
+    background-color: white;
+    border: 1px solid gainsboro;
+    border-radius: 22px;
+    padding: 30px;
+    box-shadow:
+        0 18px 45px rgba(0, 0, 0, 0.10);
+}
+
+.menu-filter-header {
+    margin-bottom: 22px;
+}
+
+.menu-filter-header h2 {
+    margin: 0 0 7px;
+    font-size: 26px;
+    font-weight: 800;
+    color: black;
+}
+
+.menu-filter-header p {
+    margin: 0;
+    color: dimgray;
+    font-size: 15px;
+}
+
+
+.menu-category-filters {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+
+.menu-filter-button {
+    appearance: none;
+    border: 1px solid lightgray;
+    background-color: white;
+    color: black;
+    padding: 12px 19px;
+    min-height: 45px;
+    border-radius: 12px;
+    font-size: 14px;
+    font-weight: 700;
+    cursor: pointer;
+    transition:
+        transform 0.2s ease,
+        background-color 0.2s ease,
+        color 0.2s ease,
+        border-color 0.2s ease,
+        box-shadow 0.2s ease;
+}
+
+
+.menu-filter-button:hover {
+    transform: translateY(-2px);
+    border-color: orange;
+    color: darkorange;
+    box-shadow:
+        0 7px 18px rgba(0, 0, 0, 0.08);
+}
+
+
+.menu-filter-button.active {
+    background-color: orange;
+    border-color: orange;
+    color: black;
+    box-shadow:
+        0 8px 20px rgba(255, 165, 0, 0.25);
+}
+
+
+.menu-filter-button:focus-visible {
+    outline: 3px solid gold;
+    outline-offset: 3px;
+}
+
+
+/* =========================================================
+   RESULTS HEADER
+   ========================================================= */
+
+.menu-results-section {
+    padding: 0 0 80px;
+}
+
+.menu-results-header {
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    gap: 20px;
+    margin-bottom: 28px;
+}
+
+
+.menu-results-label {
+    margin: 0 0 7px;
+    color: darkorange;
+    font-size: 13px;
+    font-weight: 800;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+}
+
+
+.menu-results-header h2 {
+    margin: 0;
+    color: black;
+    font-size: 34px;
+    line-height: 1.15;
+    font-weight: 850;
+}
+
+
+#menuResultsCount {
+    margin: 0;
+    padding: 9px 14px;
+    border-radius: 20px;
+    background-color: white;
+    border: 1px solid gainsboro;
+    color: dimgray;
+    font-size: 14px;
+    font-weight: 700;
+    white-space: nowrap;
+}
+
+
+/* =========================================================
+   FOOD GRID
+   ========================================================= */
+
+.menu-food-grid {
+    display: grid;
+    grid-template-columns:
+        repeat(3, minmax(0, 1fr));
+    gap: 25px;
+}
+
+
+/* =========================================================
+   FOOD CARD
+   ========================================================= */
+
+.menu-food-card {
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    min-width: 0;
+    background-color: white;
+    border: 1px solid gainsboro;
+    border-radius: 20px;
+    box-shadow:
+        0 8px 25px rgba(0, 0, 0, 0.06);
+    transition:
+        transform 0.25s ease,
+        box-shadow 0.25s ease,
+        border-color 0.25s ease;
+}
+
+
+.menu-food-card:hover {
+    transform: translateY(-7px);
+    border-color: orange;
+    box-shadow:
+        0 18px 40px rgba(0, 0, 0, 0.12);
+}
+
+
+/* =========================================================
+   FOOD IMAGE
+   ========================================================= */
+
+.menu-food-image {
+    position: relative;
+    overflow: hidden;
+    width: 100%;
+    height: 230px;
+    background:
+        linear-gradient(
+            135deg,
+            whitesmoke,
+            gainsboro
+        );
+}
+
+
+.menu-food-image::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    background:
+        linear-gradient(
+            to bottom,
+            transparent 60%,
+            rgba(0, 0, 0, 0.10)
+        );
+}
+
+
+.menu-food-image img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition:
+        transform 0.35s ease;
+}
+
+
+.menu-food-card:hover .menu-food-image img {
+    transform: scale(1.07);
+}
+
+
+/* =========================================================
+   FOOD CONTENT
+   ========================================================= */
+
+.menu-food-content {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    padding: 21px;
+}
+
+
+.menu-food-content > span[data-food-category] {
+    align-self: flex-start;
+    display: inline-flex;
+    align-items: center;
+    margin-bottom: 10px;
+    padding: 6px 10px;
+    border-radius: 20px;
+    background-color: oldlace;
+    color: darkorange;
+    font-size: 12px;
+    font-weight: 800;
+}
+
+
+.menu-food-content h3[data-food-name] {
+    margin: 0 0 10px;
+    color: black;
+    font-size: 21px;
+    line-height: 1.3;
+    font-weight: 800;
+}
+
+
+.menu-food-content p[data-food-rating] {
+    margin: 0 0 13px;
+    color: darkorange;
+    font-size: 14px;
+    font-weight: 750;
+}
+
+
+.menu-food-content strong[data-food-price] {
+    display: block;
+    margin-bottom: 18px;
+    color: black;
+    font-size: 22px;
+    font-weight: 900;
+}
+
+
+/* =========================================================
+   VIEW FOOD BUTTON
+   ========================================================= */
+
+.menu-food-content a[data-food-link] {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    min-height: 46px;
+    margin-top: auto;
+    padding: 11px 16px;
+    border: 1px solid orange;
+    border-radius: 11px;
+    background-color: orange;
+    color: black;
+    font-size: 14px;
+    font-weight: 800;
+    text-decoration: none;
+    transition:
+        background-color 0.2s ease,
+        color 0.2s ease,
+        transform 0.2s ease,
+        box-shadow 0.2s ease;
+}
+
+
+.menu-food-content a[data-food-link]:hover {
+    background-color: darkorange;
+    color: white;
+    transform: translateY(-2px);
+    box-shadow:
+        0 9px 20px rgba(255, 140, 0, 0.25);
+}
+
+
+.menu-food-content a[data-food-link]:focus-visible {
+    outline: 3px solid gold;
+    outline-offset: 3px;
+}
+
+
+/* =========================================================
+   EMPTY STATE
+   ========================================================= */
+
+.menu-empty-state {
+    padding: 70px 25px;
+    border: 1px solid gainsboro;
+    border-radius: 20px;
+    background-color: white;
+    text-align: center;
+    box-shadow:
+        0 10px 30px rgba(0, 0, 0, 0.06);
+}
+
+
+.menu-empty-content > p {
+    margin: 0 0 10px;
+    color: darkorange;
+    font-size: 14px;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+
+.menu-empty-content h2 {
+    margin: 0 0 12px;
+    color: black;
+    font-size: 28px;
+}
+
+
+.menu-empty-content span {
+    color: dimgray;
+    font-size: 15px;
+}
+
+
+.menu-food-card[hidden],
+.menu-empty-state[hidden] {
+    display: none;
+}
+
+
+/* =========================================================
+   SEARCH INPUT
+   ========================================================= */
+
+#headerSearch {
+    transition:
+        border-color 0.2s ease,
+        box-shadow 0.2s ease,
+        background-color 0.2s ease;
+}
+
+
+#headerSearch:focus {
+    outline: none;
+    border-color: orange;
+    background-color: white;
+    box-shadow:
+        0 0 0 4px rgba(255, 165, 0, 0.15);
+}
+
+
+/* =========================================================
+   PAGE SPACING
+   ========================================================= */
+
+.menu-page section {
+    scroll-margin-top: 100px;
+}
+
+
+/* =========================================================
+   TABLET
+   ========================================================= */
+
+@media (max-width: 1050px) {
+
+    .menu-food-grid {
+        grid-template-columns:
+            repeat(2, minmax(0, 1fr));
+    }
+
+    .menu-hero {
+        padding: 70px 20px;
+    }
+
+    .menu-filter-section .menu-container {
+        padding: 25px;
+    }
+}
+
+
+/* =========================================================
+   MOBILE
+   ========================================================= */
+
+@media (max-width: 700px) {
+
+    .menu-container {
+        width: min(
+            100% - 24px,
+            600px
+        );
+    }
+
+
+    .menu-hero {
+        padding: 60px 16px;
+    }
+
+
+    .menu-hero h1 {
+        font-size: 40px;
+    }
+
+
+    .menu-hero-content > p:last-child {
+        font-size: 15px;
+    }
+
+
+    .menu-filter-section {
+        margin-top: -25px;
+        margin-bottom: 40px;
+    }
+
+
+    .menu-filter-section .menu-container {
+        padding: 20px;
+        border-radius: 18px;
+    }
+
+
+    .menu-filter-header h2 {
+        font-size: 22px;
+    }
+
+
+    .menu-category-filters {
+        flex-wrap: nowrap;
+        overflow-x: auto;
+        padding-bottom: 5px;
+        scrollbar-width: thin;
+    }
+
+
+    .menu-filter-button {
+        flex: 0 0 auto;
+        white-space: nowrap;
+    }
+
+
+    .menu-results-header {
+        align-items: flex-start;
+        flex-direction: column;
+        margin-bottom: 22px;
+    }
+
+
+    .menu-results-header h2 {
+        font-size: 28px;
+    }
+
+
+    #menuResultsCount {
+        align-self: flex-start;
+    }
+
+
+    .menu-food-grid {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+
+
+    .menu-food-image {
+        height: 240px;
+    }
+}
+
+
+/* =========================================================
+   SMALL MOBILE
+   ========================================================= */
+
+@media (max-width: 420px) {
+
+    .menu-hero {
+        padding: 50px 14px;
+    }
+
+
+    .menu-hero h1 {
+        font-size: 34px;
+    }
+
+
+    .menu-filter-section .menu-container {
+        padding: 17px;
+    }
+
+
+    .menu-food-content {
+        padding: 17px;
+    }
+
+
+    .menu-food-image {
+        height: 220px;
+    }
+
+
+    .menu-food-content h3[data-food-name] {
+        font-size: 19px;
+    }
+
+
+    .menu-food-content strong[data-food-price] {
+        font-size: 20px;
+    }
+}
+
+
+/* =========================================================
+   REDUCED MOTION
+   ========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+    .menu-food-card,
+    .menu-food-image img,
+    .menu-filter-button,
+    .menu-food-content a[data-food-link] {
+        transition: none;
+    }
+}

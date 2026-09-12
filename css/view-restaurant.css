@@ -1,0 +1,316 @@
+.view-restaurant-page {
+    padding: 50px 20px 80px;
+    background: whitesmoke;
+}
+
+.view-restaurant-container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.restaurant-view-hero {
+    display: grid;
+    grid-template-columns: 1.1fr 1fr;
+    gap: 40px;
+    padding: 30px;
+    background: white;
+    border-radius: 24px;
+    box-shadow: 0 18px 45px lightgray;
+}
+
+.restaurant-view-image {
+    min-height: 390px;
+    overflow: hidden;
+    border-radius: 20px;
+    background: whitesmoke;
+}
+
+.restaurant-view-image img {
+    width: 100%;
+    height: 100%;
+    min-height: 390px;
+    display: block;
+    object-fit: cover;
+}
+
+.restaurant-view-intro {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.restaurant-view-badge {
+    width: fit-content;
+    margin-bottom: 18px;
+    padding: 8px 15px;
+    border-radius: 20px;
+    background: oldlace;
+    color: darkorange;
+    font-weight: 700;
+}
+
+.restaurant-view-intro h1 {
+    margin: 0 0 18px;
+    color: black;
+    font-size: 44px;
+    line-height: 1.1;
+}
+
+.restaurant-view-description {
+    color: dimgray;
+    font-size: 18px;
+    line-height: 1.7;
+}
+
+.restaurant-view-rating {
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+    margin-top: 20px;
+}
+
+.restaurant-view-rating strong {
+    color: darkorange;
+}
+
+.restaurant-view-rating span {
+    color: green;
+    font-weight: 700;
+}
+
+
+/* DETAILS */
+
+.restaurant-detail-section {
+    margin-top: 55px;
+}
+
+.restaurant-detail-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 18px;
+    margin-top: 25px;
+}
+
+.restaurant-detail-card {
+    padding: 24px;
+    border: 1px solid lightgray;
+    border-radius: 18px;
+    background: white;
+    box-shadow: 0 8px 25px gainsboro;
+}
+
+.restaurant-detail-card span,
+.restaurant-address-card span {
+    display: block;
+    margin-bottom: 10px;
+    color: dimgray;
+    font-size: 14px;
+}
+
+.restaurant-detail-card strong,
+.restaurant-address-card strong {
+    color: black;
+    font-size: 18px;
+    line-height: 1.5;
+}
+
+.restaurant-address-card {
+    margin-top: 18px;
+    padding: 25px;
+    border: 1px solid lightgray;
+    border-radius: 18px;
+    background: floralwhite;
+}
+
+.restaurant-action-buttons {
+    display: flex;
+    gap: 15px;
+    flex-wrap: wrap;
+    margin-top: 25px;
+}
+
+
+/* MENU */
+
+.restaurant-menu-section {
+    margin-top: 70px;
+}
+
+.restaurant-menu-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 25px;
+    margin-top: 30px;
+}
+
+.restaurant-menu-card {
+    overflow: hidden;
+    background: white;
+    border: 1px solid lightgray;
+    border-radius: 20px;
+    box-shadow: 0 12px 30px gainsboro;
+    transition:
+        transform 0.25s ease,
+        box-shadow 0.25s ease;
+}
+
+.restaurant-menu-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 18px 40px darkgray;
+}
+
+.restaurant-menu-image-container {
+    height: 230px;
+    overflow: hidden;
+    background: whitesmoke;
+}
+
+.restaurant-menu-image {
+    width: 100%;
+    height: 100%;
+    display: block;
+    object-fit: contain;
+    transition: transform 0.3s ease;
+}
+
+.restaurant-menu-card:hover
+.restaurant-menu-image {
+    transform: scale(1.05);
+}
+
+.restaurant-menu-content {
+    padding: 20px;
+}
+
+.restaurant-menu-category {
+    display: inline-block;
+    padding: 7px 12px;
+    border-radius: 20px;
+    background: oldlace;
+    color: darkorange;
+    font-size: 13px;
+    font-weight: 700;
+}
+
+.restaurant-menu-name {
+    margin: 14px 0;
+    color: black;
+    font-size: 23px;
+}
+
+.restaurant-menu-meta {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 15px;
+    margin-bottom: 20px;
+}
+
+.restaurant-menu-rating {
+    color: darkorange;
+    font-weight: 700;
+}
+
+.restaurant-menu-price {
+    color: black;
+    font-size: 20px;
+}
+
+.restaurant-menu-link {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 52px;
+    border-radius: 13px;
+    background: orange;
+    color: black;
+    text-decoration: none;
+    font-weight: 800;
+    transition: 0.25s ease;
+}
+
+.restaurant-menu-link:hover {
+    background: darkorange;
+    color: white;
+}
+
+
+/* INVALID */
+
+.invalid-restaurant-state {
+    max-width: 700px;
+    margin: 70px auto;
+    padding: 60px 30px;
+    text-align: center;
+    background: white;
+    border-radius: 24px;
+    box-shadow: 0 15px 40px lightgray;
+}
+
+.invalid-restaurant-state h1 {
+    margin-bottom: 15px;
+    color: black;
+}
+
+.invalid-restaurant-state p {
+    margin-bottom: 25px;
+    color: dimgray;
+}
+
+
+/* RESPONSIVE */
+
+@media (max-width: 950px) {
+
+    .restaurant-view-hero {
+        grid-template-columns: 1fr;
+    }
+
+    .restaurant-detail-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .restaurant-menu-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+
+@media (max-width: 600px) {
+
+    .view-restaurant-page {
+        padding: 25px 14px 50px;
+    }
+
+    .restaurant-view-hero {
+        padding: 15px;
+        gap: 20px;
+    }
+
+    .restaurant-view-image,
+    .restaurant-view-image img {
+        min-height: 260px;
+    }
+
+    .restaurant-view-intro h1 {
+        font-size: 32px;
+    }
+
+    .restaurant-detail-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .restaurant-menu-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .restaurant-action-buttons {
+        flex-direction: column;
+    }
+
+    .restaurant-action-buttons a {
+        width: 100%;
+        text-align: center;
+    }
+}

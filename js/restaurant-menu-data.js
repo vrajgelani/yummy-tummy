@@ -1,997 +1,221 @@
-const restaurantMenuData = {
-    "rajasthani-rasoi": [
-        {
-            id: "rr-01",
-            name: "Dal Baati Churma",
-            category: "Starter",
-            price: 249,
-            rating: 4.8,
-            image: "images/restaurant-foods/rajasthani-01.png"
-        },
-        {
-            id: "rr-02",
-            name: "Gatte Ki Sabzi",
-            category: "Main Course",
-            price: 199,
-            rating: 4.7,
-            image: "images/restaurant-foods/rajasthani-02.png"
-        },
-        {
-            id: "rr-03",
-            name: "Ker Sangri",
-            category: "Main Course",
-            price: 219,
-            rating: 4.6,
-            image: "images/restaurant-foods/rajasthani-03.png"
-        },
-        {
-            id: "rr-04",
-            name: "Bajra Roti",
-            category: "Bread",
-            price: 99,
-            rating: 4.5,
-            image: "images/restaurant-foods/rajasthani-04.png"
-        },
-        {
-            id: "rr-05",
-            name: "Rajasthani Kadhi",
-            category: "Main Course",
-            price: 159,
-            rating: 4.6,
-            image: "images/restaurant-foods/rajasthani-05.png"
-        },
-        {
-            id: "rr-06",
-            name: "Panchmel Dal",
-            category: "Main Course",
-            price: 149,
-            rating: 4.7,
-            image: "images/restaurant-foods/rajasthani-06.png"
-        },
-        {
-            id: "rr-07",
-            name: "Papad Mangodi",
-            category: "Main Course",
-            price: 179,
-            rating: 4.5,
-            image: "images/restaurant-foods/rajasthani-07.png"
-        },
-        {
-            id: "rr-08",
-            name: "Mohan Maas Style Paneer",
-            category: "Special",
-            price: 269,
-            rating: 4.8,
-            image: "images/restaurant-foods/rajasthani-08.png"
-        },
-        {
-            id: "rr-09",
-            name: "Marwari Veg Biryani",
-            category: "Biryani",
-            price: 239,
-            rating: 4.7,
-            image: "images/restaurant-foods/rajasthani-09.png"
-        },
-        {
-            id: "rr-10",
-            name: "Kesar Malai Ice Cream",
-            category: "Ice Cream",
-            price: 149,
-            rating: 4.8,
-            image: "images/restaurant-foods/rajasthani-10.png"
-        }
-    ],
+const restaurantMenuData = [
+    {
+        restaurantId: "rajasthani-rasoi",
+        foods: [
+            ["Rajasthani Mirchi Vada", "Starter", 149, 4.6],
+            ["Dal Baati Churma", "Main Course", 249, 4.9],
+            ["Gatte Ki Sabzi", "Main Course", 199, 4.7],
+            ["Ker Sangri", "Main Course", 219, 4.6],
+            ["Bajra Roti", "Main Course", 99, 4.5],
+            ["Rajasthani Kadhi", "Main Course", 159, 4.6],
+            ["Papad Ki Sabzi", "Main Course", 149, 4.5],
+            ["Mawa Kachori", "Dessert", 129, 4.7],
+            ["Rajasthani Veg Biryani", "Biryani", 249, 4.7],
+            ["Kesar Ice Cream", "Ice Cream", 119, 4.6]
+        ]
+    },
 
-    "gujarati-thali-house": [
-        {
-            id: "gth-01",
-            name: "Khandvi Rolls",
-            category: "Starter",
-            price: 139,
-            rating: 4.7,
-            image: "images/restaurant-foods/gujarati-01.png"
-        },
-        {
-            id: "gth-02",
-            name: "Gujarati Kadhi",
-            category: "Main Course",
-            price: 129,
-            rating: 4.6,
-            image: "images/restaurant-foods/gujarati-02.png"
-        },
-        {
-            id: "gth-03",
-            name: "Sev Tameta",
-            category: "Main Course",
-            price: 169,
-            rating: 4.6,
-            image: "images/restaurant-foods/gujarati-03.png"
-        },
-        {
-            id: "gth-04",
-            name: "Undhiyu",
-            category: "Main Course",
-            price: 219,
-            rating: 4.8,
-            image: "images/restaurant-foods/gujarati-04.png"
-        },
-        {
-            id: "gth-05",
-            name: "Dal Dhokli",
-            category: "Main Course",
-            price: 179,
-            rating: 4.7,
-            image: "images/restaurant-foods/gujarati-05.png"
-        },
-        {
-            id: "gth-06",
-            name: "Gujarati Fafda",
-            category: "Snack",
-            price: 119,
-            rating: 4.5,
-            image: "images/restaurant-foods/gujarati-06.png"
-        },
-        {
-            id: "gth-07",
-            name: "Methi Thepla",
-            category: "Bread",
-            price: 109,
-            rating: 4.6,
-            image: "images/restaurant-foods/gujarati-07.png"
-        },
-        {
-            id: "gth-08",
-            name: "Gujarati Kadak Dhokla",
-            category: "Starter",
-            price: 129,
-            rating: 4.7,
-            image: "images/restaurant-foods/gujarati-08.png"
-        },
-        {
-            id: "gth-09",
-            name: "Kathiyawadi Veg Biryani",
-            category: "Biryani",
-            price: 239,
-            rating: 4.6,
-            image: "images/restaurant-foods/gujarati-09.png"
-        },
-        {
-            id: "gth-10",
-            name: "Mango Ice Cream",
-            category: "Ice Cream",
-            price: 139,
-            rating: 4.8,
-            image: "images/restaurant-foods/gujarati-10.png"
-        }
-    ],
+    {
+        restaurantId: "gujarati-thali-house",
+        foods: [
+            ["Khandvi", "Starter", 139, 4.5],
+            ["Gujarati Thali", "Main Course", 299, 4.8],
+            ["Sev Tameta", "Main Course", 169, 4.5],
+            ["Undhiyu", "Main Course", 219, 4.7],
+            ["Dal Dhokli", "Main Course", 179, 4.6],
+            ["Gujarati Kadhi", "Main Course", 149, 4.6],
+            ["Thepla", "Main Course", 99, 4.5],
+            ["Mohanthal", "Dessert", 139, 4.7],
+            ["Gujarati Veg Biryani", "Biryani", 239, 4.5],
+            ["Rajbhog Ice Cream", "Ice Cream", 129, 4.7]
+        ]
+    },
 
-    "punjabi-zaika": [
-        {
-            id: "pz-01",
-            name: "Amritsari Paneer Tikka",
-            category: "Starter",
-            price: 249,
-            rating: 4.7,
-            image: "images/restaurant-foods/punjabi-01.png"
-        },
-        {
-            id: "pz-02",
-            name: "Dal Makhani",
-            category: "Main Course",
-            price: 219,
-            rating: 4.8,
-            image: "images/restaurant-foods/punjabi-02.png"
-        },
-        {
-            id: "pz-03",
-            name: "Paneer Butter Masala",
-            category: "Main Course",
-            price: 269,
-            rating: 4.7,
-            image: "images/restaurant-foods/punjabi-03.png"
-        },
-        {
-            id: "pz-04",
-            name: "Chole Amritsari",
-            category: "Main Course",
-            price: 189,
-            rating: 4.6,
-            image: "images/restaurant-foods/punjabi-04.png"
-        },
-        {
-            id: "pz-05",
-            name: "Sarson Saag",
-            category: "Main Course",
-            price: 199,
-            rating: 4.7,
-            image: "images/restaurant-foods/punjabi-05.png"
-        },
-        {
-            id: "pz-06",
-            name: "Makki Di Roti",
-            category: "Bread",
-            price: 119,
-            rating: 4.6,
-            image: "images/restaurant-foods/punjabi-06.png"
-        },
-        {
-            id: "pz-07",
-            name: "Amritsari Kulcha",
-            category: "Bread",
-            price: 149,
-            rating: 4.8,
-            image: "images/restaurant-foods/punjabi-07.png"
-        },
-        {
-            id: "pz-08",
-            name: "Paneer Tikka Masala",
-            category: "Special",
-            price: 279,
-            rating: 4.7,
-            image: "images/restaurant-foods/punjabi-08.png"
-        },
-        {
-            id: "pz-09",
-            name: "Punjabi Veg Biryani",
-            category: "Biryani",
-            price: 249,
-            rating: 4.6,
-            image: "images/restaurant-foods/punjabi-09.png"
-        },
-        {
-            id: "pz-10",
-            name: "Phirni Ice Cream",
-            category: "Ice Cream",
-            price: 159,
-            rating: 4.7,
-            image: "images/restaurant-foods/punjabi-10.png"
-        }
-    ],
+    {
+        restaurantId: "punjabi-zaika",
+        foods: [
+            ["Paneer Pakora", "Starter", 179, 4.5],
+            ["Dal Makhani", "Main Course", 219, 4.6],
+            ["Paneer Butter Masala", "Main Course", 249, 4.7],
+            ["Chole Punjabi", "Main Course", 179, 4.5],
+            ["Amritsari Kulcha", "Main Course", 169, 4.6],
+            ["Rajma Masala", "Main Course", 189, 4.5],
+            ["Jeera Rice", "Rice", 139, 4.4],
+            ["Gajar Halwa", "Dessert", 139, 4.6],
+            ["Punjabi Veg Biryani", "Biryani", 259, 4.6],
+            ["Kulfi Ice Cream", "Ice Cream", 119, 4.7]
+        ]
+    },
 
-    "bengal-bhojan": [
-        {
-            id: "bb-01",
-            name: "Beguni",
-            category: "Starter",
-            price: 119,
-            rating: 4.5,
-            image: "images/restaurant-foods/bengal-01.png"
-        },
-        {
-            id: "bb-02",
-            name: "Aloo Posto",
-            category: "Main Course",
-            price: 179,
-            rating: 4.6,
-            image: "images/restaurant-foods/bengal-02.png"
-        },
-        {
-            id: "bb-03",
-            name: "Shukto",
-            category: "Main Course",
-            price: 169,
-            rating: 4.5,
-            image: "images/restaurant-foods/bengal-03.png"
-        },
-        {
-            id: "bb-04",
-            name: "Cholar Dal",
-            category: "Main Course",
-            price: 149,
-            rating: 4.7,
-            image: "images/restaurant-foods/bengal-04.png"
-        },
-        {
-            id: "bb-05",
-            name: "Dhokar Dalna",
-            category: "Main Course",
-            price: 199,
-            rating: 4.6,
-            image: "images/restaurant-foods/bengal-05.png"
-        },
-        {
-            id: "bb-06",
-            name: "Luchi",
-            category: "Bread",
-            price: 99,
-            rating: 4.6,
-            image: "images/restaurant-foods/bengal-06.png"
-        },
-        {
-            id: "bb-07",
-            name: "Mochar Ghonto",
-            category: "Main Course",
-            price: 189,
-            rating: 4.5,
-            image: "images/restaurant-foods/bengal-07.png"
-        },
-        {
-            id: "bb-08",
-            name: "Paneer Kasha",
-            category: "Special",
-            price: 249,
-            rating: 4.7,
-            image: "images/restaurant-foods/bengal-08.png"
-        },
-        {
-            id: "bb-09",
-            name: "Bengali Veg Biryani",
-            category: "Biryani",
-            price: 259,
-            rating: 4.7,
-            image: "images/restaurant-foods/bengal-09.png"
-        },
-        {
-            id: "bb-10",
-            name: "Nolen Gur Ice Cream",
-            category: "Ice Cream",
-            price: 169,
-            rating: 4.8,
-            image: "images/restaurant-foods/bengal-10.png"
-        }
-    ],
+    {
+        restaurantId: "bengal-bhojan",
+        foods: [
+            ["Beguni", "Starter", 129, 4.4],
+            ["Aloo Posto", "Main Course", 179, 4.5],
+            ["Shukto", "Main Course", 169, 4.3],
+            ["Cholar Dal", "Main Course", 159, 4.4],
+            ["Luchi", "Main Course", 119, 4.5],
+            ["Dhokar Dalna", "Main Course", 189, 4.5],
+            ["Basanti Pulao", "Rice", 179, 4.4],
+            ["Mishti Doi", "Dessert", 99, 4.6],
+            ["Bengali Veg Biryani", "Biryani", 249, 4.5],
+            ["Mango Ice Cream", "Ice Cream", 109, 4.5]
+        ]
+    },
 
-    "south-spice-kitchen": [
-        {
-            id: "ssk-01",
-            name: "Medu Vada",
-            category: "Starter",
-            price: 129,
-            rating: 4.7,
-            image: "images/restaurant-foods/south-indian-01.png"
-        },
-        {
-            id: "ssk-02",
-            name: "Masala Dosa",
-            category: "Main Course",
-            price: 149,
-            rating: 4.8,
-            image: "images/restaurant-foods/south-indian-02.png"
-        },
-        {
-            id: "ssk-03",
-            name: "Mysore Masala Dosa",
-            category: "Main Course",
-            price: 179,
-            rating: 4.7,
-            image: "images/restaurant-foods/south-indian-03.png"
-        },
-        {
-            id: "ssk-04",
-            name: "Idli Sambar",
-            category: "Main Course",
-            price: 109,
-            rating: 4.6,
-            image: "images/restaurant-foods/south-indian-04.png"
-        },
-        {
-            id: "ssk-05",
-            name: "Vegetable Uttapam",
-            category: "Main Course",
-            price: 159,
-            rating: 4.6,
-            image: "images/restaurant-foods/south-indian-05.png"
-        },
-        {
-            id: "ssk-06",
-            name: "Rava Dosa",
-            category: "Main Course",
-            price: 159,
-            rating: 4.7,
-            image: "images/restaurant-foods/south-indian-06.png"
-        },
-        {
-            id: "ssk-07",
-            name: "Curd Rice",
-            category: "Main Course",
-            price: 139,
-            rating: 4.5,
-            image: "images/restaurant-foods/south-indian-07.png"
-        },
-        {
-            id: "ssk-08",
-            name: "Vegetable Upma",
-            category: "Special",
-            price: 119,
-            rating: 4.5,
-            image: "images/restaurant-foods/south-indian-08.png"
-        },
-        {
-            id: "ssk-09",
-            name: "South Indian Veg Biryani",
-            category: "Biryani",
-            price: 229,
-            rating: 4.6,
-            image: "images/restaurant-foods/south-indian-09.png"
-        },
-        {
-            id: "ssk-10",
-            name: "Tender Coconut Ice Cream",
-            category: "Ice Cream",
-            price: 159,
-            rating: 4.8,
-            image: "images/restaurant-foods/south-indian-10.png"
-        }
-    ],
+    {
+        restaurantId: "south-spice-kitchen",
+        foods: [
+            ["Medu Vada", "Starter", 129, 4.5],
+            ["Masala Dosa", "Main Course", 149, 4.7],
+            ["Idli Sambar", "Main Course", 109, 4.6],
+            ["Podi Idli", "Main Course", 119, 4.5],
+            ["Vegetable Uttapam", "Main Course", 159, 4.6],
+            ["Ven Pongal", "Main Course", 139, 4.5],
+            ["Curd Rice", "Rice", 119, 4.4],
+            ["Mysore Pak", "Dessert", 109, 4.6],
+            ["South Indian Veg Biryani", "Biryani", 239, 4.6],
+            ["Tender Coconut Ice Cream", "Ice Cream", 139, 4.7]
+        ]
+    },
 
-    "maharashtra-tadka": [
-        {
-            id: "mt-01",
-            name: "Kothimbir Vadi",
-            category: "Starter",
-            price: 139,
-            rating: 4.6,
-            image: "images/restaurant-foods/maharashtra-01.png"
-        },
-        {
-            id: "mt-02",
-            name: "Misal Pav",
-            category: "Main Course",
-            price: 159,
-            rating: 4.7,
-            image: "images/restaurant-foods/maharashtra-02.png"
-        },
-        {
-            id: "mt-03",
-            name: "Bharli Vangi",
-            category: "Main Course",
-            price: 189,
-            rating: 4.6,
-            image: "images/restaurant-foods/maharashtra-03.png"
-        },
-        {
-            id: "mt-04",
-            name: "Pithla Bhakri",
-            category: "Main Course",
-            price: 179,
-            rating: 4.7,
-            image: "images/restaurant-foods/maharashtra-04.png"
-        },
-        {
-            id: "mt-05",
-            name: "Batata Bhaji",
-            category: "Main Course",
-            price: 139,
-            rating: 4.5,
-            image: "images/restaurant-foods/maharashtra-05.png"
-        },
-        {
-            id: "mt-06",
-            name: "Thalipeeth",
-            category: "Bread",
-            price: 149,
-            rating: 4.6,
-            image: "images/restaurant-foods/maharashtra-06.png"
-        },
-        {
-            id: "mt-07",
-            name: "Sabudana Khichdi",
-            category: "Special",
-            price: 139,
-            rating: 4.7,
-            image: "images/restaurant-foods/maharashtra-07.png"
-        },
-        {
-            id: "mt-08",
-            name: "Matki Usal",
-            category: "Main Course",
-            price: 169,
-            rating: 4.5,
-            image: "images/restaurant-foods/maharashtra-08.png"
-        },
-        {
-            id: "mt-09",
-            name: "Maharashtrian Veg Biryani",
-            category: "Biryani",
-            price: 239,
-            rating: 4.6,
-            image: "images/restaurant-foods/maharashtra-09.png"
-        },
-        {
-            id: "mt-10",
-            name: "Puran Poli Ice Cream",
-            category: "Ice Cream",
-            price: 159,
-            rating: 4.7,
-            image: "images/restaurant-foods/maharashtra-10.png"
-        }
-    ],
+    {
+        restaurantId: "maharashtra-tadka",
+        foods: [
+            ["Kothimbir Vadi", "Starter", 139, 4.5],
+            ["Misal Pav", "Main Course", 159, 4.6],
+            ["Pav Bhaji", "Main Course", 179, 4.7],
+            ["Bharli Vangi", "Main Course", 189, 4.5],
+            ["Pithla Bhakri", "Main Course", 199, 4.6],
+            ["Batata Bhaji", "Main Course", 139, 4.4],
+            ["Vangyache Bharit", "Main Course", 169, 4.5],
+            ["Puran Poli", "Dessert", 119, 4.7],
+            ["Maharashtrian Veg Biryani", "Biryani", 239, 4.5],
+            ["Mango Ice Cream", "Ice Cream", 109, 4.5]
+        ]
+    },
 
-    "kashmir-valley-kitchen": [
-        {
-            id: "kvk-01",
-            name: "Nadru Monje",
-            category: "Starter",
-            price: 169,
-            rating: 4.5,
-            image: "images/restaurant-foods/kashmir-01.png"
-        },
-        {
-            id: "kvk-02",
-            name: "Dum Aloo Kashmiri",
-            category: "Main Course",
-            price: 219,
-            rating: 4.7,
-            image: "images/restaurant-foods/kashmir-02.png"
-        },
-        {
-            id: "kvk-03",
-            name: "Haak Saag",
-            category: "Main Course",
-            price: 179,
-            rating: 4.5,
-            image: "images/restaurant-foods/kashmir-03.png"
-        },
-        {
-            id: "kvk-04",
-            name: "Nadru Yakhni",
-            category: "Main Course",
-            price: 229,
-            rating: 4.6,
-            image: "images/restaurant-foods/kashmir-04.png"
-        },
-        {
-            id: "kvk-05",
-            name: "Rajma Kashmiri",
-            category: "Main Course",
-            price: 189,
-            rating: 4.6,
-            image: "images/restaurant-foods/kashmir-05.png"
-        },
-        {
-            id: "kvk-06",
-            name: "Kashmiri Pulao",
-            category: "Main Course",
-            price: 199,
-            rating: 4.7,
-            image: "images/restaurant-foods/kashmir-06.png"
-        },
-        {
-            id: "kvk-07",
-            name: "Paneer Rogan Style",
-            category: "Special",
-            price: 269,
-            rating: 4.5,
-            image: "images/restaurant-foods/kashmir-07.png"
-        },
-        {
-            id: "kvk-08",
-            name: "Kashmiri Modur Pulao",
-            category: "Special",
-            price: 219,
-            rating: 4.6,
-            image: "images/restaurant-foods/kashmir-08.png"
-        },
-        {
-            id: "kvk-09",
-            name: "Kashmiri Veg Biryani",
-            category: "Biryani",
-            price: 259,
-            rating: 4.7,
-            image: "images/restaurant-foods/kashmir-09.png"
-        },
-        {
-            id: "kvk-10",
-            name: "Saffron Apple Ice Cream",
-            category: "Ice Cream",
-            price: 179,
-            rating: 4.8,
-            image: "images/restaurant-foods/kashmir-10.png"
-        }
-    ],
+    {
+        restaurantId: "kashmir-valley-kitchen",
+        foods: [
+            ["Kashmiri Aloo", "Starter", 159, 4.4],
+            ["Dum Aloo Kashmiri", "Main Course", 199, 4.6],
+            ["Rajma Gogji", "Main Course", 189, 4.4],
+            ["Nadru Yakhni", "Main Course", 219, 4.5],
+            ["Haak Saag", "Main Course", 169, 4.4],
+            ["Kashmiri Pulao", "Rice", 189, 4.6],
+            ["Modur Pulao", "Rice", 179, 4.5],
+            ["Phirni", "Dessert", 119, 4.6],
+            ["Kashmiri Veg Biryani", "Biryani", 259, 4.6],
+            ["Saffron Ice Cream", "Ice Cream", 149, 4.7]
+        ]
+    },
 
-    "awadhi-dastarkhwan": [
-        {
-            id: "ad-01",
-            name: "Awadhi Paneer Tikka",
-            category: "Starter",
-            price: 249,
-            rating: 4.7,
-            image: "images/restaurant-foods/awadhi-01.png"
-        },
-        {
-            id: "ad-02",
-            name: "Awadhi Dal",
-            category: "Main Course",
-            price: 169,
-            rating: 4.6,
-            image: "images/restaurant-foods/awadhi-02.png"
-        },
-        {
-            id: "ad-03",
-            name: "Shahi Paneer Awadhi",
-            category: "Main Course",
-            price: 269,
-            rating: 4.8,
-            image: "images/restaurant-foods/awadhi-03.png"
-        },
-        {
-            id: "ad-04",
-            name: "Awadhi Vegetable Korma",
-            category: "Main Course",
-            price: 229,
-            rating: 4.6,
-            image: "images/restaurant-foods/awadhi-04.png"
-        },
-        {
-            id: "ad-05",
-            name: "Matar Pulao",
-            category: "Rice",
-            price: 159,
-            rating: 4.5,
-            image: "images/restaurant-foods/awadhi-05.png"
-        },
-        {
-            id: "ad-06",
-            name: "Roomali Roti",
-            category: "Bread",
-            price: 89,
-            rating: 4.6,
-            image: "images/restaurant-foods/awadhi-06.png"
-        },
-        {
-            id: "ad-07",
-            name: "Sheermal",
-            category: "Bread",
-            price: 119,
-            rating: 4.7,
-            image: "images/restaurant-foods/awadhi-07.png"
-        },
-        {
-            id: "ad-08",
-            name: "Awadhi Kofta Curry",
-            category: "Special",
-            price: 249,
-            rating: 4.7,
-            image: "images/restaurant-foods/awadhi-08.png"
-        },
-        {
-            id: "ad-09",
-            name: "Awadhi Veg Biryani",
-            category: "Biryani",
-            price: 259,
-            rating: 4.8,
-            image: "images/restaurant-foods/awadhi-09.png"
-        },
-        {
-            id: "ad-10",
-            name: "Royal Kulfi Ice Cream",
-            category: "Ice Cream",
-            price: 159,
-            rating: 4.8,
-            image: "images/restaurant-foods/awadhi-10.png"
-        }
-    ],
+    {
+        restaurantId: "awadhi-dastarkhwan",
+        foods: [
+            ["Galouti Style Veg Kebab", "Starter", 219, 4.6],
+            ["Awadhi Paneer Korma", "Main Course", 249, 4.7],
+            ["Subz Korma", "Main Course", 229, 4.5],
+            ["Awadhi Dal", "Main Course", 179, 4.5],
+            ["Sheermal Roti", "Main Course", 119, 4.4],
+            ["Roomali Roti", "Main Course", 99, 4.5],
+            ["Awadhi Pulao", "Rice", 189, 4.6],
+            ["Shahi Tukda", "Dessert", 139, 4.7],
+            ["Awadhi Veg Biryani", "Biryani", 269, 4.8],
+            ["Kesar Ice Cream", "Ice Cream", 129, 4.6]
+        ]
+    },
 
-    "hyderabadi-nizams-kitchen": [
-        {
-            id: "hnk-01",
-            name: "Paneer Shikampuri",
-            category: "Starter",
-            price: 239,
-            rating: 4.6,
-            image: "images/restaurant-foods/hyderabad-01.png"
-        },
-        {
-            id: "hnk-02",
-            name: "Bagara Baingan",
-            category: "Main Course",
-            price: 199,
-            rating: 4.7,
-            image: "images/restaurant-foods/hyderabad-02.png"
-        },
-        {
-            id: "hnk-03",
-            name: "Mirchi Ka Salan",
-            category: "Main Course",
-            price: 179,
-            rating: 4.6,
-            image: "images/restaurant-foods/hyderabad-03.png"
-        },
-        {
-            id: "hnk-04",
-            name: "Hyderabadi Khatti Dal",
-            category: "Main Course",
-            price: 159,
-            rating: 4.7,
-            image: "images/restaurant-foods/hyderabad-04.png"
-        },
-        {
-            id: "hnk-05",
-            name: "Veg Shikampuri",
-            category: "Special",
-            price: 229,
-            rating: 4.5,
-            image: "images/restaurant-foods/hyderabad-05.png"
-        },
-        {
-            id: "hnk-06",
-            name: "Hyderabadi Mirchi Pakoda",
-            category: "Snack",
-            price: 119,
-            rating: 4.5,
-            image: "images/restaurant-foods/hyderabad-06.png"
-        },
-        {
-            id: "hnk-07",
-            name: "Double Ka Meetha Style Bread",
-            category: "Dessert",
-            price: 149,
-            rating: 4.7,
-            image: "images/restaurant-foods/hyderabad-07.png"
-        },
-        {
-            id: "hnk-08",
-            name: "Nizami Paneer",
-            category: "Special",
-            price: 279,
-            rating: 4.8,
-            image: "images/restaurant-foods/hyderabad-08.png"
-        },
-        {
-            id: "hnk-09",
-            name: "Hyderabadi Veg Biryani",
-            category: "Biryani",
-            price: 269,
-            rating: 4.8,
-            image: "images/restaurant-foods/hyderabad-09.png"
-        },
-        {
-            id: "hnk-10",
-            name: "Qubani Kulfi Ice Cream",
-            category: "Ice Cream",
-            price: 169,
-            rating: 4.7,
-            image: "images/restaurant-foods/hyderabad-10.png"
-        }
-    ],
+    {
+        restaurantId: "hyderabadi-nizams-kitchen",
+        foods: [
+            ["Mirchi Bajji", "Starter", 129, 4.4],
+            ["Bagara Baingan", "Main Course", 189, 4.5],
+            ["Mirchi Ka Salan", "Main Course", 179, 4.4],
+            ["Paneer Shahi Korma", "Main Course", 239, 4.6],
+            ["Hyderabadi Khatti Dal", "Main Course", 169, 4.5],
+            ["Veg Double Ka Meetha", "Dessert", 129, 4.6],
+            ["Bagara Rice", "Rice", 159, 4.5],
+            ["Qubani Sweet", "Dessert", 139, 4.5],
+            ["Hyderabadi Veg Biryani", "Biryani", 259, 4.8],
+            ["Pista Ice Cream", "Ice Cream", 129, 4.6]
+        ]
+    },
 
-    "goan-coastal-bites": [
-        {
-            id: "gcb-01",
-            name: "Goan Veg Cutlet",
-            category: "Starter",
-            price: 139,
-            rating: 4.5,
-            image: "images/restaurant-foods/goan-01.png"
-        },
-        {
-            id: "gcb-02",
-            name: "Vegetable Xacuti",
-            category: "Main Course",
-            price: 229,
-            rating: 4.6,
-            image: "images/restaurant-foods/goan-02.png"
-        },
-        {
-            id: "gcb-03",
-            name: "Mushroom Cafreal",
-            category: "Main Course",
-            price: 219,
-            rating: 4.5,
-            image: "images/restaurant-foods/goan-03.png"
-        },
-        {
-            id: "gcb-04",
-            name: "Goan Vegetable Curry",
-            category: "Main Course",
-            price: 199,
-            rating: 4.6,
-            image: "images/restaurant-foods/goan-04.png"
-        },
-        {
-            id: "gcb-05",
-            name: "Goan Poi Bread",
-            category: "Bread",
-            price: 89,
-            rating: 4.5,
-            image: "images/restaurant-foods/goan-05.png"
-        },
-        {
-            id: "gcb-06",
-            name: "Cashew Masala",
-            category: "Snack",
-            price: 159,
-            rating: 4.6,
-            image: "images/restaurant-foods/goan-06.png"
-        },
-        {
-            id: "gcb-07",
-            name: "Vegetable Sorpotel Style",
-            category: "Special",
-            price: 239,
-            rating: 4.4,
-            image: "images/restaurant-foods/goan-07.png"
-        },
-        {
-            id: "gcb-08",
-            name: "Goan Coconut Rice",
-            category: "Rice",
-            price: 179,
-            rating: 4.6,
-            image: "images/restaurant-foods/goan-08.png"
-        },
-        {
-            id: "gcb-09",
-            name: "Goan Veg Biryani",
-            category: "Biryani",
-            price: 249,
-            rating: 4.6,
-            image: "images/restaurant-foods/goan-09.png"
-        },
-        {
-            id: "gcb-10",
-            name: "Coconut Caramel Ice Cream",
-            category: "Ice Cream",
-            price: 159,
-            rating: 4.7,
-            image: "images/restaurant-foods/goan-10.png"
-        }
-    ],
+    {
+        restaurantId: "goan-coastal-bites",
+        foods: [
+            ["Goan Veg Cutlet", "Starter", 149, 4.3],
+            ["Vegetable Xacuti", "Main Course", 219, 4.5],
+            ["Goan Kaju Curry", "Main Course", 229, 4.6],
+            ["Veg Cafreal", "Main Course", 199, 4.4],
+            ["Goan Dal", "Main Course", 159, 4.3],
+            ["Poi Bread", "Main Course", 89, 4.4],
+            ["Coconut Rice", "Rice", 169, 4.5],
+            ["Bebinca", "Dessert", 129, 4.6],
+            ["Goan Veg Biryani", "Biryani", 249, 4.5],
+            ["Coconut Ice Cream", "Ice Cream", 139, 4.7]
+        ]
+    },
 
-    "kerala-coconut-kitchen": [
-        {
-            id: "kck-01",
-            name: "Banana Chips",
-            category: "Starter",
-            price: 99,
-            rating: 4.5,
-            image: "images/restaurant-foods/kerala-01.png"
-        },
-        {
-            id: "kck-02",
-            name: "Avial",
-            category: "Main Course",
-            price: 179,
-            rating: 4.7,
-            image: "images/restaurant-foods/kerala-02.png"
-        },
-        {
-            id: "kck-03",
-            name: "Kerala Vegetable Stew",
-            category: "Main Course",
-            price: 199,
-            rating: 4.6,
-            image: "images/restaurant-foods/kerala-03.png"
-        },
-        {
-            id: "kck-04",
-            name: "Thoran",
-            category: "Main Course",
-            price: 159,
-            rating: 4.6,
-            image: "images/restaurant-foods/kerala-04.png"
-        },
-        {
-            id: "kck-05",
-            name: "Appam",
-            category: "Bread",
-            price: 129,
-            rating: 4.7,
-            image: "images/restaurant-foods/kerala-05.png"
-        },
-        {
-            id: "kck-06",
-            name: "Puttu Kadala",
-            category: "Main Course",
-            price: 169,
-            rating: 4.6,
-            image: "images/restaurant-foods/kerala-06.png"
-        },
-        {
-            id: "kck-07",
-            name: "Vegetable Ishtu",
-            category: "Main Course",
-            price: 189,
-            rating: 4.5,
-            image: "images/restaurant-foods/kerala-07.png"
-        },
-        {
-            id: "kck-08",
-            name: "Kerala Parotta",
-            category: "Bread",
-            price: 119,
-            rating: 4.7,
-            image: "images/restaurant-foods/kerala-08.png"
-        },
-        {
-            id: "kck-09",
-            name: "Kerala Veg Biryani",
-            category: "Biryani",
-            price: 239,
-            rating: 4.7,
-            image: "images/restaurant-foods/kerala-09.png"
-        },
-        {
-            id: "kck-10",
-            name: "Coconut Payasam Ice Cream",
-            category: "Ice Cream",
-            price: 169,
-            rating: 4.8,
-            image: "images/restaurant-foods/kerala-10.png"
-        }
-    ],
+    {
+        restaurantId: "kerala-coconut-kitchen",
+        foods: [
+            ["Banana Fritters", "Starter", 119, 4.5],
+            ["Avial", "Main Course", 189, 4.6],
+            ["Kerala Vegetable Stew", "Main Course", 199, 4.5],
+            ["Kadala Curry", "Main Course", 169, 4.4],
+            ["Thoran", "Main Course", 159, 4.5],
+            ["Appam", "Main Course", 129, 4.6],
+            ["Lemon Rice", "Rice", 139, 4.4],
+            ["Palada Payasam", "Dessert", 119, 4.7],
+            ["Kerala Veg Biryani", "Biryani", 249, 4.6],
+            ["Tender Coconut Ice Cream", "Ice Cream", 139, 4.7]
+        ]
+    },
 
-    "bihar-swad-ghar": [
-        {
-            id: "bsg-01",
-            name: "Litti Chokha",
-            category: "Starter",
-            price: 149,
-            rating: 4.6,
-            image: "images/restaurant-foods/bihar-01.png"
-        },
-        {
-            id: "bsg-02",
-            name: "Sattu Paratha",
-            category: "Main Course",
-            price: 139,
-            rating: 4.5,
-            image: "images/restaurant-foods/bihar-02.png"
-        },
-        {
-            id: "bsg-03",
-            name: "Aloo Chokha",
-            category: "Main Course",
-            price: 119,
-            rating: 4.5,
-            image: "images/restaurant-foods/bihar-03.png"
-        },
-        {
-            id: "bsg-04",
-            name: "Dal Pitha",
-            category: "Main Course",
-            price: 159,
-            rating: 4.6,
-            image: "images/restaurant-foods/bihar-04.png"
-        },
-        {
-            id: "bsg-05",
-            name: "Bihari Kadhi",
-            category: "Main Course",
-            price: 149,
-            rating: 4.4,
-            image: "images/restaurant-foods/bihar-05.png"
-        },
-        {
-            id: "bsg-06",
-            name: "Chana Ghugni",
-            category: "Snack",
-            price: 129,
-            rating: 4.5,
-            image: "images/restaurant-foods/bihar-06.png"
-        },
-        {
-            id: "bsg-07",
-            name: "Thekua",
-            category: "Dessert",
-            price: 109,
-            rating: 4.5,
-            image: "images/restaurant-foods/bihar-07.png"
-        },
-        {
-            id: "bsg-08",
-            name: "Sattu Stuffed Roti",
-            category: "Bread",
-            price: 129,
-            rating: 4.6,
-            image: "images/restaurant-foods/bihar-08.png"
-        },
-        {
-            id: "bsg-09",
-            name: "Bihari Veg Biryani",
-            category: "Biryani",
-            price: 229,
-            rating: 4.5,
-            image: "images/restaurant-foods/bihar-09.png"
-        },
-        {
-            id: "bsg-10",
-            name: "Makhana Ice Cream",
-            category: "Ice Cream",
-            price: 159,
-            rating: 4.7,
-            image: "images/restaurant-foods/bihar-10.png"
-        }
-    ]
-};
+    {
+        restaurantId: "bihar-swad-ghar",
+        foods: [
+            ["Litti Chokha", "Starter", 159, 4.5],
+            ["Sattu Paratha", "Main Course", 149, 4.4],
+            ["Bihari Aloo", "Main Course", 139, 4.3],
+            ["Ghugni", "Main Course", 129, 4.4],
+            ["Dal Pitha", "Main Course", 159, 4.3],
+            ["Bharbhara", "Main Course", 119, 4.2],
+            ["Jeera Rice", "Rice", 129, 4.3],
+            ["Thekua", "Dessert", 99, 4.5],
+            ["Bihari Veg Biryani", "Biryani", 229, 4.4],
+            ["Kulfi Ice Cream", "Ice Cream", 119, 4.5]
+        ]
+    }
+];
+
+
+restaurantMenuData.forEach(function (restaurantMenu) {
+    restaurantMenu.foods =
+        restaurantMenu.foods.map(function (food, index) {
+            const restaurantId =
+                restaurantMenu.restaurantId;
+
+            const foodId =
+                restaurantId +
+                "-food-" +
+                String(index + 1).padStart(2, "0");
+
+            return {
+                id: foodId,
+                name: food[0],
+                category: food[1],
+                price: food[2],
+                rating: food[3],
+                image:
+                    "images/restaurant-food/" +
+                    restaurantId +
+                    "/" +
+                    foodId +
+                    ".png"
+            };
+        });
+});

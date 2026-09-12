@@ -1,0 +1,213 @@
+/* =========================================================
+   YUMMY TUMMY
+   HOME OFFERS
+   ========================================================= */
+
+
+.home-offers-section {
+    padding: 80px 20px;
+    background-color: whitesmoke;
+}
+
+
+.offers-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+    margin-top: 40px;
+}
+
+
+.offer-card {
+    background-color: white;
+    border: 1px solid lightgray;
+    border-radius: 24px;
+    overflow: hidden;
+    transition:
+        transform 0.3s ease,
+        box-shadow 0.3s ease;
+}
+
+
+.offer-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 12px 30px lightgray;
+}
+
+
+.offer-content {
+    padding: 36px;
+}
+
+
+.offer-label {
+    margin: 0 0 18px;
+    color: darkorange;
+    font-size: 15px;
+    font-weight: 800;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+}
+
+
+.offer-card h3 {
+    margin: 0 0 16px;
+    color: black;
+    font-size: 30px;
+    line-height: 1.2;
+}
+
+
+.offer-description {
+    margin: 0 0 24px;
+    color: dimgray;
+    font-size: 17px;
+    line-height: 1.6;
+}
+
+
+.offer-code-box {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 15px;
+    margin-bottom: 22px;
+    padding: 14px 16px;
+    border: 2px dashed orange;
+    border-radius: 12px;
+    background-color: floralwhite;
+}
+
+
+.offer-code-box span {
+    color: dimgray;
+    font-size: 14px;
+    font-weight: 600;
+}
+
+
+.offer-code-box strong {
+    color: black;
+    font-size: 16px;
+    letter-spacing: 1px;
+}
+
+
+.offer-button {
+    width: 100%;
+    padding: 14px 20px;
+    border: 1px solid orange;
+    border-radius: 10px;
+    background-color: white;
+    color: darkorange;
+    font-size: 16px;
+    font-weight: 700;
+    cursor: pointer;
+    transition:
+        background-color 0.3s ease,
+        color 0.3s ease;
+}
+
+
+.offer-button:hover {
+    background-color: orange;
+    color: white;
+}
+
+
+.offer-button:active {
+    transform: scale(0.98);
+}
+
+
+.offer-button.offer-applied {
+    background-color: green;
+    border-color: green;
+    color: white;
+}
+
+
+.offer-button.offer-applied:hover {
+    background-color: darkgreen;
+    border-color: darkgreen;
+}
+
+
+.offer-message {
+    min-height: 24px;
+    margin: 24px 0 0;
+    text-align: center;
+    font-size: 16px;
+    font-weight: 700;
+}
+
+
+.offer-message.offer-success {
+    color: green;
+}
+
+
+/* =========================================================
+   MOBILE
+   ========================================================= */
+
+@media (max-width: 768px) {
+
+    .home-offers-section {
+        padding: 60px 16px;
+    }
+
+
+    .offers-grid {
+        grid-template-columns: 1fr;
+        gap: 20px;
+        margin-top: 30px;
+    }
+
+
+    .offer-content {
+        padding: 28px 22px;
+    }
+
+
+    .offer-card h3 {
+        font-size: 26px;
+    }
+
+
+    .offer-description {
+        font-size: 16px;
+    }
+
+}
+
+
+@media (max-width: 480px) {
+
+    .home-offers-section {
+        padding: 50px 12px;
+    }
+
+
+    .offer-content {
+        padding: 24px 18px;
+    }
+
+
+    .offer-card h3 {
+        font-size: 24px;
+    }
+
+
+    .offer-code-box {
+        align-items: flex-start;
+        flex-direction: column;
+        gap: 6px;
+    }
+
+
+    .offer-button {
+        padding: 13px 16px;
+    }
+
+}

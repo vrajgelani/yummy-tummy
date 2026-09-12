@@ -1,0 +1,343 @@
+/* =========================================================
+   YUMMY TUMMY
+   HOME MOBILE APP SECTION
+   ========================================================= */
+
+
+.home-mobile-section {
+    padding: 90px 20px;
+    background-color: floralwhite;
+}
+
+
+.mobile-app-container {
+    display: grid;
+    grid-template-columns: 1.2fr 0.8fr;
+    align-items: center;
+    gap: 70px;
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+
+.mobile-app-content {
+    max-width: 650px;
+}
+
+
+.mobile-app-content h2 {
+    margin: 0 0 20px;
+    color: black;
+    font-size: 44px;
+    line-height: 1.15;
+}
+
+
+.mobile-app-description {
+    max-width: 600px;
+    margin: 0 0 32px;
+    color: dimgray;
+    font-size: 18px;
+    line-height: 1.7;
+}
+
+
+.mobile-app-features {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 18px;
+    margin-bottom: 35px;
+}
+
+
+.mobile-feature {
+    padding: 20px;
+    background-color: white;
+    border: 1px solid lightgray;
+    border-radius: 16px;
+}
+
+
+.mobile-feature h3 {
+    margin: 0 0 10px;
+    color: black;
+    font-size: 17px;
+}
+
+
+.mobile-feature p {
+    margin: 0;
+    color: dimgray;
+    font-size: 14px;
+    line-height: 1.5;
+}
+
+
+.mobile-app-buttons {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+}
+
+
+.mobile-app-button {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    min-width: 175px;
+    min-height: 62px;
+    padding: 10px 20px;
+    border: 1px solid black;
+    border-radius: 12px;
+    background-color: black;
+    color: white;
+    text-decoration: none;
+    transition:
+        transform 0.3s ease,
+        box-shadow 0.3s ease;
+}
+
+
+.mobile-app-button:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 20px lightgray;
+}
+
+
+.mobile-app-button-small {
+    font-size: 10px;
+    font-weight: 600;
+    letter-spacing: 1px;
+}
+
+
+.mobile-app-button-title {
+    margin-top: 3px;
+    font-size: 19px;
+    font-weight: 700;
+}
+
+
+.mobile-app-visual {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+.mobile-phone {
+    width: 260px;
+    height: 500px;
+    padding: 12px;
+    border: 5px solid black;
+    border-radius: 38px;
+    background-color: black;
+    box-shadow: 0 20px 45px lightgray;
+}
+
+
+.mobile-phone-screen {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    padding: 35px 18px 20px;
+    border-radius: 27px;
+    background-color: white;
+    overflow: hidden;
+}
+
+
+.mobile-phone-screen::before {
+    content: "";
+    position: absolute;
+    top: 10px;
+    left: 50%;
+    width: 75px;
+    height: 8px;
+    border-radius: 10px;
+    background-color: black;
+    transform: translateX(-50%);
+}
+
+
+.mobile-screen-brand {
+    margin-top: 15px;
+    color: darkorange;
+    font-size: 18px;
+    font-weight: 800;
+}
+
+
+.mobile-screen-title {
+    margin-top: 35px;
+    color: black;
+    font-size: 27px;
+    font-weight: 800;
+}
+
+
+.mobile-screen-text {
+    margin-top: 4px;
+    color: darkorange;
+    font-size: 22px;
+    font-weight: 700;
+}
+
+
+.mobile-screen-card {
+    display: flex;
+    flex-direction: column;
+    gap: 7px;
+    margin-top: 28px;
+    padding: 18px;
+    border: 1px solid lightgray;
+    border-radius: 15px;
+    background-color: floralwhite;
+}
+
+
+.mobile-screen-card strong {
+    color: black;
+    font-size: 15px;
+}
+
+
+.mobile-screen-card span {
+    color: dimgray;
+    font-size: 12px;
+    line-height: 1.4;
+}
+
+
+/* =========================================================
+   TABLET
+   ========================================================= */
+
+@media (max-width: 1024px) {
+
+    .mobile-app-container {
+        grid-template-columns: 1fr 0.7fr;
+        gap: 40px;
+    }
+
+
+    .mobile-app-content h2 {
+        font-size: 38px;
+    }
+
+
+    .mobile-app-features {
+        grid-template-columns: 1fr;
+    }
+
+}
+
+
+/* =========================================================
+   MOBILE
+   ========================================================= */
+
+@media (max-width: 768px) {
+
+    .home-mobile-section {
+        padding: 65px 16px;
+    }
+
+
+    .mobile-app-container {
+        grid-template-columns: 1fr;
+        gap: 50px;
+        text-align: center;
+    }
+
+
+    .mobile-app-content {
+        max-width: none;
+    }
+
+
+    .mobile-app-content h2 {
+        font-size: 34px;
+    }
+
+
+    .mobile-app-description {
+        font-size: 16px;
+    }
+
+
+    .mobile-app-features {
+        grid-template-columns: 1fr;
+        text-align: left;
+    }
+
+
+    .mobile-app-buttons {
+        justify-content: center;
+    }
+
+
+    .mobile-app-visual {
+        order: -1;
+    }
+
+
+    .mobile-phone {
+        width: 230px;
+        height: 440px;
+    }
+
+}
+
+
+/* =========================================================
+   SMALL MOBILE
+   ========================================================= */
+
+@media (max-width: 480px) {
+
+    .home-mobile-section {
+        padding: 50px 12px;
+    }
+
+
+    .mobile-app-content h2 {
+        font-size: 29px;
+    }
+
+
+    .mobile-app-buttons {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+
+    .mobile-app-button {
+        width: 100%;
+        min-width: 0;
+        box-sizing: border-box;
+    }
+
+
+    .mobile-phone {
+        width: 205px;
+        height: 395px;
+        border-radius: 32px;
+    }
+
+
+    .mobile-phone-screen {
+        border-radius: 23px;
+    }
+
+
+    .mobile-screen-title {
+        font-size: 23px;
+    }
+
+
+    .mobile-screen-text {
+        font-size: 19px;
+    }
+
+}
