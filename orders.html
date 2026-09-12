@@ -1,0 +1,897 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>My Orders - Yummy Tummy</title>
+
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/orders.css">
+</head>
+
+<body>
+
+    <!-- Header -->
+    <header class="site-header">
+
+        <div class="header-container">
+
+            <a href="index.html" class="brand-logo">
+                <img
+                    src="images/logo/yummy-tummy-logo.png"
+                    alt="Yummy Tummy"
+                >
+            </a>
+
+            <nav class="main-navigation">
+                <a href="index.html">Home</a>
+                <a href="menu.html">Menu</a>
+                <a href="restaurants.html">Restaurants</a>
+            </nav>
+
+            <div class="header-search">
+                <input
+                    type="search"
+                    id="headerSearch"
+                    placeholder="Search food or restaurant"
+                    aria-label="Search food or restaurant"
+                >
+            </div>
+
+            <div class="header-actions">
+
+                <a href="wishlist.html" class="wishlist-link">
+                    Wishlist
+                </a>
+
+                <a href="cart.html" class="cart-link">
+                    Cart
+                </a>
+
+                <a href="login.html" class="login-link">
+                    Login
+                </a>
+
+                <a href="register.html" class="register-link">
+                    Register
+                </a>
+
+                <a href="profile.html" class="profile-link" hidden>
+                    Profile
+                </a>
+
+            </div>
+
+        </div>
+
+    </header>
+
+
+    <!-- Main Content -->
+    <main class="orders-page">
+
+        <section class="orders-section">
+
+            <div class="orders-container">
+
+                <div class="orders-heading">
+
+                    <p class="orders-eyebrow">
+                        Your Orders
+                    </p>
+
+                    <h1>
+                        My Orders
+                    </h1>
+
+                    <p class="orders-intro">
+                        View your recent food orders and order details.
+                    </p>
+
+                </div>
+
+
+                <!-- Order Count -->
+                <div class="orders-summary-bar">
+
+                    <div>
+                        <span class="orders-summary-label">
+                            Total Orders
+                        </span>
+
+                        <strong id="ordersCount">
+                            0
+                        </strong>
+                    </div>
+
+                </div>
+
+
+                <!-- Orders List -->
+                <section
+                    class="orders-list"
+                    id="ordersList"
+                    aria-label="My orders"
+                >
+
+                    <!-- Order Card 01 -->
+                    <article
+                        class="order-card"
+                        data-order-card="01"
+                        hidden
+                    >
+
+                        <div class="order-card-header">
+
+                            <div>
+                                <p class="order-label">
+                                    Order ID
+                                </p>
+
+                                <h2 data-order-id>
+                                    Order ID
+                                </h2>
+                            </div>
+
+                            <span
+                                class="order-status"
+                                data-order-status
+                            >
+                                Order Placed
+                            </span>
+
+                        </div>
+
+
+                        <div class="order-card-info">
+
+                            <div>
+                                <span class="order-info-label">
+                                    Order Date
+                                </span>
+
+                                <strong data-order-date>
+                                    -
+                                </strong>
+                            </div>
+
+                            <div>
+                                <span class="order-info-label">
+                                    Payment
+                                </span>
+
+                                <strong data-order-payment>
+                                    -
+                                </strong>
+                            </div>
+
+                            <div>
+                                <span class="order-info-label">
+                                    Total
+                                </span>
+
+                                <strong data-order-total>
+                                    ₹0
+                                </strong>
+                            </div>
+
+                        </div>
+
+
+                        <div class="order-card-address">
+
+                            <span class="order-info-label">
+                                Delivery Address
+                            </span>
+
+                            <p data-order-address>
+                                -
+                            </p>
+
+                        </div>
+
+
+                        <div class="order-card-items">
+
+                            <h3>
+                                Order Items
+                            </h3>
+
+                            <div class="order-items-preview">
+
+                                <div
+                                    class="order-item-preview"
+                                    data-order-item="01"
+                                    hidden
+                                >
+
+                                    <div class="order-item-image-wrapper">
+
+                                        <img
+                                            src=""
+                                            alt=""
+                                            data-order-item-image
+                                        >
+
+                                    </div>
+
+                                    <div class="order-item-details">
+
+                                        <h4 data-order-item-name>
+                                            Food Name
+                                        </h4>
+
+                                        <p data-order-item-category>
+                                            Category
+                                        </p>
+
+                                        <span data-order-item-quantity>
+                                            Quantity: 1
+                                        </span>
+
+                                    </div>
+
+                                    <strong data-order-item-price>
+                                        ₹0
+                                    </strong>
+
+                                </div>
+
+
+                                <div
+                                    class="order-item-preview"
+                                    data-order-item="02"
+                                    hidden
+                                >
+
+                                    <div class="order-item-image-wrapper">
+
+                                        <img
+                                            src=""
+                                            alt=""
+                                            data-order-item-image
+                                        >
+
+                                    </div>
+
+                                    <div class="order-item-details">
+
+                                        <h4 data-order-item-name>
+                                            Food Name
+                                        </h4>
+
+                                        <p data-order-item-category>
+                                            Category
+                                        </p>
+
+                                        <span data-order-item-quantity>
+                                            Quantity: 1
+                                        </span>
+
+                                    </div>
+
+                                    <strong data-order-item-price>
+                                        ₹0
+                                    </strong>
+
+                                </div>
+
+
+                                <div
+                                    class="order-item-preview"
+                                    data-order-item="03"
+                                    hidden
+                                >
+
+                                    <div class="order-item-image-wrapper">
+
+                                        <img
+                                            src=""
+                                            alt=""
+                                            data-order-item-image
+                                        >
+
+                                    </div>
+
+                                    <div class="order-item-details">
+
+                                        <h4 data-order-item-name>
+                                            Food Name
+                                        </h4>
+
+                                        <p data-order-item-category>
+                                            Category
+                                        </p>
+
+                                        <span data-order-item-quantity>
+                                            Quantity: 1
+                                        </span>
+
+                                    </div>
+
+                                    <strong data-order-item-price>
+                                        ₹0
+                                    </strong>
+
+                                </div>
+
+
+                                <div
+                                    class="order-item-preview"
+                                    data-order-item="04"
+                                    hidden
+                                >
+
+                                    <div class="order-item-image-wrapper">
+
+                                        <img
+                                            src=""
+                                            alt=""
+                                            data-order-item-image
+                                        >
+
+                                    </div>
+
+                                    <div class="order-item-details">
+
+                                        <h4 data-order-item-name>
+                                            Food Name
+                                        </h4>
+
+                                        <p data-order-item-category>
+                                            Category
+                                        </p>
+
+                                        <span data-order-item-quantity>
+                                            Quantity: 1
+                                        </span>
+
+                                    </div>
+
+                                    <strong data-order-item-price>
+                                        ₹0
+                                    </strong>
+
+                                </div>
+
+
+                                <div
+                                    class="order-item-preview"
+                                    data-order-item="05"
+                                    hidden
+                                >
+
+                                    <div class="order-item-image-wrapper">
+
+                                        <img
+                                            src=""
+                                            alt=""
+                                            data-order-item-image
+                                        >
+
+                                    </div>
+
+                                    <div class="order-item-details">
+
+                                        <h4 data-order-item-name>
+                                            Food Name
+                                        </h4>
+
+                                        <p data-order-item-category>
+                                            Category
+                                        </p>
+
+                                        <span data-order-item-quantity>
+                                            Quantity: 1
+                                        </span>
+
+                                    </div>
+
+                                    <strong data-order-item-price>
+                                        ₹0
+                                    </strong>
+
+                                </div>
+
+
+                                <div
+                                    class="order-item-preview"
+                                    data-order-item="06"
+                                    hidden
+                                >
+
+                                    <div class="order-item-image-wrapper">
+
+                                        <img
+                                            src=""
+                                            alt=""
+                                            data-order-item-image
+                                        >
+
+                                    </div>
+
+                                    <div class="order-item-details">
+
+                                        <h4 data-order-item-name>
+                                            Food Name
+                                        </h4>
+
+                                        <p data-order-item-category>
+                                            Category
+                                        </p>
+
+                                        <span data-order-item-quantity>
+                                            Quantity: 1
+                                        </span>
+
+                                    </div>
+
+                                    <strong data-order-item-price>
+                                        ₹0
+                                    </strong>
+
+                                </div>
+
+                            </div>
+
+                        </div>
+
+                    </article>
+
+
+                    <!-- Order Card 02 -->
+                    <article
+                        class="order-card"
+                        data-order-card="02"
+                        hidden
+                    >
+
+                        <div class="order-card-header">
+
+                            <div>
+                                <p class="order-label">
+                                    Order ID
+                                </p>
+
+                                <h2 data-order-id>
+                                    Order ID
+                                </h2>
+                            </div>
+
+                            <span
+                                class="order-status"
+                                data-order-status
+                            >
+                                Order Placed
+                            </span>
+
+                        </div>
+
+
+                        <div class="order-card-info">
+
+                            <div>
+                                <span class="order-info-label">
+                                    Order Date
+                                </span>
+
+                                <strong data-order-date>
+                                    -
+                                </strong>
+                            </div>
+
+                            <div>
+                                <span class="order-info-label">
+                                    Payment
+                                </span>
+
+                                <strong data-order-payment>
+                                    -
+                                </strong>
+                            </div>
+
+                            <div>
+                                <span class="order-info-label">
+                                    Total
+                                </span>
+
+                                <strong data-order-total>
+                                    ₹0
+                                </strong>
+                            </div>
+
+                        </div>
+
+
+                        <div class="order-card-address">
+
+                            <span class="order-info-label">
+                                Delivery Address
+                            </span>
+
+                            <p data-order-address>
+                                -
+                            </p>
+
+                        </div>
+
+
+                        <div class="order-card-items">
+
+                            <h3>
+                                Order Items
+                            </h3>
+
+                            <div class="order-items-preview">
+
+                                <div
+                                    class="order-item-preview"
+                                    data-order-item="01"
+                                    hidden
+                                >
+
+                                    <div class="order-item-image-wrapper">
+
+                                        <img
+                                            src=""
+                                            alt=""
+                                            data-order-item-image
+                                        >
+
+                                    </div>
+
+                                    <div class="order-item-details">
+
+                                        <h4 data-order-item-name>
+                                            Food Name
+                                        </h4>
+
+                                        <p data-order-item-category>
+                                            Category
+                                        </p>
+
+                                        <span data-order-item-quantity>
+                                            Quantity: 1
+                                        </span>
+
+                                    </div>
+
+                                    <strong data-order-item-price>
+                                        ₹0
+                                    </strong>
+
+                                </div>
+
+
+                                <div
+                                    class="order-item-preview"
+                                    data-order-item="02"
+                                    hidden
+                                >
+
+                                    <div class="order-item-image-wrapper">
+
+                                        <img
+                                            src=""
+                                            alt=""
+                                            data-order-item-image
+                                        >
+
+                                    </div>
+
+                                    <div class="order-item-details">
+
+                                        <h4 data-order-item-name>
+                                            Food Name
+                                        </h4>
+
+                                        <p data-order-item-category>
+                                            Category
+                                        </p>
+
+                                        <span data-order-item-quantity>
+                                            Quantity: 1
+                                        </span>
+
+                                    </div>
+
+                                    <strong data-order-item-price>
+                                        ₹0
+                                    </strong>
+
+                                </div>
+
+
+                                <div
+                                    class="order-item-preview"
+                                    data-order-item="03"
+                                    hidden
+                                >
+
+                                    <div class="order-item-image-wrapper">
+
+                                        <img
+                                            src=""
+                                            alt=""
+                                            data-order-item-image
+                                        >
+
+                                    </div>
+
+                                    <div class="order-item-details">
+
+                                        <h4 data-order-item-name>
+                                            Food Name
+                                        </h4>
+
+                                        <p data-order-item-category>
+                                            Category
+                                        </p>
+
+                                        <span data-order-item-quantity>
+                                            Quantity: 1
+                                        </span>
+
+                                    </div>
+
+                                    <strong data-order-item-price>
+                                        ₹0
+                                    </strong>
+
+                                </div>
+
+
+                                <div
+                                    class="order-item-preview"
+                                    data-order-item="04"
+                                    hidden
+                                >
+
+                                    <div class="order-item-image-wrapper">
+
+                                        <img
+                                            src=""
+                                            alt=""
+                                            data-order-item-image
+                                        >
+
+                                    </div>
+
+                                    <div class="order-item-details">
+
+                                        <h4 data-order-item-name>
+                                            Food Name
+                                        </h4>
+
+                                        <p data-order-item-category>
+                                            Category
+                                        </p>
+
+                                        <span data-order-item-quantity>
+                                            Quantity: 1
+                                        </span>
+
+                                    </div>
+
+                                    <strong data-order-item-price>
+                                        ₹0
+                                    </strong>
+
+                                </div>
+
+
+                                <div
+                                    class="order-item-preview"
+                                    data-order-item="05"
+                                    hidden
+                                >
+
+                                    <div class="order-item-image-wrapper">
+
+                                        <img
+                                            src=""
+                                            alt=""
+                                            data-order-item-image
+                                        >
+
+                                    </div>
+
+                                    <div class="order-item-details">
+
+                                        <h4 data-order-item-name>
+                                            Food Name
+                                        </h4>
+
+                                        <p data-order-item-category>
+                                            Category
+                                        </p>
+
+                                        <span data-order-item-quantity>
+                                            Quantity: 1
+                                        </span>
+
+                                    </div>
+
+                                    <strong data-order-item-price>
+                                        ₹0
+                                    </strong>
+
+                                </div>
+
+
+                                <div
+                                    class="order-item-preview"
+                                    data-order-item="06"
+                                    hidden
+                                >
+
+                                    <div class="order-item-image-wrapper">
+
+                                        <img
+                                            src=""
+                                            alt=""
+                                            data-order-item-image
+                                        >
+
+                                    </div>
+
+                                    <div class="order-item-details">
+
+                                        <h4 data-order-item-name>
+                                            Food Name
+                                        </h4>
+
+                                        <p data-order-item-category>
+                                            Category
+                                        </p>
+
+                                        <span data-order-item-quantity>
+                                            Quantity: 1
+                                        </span>
+
+                                    </div>
+
+                                    <strong data-order-item-price>
+                                        ₹0
+                                    </strong>
+
+                                </div>
+
+                            </div>
+
+                        </div>
+
+                    </article>
+
+                </section>
+
+
+                <!-- Empty State -->
+                <section
+                    class="orders-empty-state"
+                    id="ordersEmptyState"
+                    hidden
+                >
+
+                    <div class="orders-empty-content">
+
+                        <p class="orders-empty-label">
+                            No Orders
+                        </p>
+
+                        <h2>
+                            You have not placed any orders yet
+                        </h2>
+
+                        <p>
+                            Your completed and active orders will appear here.
+                        </p>
+
+                        <a
+                            href="menu.html"
+                            class="orders-browse-button"
+                        >
+                            Browse Menu
+                        </a>
+
+                    </div>
+
+                </section>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <!-- Footer -->
+    <footer class="site-footer">
+
+        <div class="footer-container">
+
+            <div class="footer-brand">
+
+                <a href="index.html">
+                    <img
+                        src="images/logo/yummy-tummy-logo.png"
+                        alt="Yummy Tummy"
+                    >
+                </a>
+
+                <p>
+                    Delicious food, delivered with care.
+                </p>
+
+            </div>
+
+
+            <div class="footer-links">
+
+                <div class="footer-column">
+
+                    <h3>
+                        Quick Links
+                    </h3>
+
+                    <a href="index.html">
+                        Home
+                    </a>
+
+                    <a href="menu.html">
+                        Menu
+                    </a>
+
+                    <a href="restaurants.html">
+                        Restaurants
+                    </a>
+
+                </div>
+
+
+                <div class="footer-column">
+
+                    <h3>
+                        Account
+                    </h3>
+
+                    <a href="profile.html">
+                        Profile
+                    </a>
+
+                    <a href="orders.html">
+                        My Orders
+                    </a>
+
+                    <a href="wishlist.html">
+                        Wishlist
+                    </a>
+
+                    <a href="cart.html">
+                        Cart
+                    </a>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <div class="footer-bottom">
+
+            <p>
+                © 2026 Yummy Tummy. All Rights Reserved.
+            </p>
+
+        </div>
+
+    </footer>
+
+
+    <script src="js/auth.js"></script>
+    <script src="js/main.js"></script>
+
+</body>
+</html>
