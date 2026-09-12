@@ -1,75 +1,33 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-
     <meta charset="UTF-8">
-
-    <meta
-        name="viewport"
-        content="width=device-width, initial-scale=1.0"
-    >
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <title>Menu - Yummy Tummy</title>
 
-    <link
-        rel="stylesheet"
-        href="css/style.css"
-    >
-
+    <link rel="stylesheet" href="css/style.css">
 </head>
-
 
 <body>
 
-
-    <!-- ==================== HEADER ==================== -->
-
+    <!-- Header -->
     <header class="site-header">
 
         <div class="header-container">
 
-
-            <a
-                href="index.html"
-                class="brand-logo"
-            >
-
+            <a href="index.html" class="brand-logo">
                 <img
                     src="images/logo/yummy-tummy-logo.png"
-                    alt="Yummy Tummy Logo"
+                    alt="Yummy Tummy"
                 >
-
             </a>
 
-
             <nav class="main-navigation">
-
-                <a
-                    href="index.html"
-                    class="nav-link"
-                >
-                    Home
-                </a>
-
-
-                <a
-                    href="menu.html"
-                    class="nav-link active"
-                >
-                    Menu
-                </a>
-
-
-                <a
-                    href="restaurants.html"
-                    class="nav-link"
-                >
-                    Restaurants
-                </a>
-
+                <a href="index.html">Home</a>
+                <a href="menu.html">Menu</a>
+                <a href="restaurants.html">Restaurants</a>
             </nav>
-
 
             <div class="header-search">
 
@@ -82,44 +40,40 @@
 
             </div>
 
-
             <div class="header-actions">
 
                 <a
                     href="wishlist.html"
-                    class="header-action"
+                    class="wishlist-link"
                 >
                     Wishlist
                 </a>
 
-
                 <a
                     href="cart.html"
-                    class="header-action"
+                    class="cart-link"
                 >
                     Cart
                 </a>
 
-
                 <a
                     href="login.html"
-                    class="header-action login-link"
+                    class="login-link"
                 >
                     Login
                 </a>
 
-
                 <a
                     href="register.html"
-                    class="header-action register-link"
+                    class="register-link"
                 >
                     Register
                 </a>
 
-
                 <a
                     href="profile.html"
-                    class="header-action profile-link hidden"
+                    class="profile-link"
+                    hidden
                 >
                     Profile
                 </a>
@@ -131,31 +85,140 @@
     </header>
 
 
-    <!-- ==================== MAIN ==================== -->
+    <!-- Menu Hero -->
+    <main class="menu-page">
 
-    <main>
+        <section class="menu-hero">
+
+            <div class="menu-hero-content">
+
+                <p class="menu-eyebrow">
+                    Yummy Tummy Menu
+                </p>
+
+                <h1>
+                    Explore Our Food
+                </h1>
+
+                <p>
+                    Discover delicious vegetarian food from different categories.
+                </p>
+
+            </div>
+
+        </section>
 
 
-        <!-- ==================== MENU HERO ==================== -->
+        <!-- Category Filters -->
+        <section class="menu-filter-section">
 
-        <section class="menu-page-hero">
+            <div class="menu-container">
 
-            <div class="section-container">
+                <div class="menu-filter-header">
 
-                <div class="menu-page-heading">
-
-                    <p class="section-label">
-                        YUMMY TUMMY MENU
-                    </p>
-
-                    <h1>
-                        Explore Our Menu
-                    </h1>
+                    <h2>
+                        Food Categories
+                    </h2>
 
                     <p>
-                        Discover delicious vegetarian food across
-                        different categories.
+                        Choose a category to explore.
                     </p>
+
+                </div>
+
+
+                <div
+                    class="menu-category-filters"
+                    id="menuCategoryFilters"
+                >
+
+                    <button
+                        type="button"
+                        class="menu-filter-button active"
+                        data-category="all"
+                    >
+                        All Foods
+                    </button>
+
+                    <button
+                        type="button"
+                        class="menu-filter-button"
+                        data-category="starters"
+                    >
+                        Starters
+                    </button>
+
+                    <button
+                        type="button"
+                        class="menu-filter-button"
+                        data-category="pizza"
+                    >
+                        Pizza
+                    </button>
+
+                    <button
+                        type="button"
+                        class="menu-filter-button"
+                        data-category="burger"
+                    >
+                        Burger
+                    </button>
+
+                    <button
+                        type="button"
+                        class="menu-filter-button"
+                        data-category="sandwich"
+                    >
+                        Sandwich
+                    </button>
+
+                    <button
+                        type="button"
+                        class="menu-filter-button"
+                        data-category="pasta"
+                    >
+                        Pasta
+                    </button>
+
+                    <button
+                        type="button"
+                        class="menu-filter-button"
+                        data-category="chinese"
+                    >
+                        Chinese
+                    </button>
+
+                    <button
+                        type="button"
+                        class="menu-filter-button"
+                        data-category="south-indian"
+                    >
+                        South Indian
+                    </button>
+
+                    <button
+                        type="button"
+                        class="menu-filter-button"
+                        data-category="gujarati"
+                    >
+                        Gujarati
+                    </button>
+
+                    <button
+                        type="button"
+                        class="menu-filter-button"
+                        data-category="biryani"
+                    >
+                        Biryani
+                    </button>
+
+                    <button
+                        type="button"
+                        class="menu-filter-button"
+                        data-category="desserts"
+                    >
+                        Desserts
+                    </button>
 
                 </div>
 
@@ -164,145 +227,18 @@
         </section>
 
 
-        <!-- ==================== MENU CONTENT ==================== -->
+        <!-- Results -->
+        <section class="menu-results-section">
 
-        <section class="menu-content-section">
+            <div class="menu-container">
 
-            <div class="section-container">
-
-
-                <!-- ==================== CATEGORY FILTERS ==================== -->
-
-                <div class="menu-filter-section">
-
-                    <div class="menu-filter-heading">
-
-                        <h2>
-                            Food Categories
-                        </h2>
-
-                        <p>
-                            Choose a category to explore its foods.
-                        </p>
-
-                    </div>
-
-
-                    <div class="menu-category-filters">
-
-                        <button
-                            type="button"
-                            class="menu-category-filter active"
-                            data-category="all"
-                        >
-                            All Foods
-                        </button>
-
-
-                        <button
-                            type="button"
-                            class="menu-category-filter"
-                            data-category="starters"
-                        >
-                            Starters
-                        </button>
-
-
-                        <button
-                            type="button"
-                            class="menu-category-filter"
-                            data-category="pizza"
-                        >
-                            Pizza
-                        </button>
-
-
-                        <button
-                            type="button"
-                            class="menu-category-filter"
-                            data-category="burger"
-                        >
-                            Burger
-                        </button>
-
-
-                        <button
-                            type="button"
-                            class="menu-category-filter"
-                            data-category="sandwich"
-                        >
-                            Sandwich
-                        </button>
-
-
-                        <button
-                            type="button"
-                            class="menu-category-filter"
-                            data-category="pasta"
-                        >
-                            Pasta
-                        </button>
-
-
-                        <button
-                            type="button"
-                            class="menu-category-filter"
-                            data-category="chinese"
-                        >
-                            Chinese
-                        </button>
-
-
-                        <button
-                            type="button"
-                            class="menu-category-filter"
-                            data-category="south-indian"
-                        >
-                            South Indian
-                        </button>
-
-
-                        <button
-                            type="button"
-                            class="menu-category-filter"
-                            data-category="gujarati"
-                        >
-                            Gujarati
-                        </button>
-
-
-                        <button
-                            type="button"
-                            class="menu-category-filter"
-                            data-category="biryani"
-                        >
-                            Biryani
-                        </button>
-
-
-                        <button
-                            type="button"
-                            class="menu-category-filter"
-                            data-category="desserts"
-                        >
-                            Desserts
-                        </button>
-
-                    </div>
-
-                </div>
-
-
-                <!-- ==================== MENU HEADING ==================== -->
-
-                <div class="menu-results-heading">
+                <div class="menu-results-header">
 
                     <div>
 
-                        <p class="section-label">
-                            OUR FOODS
+                        <p class="menu-results-label">
+                            Food Collection
                         </p>
-
 
                         <h2 id="menuResultsTitle">
                             All Foods
@@ -310,858 +246,957 @@
 
                     </div>
 
-
-                    <p
-                        class="menu-results-count"
-                        id="menuResultsCount"
-                    >
+                    <p id="menuResultsCount">
                         50 Foods
                     </p>
 
                 </div>
 
 
-                <!-- ==================== FOOD GRID ==================== -->
-
+                <!-- Food Grid -->
                 <div
                     class="menu-food-grid"
                     id="menuFoodGrid"
                 >
 
-
-                    <!-- ==================== STARTERS ==================== -->
+                    <!-- Starters -->
 
                     <article
                         class="menu-food-card"
-                        data-food-id="starter-01"
+                        data-food-id="paneer-tikka"
+                        data-category="starters"
                     >
-                        <div class="menu-food-image-container">
+
+                        <div class="menu-food-image">
                             <img
-                                src="images/menu-foods/starter-01.png"
-                                alt="Paneer Tikka"
-                                class="menu-food-image"
+                                src=""
+                                alt=""
+                                data-food-image
                             >
                         </div>
 
                         <div class="menu-food-content">
 
-                            <p class="menu-food-category"></p>
+                            <span data-food-category>
+                                Starters
+                            </span>
 
-                            <h3 class="menu-food-name"></h3>
+                            <h3 data-food-name>
+                                Paneer Tikka
+                            </h3>
 
-                            <p class="menu-food-rating"></p>
+                            <p data-food-rating>
+                                4.6
+                            </p>
 
-                            <p class="menu-food-price"></p>
+                            <strong data-food-price>
+                                ₹249
+                            </strong>
 
                             <a
-                                href="food-details.html"
-                                class="menu-food-view-button"
+                                href="#"
+                                data-food-link
                             >
                                 View Food
                             </a>
 
                         </div>
-                    </article>
 
-
-                    <article
-                        class="menu-food-card"
-                        data-food-id="starter-02"
-                    >
-                        <div class="menu-food-image-container">
-                            <img
-                                src="images/menu-foods/starter-02.png"
-                                alt="Veg Spring Rolls"
-                                class="menu-food-image"
-                            >
-                        </div>
-
-                        <div class="menu-food-content">
-                            <p class="menu-food-category"></p>
-                            <h3 class="menu-food-name"></h3>
-                            <p class="menu-food-rating"></p>
-                            <p class="menu-food-price"></p>
-
-                            <a
-                                href="food-details.html"
-                                class="menu-food-view-button"
-                            >
-                                View Food
-                            </a>
-                        </div>
                     </article>
 
 
                     <article
                         class="menu-food-card"
-                        data-food-id="starter-03"
+                        data-food-id="veg-spring-rolls"
+                        data-category="starters"
                     >
-                        <div class="menu-food-image-container">
+
+                        <div class="menu-food-image">
                             <img
-                                src="images/menu-foods/starter-03.png"
-                                alt="Hara Bhara Kebab"
-                                class="menu-food-image"
+                                src=""
+                                alt=""
+                                data-food-image
                             >
                         </div>
 
                         <div class="menu-food-content">
-                            <p class="menu-food-category"></p>
-                            <h3 class="menu-food-name"></h3>
-                            <p class="menu-food-rating"></p>
-                            <p class="menu-food-price"></p>
+
+                            <span data-food-category>
+                                Starters
+                            </span>
+
+                            <h3 data-food-name>
+                                Veg Spring Rolls
+                            </h3>
+
+                            <p data-food-rating>
+                                4.5
+                            </p>
+
+                            <strong data-food-price>
+                                ₹199
+                            </strong>
 
                             <a
-                                href="food-details.html"
-                                class="menu-food-view-button"
+                                href="#"
+                                data-food-link
                             >
                                 View Food
                             </a>
+
                         </div>
+
                     </article>
 
 
                     <article
                         class="menu-food-card"
-                        data-food-id="starter-04"
+                        data-food-id="hara-bhara-kebab"
+                        data-category="starters"
                     >
-                        <div class="menu-food-image-container">
+
+                        <div class="menu-food-image">
                             <img
-                                src="images/menu-foods/starter-04.png"
-                                alt="Cheese Corn Balls"
-                                class="menu-food-image"
+                                src=""
+                                alt=""
+                                data-food-image
                             >
                         </div>
 
                         <div class="menu-food-content">
-                            <p class="menu-food-category"></p>
-                            <h3 class="menu-food-name"></h3>
-                            <p class="menu-food-rating"></p>
-                            <p class="menu-food-price"></p>
+
+                            <span data-food-category>
+                                Starters
+                            </span>
+
+                            <h3 data-food-name>
+                                Hara Bhara Kebab
+                            </h3>
+
+                            <p data-food-rating>
+                                4.7
+                            </p>
+
+                            <strong data-food-price>
+                                ₹219
+                            </strong>
 
                             <a
-                                href="food-details.html"
-                                class="menu-food-view-button"
+                                href="#"
+                                data-food-link
                             >
                                 View Food
                             </a>
+
                         </div>
+
                     </article>
 
 
                     <article
                         class="menu-food-card"
-                        data-food-id="starter-05"
+                        data-food-id="cheese-corn-balls"
+                        data-category="starters"
                     >
-                        <div class="menu-food-image-container">
+
+                        <div class="menu-food-image">
                             <img
-                                src="images/menu-foods/starter-05.png"
-                                alt="Crispy Veg Fingers"
-                                class="menu-food-image"
+                                src=""
+                                alt=""
+                                data-food-image
                             >
                         </div>
 
                         <div class="menu-food-content">
-                            <p class="menu-food-category"></p>
-                            <h3 class="menu-food-name"></h3>
-                            <p class="menu-food-rating"></p>
-                            <p class="menu-food-price"></p>
+
+                            <span data-food-category>
+                                Starters
+                            </span>
+
+                            <h3 data-food-name>
+                                Cheese Corn Balls
+                            </h3>
+
+                            <p data-food-rating>
+                                4.6
+                            </p>
+
+                            <strong data-food-price>
+                                ₹229
+                            </strong>
 
                             <a
-                                href="food-details.html"
-                                class="menu-food-view-button"
+                                href="#"
+                                data-food-link
                             >
                                 View Food
                             </a>
+
                         </div>
+
                     </article>
 
 
-                    <!-- ==================== PIZZA ==================== -->
+                    <article
+                        class="menu-food-card"
+                        data-food-id="crispy-veg-fingers"
+                        data-category="starters"
+                    >
 
-                    <article class="menu-food-card" data-food-id="pizza-01">
-                        <div class="menu-food-image-container">
+                        <div class="menu-food-image">
                             <img
-                                src="images/menu-foods/pizza-01.png"
-                                alt="Margherita Pizza"
-                                class="menu-food-image"
+                                src=""
+                                alt=""
+                                data-food-image
                             >
                         </div>
 
                         <div class="menu-food-content">
-                            <p class="menu-food-category"></p>
-                            <h3 class="menu-food-name"></h3>
-                            <p class="menu-food-rating"></p>
-                            <p class="menu-food-price"></p>
 
-                            <a href="food-details.html" class="menu-food-view-button">
+                            <span data-food-category>
+                                Starters
+                            </span>
+
+                            <h3 data-food-name>
+                                Crispy Veg Fingers
+                            </h3>
+
+                            <p data-food-rating>
+                                4.5
+                            </p>
+
+                            <strong data-food-price>
+                                ₹189
+                            </strong>
+
+                            <a
+                                href="#"
+                                data-food-link
+                            >
                                 View Food
                             </a>
+
                         </div>
+
                     </article>
 
 
-                    <article class="menu-food-card" data-food-id="pizza-02">
-                        <div class="menu-food-image-container">
-                            <img
-                                src="images/menu-foods/pizza-02.png"
-                                alt="Farmhouse Pizza"
-                                class="menu-food-image"
-                            >
+                    <!-- Pizza -->
+
+                    <article
+                        class="menu-food-card"
+                        data-food-id="margherita-pizza"
+                        data-category="pizza"
+                    >
+
+                        <div class="menu-food-image">
+                            <img src="" alt="" data-food-image>
                         </div>
 
                         <div class="menu-food-content">
-                            <p class="menu-food-category"></p>
-                            <h3 class="menu-food-name"></h3>
-                            <p class="menu-food-rating"></p>
-                            <p class="menu-food-price"></p>
-
-                            <a href="food-details.html" class="menu-food-view-button">
-                                View Food
-                            </a>
+                            <span data-food-category>Pizza</span>
+                            <h3 data-food-name>Margherita Pizza</h3>
+                            <p data-food-rating>4.5</p>
+                            <strong data-food-price>₹249</strong>
+                            <a href="#" data-food-link>View Food</a>
                         </div>
+
                     </article>
 
 
-                    <article class="menu-food-card" data-food-id="pizza-03">
-                        <div class="menu-food-image-container">
-                            <img
-                                src="images/menu-foods/pizza-03.png"
-                                alt="Veggie Delight Pizza"
-                                class="menu-food-image"
-                            >
+                    <article
+                        class="menu-food-card"
+                        data-food-id="farmhouse-pizza"
+                        data-category="pizza"
+                    >
+
+                        <div class="menu-food-image">
+                            <img src="" alt="" data-food-image>
                         </div>
 
                         <div class="menu-food-content">
-                            <p class="menu-food-category"></p>
-                            <h3 class="menu-food-name"></h3>
-                            <p class="menu-food-rating"></p>
-                            <p class="menu-food-price"></p>
-
-                            <a href="food-details.html" class="menu-food-view-button">
-                                View Food
-                            </a>
+                            <span data-food-category>Pizza</span>
+                            <h3 data-food-name>Farmhouse Pizza</h3>
+                            <p data-food-rating>4.7</p>
+                            <strong data-food-price>₹299</strong>
+                            <a href="#" data-food-link>View Food</a>
                         </div>
+
                     </article>
 
 
-                    <article class="menu-food-card" data-food-id="pizza-04">
-                        <div class="menu-food-image-container">
-                            <img
-                                src="images/menu-foods/pizza-04.png"
-                                alt="Corn Cheese Pizza"
-                                class="menu-food-image"
-                            >
+                    <article
+                        class="menu-food-card"
+                        data-food-id="veggie-delight-pizza"
+                        data-category="pizza"
+                    >
+
+                        <div class="menu-food-image">
+                            <img src="" alt="" data-food-image>
                         </div>
 
                         <div class="menu-food-content">
-                            <p class="menu-food-category"></p>
-                            <h3 class="menu-food-name"></h3>
-                            <p class="menu-food-rating"></p>
-                            <p class="menu-food-price"></p>
-
-                            <a href="food-details.html" class="menu-food-view-button">
-                                View Food
-                            </a>
+                            <span data-food-category>Pizza</span>
+                            <h3 data-food-name>Veggie Delight Pizza</h3>
+                            <p data-food-rating>4.6</p>
+                            <strong data-food-price>₹279</strong>
+                            <a href="#" data-food-link>View Food</a>
                         </div>
+
                     </article>
 
 
-                    <article class="menu-food-card" data-food-id="pizza-05">
-                        <div class="menu-food-image-container">
-                            <img
-                                src="images/menu-foods/pizza-05.png"
-                                alt="Paneer Tikka Pizza"
-                                class="menu-food-image"
-                            >
+                    <article
+                        class="menu-food-card"
+                        data-food-id="corn-cheese-pizza"
+                        data-category="pizza"
+                    >
+
+                        <div class="menu-food-image">
+                            <img src="" alt="" data-food-image>
                         </div>
 
                         <div class="menu-food-content">
-                            <p class="menu-food-category"></p>
-                            <h3 class="menu-food-name"></h3>
-                            <p class="menu-food-rating"></p>
-                            <p class="menu-food-price"></p>
-
-                            <a href="food-details.html" class="menu-food-view-button">
-                                View Food
-                            </a>
+                            <span data-food-category>Pizza</span>
+                            <h3 data-food-name>Corn Cheese Pizza</h3>
+                            <p data-food-rating>4.5</p>
+                            <strong data-food-price>₹289</strong>
+                            <a href="#" data-food-link>View Food</a>
                         </div>
+
                     </article>
 
 
-                    <!-- ==================== BURGER ==================== -->
+                    <article
+                        class="menu-food-card"
+                        data-food-id="paneer-tikka-pizza"
+                        data-category="pizza"
+                    >
 
-                    <article class="menu-food-card" data-food-id="burger-01">
-                        <div class="menu-food-image-container">
-                            <img
-                                src="images/menu-foods/burger-01.png"
-                                alt="Classic Veg Burger"
-                                class="menu-food-image"
-                            >
+                        <div class="menu-food-image">
+                            <img src="" alt="" data-food-image>
                         </div>
 
                         <div class="menu-food-content">
-                            <p class="menu-food-category"></p>
-                            <h3 class="menu-food-name"></h3>
-                            <p class="menu-food-rating"></p>
-                            <p class="menu-food-price"></p>
-                            <a href="food-details.html" class="menu-food-view-button">View Food</a>
+                            <span data-food-category>Pizza</span>
+                            <h3 data-food-name>Paneer Tikka Pizza</h3>
+                            <p data-food-rating>4.8</p>
+                            <strong data-food-price>₹319</strong>
+                            <a href="#" data-food-link>View Food</a>
                         </div>
+
                     </article>
 
 
-                    <article class="menu-food-card" data-food-id="burger-02">
-                        <div class="menu-food-image-container">
-                            <img
-                                src="images/menu-foods/burger-02.png"
-                                alt="Aloo Tikki Burger"
-                                class="menu-food-image"
-                            >
+                    <!-- Burger -->
+
+                    <article
+                        class="menu-food-card"
+                        data-food-id="classic-veg-burger"
+                        data-category="burger"
+                    >
+
+                        <div class="menu-food-image">
+                            <img src="" alt="" data-food-image>
                         </div>
 
                         <div class="menu-food-content">
-                            <p class="menu-food-category"></p>
-                            <h3 class="menu-food-name"></h3>
-                            <p class="menu-food-rating"></p>
-                            <p class="menu-food-price"></p>
-                            <a href="food-details.html" class="menu-food-view-button">View Food</a>
+                            <span data-food-category>Burger</span>
+                            <h3 data-food-name>Classic Veg Burger</h3>
+                            <p data-food-rating>4.5</p>
+                            <strong data-food-price>₹169</strong>
+                            <a href="#" data-food-link>View Food</a>
                         </div>
+
                     </article>
 
 
-                    <article class="menu-food-card" data-food-id="burger-03">
-                        <div class="menu-food-image-container">
-                            <img
-                                src="images/menu-foods/burger-03.png"
-                                alt="Cheese Veg Burger"
-                                class="menu-food-image"
-                            >
+                    <article
+                        class="menu-food-card"
+                        data-food-id="aloo-tikki-burger"
+                        data-category="burger"
+                    >
+
+                        <div class="menu-food-image">
+                            <img src="" alt="" data-food-image>
                         </div>
 
                         <div class="menu-food-content">
-                            <p class="menu-food-category"></p>
-                            <h3 class="menu-food-name"></h3>
-                            <p class="menu-food-rating"></p>
-                            <p class="menu-food-price"></p>
-                            <a href="food-details.html" class="menu-food-view-button">View Food</a>
+                            <span data-food-category>Burger</span>
+                            <h3 data-food-name>Aloo Tikki Burger</h3>
+                            <p data-food-rating>4.6</p>
+                            <strong data-food-price>₹149</strong>
+                            <a href="#" data-food-link>View Food</a>
                         </div>
+
                     </article>
 
 
-                    <article class="menu-food-card" data-food-id="burger-04">
-                        <div class="menu-food-image-container">
-                            <img
-                                src="images/menu-foods/burger-04.png"
-                                alt="Paneer Burger"
-                                class="menu-food-image"
-                            >
+                    <article
+                        class="menu-food-card"
+                        data-food-id="cheese-veg-burger"
+                        data-category="burger"
+                    >
+
+                        <div class="menu-food-image">
+                            <img src="" alt="" data-food-image>
                         </div>
 
                         <div class="menu-food-content">
-                            <p class="menu-food-category"></p>
-                            <h3 class="menu-food-name"></h3>
-                            <p class="menu-food-rating"></p>
-                            <p class="menu-food-price"></p>
-                            <a href="food-details.html" class="menu-food-view-button">View Food</a>
+                            <span data-food-category>Burger</span>
+                            <h3 data-food-name>Cheese Veg Burger</h3>
+                            <p data-food-rating>4.7</p>
+                            <strong data-food-price>₹189</strong>
+                            <a href="#" data-food-link>View Food</a>
                         </div>
+
                     </article>
 
 
-                    <article class="menu-food-card" data-food-id="burger-05">
-                        <div class="menu-food-image-container">
-                            <img
-                                src="images/menu-foods/burger-05.png"
-                                alt="Mexican Veg Burger"
-                                class="menu-food-image"
-                            >
+                    <article
+                        class="menu-food-card"
+                        data-food-id="paneer-burger"
+                        data-category="burger"
+                    >
+
+                        <div class="menu-food-image">
+                            <img src="" alt="" data-food-image>
                         </div>
 
                         <div class="menu-food-content">
-                            <p class="menu-food-category"></p>
-                            <h3 class="menu-food-name"></h3>
-                            <p class="menu-food-rating"></p>
-                            <p class="menu-food-price"></p>
-                            <a href="food-details.html" class="menu-food-view-button">View Food</a>
+                            <span data-food-category>Burger</span>
+                            <h3 data-food-name>Paneer Burger</h3>
+                            <p data-food-rating>4.6</p>
+                            <strong data-food-price>₹209</strong>
+                            <a href="#" data-food-link>View Food</a>
                         </div>
+
                     </article>
 
 
-                    <!-- ==================== SANDWICH ==================== -->
+                    <article
+                        class="menu-food-card"
+                        data-food-id="mexican-veg-burger"
+                        data-category="burger"
+                    >
 
-                    <article class="menu-food-card" data-food-id="sandwich-01">
-                        <div class="menu-food-image-container">
-                            <img src="images/menu-foods/sandwich-01.png" alt="Grilled Veg Sandwich" class="menu-food-image">
+                        <div class="menu-food-image">
+                            <img src="" alt="" data-food-image>
+                        </div>
+
+                        <div class="menu-food-content">
+                            <span data-food-category>Burger</span>
+                            <h3 data-food-name>Mexican Veg Burger</h3>
+                            <p data-food-rating>4.5</p>
+                            <strong data-food-price>₹199</strong>
+                            <a href="#" data-food-link>View Food</a>
+                        </div>
+
+                    </article>
+
+
+                    <!-- Sandwich -->
+
+                    <article class="menu-food-card" data-food-id="grilled-veg-sandwich" data-category="sandwich">
+                        <div class="menu-food-image">
+                            <img src="" alt="" data-food-image>
                         </div>
                         <div class="menu-food-content">
-                            <p class="menu-food-category"></p>
-                            <h3 class="menu-food-name"></h3>
-                            <p class="menu-food-rating"></p>
-                            <p class="menu-food-price"></p>
-                            <a href="food-details.html" class="menu-food-view-button">View Food</a>
+                            <span data-food-category>Sandwich</span>
+                            <h3 data-food-name>Grilled Veg Sandwich</h3>
+                            <p data-food-rating>4.5</p>
+                            <strong data-food-price>₹159</strong>
+                            <a href="#" data-food-link>View Food</a>
                         </div>
                     </article>
 
-                    <article class="menu-food-card" data-food-id="sandwich-02">
-                        <div class="menu-food-image-container">
-                            <img src="images/menu-foods/sandwich-02.png" alt="Bombay Veg Sandwich" class="menu-food-image">
+                    <article class="menu-food-card" data-food-id="bombay-veg-sandwich" data-category="sandwich">
+                        <div class="menu-food-image">
+                            <img src="" alt="" data-food-image>
                         </div>
                         <div class="menu-food-content">
-                            <p class="menu-food-category"></p>
-                            <h3 class="menu-food-name"></h3>
-                            <p class="menu-food-rating"></p>
-                            <p class="menu-food-price"></p>
-                            <a href="food-details.html" class="menu-food-view-button">View Food</a>
+                            <span data-food-category>Sandwich</span>
+                            <h3 data-food-name>Bombay Veg Sandwich</h3>
+                            <p data-food-rating>4.6</p>
+                            <strong data-food-price>₹149</strong>
+                            <a href="#" data-food-link>View Food</a>
                         </div>
                     </article>
 
-                    <article class="menu-food-card" data-food-id="sandwich-03">
-                        <div class="menu-food-image-container">
-                            <img src="images/menu-foods/sandwich-03.png" alt="Cheese Corn Sandwich" class="menu-food-image">
+                    <article class="menu-food-card" data-food-id="cheese-corn-sandwich" data-category="sandwich">
+                        <div class="menu-food-image">
+                            <img src="" alt="" data-food-image>
                         </div>
                         <div class="menu-food-content">
-                            <p class="menu-food-category"></p>
-                            <h3 class="menu-food-name"></h3>
-                            <p class="menu-food-rating"></p>
-                            <p class="menu-food-price"></p>
-                            <a href="food-details.html" class="menu-food-view-button">View Food</a>
+                            <span data-food-category>Sandwich</span>
+                            <h3 data-food-name>Cheese Corn Sandwich</h3>
+                            <p data-food-rating>4.5</p>
+                            <strong data-food-price>₹179</strong>
+                            <a href="#" data-food-link>View Food</a>
                         </div>
                     </article>
 
-                    <article class="menu-food-card" data-food-id="sandwich-04">
-                        <div class="menu-food-image-container">
-                            <img src="images/menu-foods/sandwich-04.png" alt="Masala Paneer Sandwich" class="menu-food-image">
+                    <article class="menu-food-card" data-food-id="masala-paneer-sandwich" data-category="sandwich">
+                        <div class="menu-food-image">
+                            <img src="" alt="" data-food-image>
                         </div>
                         <div class="menu-food-content">
-                            <p class="menu-food-category"></p>
-                            <h3 class="menu-food-name"></h3>
-                            <p class="menu-food-rating"></p>
-                            <p class="menu-food-price"></p>
-                            <a href="food-details.html" class="menu-food-view-button">View Food</a>
+                            <span data-food-category>Sandwich</span>
+                            <h3 data-food-name>Masala Paneer Sandwich</h3>
+                            <p data-food-rating>4.7</p>
+                            <strong data-food-price>₹199</strong>
+                            <a href="#" data-food-link>View Food</a>
                         </div>
                     </article>
 
-                    <article class="menu-food-card" data-food-id="sandwich-05">
-                        <div class="menu-food-image-container">
-                            <img src="images/menu-foods/sandwich-05.png" alt="Veg Club Sandwich" class="menu-food-image">
+                    <article class="menu-food-card" data-food-id="veg-club-sandwich" data-category="sandwich">
+                        <div class="menu-food-image">
+                            <img src="" alt="" data-food-image>
                         </div>
                         <div class="menu-food-content">
-                            <p class="menu-food-category"></p>
-                            <h3 class="menu-food-name"></h3>
-                            <p class="menu-food-rating"></p>
-                            <p class="menu-food-price"></p>
-                            <a href="food-details.html" class="menu-food-view-button">View Food</a>
+                            <span data-food-category>Sandwich</span>
+                            <h3 data-food-name>Veg Club Sandwich</h3>
+                            <p data-food-rating>4.6</p>
+                            <strong data-food-price>₹219</strong>
+                            <a href="#" data-food-link>View Food</a>
                         </div>
                     </article>
 
 
-                    <!-- ==================== PASTA ==================== -->
+                    <!-- Pasta -->
 
-                    <article class="menu-food-card" data-food-id="pasta-01">
-                        <div class="menu-food-image-container">
-                            <img src="images/menu-foods/pasta-01.png" alt="Arrabbiata Pasta" class="menu-food-image">
+                    <article class="menu-food-card" data-food-id="arrabbiata-pasta" data-category="pasta">
+                        <div class="menu-food-image">
+                            <img src="" alt="" data-food-image>
                         </div>
                         <div class="menu-food-content">
-                            <p class="menu-food-category"></p>
-                            <h3 class="menu-food-name"></h3>
-                            <p class="menu-food-rating"></p>
-                            <p class="menu-food-price"></p>
-                            <a href="food-details.html" class="menu-food-view-button">View Food</a>
+                            <span data-food-category>Pasta</span>
+                            <h3 data-food-name>Arrabbiata Pasta</h3>
+                            <p data-food-rating>4.5</p>
+                            <strong data-food-price>₹229</strong>
+                            <a href="#" data-food-link>View Food</a>
                         </div>
                     </article>
 
-                    <article class="menu-food-card" data-food-id="pasta-02">
-                        <div class="menu-food-image-container">
-                            <img src="images/menu-foods/pasta-02.png" alt="Alfredo Pasta" class="menu-food-image">
+                    <article class="menu-food-card" data-food-id="alfredo-pasta" data-category="pasta">
+                        <div class="menu-food-image">
+                            <img src="" alt="" data-food-image>
                         </div>
                         <div class="menu-food-content">
-                            <p class="menu-food-category"></p>
-                            <h3 class="menu-food-name"></h3>
-                            <p class="menu-food-rating"></p>
-                            <p class="menu-food-price"></p>
-                            <a href="food-details.html" class="menu-food-view-button">View Food</a>
+                            <span data-food-category>Pasta</span>
+                            <h3 data-food-name>Alfredo Pasta</h3>
+                            <p data-food-rating>4.7</p>
+                            <strong data-food-price>₹249</strong>
+                            <a href="#" data-food-link>View Food</a>
                         </div>
                     </article>
 
-                    <article class="menu-food-card" data-food-id="pasta-03">
-                        <div class="menu-food-image-container">
-                            <img src="images/menu-foods/pasta-03.png" alt="Pink Sauce Pasta" class="menu-food-image">
+                    <article class="menu-food-card" data-food-id="pink-sauce-pasta" data-category="pasta">
+                        <div class="menu-food-image">
+                            <img src="" alt="" data-food-image>
                         </div>
                         <div class="menu-food-content">
-                            <p class="menu-food-category"></p>
-                            <h3 class="menu-food-name"></h3>
-                            <p class="menu-food-rating"></p>
-                            <p class="menu-food-price"></p>
-                            <a href="food-details.html" class="menu-food-view-button">View Food</a>
+                            <span data-food-category>Pasta</span>
+                            <h3 data-food-name>Pink Sauce Pasta</h3>
+                            <p data-food-rating>4.6</p>
+                            <strong data-food-price>₹259</strong>
+                            <a href="#" data-food-link>View Food</a>
                         </div>
                     </article>
 
-                    <article class="menu-food-card" data-food-id="pasta-04">
-                        <div class="menu-food-image-container">
-                            <img src="images/menu-foods/pasta-04.png" alt="Pesto Veg Pasta" class="menu-food-image">
+                    <article class="menu-food-card" data-food-id="pesto-veg-pasta" data-category="pasta">
+                        <div class="menu-food-image">
+                            <img src="" alt="" data-food-image>
                         </div>
                         <div class="menu-food-content">
-                            <p class="menu-food-category"></p>
-                            <h3 class="menu-food-name"></h3>
-                            <p class="menu-food-rating"></p>
-                            <p class="menu-food-price"></p>
-                            <a href="food-details.html" class="menu-food-view-button">View Food</a>
+                            <span data-food-category>Pasta</span>
+                            <h3 data-food-name>Pesto Veg Pasta</h3>
+                            <p data-food-rating>4.5</p>
+                            <strong data-food-price>₹269</strong>
+                            <a href="#" data-food-link>View Food</a>
                         </div>
                     </article>
 
-                    <article class="menu-food-card" data-food-id="pasta-05">
-                        <div class="menu-food-image-container">
-                            <img src="images/menu-foods/pasta-05.png" alt="Creamy Mushroom Pasta" class="menu-food-image">
+                    <article class="menu-food-card" data-food-id="creamy-mushroom-pasta" data-category="pasta">
+                        <div class="menu-food-image">
+                            <img src="" alt="" data-food-image>
                         </div>
                         <div class="menu-food-content">
-                            <p class="menu-food-category"></p>
-                            <h3 class="menu-food-name"></h3>
-                            <p class="menu-food-rating"></p>
-                            <p class="menu-food-price"></p>
-                            <a href="food-details.html" class="menu-food-view-button">View Food</a>
+                            <span data-food-category>Pasta</span>
+                            <h3 data-food-name>Creamy Mushroom Pasta</h3>
+                            <p data-food-rating>4.6</p>
+                            <strong data-food-price>₹279</strong>
+                            <a href="#" data-food-link>View Food</a>
                         </div>
                     </article>
 
 
-                    <!-- ==================== CHINESE ==================== -->
+                    <!-- Chinese -->
 
-                    <article class="menu-food-card" data-food-id="chinese-01">
-                        <div class="menu-food-image-container">
-                            <img src="images/menu-foods/chinese-01.png" alt="Veg Hakka Noodles" class="menu-food-image">
+                    <article class="menu-food-card" data-food-id="veg-hakka-noodles" data-category="chinese">
+                        <div class="menu-food-image">
+                            <img src="" alt="" data-food-image>
                         </div>
                         <div class="menu-food-content">
-                            <p class="menu-food-category"></p>
-                            <h3 class="menu-food-name"></h3>
-                            <p class="menu-food-rating"></p>
-                            <p class="menu-food-price"></p>
-                            <a href="food-details.html" class="menu-food-view-button">View Food</a>
+                            <span data-food-category>Chinese</span>
+                            <h3 data-food-name>Veg Hakka Noodles</h3>
+                            <p data-food-rating>4.6</p>
+                            <strong data-food-price>₹199</strong>
+                            <a href="#" data-food-link>View Food</a>
                         </div>
                     </article>
 
-                    <article class="menu-food-card" data-food-id="chinese-02">
-                        <div class="menu-food-image-container">
-                            <img src="images/menu-foods/chinese-02.png" alt="Veg Fried Rice" class="menu-food-image">
+                    <article class="menu-food-card" data-food-id="veg-fried-rice" data-category="chinese">
+                        <div class="menu-food-image">
+                            <img src="" alt="" data-food-image>
                         </div>
                         <div class="menu-food-content">
-                            <p class="menu-food-category"></p>
-                            <h3 class="menu-food-name"></h3>
-                            <p class="menu-food-rating"></p>
-                            <p class="menu-food-price"></p>
-                            <a href="food-details.html" class="menu-food-view-button">View Food</a>
+                            <span data-food-category>Chinese</span>
+                            <h3 data-food-name>Veg Fried Rice</h3>
+                            <p data-food-rating>4.5</p>
+                            <strong data-food-price>₹189</strong>
+                            <a href="#" data-food-link>View Food</a>
                         </div>
                     </article>
 
-                    <article class="menu-food-card" data-food-id="chinese-03">
-                        <div class="menu-food-image-container">
-                            <img src="images/menu-foods/chinese-03.png" alt="Veg Manchurian" class="menu-food-image">
+                    <article class="menu-food-card" data-food-id="veg-manchurian" data-category="chinese">
+                        <div class="menu-food-image">
+                            <img src="" alt="" data-food-image>
                         </div>
                         <div class="menu-food-content">
-                            <p class="menu-food-category"></p>
-                            <h3 class="menu-food-name"></h3>
-                            <p class="menu-food-rating"></p>
-                            <p class="menu-food-price"></p>
-                            <a href="food-details.html" class="menu-food-view-button">View Food</a>
+                            <span data-food-category>Chinese</span>
+                            <h3 data-food-name>Veg Manchurian</h3>
+                            <p data-food-rating>4.7</p>
+                            <strong data-food-price>₹209</strong>
+                            <a href="#" data-food-link>View Food</a>
                         </div>
                     </article>
 
-                    <article class="menu-food-card" data-food-id="chinese-04">
-                        <div class="menu-food-image-container">
-                            <img src="images/menu-foods/chinese-04.png" alt="Chilli Paneer" class="menu-food-image">
+                    <article class="menu-food-card" data-food-id="chilli-paneer" data-category="chinese">
+                        <div class="menu-food-image">
+                            <img src="" alt="" data-food-image>
                         </div>
                         <div class="menu-food-content">
-                            <p class="menu-food-category"></p>
-                            <h3 class="menu-food-name"></h3>
-                            <p class="menu-food-rating"></p>
-                            <p class="menu-food-price"></p>
-                            <a href="food-details.html" class="menu-food-view-button">View Food</a>
+                            <span data-food-category>Chinese</span>
+                            <h3 data-food-name>Chilli Paneer</h3>
+                            <p data-food-rating>4.6</p>
+                            <strong data-food-price>₹229</strong>
+                            <a href="#" data-food-link>View Food</a>
                         </div>
                     </article>
 
-                    <article class="menu-food-card" data-food-id="chinese-05">
-                        <div class="menu-food-image-container">
-                            <img src="images/menu-foods/chinese-05.png" alt="Schezwan Veg Noodles" class="menu-food-image">
+                    <article class="menu-food-card" data-food-id="schezwan-veg-noodles" data-category="chinese">
+                        <div class="menu-food-image">
+                            <img src="" alt="" data-food-image>
                         </div>
                         <div class="menu-food-content">
-                            <p class="menu-food-category"></p>
-                            <h3 class="menu-food-name"></h3>
-                            <p class="menu-food-rating"></p>
-                            <p class="menu-food-price"></p>
-                            <a href="food-details.html" class="menu-food-view-button">View Food</a>
+                            <span data-food-category>Chinese</span>
+                            <h3 data-food-name>Schezwan Veg Noodles</h3>
+                            <p data-food-rating>4.5</p>
+                            <strong data-food-price>₹219</strong>
+                            <a href="#" data-food-link>View Food</a>
                         </div>
                     </article>
 
 
-                    <!-- ==================== SOUTH INDIAN ==================== -->
+                    <!-- South Indian -->
 
-                    <article class="menu-food-card" data-food-id="south-indian-01">
-                        <div class="menu-food-image-container">
-                            <img src="images/menu-foods/south-indian-01.png" alt="Masala Dosa" class="menu-food-image">
+                    <article class="menu-food-card" data-food-id="masala-dosa" data-category="south-indian">
+                        <div class="menu-food-image">
+                            <img src="" alt="" data-food-image>
                         </div>
                         <div class="menu-food-content">
-                            <p class="menu-food-category"></p>
-                            <h3 class="menu-food-name"></h3>
-                            <p class="menu-food-rating"></p>
-                            <p class="menu-food-price"></p>
-                            <a href="food-details.html" class="menu-food-view-button">View Food</a>
+                            <span data-food-category>South Indian</span>
+                            <h3 data-food-name>Masala Dosa</h3>
+                            <p data-food-rating>4.7</p>
+                            <strong data-food-price>₹149</strong>
+                            <a href="#" data-food-link>View Food</a>
                         </div>
                     </article>
 
-                    <article class="menu-food-card" data-food-id="south-indian-02">
-                        <div class="menu-food-image-container">
-                            <img src="images/menu-foods/south-indian-02.png" alt="Plain Dosa" class="menu-food-image">
+                    <article class="menu-food-card" data-food-id="plain-dosa" data-category="south-indian">
+                        <div class="menu-food-image">
+                            <img src="" alt="" data-food-image>
                         </div>
                         <div class="menu-food-content">
-                            <p class="menu-food-category"></p>
-                            <h3 class="menu-food-name"></h3>
-                            <p class="menu-food-rating"></p>
-                            <p class="menu-food-price"></p>
-                            <a href="food-details.html" class="menu-food-view-button">View Food</a>
+                            <span data-food-category>South Indian</span>
+                            <h3 data-food-name>Plain Dosa</h3>
+                            <p data-food-rating>4.5</p>
+                            <strong data-food-price>₹119</strong>
+                            <a href="#" data-food-link>View Food</a>
                         </div>
                     </article>
 
-                    <article class="menu-food-card" data-food-id="south-indian-03">
-                        <div class="menu-food-image-container">
-                            <img src="images/menu-foods/south-indian-03.png" alt="Idli Sambar" class="menu-food-image">
+                    <article class="menu-food-card" data-food-id="idli-sambar" data-category="south-indian">
+                        <div class="menu-food-image">
+                            <img src="" alt="" data-food-image>
                         </div>
                         <div class="menu-food-content">
-                            <p class="menu-food-category"></p>
-                            <h3 class="menu-food-name"></h3>
-                            <p class="menu-food-rating"></p>
-                            <p class="menu-food-price"></p>
-                            <a href="food-details.html" class="menu-food-view-button">View Food</a>
+                            <span data-food-category>South Indian</span>
+                            <h3 data-food-name>Idli Sambar</h3>
+                            <p data-food-rating>4.6</p>
+                            <strong data-food-price>₹109</strong>
+                            <a href="#" data-food-link>View Food</a>
                         </div>
                     </article>
 
-                    <article class="menu-food-card" data-food-id="south-indian-04">
-                        <div class="menu-food-image-container">
-                            <img src="images/menu-foods/south-indian-04.png" alt="Medu Vada" class="menu-food-image">
+                    <article class="menu-food-card" data-food-id="medu-vada" data-category="south-indian">
+                        <div class="menu-food-image">
+                            <img src="" alt="" data-food-image>
                         </div>
                         <div class="menu-food-content">
-                            <p class="menu-food-category"></p>
-                            <h3 class="menu-food-name"></h3>
-                            <p class="menu-food-rating"></p>
-                            <p class="menu-food-price"></p>
-                            <a href="food-details.html" class="menu-food-view-button">View Food</a>
+                            <span data-food-category>South Indian</span>
+                            <h3 data-food-name>Medu Vada</h3>
+                            <p data-food-rating>4.5</p>
+                            <strong data-food-price>₹129</strong>
+                            <a href="#" data-food-link>View Food</a>
                         </div>
                     </article>
 
-                    <article class="menu-food-card" data-food-id="south-indian-05">
-                        <div class="menu-food-image-container">
-                            <img src="images/menu-foods/south-indian-05.png" alt="Uttapam" class="menu-food-image">
+                    <article class="menu-food-card" data-food-id="uttapam" data-category="south-indian">
+                        <div class="menu-food-image">
+                            <img src="" alt="" data-food-image>
                         </div>
                         <div class="menu-food-content">
-                            <p class="menu-food-category"></p>
-                            <h3 class="menu-food-name"></h3>
-                            <p class="menu-food-rating"></p>
-                            <p class="menu-food-price"></p>
-                            <a href="food-details.html" class="menu-food-view-button">View Food</a>
+                            <span data-food-category>South Indian</span>
+                            <h3 data-food-name>Uttapam</h3>
+                            <p data-food-rating>4.6</p>
+                            <strong data-food-price>₹159</strong>
+                            <a href="#" data-food-link>View Food</a>
                         </div>
                     </article>
 
 
-                    <!-- ==================== GUJARATI ==================== -->
+                    <!-- Gujarati -->
 
-                    <article class="menu-food-card" data-food-id="gujarati-01">
-                        <div class="menu-food-image-container">
-                            <img src="images/menu-foods/gujarati-01.png" alt="Gujarati Thali" class="menu-food-image">
+                    <article class="menu-food-card" data-food-id="gujarati-thali" data-category="gujarati">
+                        <div class="menu-food-image">
+                            <img src="" alt="" data-food-image>
                         </div>
                         <div class="menu-food-content">
-                            <p class="menu-food-category"></p>
-                            <h3 class="menu-food-name"></h3>
-                            <p class="menu-food-rating"></p>
-                            <p class="menu-food-price"></p>
-                            <a href="food-details.html" class="menu-food-view-button">View Food</a>
+                            <span data-food-category>Gujarati</span>
+                            <h3 data-food-name>Gujarati Thali</h3>
+                            <p data-food-rating>4.8</p>
+                            <strong data-food-price>₹299</strong>
+                            <a href="#" data-food-link>View Food</a>
                         </div>
                     </article>
 
-                    <article class="menu-food-card" data-food-id="gujarati-02">
-                        <div class="menu-food-image-container">
-                            <img src="images/menu-foods/gujarati-02.png" alt="Sev Tameta" class="menu-food-image">
+                    <article class="menu-food-card" data-food-id="sev-tameta" data-category="gujarati">
+                        <div class="menu-food-image">
+                            <img src="" alt="" data-food-image>
                         </div>
                         <div class="menu-food-content">
-                            <p class="menu-food-category"></p>
-                            <h3 class="menu-food-name"></h3>
-                            <p class="menu-food-rating"></p>
-                            <p class="menu-food-price"></p>
-                            <a href="food-details.html" class="menu-food-view-button">View Food</a>
+                            <span data-food-category>Gujarati</span>
+                            <h3 data-food-name>Sev Tameta</h3>
+                            <p data-food-rating>4.5</p>
+                            <strong data-food-price>₹169</strong>
+                            <a href="#" data-food-link>View Food</a>
                         </div>
                     </article>
 
-                    <article class="menu-food-card" data-food-id="gujarati-03">
-                        <div class="menu-food-image-container">
-                            <img src="images/menu-foods/gujarati-03.png" alt="Undhiyu" class="menu-food-image">
+                    <article class="menu-food-card" data-food-id="undhiyu" data-category="gujarati">
+                        <div class="menu-food-image">
+                            <img src="" alt="" data-food-image>
                         </div>
                         <div class="menu-food-content">
-                            <p class="menu-food-category"></p>
-                            <h3 class="menu-food-name"></h3>
-                            <p class="menu-food-rating"></p>
-                            <p class="menu-food-price"></p>
-                            <a href="food-details.html" class="menu-food-view-button">View Food</a>
+                            <span data-food-category>Gujarati</span>
+                            <h3 data-food-name>Undhiyu</h3>
+                            <p data-food-rating>4.7</p>
+                            <strong data-food-price>₹219</strong>
+                            <a href="#" data-food-link>View Food</a>
                         </div>
                     </article>
 
-                    <article class="menu-food-card" data-food-id="gujarati-04">
-                        <div class="menu-food-image-container">
-                            <img src="images/menu-foods/gujarati-04.png" alt="Dal Dhokli" class="menu-food-image">
+                    <article class="menu-food-card" data-food-id="dal-dhokli" data-category="gujarati">
+                        <div class="menu-food-image">
+                            <img src="" alt="" data-food-image>
                         </div>
                         <div class="menu-food-content">
-                            <p class="menu-food-category"></p>
-                            <h3 class="menu-food-name"></h3>
-                            <p class="menu-food-rating"></p>
-                            <p class="menu-food-price"></p>
-                            <a href="food-details.html" class="menu-food-view-button">View Food</a>
+                            <span data-food-category>Gujarati</span>
+                            <h3 data-food-name>Dal Dhokli</h3>
+                            <p data-food-rating>4.6</p>
+                            <strong data-food-price>₹179</strong>
+                            <a href="#" data-food-link>View Food</a>
                         </div>
                     </article>
 
-                    <article class="menu-food-card" data-food-id="gujarati-05">
-                        <div class="menu-food-image-container">
-                            <img src="images/menu-foods/gujarati-05.png" alt="Khandvi" class="menu-food-image">
+                    <article class="menu-food-card" data-food-id="khandvi" data-category="gujarati">
+                        <div class="menu-food-image">
+                            <img src="" alt="" data-food-image>
                         </div>
                         <div class="menu-food-content">
-                            <p class="menu-food-category"></p>
-                            <h3 class="menu-food-name"></h3>
-                            <p class="menu-food-rating"></p>
-                            <p class="menu-food-price"></p>
-                            <a href="food-details.html" class="menu-food-view-button">View Food</a>
+                            <span data-food-category>Gujarati</span>
+                            <h3 data-food-name>Khandvi</h3>
+                            <p data-food-rating>4.5</p>
+                            <strong data-food-price>₹139</strong>
+                            <a href="#" data-food-link>View Food</a>
                         </div>
                     </article>
 
 
-                    <!-- ==================== BIRYANI ==================== -->
+                    <!-- Biryani -->
 
-                    <article class="menu-food-card" data-food-id="biryani-01">
-                        <div class="menu-food-image-container">
-                            <img src="images/menu-foods/biryani-01.png" alt="Veg Dum Biryani" class="menu-food-image">
+                    <article class="menu-food-card" data-food-id="veg-dum-biryani" data-category="biryani">
+                        <div class="menu-food-image">
+                            <img src="" alt="" data-food-image>
                         </div>
                         <div class="menu-food-content">
-                            <p class="menu-food-category"></p>
-                            <h3 class="menu-food-name"></h3>
-                            <p class="menu-food-rating"></p>
-                            <p class="menu-food-price"></p>
-                            <a href="food-details.html" class="menu-food-view-button">View Food</a>
+                            <span data-food-category>Biryani</span>
+                            <h3 data-food-name>Veg Dum Biryani</h3>
+                            <p data-food-rating>4.7</p>
+                            <strong data-food-price>₹249</strong>
+                            <a href="#" data-food-link>View Food</a>
                         </div>
                     </article>
 
-                    <article class="menu-food-card" data-food-id="biryani-02">
-                        <div class="menu-food-image-container">
-                            <img src="images/menu-foods/biryani-02.png" alt="Paneer Biryani" class="menu-food-image">
+                    <article class="menu-food-card" data-food-id="paneer-biryani" data-category="biryani">
+                        <div class="menu-food-image">
+                            <img src="" alt="" data-food-image>
                         </div>
                         <div class="menu-food-content">
-                            <p class="menu-food-category"></p>
-                            <h3 class="menu-food-name"></h3>
-                            <p class="menu-food-rating"></p>
-                            <p class="menu-food-price"></p>
-                            <a href="food-details.html" class="menu-food-view-button">View Food</a>
+                            <span data-food-category>Biryani</span>
+                            <h3 data-food-name>Paneer Biryani</h3>
+                            <p data-food-rating>4.6</p>
+                            <strong data-food-price>₹269</strong>
+                            <a href="#" data-food-link>View Food</a>
                         </div>
                     </article>
 
-                    <article class="menu-food-card" data-food-id="biryani-03">
-                        <div class="menu-food-image-container">
-                            <img src="images/menu-foods/biryani-03.png" alt="Hyderabadi Veg Biryani" class="menu-food-image">
+                    <article class="menu-food-card" data-food-id="hyderabadi-veg-biryani" data-category="biryani">
+                        <div class="menu-food-image">
+                            <img src="" alt="" data-food-image>
                         </div>
                         <div class="menu-food-content">
-                            <p class="menu-food-category"></p>
-                            <h3 class="menu-food-name"></h3>
-                            <p class="menu-food-rating"></p>
-                            <p class="menu-food-price"></p>
-                            <a href="food-details.html" class="menu-food-view-button">View Food</a>
+                            <span data-food-category>Biryani</span>
+                            <h3 data-food-name>Hyderabadi Veg Biryani</h3>
+                            <p data-food-rating>4.8</p>
+                            <strong data-food-price>₹259</strong>
+                            <a href="#" data-food-link>View Food</a>
                         </div>
                     </article>
 
-                    <article class="menu-food-card" data-food-id="biryani-04">
-                        <div class="menu-food-image-container">
-                            <img src="images/menu-foods/biryani-04.png" alt="Kathiyawadi Veg Biryani" class="menu-food-image">
+                    <article class="menu-food-card" data-food-id="kathiyawadi-veg-biryani" data-category="biryani">
+                        <div class="menu-food-image">
+                            <img src="" alt="" data-food-image>
                         </div>
                         <div class="menu-food-content">
-                            <p class="menu-food-category"></p>
-                            <h3 class="menu-food-name"></h3>
-                            <p class="menu-food-rating"></p>
-                            <p class="menu-food-price"></p>
-                            <a href="food-details.html" class="menu-food-view-button">View Food</a>
+                            <span data-food-category>Biryani</span>
+                            <h3 data-food-name>Kathiyawadi Veg Biryani</h3>
+                            <p data-food-rating>4.5</p>
+                            <strong data-food-price>₹239</strong>
+                            <a href="#" data-food-link>View Food</a>
                         </div>
                     </article>
 
-                    <article class="menu-food-card" data-food-id="biryani-05">
-                        <div class="menu-food-image-container">
-                            <img src="images/menu-foods/biryani-05.png" alt="Tawa Veg Biryani" class="menu-food-image">
+                    <article class="menu-food-card" data-food-id="tawa-veg-biryani" data-category="biryani">
+                        <div class="menu-food-image">
+                            <img src="" alt="" data-food-image>
                         </div>
                         <div class="menu-food-content">
-                            <p class="menu-food-category"></p>
-                            <h3 class="menu-food-name"></h3>
-                            <p class="menu-food-rating"></p>
-                            <p class="menu-food-price"></p>
-                            <a href="food-details.html" class="menu-food-view-button">View Food</a>
+                            <span data-food-category>Biryani</span>
+                            <h3 data-food-name>Tawa Veg Biryani</h3>
+                            <p data-food-rating>4.6</p>
+                            <strong data-food-price>₹229</strong>
+                            <a href="#" data-food-link>View Food</a>
                         </div>
                     </article>
 
 
-                    <!-- ==================== DESSERTS ==================== -->
+                    <!-- Desserts -->
 
-                    <article class="menu-food-card" data-food-id="dessert-01">
-                        <div class="menu-food-image-container">
-                            <img src="images/menu-foods/dessert-01.png" alt="Gulab Jamun" class="menu-food-image">
+                    <article class="menu-food-card" data-food-id="gulab-jamun" data-category="desserts">
+                        <div class="menu-food-image">
+                            <img src="" alt="" data-food-image>
                         </div>
                         <div class="menu-food-content">
-                            <p class="menu-food-category"></p>
-                            <h3 class="menu-food-name"></h3>
-                            <p class="menu-food-rating"></p>
-                            <p class="menu-food-price"></p>
-                            <a href="food-details.html" class="menu-food-view-button">View Food</a>
+                            <span data-food-category>Desserts</span>
+                            <h3 data-food-name>Gulab Jamun</h3>
+                            <p data-food-rating>4.6</p>
+                            <strong data-food-price>₹119</strong>
+                            <a href="#" data-food-link>View Food</a>
                         </div>
                     </article>
 
-                    <article class="menu-food-card" data-food-id="dessert-02">
-                        <div class="menu-food-image-container">
-                            <img src="images/menu-foods/dessert-02.png" alt="Rasmalai" class="menu-food-image">
+                    <article class="menu-food-card" data-food-id="rasmalai" data-category="desserts">
+                        <div class="menu-food-image">
+                            <img src="" alt="" data-food-image>
                         </div>
                         <div class="menu-food-content">
-                            <p class="menu-food-category"></p>
-                            <h3 class="menu-food-name"></h3>
-                            <p class="menu-food-rating"></p>
-                            <p class="menu-food-price"></p>
-                            <a href="food-details.html" class="menu-food-view-button">View Food</a>
+                            <span data-food-category>Desserts</span>
+                            <h3 data-food-name>Rasmalai</h3>
+                            <p data-food-rating>4.7</p>
+                            <strong data-food-price>₹149</strong>
+                            <a href="#" data-food-link>View Food</a>
                         </div>
                     </article>
 
-                    <article class="menu-food-card" data-food-id="dessert-03">
-                        <div class="menu-food-image-container">
-                            <img src="images/menu-foods/dessert-03.png" alt="Jalebi" class="menu-food-image">
+                    <article class="menu-food-card" data-food-id="jalebi" data-category="desserts">
+                        <div class="menu-food-image">
+                            <img src="" alt="" data-food-image>
                         </div>
                         <div class="menu-food-content">
-                            <p class="menu-food-category"></p>
-                            <h3 class="menu-food-name"></h3>
-                            <p class="menu-food-rating"></p>
-                            <p class="menu-food-price"></p>
-                            <a href="food-details.html" class="menu-food-view-button">View Food</a>
+                            <span data-food-category>Desserts</span>
+                            <h3 data-food-name>Jalebi</h3>
+                            <p data-food-rating>4.5</p>
+                            <strong data-food-price>₹99</strong>
+                            <a href="#" data-food-link>View Food</a>
                         </div>
                     </article>
 
-                    <article class="menu-food-card" data-food-id="dessert-04">
-                        <div class="menu-food-image-container">
-                            <img src="images/menu-foods/dessert-04.png" alt="Gajar Halwa" class="menu-food-image">
+                    <article class="menu-food-card" data-food-id="gajar-halwa" data-category="desserts">
+                        <div class="menu-food-image">
+                            <img src="" alt="" data-food-image>
                         </div>
                         <div class="menu-food-content">
-                            <p class="menu-food-category"></p>
-                            <h3 class="menu-food-name"></h3>
-                            <p class="menu-food-rating"></p>
-                            <p class="menu-food-price"></p>
-                            <a href="food-details.html" class="menu-food-view-button">View Food</a>
+                            <span data-food-category>Desserts</span>
+                            <h3 data-food-name>Gajar Halwa</h3>
+                            <p data-food-rating>4.6</p>
+                            <strong data-food-price>₹139</strong>
+                            <a href="#" data-food-link>View Food</a>
                         </div>
                     </article>
 
-                    <article class="menu-food-card" data-food-id="dessert-05">
-                        <div class="menu-food-image-container">
-                            <img src="images/menu-foods/dessert-05.png" alt="Shrikhand" class="menu-food-image">
+                    <article class="menu-food-card" data-food-id="shrikhand" data-category="desserts">
+                        <div class="menu-food-image">
+                            <img src="" alt="" data-food-image>
                         </div>
                         <div class="menu-food-content">
-                            <p class="menu-food-category"></p>
-                            <h3 class="menu-food-name"></h3>
-                            <p class="menu-food-rating"></p>
-                            <p class="menu-food-price"></p>
-                            <a href="food-details.html" class="menu-food-view-button">View Food</a>
+                            <span data-food-category>Desserts</span>
+                            <h3 data-food-name>Shrikhand</h3>
+                            <p data-food-rating>4.7</p>
+                            <strong data-food-price>₹129</strong>
+                            <a href="#" data-food-link>View Food</a>
                         </div>
                     </article>
-
 
                 </div>
+
+
+                <!-- Search Empty State -->
+                <section
+                    class="menu-empty-state"
+                    id="menuSearchEmptyState"
+                    hidden
+                >
+
+                    <div class="menu-empty-content">
+
+                        <p>
+                            No Food Found
+                        </p>
+
+                        <h2>
+                            We could not find matching food
+                        </h2>
+
+                        <span>
+                            Try another food name or choose a different category.
+                        </span>
+
+                    </div>
+
+                </section>
 
             </div>
 
@@ -1170,22 +1205,22 @@
     </main>
 
 
-    <!-- ==================== FOOTER ==================== -->
-
+    <!-- Footer -->
     <footer class="site-footer">
 
         <div class="footer-container">
 
             <div class="footer-brand">
 
-                <img
-                    src="images/logo/yummy-tummy-logo.png"
-                    alt="Yummy Tummy Logo"
-                >
+                <a href="index.html">
+                    <img
+                        src="images/logo/yummy-tummy-logo.png"
+                        alt="Yummy Tummy"
+                    >
+                </a>
 
                 <p>
-                    Delicious vegetarian food,
-                    better dining experiences.
+                    Delicious food, delivered with care.
                 </p>
 
             </div>
@@ -1217,8 +1252,16 @@
                 <div class="footer-column">
 
                     <h3>
-                        Customer
+                        Account
                     </h3>
+
+                    <a href="profile.html">
+                        Profile
+                    </a>
+
+                    <a href="orders.html">
+                        My Orders
+                    </a>
 
                     <a href="wishlist.html">
                         Wishlist
@@ -1226,27 +1269,6 @@
 
                     <a href="cart.html">
                         Cart
-                    </a>
-
-                    <a href="profile.html">
-                        Profile
-                    </a>
-
-                </div>
-
-
-                <div class="footer-column">
-
-                    <h3>
-                        Account
-                    </h3>
-
-                    <a href="login.html">
-                        Login
-                    </a>
-
-                    <a href="register.html">
-                        Register
                     </a>
 
                 </div>
@@ -1267,12 +1289,10 @@
     </footer>
 
 
-    <!-- ==================== JAVASCRIPT ==================== -->
-
     <script src="js/menu-data.js"></script>
+    <script src="js/auth.js"></script>
+    <script src="js/search.js"></script>
     <script src="js/main.js"></script>
 
-
 </body>
-
 </html>

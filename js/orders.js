@@ -42,6 +42,8 @@ function initializeOrdersPage() {
         }
 
         fillOrderCard(card, order);
+        initializeOrderDetailsButton(card);
+
         card.hidden = false;
     });
 }
@@ -80,6 +82,10 @@ function resetOrderCards() {
         const orderTotal = card.querySelector("[data-order-total]");
         const orderAddress = card.querySelector("[data-order-address]");
         const orderStatus = card.querySelector("[data-order-status]");
+        const detailsButton = card.querySelector(
+            "[data-order-details-button]"
+        );
+        const detailsSection = card.querySelector("[data-order-details]");
 
         if (orderId) {
             orderId.textContent = "Order ID";
@@ -103,6 +109,16 @@ function resetOrderCards() {
 
         if (orderStatus) {
             orderStatus.textContent = "Order Placed";
+            applyOrderStatusClass(orderStatus, "Order Placed");
+        }
+
+        if (detailsButton) {
+            detailsButton.textContent = "View Details";
+            detailsButton.setAttribute("aria-expanded", "false");
+        }
+
+        if (detailsSection) {
+            detailsSection.hidden = true;
         }
 
         resetOrderItems(card);
@@ -118,8 +134,12 @@ function resetOrderItems(card) {
 
         const image = itemElement.querySelector("[data-order-item-image]");
         const name = itemElement.querySelector("[data-order-item-name]");
-        const category = itemElement.querySelector("[data-order-item-category]");
-        const quantity = itemElement.querySelector("[data-order-item-quantity]");
+        const category = itemElement.querySelector(
+            "[data-order-item-category]"
+        );
+        const quantity = itemElement.querySelector(
+            "[data-order-item-quantity]"
+        );
         const price = itemElement.querySelector("[data-order-item-price]");
 
         if (image) {
@@ -177,7 +197,10 @@ function fillOrderCard(card, order) {
     }
 
     if (orderStatus) {
-        orderStatus.textContent = order.status || "Order Placed";
+        const status = order.status || "Order Placed";
+
+        orderStatus.textContent = status;
+        applyOrderStatusClass(orderStatus, status);
     }
 
     fillOrderItems(card, order.items);
@@ -200,8 +223,12 @@ function fillOrderItems(card, items) {
 
         const image = itemElement.querySelector("[data-order-item-image]");
         const name = itemElement.querySelector("[data-order-item-name]");
-        const category = itemElement.querySelector("[data-order-item-category]");
-        const quantity = itemElement.querySelector("[data-order-item-quantity]");
+        const category = itemElement.querySelector(
+            "[data-order-item-category]"
+        );
+        const quantity = itemElement.querySelector(
+            "[data-order-item-quantity]"
+        );
         const price = itemElement.querySelector("[data-order-item-price]");
 
         if (image) {
@@ -230,6 +257,76 @@ function fillOrderItems(card, items) {
 
         itemElement.hidden = false;
     });
+}
+
+
+function initializeOrderDetailsButton(card) {
+    const button = card.querySelector("[data-order-details-button]");
+    const detailsSection = card.querySelector("[data-order-details]");
+
+    if (!button || !detailsSection) {
+        return;
+    }
+
+    button.onclick = () => {
+        const isHidden = detailsSection.hidden;
+
+        detailsSection.hidden = !isHidden;
+
+        button.setAttribute(
+            "aria-expanded",
+            String(isHidden)
+        );
+
+        button.textContent = isHidden
+            ? "Hide Details"
+            : "View Details";
+    };
+}
+
+
+function applyOrderStatusClass(statusElement, status) {
+    statusElement.classList.remove(
+        "status-placed",
+        "status-confirmed",
+        "status-preparing",
+        "status-out-for-delivery",
+        "status-delivered",
+        "status-cancelled"
+    );
+
+    const normalizedStatus = String(status)
+        .toLowerCase()
+        .trim();
+
+    if (normalizedStatus === "order placed") {
+        statusElement.classList.add("status-placed");
+        return;
+    }
+
+    if (normalizedStatus === "confirmed") {
+        statusElement.classList.add("status-confirmed");
+        return;
+    }
+
+    if (normalizedStatus === "preparing") {
+        statusElement.classList.add("status-preparing");
+        return;
+    }
+
+    if (normalizedStatus === "out for delivery") {
+        statusElement.classList.add("status-out-for-delivery");
+        return;
+    }
+
+    if (normalizedStatus === "delivered") {
+        statusElement.classList.add("status-delivered");
+        return;
+    }
+
+    if (normalizedStatus === "cancelled") {
+        statusElement.classList.add("status-cancelled");
+    }
 }
 
 
@@ -277,7 +374,13 @@ function formatAddress(address) {
     ];
 
     return parts
-        .filter((part) => part !== undefined && part !== null && part !== "")
+        .filter((part) => {
+            return (
+                part !== undefined &&
+                part !== null &&
+                part !== ""
+            );
+        })
         .join(", ");
 }
 

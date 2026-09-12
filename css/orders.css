@@ -42,7 +42,7 @@
 }
 
 
-/* Orders Summary */
+/* Summary */
 
 .orders-summary-bar {
     display: flex;
@@ -53,6 +53,7 @@
     padding: 18px 22px;
 
     background-color: white;
+
     border: 1px solid lightgray;
     border-radius: 14px;
 
@@ -144,6 +145,9 @@
     font-weight: 700;
 }
 
+
+/* Status */
+
 .order-status {
     display: inline-flex;
     align-items: center;
@@ -152,15 +156,42 @@
     min-height: 34px;
     padding: 7px 14px;
 
-    background-color: lightgreen;
-    color: darkgreen;
-
     border-radius: 20px;
 
     font-size: 13px;
     font-weight: 700;
 
     white-space: nowrap;
+}
+
+.status-placed {
+    background-color: lightyellow;
+    color: darkorange;
+}
+
+.status-confirmed {
+    background-color: lightblue;
+    color: darkblue;
+}
+
+.status-preparing {
+    background-color: lightyellow;
+    color: darkorange;
+}
+
+.status-out-for-delivery {
+    background-color: lightblue;
+    color: darkblue;
+}
+
+.status-delivered {
+    background-color: lightgreen;
+    color: darkgreen;
+}
+
+.status-cancelled {
+    background-color: lightgray;
+    color: darkred;
 }
 
 
@@ -217,6 +248,52 @@
 }
 
 
+/* Details Button */
+
+.order-card-actions {
+    display: flex;
+    justify-content: flex-end;
+
+    padding: 16px 24px;
+
+    border-bottom: 1px solid lightgray;
+}
+
+.order-details-button {
+    min-height: 40px;
+
+    padding: 0 18px;
+
+    background-color: white;
+    color: orange;
+
+    border: 1px solid orange;
+    border-radius: 8px;
+
+    font-size: 13px;
+    font-weight: 700;
+
+    cursor: pointer;
+
+    transition:
+        background-color 0.2s ease,
+        color 0.2s ease,
+        transform 0.2s ease;
+}
+
+.order-details-button:hover {
+    background-color: orange;
+    color: white;
+
+    transform: translateY(-1px);
+}
+
+.order-details-button:focus-visible {
+    outline: 3px solid orange;
+    outline-offset: 3px;
+}
+
+
 /* Order Items */
 
 .order-card-items {
@@ -231,13 +308,11 @@
     font-size: 18px;
 }
 
-
 .order-items-preview {
     display: flex;
     flex-direction: column;
     gap: 12px;
 }
-
 
 .order-item-preview {
     display: grid;
@@ -255,7 +330,6 @@
     border-radius: 12px;
 }
 
-
 .order-item-image-wrapper {
     width: 65px;
     height: 65px;
@@ -267,7 +341,6 @@
     border-radius: 10px;
 }
 
-
 .order-item-image-wrapper img {
     width: 100%;
     height: 100%;
@@ -277,11 +350,9 @@
     object-fit: cover;
 }
 
-
 .order-item-details {
     min-width: 0;
 }
-
 
 .order-item-details h4 {
     margin: 0 0 4px;
@@ -295,7 +366,6 @@
     text-overflow: ellipsis;
 }
 
-
 .order-item-details p {
     margin: 0 0 4px;
 
@@ -304,13 +374,11 @@
     font-size: 13px;
 }
 
-
 .order-item-details span {
     color: dimgray;
 
     font-size: 12px;
 }
-
 
 .order-item-preview > strong {
     color: black;
@@ -334,7 +402,6 @@
     box-shadow: 0 8px 25px lightgray;
 }
 
-
 .orders-empty-content {
     max-width: 550px;
 
@@ -342,7 +409,6 @@
 
     text-align: center;
 }
-
 
 .orders-empty-label {
     margin: 0 0 8px;
@@ -356,7 +422,6 @@
     letter-spacing: 1px;
 }
 
-
 .orders-empty-content h2 {
     margin: 0 0 10px;
 
@@ -364,7 +429,6 @@
 
     font-size: 25px;
 }
-
 
 .orders-empty-content p {
     margin: 0 0 24px;
@@ -374,7 +438,6 @@
     font-size: 15px;
     line-height: 1.6;
 }
-
 
 .orders-browse-button {
     display: inline-flex;
@@ -403,14 +466,12 @@
         transform 0.2s ease;
 }
 
-
 .orders-browse-button:hover {
     background-color: darkorange;
     border-color: darkorange;
 
     transform: translateY(-2px);
 }
-
 
 .orders-browse-button:focus-visible {
     outline: 3px solid orange;
@@ -464,6 +525,14 @@
 
     .order-card-address {
         padding: 20px;
+    }
+
+    .order-card-actions {
+        padding: 15px 20px;
+    }
+
+    .order-details-button {
+        width: 100%;
     }
 
     .order-card-items {
