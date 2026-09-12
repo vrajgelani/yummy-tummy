@@ -6,13 +6,13 @@
 
     <meta
         name="description"
-        content="Create your Yummy Tummy customer account."
+        content="Manage your Yummy Tummy customer profile, orders, addresses and account."
     >
 
-    <title>Register | Yummy Tummy</title>
+    <title>Profile | Yummy Tummy</title>
 
     <link rel="stylesheet" href="css/style.css">
-    <link rel="stylesheet" href="css/register.css">
+    <link rel="stylesheet" href="css/profile.css">
 </head>
 
 <body>
@@ -117,181 +117,242 @@
 
     <main>
 
-        <section class="register-page">
+        <section class="profile-page">
 
-            <div class="register-container">
+            <div class="profile-container">
 
-                <div class="register-card">
+                <!-- ==================== PAGE HEADING ==================== -->
 
-                    <div class="register-heading">
+                <div class="profile-page-heading">
 
-                        <p class="register-eyebrow">
-                            Yummy Tummy
-                        </p>
+                    <p class="profile-eyebrow">
+                        Yummy Tummy
+                    </p>
 
-                        <h1>
-                            Create Your Account
-                        </h1>
+                    <h1>
+                        My Profile
+                    </h1>
 
-                        <p class="register-subtitle">
-                            Register to explore vegetarian food,
-                            restaurants and table booking.
-                        </p>
-
-                    </div>
-
-
-                    <form
-                        id="registerForm"
-                        class="register-form"
-                        novalidate
-                    >
-
-                        <div class="register-form-group">
-
-                            <label for="registerName">
-                                Full Name
-                            </label>
-
-                            <input
-                                type="text"
-                                id="registerName"
-                                name="name"
-                                placeholder="Enter your full name"
-                                autocomplete="name"
-                            >
-
-                            <p
-                                id="registerNameError"
-                                class="register-error"
-                                aria-live="polite"
-                            ></p>
-
-                        </div>
-
-
-                        <div class="register-form-group">
-
-                            <label for="registerEmail">
-                                Email Address
-                            </label>
-
-                            <input
-                                type="email"
-                                id="registerEmail"
-                                name="email"
-                                placeholder="Enter your email address"
-                                autocomplete="email"
-                            >
-
-                            <p
-                                id="registerEmailError"
-                                class="register-error"
-                                aria-live="polite"
-                            ></p>
-
-                        </div>
-
-
-                        <div class="register-form-group">
-
-                            <label for="registerMobile">
-                                Mobile Number
-                            </label>
-
-                            <input
-                                type="tel"
-                                id="registerMobile"
-                                name="mobile"
-                                placeholder="Enter your mobile number"
-                                autocomplete="tel"
-                            >
-
-                            <p
-                                id="registerMobileError"
-                                class="register-error"
-                                aria-live="polite"
-                            ></p>
-
-                        </div>
-
-
-                        <div class="register-form-group">
-
-                            <label for="registerPassword">
-                                Password
-                            </label>
-
-                            <input
-                                type="password"
-                                id="registerPassword"
-                                name="password"
-                                placeholder="Create a password"
-                                autocomplete="new-password"
-                            >
-
-                            <p
-                                id="registerPasswordError"
-                                class="register-error"
-                                aria-live="polite"
-                            ></p>
-
-                        </div>
-
-
-                        <div class="register-form-group">
-
-                            <label for="registerConfirmPassword">
-                                Confirm Password
-                            </label>
-
-                            <input
-                                type="password"
-                                id="registerConfirmPassword"
-                                name="confirmPassword"
-                                placeholder="Confirm your password"
-                                autocomplete="new-password"
-                            >
-
-                            <p
-                                id="registerConfirmPasswordError"
-                                class="register-error"
-                                aria-live="polite"
-                            ></p>
-
-                        </div>
-
-
-                        <p
-                            id="registerMessage"
-                            class="register-message"
-                            aria-live="polite"
-                        ></p>
-
-
-                        <button
-                            type="submit"
-                            id="registerButton"
-                            class="register-button"
-                        >
-                            Create Account
-                        </button>
-
-                    </form>
-
-
-                    <div class="register-login-link">
-
-                        <p>
-                            Already have an account?
-                            <a href="login.html">
-                                Login
-                            </a>
-                        </p>
-
-                    </div>
+                    <p class="profile-subtitle">
+                        Manage your account, orders and preferences.
+                    </p>
 
                 </div>
+
+
+                <!-- ==================== PROFILE INFORMATION ==================== -->
+
+                <section
+                    class="profile-information-card"
+                    aria-labelledby="profileInformationTitle"
+                >
+
+                    <div class="profile-card-heading">
+
+                        <h2 id="profileInformationTitle">
+                            Personal Information
+                        </h2>
+
+                        <p>
+                            Your account information
+                        </p>
+
+                    </div>
+
+
+                    <div class="profile-information-grid">
+
+                        <div class="profile-information-item">
+
+                            <span class="profile-information-label">
+                                Full Name
+                            </span>
+
+                            <strong
+                                id="profileName"
+                                class="profile-information-value"
+                            >
+                                User Name
+                            </strong>
+
+                        </div>
+
+
+                        <div class="profile-information-item">
+
+                            <span class="profile-information-label">
+                                Email Address
+                            </span>
+
+                            <strong
+                                id="profileEmail"
+                                class="profile-information-value"
+                            >
+                                user@example.com
+                            </strong>
+
+                        </div>
+
+
+                        <div class="profile-information-item">
+
+                            <span class="profile-information-label">
+                                Mobile Number
+                            </span>
+
+                            <strong
+                                id="profileMobile"
+                                class="profile-information-value"
+                            >
+                                Not Available
+                            </strong>
+
+                        </div>
+
+
+                        <div class="profile-information-item">
+
+                            <span class="profile-information-label">
+                                Account Status
+                            </span>
+
+                            <strong class="profile-status">
+                                Active
+                            </strong>
+
+                        </div>
+
+                    </div>
+
+                </section>
+
+
+                <!-- ==================== PROFILE OPTIONS ==================== -->
+
+                <section
+                    class="profile-options-section"
+                    aria-labelledby="profileOptionsTitle"
+                >
+
+                    <div class="profile-card-heading">
+
+                        <h2 id="profileOptionsTitle">
+                            Account Options
+                        </h2>
+
+                        <p>
+                            Quickly access your Yummy Tummy activities.
+                        </p>
+
+                    </div>
+
+
+                    <div class="profile-options-grid">
+
+                        <!-- My Orders -->
+
+                        <a
+                            href="orders.html"
+                            class="profile-option-card"
+                        >
+
+                            <span class="profile-option-title">
+                                My Orders
+                            </span>
+
+                            <span class="profile-option-description">
+                                View your food orders and order history.
+                            </span>
+
+                            <span class="profile-option-link">
+                                View Orders
+                            </span>
+
+                        </a>
+
+
+                        <!-- Manage Addresses -->
+
+                        <a
+                            href="address.html"
+                            class="profile-option-card"
+                        >
+
+                            <span class="profile-option-title">
+                                Manage Addresses
+                            </span>
+
+                            <span class="profile-option-description">
+                                Add and manage your delivery addresses.
+                            </span>
+
+                            <span class="profile-option-link">
+                                Manage Addresses
+                            </span>
+
+                        </a>
+
+
+                        <!-- Wishlist -->
+
+                        <a
+                            href="wishlist.html"
+                            class="profile-option-card"
+                        >
+
+                            <span class="profile-option-title">
+                                Wishlist
+                            </span>
+
+                            <span class="profile-option-description">
+                                View the foods you have saved.
+                            </span>
+
+                            <span class="profile-option-link">
+                                View Wishlist
+                            </span>
+
+                        </a>
+
+
+                        <!-- Cart -->
+
+                        <a
+                            href="cart.html"
+                            class="profile-option-card"
+                        >
+
+                            <span class="profile-option-title">
+                                My Cart
+                            </span>
+
+                            <span class="profile-option-description">
+                                View your selected food items.
+                            </span>
+
+                            <span class="profile-option-link">
+                                View Cart
+                            </span>
+
+                        </a>
+
+                    </div>
+
+                </section>
+
+
+                <!-- ==================== ACCOUNT ACTIONS ==================== -->
+
+                <section class="profile-account-actions">
+
+                    <button
+                        type="button"
+                        class="profile-logout-button logout-link"
+                    >
+                        Logout
+                    </button>
+
+                </section>
 
             </div>
 

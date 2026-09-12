@@ -1,0 +1,306 @@
+/* ==================================================
+   YUMMY TUMMY
+   PROFILE PAGE
+   ================================================== */
+
+
+/* ==================== PROFILE PAGE ==================== */
+
+.profile-page {
+    min-height: 700px;
+    padding: 60px 20px;
+    background-color: whitesmoke;
+}
+
+
+.profile-container {
+    width: 100%;
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+
+/* ==================== PAGE HEADING ==================== */
+
+.profile-page-heading {
+    margin-bottom: 35px;
+    text-align: center;
+}
+
+
+.profile-eyebrow {
+    margin: 0 0 8px;
+    color: orange;
+    font-size: 14px;
+    font-weight: 700;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+}
+
+
+.profile-page-heading h1 {
+    margin: 0;
+    color: black;
+    font-size: 36px;
+    line-height: 1.2;
+}
+
+
+.profile-subtitle {
+    margin: 12px 0 0;
+    color: dimgray;
+    font-size: 15px;
+    line-height: 1.6;
+}
+
+
+/* ==================== COMMON CARD ==================== */
+
+.profile-information-card,
+.profile-options-section {
+    margin-bottom: 30px;
+    padding: 30px;
+    background-color: white;
+    border: 1px solid lightgray;
+    border-radius: 14px;
+    box-shadow: 0 6px 20px lightgray;
+}
+
+
+/* ==================== CARD HEADING ==================== */
+
+.profile-card-heading {
+    margin-bottom: 25px;
+}
+
+
+.profile-card-heading h2 {
+    margin: 0;
+    color: black;
+    font-size: 23px;
+}
+
+
+.profile-card-heading p {
+    margin: 7px 0 0;
+    color: dimgray;
+    font-size: 14px;
+}
+
+
+/* ==================== INFORMATION GRID ==================== */
+
+.profile-information-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 18px;
+}
+
+
+.profile-information-item {
+    padding: 18px;
+    border: 1px solid lightgray;
+    border-radius: 10px;
+    background-color: whitesmoke;
+}
+
+
+.profile-information-label {
+    display: block;
+    margin-bottom: 7px;
+    color: dimgray;
+    font-size: 13px;
+}
+
+
+.profile-information-value {
+    display: block;
+    overflow-wrap: anywhere;
+    color: black;
+    font-size: 16px;
+}
+
+
+.profile-status {
+    display: block;
+    color: green;
+    font-size: 16px;
+}
+
+
+/* ==================== OPTIONS GRID ==================== */
+
+.profile-options-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 20px;
+}
+
+
+.profile-option-card {
+    display: flex;
+    min-height: 160px;
+    box-sizing: border-box;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 22px;
+    border: 1px solid lightgray;
+    border-radius: 12px;
+    background-color: white;
+    text-decoration: none;
+    transition:
+        border-color 0.2s ease,
+        box-shadow 0.2s ease,
+        transform 0.2s ease;
+}
+
+
+.profile-option-card:hover {
+    border-color: orange;
+    box-shadow: 0 7px 20px lightgray;
+    transform: translateY(-2px);
+}
+
+
+.profile-option-title {
+    display: block;
+    margin-bottom: 8px;
+    color: black;
+    font-size: 19px;
+    font-weight: 700;
+}
+
+
+.profile-option-description {
+    display: block;
+    color: dimgray;
+    font-size: 14px;
+    line-height: 1.6;
+}
+
+
+.profile-option-link {
+    display: block;
+    margin-top: 18px;
+    color: orange;
+    font-size: 14px;
+    font-weight: 700;
+}
+
+
+/* ==================== ACCOUNT ACTIONS ==================== */
+
+.profile-account-actions {
+    display: flex;
+    justify-content: center;
+    padding: 5px 0 20px;
+}
+
+
+.profile-logout-button {
+    min-width: 160px;
+    padding: 13px 25px;
+    border: 1px solid firebrick;
+    border-radius: 8px;
+    background-color: white;
+    color: firebrick;
+    font-size: 15px;
+    font-weight: 700;
+    cursor: pointer;
+    transition:
+        background-color 0.2s ease,
+        color 0.2s ease,
+        transform 0.2s ease;
+}
+
+
+.profile-logout-button:hover {
+    background-color: firebrick;
+    color: white;
+    transform: translateY(-1px);
+}
+
+
+.profile-logout-button:focus {
+    outline: 3px solid mistyrose;
+    outline-offset: 2px;
+}
+
+
+/* ==================== RESPONSIVE ==================== */
+
+@media (max-width: 800px) {
+
+    .profile-page {
+        padding: 45px 15px;
+    }
+
+
+    .profile-information-card,
+    .profile-options-section {
+        padding: 24px;
+    }
+
+
+    .profile-page-heading h1 {
+        font-size: 31px;
+    }
+
+
+    .profile-information-grid {
+        grid-template-columns: 1fr;
+    }
+
+
+    .profile-options-grid {
+        grid-template-columns: 1fr;
+    }
+
+}
+
+
+@media (max-width: 500px) {
+
+    .profile-page {
+        padding: 35px 12px;
+    }
+
+
+    .profile-information-card,
+    .profile-options-section {
+        padding: 20px 16px;
+        border-radius: 10px;
+    }
+
+
+    .profile-page-heading {
+        margin-bottom: 25px;
+    }
+
+
+    .profile-page-heading h1 {
+        font-size: 27px;
+    }
+
+
+    .profile-subtitle {
+        font-size: 14px;
+    }
+
+
+    .profile-card-heading h2 {
+        font-size: 20px;
+    }
+
+
+    .profile-option-card {
+        min-height: 145px;
+        padding: 18px;
+    }
+
+
+    .profile-logout-button {
+        width: 100%;
+    }
+
+}

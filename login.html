@@ -1,14 +1,8 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-
     <meta charset="UTF-8">
-
-    <meta
-        name="viewport"
-        content="width=device-width, initial-scale=1.0"
-    >
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <meta
         name="description"
@@ -17,49 +11,24 @@
 
     <title>Login | Yummy Tummy</title>
 
-    <!-- Main CSS -->
-    <link
-        rel="stylesheet"
-        href="css/style.css"
-    >
-
-    <!-- Login CSS -->
-    <link
-        rel="stylesheet"
-        href="css/login.css"
-    >
-
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/login.css">
 </head>
-
 
 <body>
 
-
-    <!-- =====================================================
-         HEADER
-    ====================================================== -->
+    <!-- ==================== HEADER ==================== -->
 
     <header class="site-header">
 
         <div class="header-container">
 
-
-            <!-- LOGO -->
-
-            <a
-                href="index.html"
-                class="brand-logo"
-            >
-
+            <a href="index.html" class="brand-logo">
                 <img
                     src="images/logo/yummy-tummy-logo.png"
                     alt="Yummy Tummy Logo"
                 >
-
             </a>
-
-
-            <!-- NAVIGATION -->
 
             <nav
                 class="main-navigation"
@@ -89,9 +58,6 @@
 
             </nav>
 
-
-            <!-- HEADER SEARCH -->
-
             <div class="header-search">
 
                 <input
@@ -103,11 +69,7 @@
 
             </div>
 
-
-            <!-- HEADER ACTIONS -->
-
             <div class="header-actions">
-
 
                 <a
                     href="wishlist.html"
@@ -116,14 +78,12 @@
                     Wishlist
                 </a>
 
-
                 <a
                     href="cart.html"
                     class="header-action"
                 >
                     Cart
                 </a>
-
 
                 <a
                     href="login.html"
@@ -132,14 +92,12 @@
                     Login
                 </a>
 
-
                 <a
                     href="register.html"
                     class="header-action register-link"
                 >
                     Register
                 </a>
-
 
                 <a
                     href="profile.html"
@@ -150,55 +108,38 @@
 
             </div>
 
-
         </div>
 
     </header>
 
 
-
-    <!-- =====================================================
-         MAIN
-    ====================================================== -->
+    <!-- ==================== MAIN ==================== -->
 
     <main>
-
-
-        <!-- =================================================
-             LOGIN SECTION
-        ================================================== -->
 
         <section class="login-page">
 
             <div class="login-container">
 
-
-                <!-- LOGIN CARD -->
-
                 <div class="login-card">
-
-
-                    <!-- LOGIN HEADING -->
 
                     <div class="login-heading">
 
-                        <p class="login-label">
-                            WELCOME BACK
+                        <p class="login-eyebrow">
+                            Yummy Tummy
                         </p>
 
                         <h1>
-                            Login to Yummy Tummy
+                            Welcome Back
                         </h1>
 
-                        <p>
-                            Login to continue ordering food,
-                            saving favourites and booking tables.
+                        <p class="login-subtitle">
+                            Login to continue exploring vegetarian
+                            food and restaurants.
                         </p>
 
                     </div>
 
-
-                    <!-- LOGIN FORM -->
 
                     <form
                         id="loginForm"
@@ -206,14 +147,9 @@
                         novalidate
                     >
 
-
-                        <!-- EMAIL -->
-
                         <div class="login-form-group">
 
-                            <label
-                                for="loginEmail"
-                            >
+                            <label for="loginEmail">
                                 Email Address
                             </label>
 
@@ -223,27 +159,20 @@
                                 name="email"
                                 placeholder="Enter your email address"
                                 autocomplete="email"
-                                required
                             >
 
                             <p
                                 id="loginEmailError"
                                 class="login-error"
-                                hidden
-                            >
-                                Please enter a valid email address.
-                            </p>
+                                aria-live="polite"
+                            ></p>
 
                         </div>
 
 
-                        <!-- PASSWORD -->
-
                         <div class="login-form-group">
 
-                            <label
-                                for="loginPassword"
-                            >
+                            <label for="loginPassword">
                                 Password
                             </label>
 
@@ -253,82 +182,60 @@
                                 name="password"
                                 placeholder="Enter your password"
                                 autocomplete="current-password"
-                                required
                             >
 
                             <p
                                 id="loginPasswordError"
                                 class="login-error"
-                                hidden
-                            >
-                                Please enter your password.
-                            </p>
+                                aria-live="polite"
+                            ></p>
 
                         </div>
 
 
-                        <!-- LOGIN MESSAGE -->
-
                         <p
                             id="loginMessage"
                             class="login-message"
-                            role="alert"
-                            hidden
-                        >
-                        </p>
+                            aria-live="polite"
+                        ></p>
 
-
-                        <!-- LOGIN BUTTON -->
 
                         <button
                             type="submit"
                             id="loginButton"
-                            class="login-submit-button"
+                            class="login-button"
                         >
                             Login
                         </button>
 
-
                     </form>
 
-
-                    <!-- REGISTER LINK -->
 
                     <div class="login-register-link">
 
                         <p>
                             Don't have an account?
+                            <a href="register.html">
+                                Register
+                            </a>
                         </p>
-
-                        <a href="register.html">
-                            Create Account
-                        </a>
 
                     </div>
 
-
                 </div>
-
 
             </div>
 
         </section>
 
-
     </main>
 
 
-
-    <!-- =====================================================
-         FOOTER
-    ====================================================== -->
+    <!-- ==================== FOOTER ==================== -->
 
     <footer class="site-footer">
 
         <div class="footer-container">
-
-
-            <!-- FOOTER BRAND -->
 
             <div class="footer-brand">
 
@@ -345,29 +252,21 @@
 
                 </a>
 
-
                 <p class="footer-description">
-                    Delicious vegetarian food and restaurant
-                    table booking, all in one place.
+                    Delicious vegetarian food and restaurant table
+                    booking, all in one place.
                 </p>
 
             </div>
 
 
-
-            <!-- FOOTER LINKS -->
-
             <div class="footer-links">
-
-
-                <!-- QUICK LINKS -->
 
                 <div class="footer-column">
 
                     <h3 class="footer-title">
                         Quick Links
                     </h3>
-
 
                     <a
                         href="index.html"
@@ -376,14 +275,12 @@
                         Home
                     </a>
 
-
                     <a
                         href="menu.html"
                         class="footer-link"
                     >
                         Menu
                     </a>
-
 
                     <a
                         href="restaurants.html"
@@ -395,15 +292,11 @@
                 </div>
 
 
-
-                <!-- CUSTOMER -->
-
                 <div class="footer-column">
 
                     <h3 class="footer-title">
                         Customer
                     </h3>
-
 
                     <a
                         href="wishlist.html"
@@ -412,7 +305,6 @@
                         Wishlist
                     </a>
 
-
                     <a
                         href="cart.html"
                         class="footer-link"
@@ -420,14 +312,12 @@
                         Cart
                     </a>
 
-
                     <a
                         href="profile.html"
                         class="footer-link"
                     >
                         Profile
                     </a>
-
 
                     <a
                         href="orders.html"
@@ -439,15 +329,11 @@
                 </div>
 
 
-
-                <!-- ACCOUNT -->
-
                 <div class="footer-column">
 
                     <h3 class="footer-title">
                         Account
                     </h3>
-
 
                     <a
                         href="login.html"
@@ -455,7 +341,6 @@
                     >
                         Login
                     </a>
-
 
                     <a
                         href="register.html"
@@ -467,32 +352,23 @@
                 </div>
 
 
-
-                <!-- INFORMATION -->
-
                 <div class="footer-column">
 
                     <h3 class="footer-title">
                         Yummy Tummy
                     </h3>
 
-
                     <p class="footer-information-text">
-                        Discover vegetarian food, restaurants
-                        and table booking with Yummy Tummy.
+                        Discover vegetarian food, restaurants and
+                        table booking with Yummy Tummy.
                     </p>
 
                 </div>
 
-
             </div>
-
 
         </div>
 
-
-
-        <!-- FOOTER BOTTOM -->
 
         <div class="footer-bottom">
 
@@ -502,10 +378,11 @@
 
         </div>
 
-
     </footer>
 
 
-</body>
+    <script src="js/auth.js"></script>
+    <script src="js/main.js"></script>
 
+</body>
 </html>
