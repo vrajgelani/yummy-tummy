@@ -1,0 +1,444 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta
+        name="description"
+        content="Create your Yummy Tummy customer account."
+    >
+
+    <title>Register | Yummy Tummy</title>
+
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/register.css">
+</head>
+
+<body>
+
+    <!-- ==================== HEADER ==================== -->
+    <header class="site-header">
+
+        <div class="header-container">
+
+            <a href="index.html" class="brand-logo">
+                <img
+                    src="images/logo/yummy-tummy-logo.png"
+                    alt="Yummy Tummy Logo"
+                >
+            </a>
+
+            <nav class="main-navigation" aria-label="Main Navigation">
+
+                <a href="index.html" class="nav-link">
+                    Home
+                </a>
+
+                <a href="menu.html" class="nav-link">
+                    Menu
+                </a>
+
+                <a href="restaurants.html" class="nav-link">
+                    Restaurants
+                </a>
+
+            </nav>
+
+            <div class="header-search">
+
+                <input
+                    type="search"
+                    id="headerSearch"
+                    placeholder="Search food or restaurant"
+                    aria-label="Search food or restaurant"
+                >
+
+            </div>
+
+            <div class="header-actions">
+
+                <a
+                    href="wishlist.html"
+                    class="header-action"
+                >
+                    Wishlist
+                </a>
+
+                <a
+                    href="cart.html"
+                    class="header-action"
+                >
+                    Cart
+                </a>
+
+                <a
+                    href="login.html"
+                    class="header-action login-link"
+                >
+                    Login
+                </a>
+
+                <a
+                    href="register.html"
+                    class="header-action register-link"
+                >
+                    Register
+                </a>
+
+                <a
+                    href="profile.html"
+                    class="header-action profile-link hidden"
+                >
+                    Profile
+                </a>
+
+            </div>
+
+        </div>
+
+    </header>
+
+
+    <!-- ==================== MAIN ==================== -->
+    <main>
+
+        <section class="register-page">
+
+            <div class="register-container">
+
+                <div class="register-card">
+
+                    <div class="register-heading">
+
+                        <p class="register-eyebrow">
+                            Yummy Tummy
+                        </p>
+
+                        <h1>
+                            Create Your Account
+                        </h1>
+
+                        <p class="register-subtitle">
+                            Register to explore vegetarian food,
+                            restaurants and table booking.
+                        </p>
+
+                    </div>
+
+
+                    <form
+                        id="registerForm"
+                        class="register-form"
+                        novalidate
+                    >
+
+                        <!-- Full Name -->
+                        <div class="register-form-group">
+
+                            <label for="registerName">
+                                Full Name
+                            </label>
+
+                            <input
+                                type="text"
+                                id="registerName"
+                                name="name"
+                                placeholder="Enter your full name"
+                                autocomplete="name"
+                            >
+
+                            <p
+                                id="registerNameError"
+                                class="register-error"
+                                aria-live="polite"
+                            ></p>
+
+                        </div>
+
+
+                        <!-- Email -->
+                        <div class="register-form-group">
+
+                            <label for="registerEmail">
+                                Email Address
+                            </label>
+
+                            <input
+                                type="email"
+                                id="registerEmail"
+                                name="email"
+                                placeholder="Enter your email address"
+                                autocomplete="email"
+                            >
+
+                            <p
+                                id="registerEmailError"
+                                class="register-error"
+                                aria-live="polite"
+                            ></p>
+
+                        </div>
+
+
+                        <!-- Mobile Number -->
+                        <div class="register-form-group">
+
+                            <label for="registerMobile">
+                                Mobile Number
+                            </label>
+
+                            <input
+                                type="tel"
+                                id="registerMobile"
+                                name="mobile"
+                                placeholder="Enter your mobile number"
+                                autocomplete="tel"
+                            >
+
+                            <p
+                                id="registerMobileError"
+                                class="register-error"
+                                aria-live="polite"
+                            ></p>
+
+                        </div>
+
+
+                        <!-- Password -->
+                        <div class="register-form-group">
+
+                            <label for="registerPassword">
+                                Password
+                            </label>
+
+                            <input
+                                type="password"
+                                id="registerPassword"
+                                name="password"
+                                placeholder="Create a password"
+                                autocomplete="new-password"
+                            >
+
+                            <p
+                                id="registerPasswordError"
+                                class="register-error"
+                                aria-live="polite"
+                            ></p>
+
+                        </div>
+
+
+                        <!-- Confirm Password -->
+                        <div class="register-form-group">
+
+                            <label for="registerConfirmPassword">
+                                Confirm Password
+                            </label>
+
+                            <input
+                                type="password"
+                                id="registerConfirmPassword"
+                                name="confirmPassword"
+                                placeholder="Confirm your password"
+                                autocomplete="new-password"
+                            >
+
+                            <p
+                                id="registerConfirmPasswordError"
+                                class="register-error"
+                                aria-live="polite"
+                            ></p>
+
+                        </div>
+
+
+                        <!-- Message -->
+                        <p
+                            id="registerMessage"
+                            class="register-message"
+                            aria-live="polite"
+                        ></p>
+
+
+                        <!-- Register Button -->
+                        <button
+                            type="submit"
+                            id="registerButton"
+                            class="register-button"
+                        >
+                            Create Account
+                        </button>
+
+                    </form>
+
+
+                    <!-- Login Link -->
+                    <div class="register-login-link">
+
+                        <p>
+                            Already have an account?
+                            <a href="login.html">
+                                Login
+                            </a>
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <!-- ==================== FOOTER ==================== -->
+    <footer class="site-footer">
+
+        <div class="footer-container">
+
+            <div class="footer-brand">
+
+                <a
+                    href="index.html"
+                    class="footer-brand-link"
+                >
+                    <img
+                        src="images/logo/yummy-tummy-logo.png"
+                        alt="Yummy Tummy Logo"
+                        class="footer-logo"
+                    >
+                </a>
+
+                <p class="footer-description">
+                    Delicious vegetarian food and restaurant table
+                    booking, all in one place.
+                </p>
+
+            </div>
+
+
+            <div class="footer-links">
+
+                <div class="footer-column">
+
+                    <h3 class="footer-title">
+                        Quick Links
+                    </h3>
+
+                    <a
+                        href="index.html"
+                        class="footer-link"
+                    >
+                        Home
+                    </a>
+
+                    <a
+                        href="menu.html"
+                        class="footer-link"
+                    >
+                        Menu
+                    </a>
+
+                    <a
+                        href="restaurants.html"
+                        class="footer-link"
+                    >
+                        Restaurants
+                    </a>
+
+                </div>
+
+
+                <div class="footer-column">
+
+                    <h3 class="footer-title">
+                        Customer
+                    </h3>
+
+                    <a
+                        href="wishlist.html"
+                        class="footer-link"
+                    >
+                        Wishlist
+                    </a>
+
+                    <a
+                        href="cart.html"
+                        class="footer-link"
+                    >
+                        Cart
+                    </a>
+
+                    <a
+                        href="profile.html"
+                        class="footer-link"
+                    >
+                        Profile
+                    </a>
+
+                    <a
+                        href="orders.html"
+                        class="footer-link"
+                    >
+                        My Orders
+                    </a>
+
+                </div>
+
+
+                <div class="footer-column">
+
+                    <h3 class="footer-title">
+                        Account
+                    </h3>
+
+                    <a
+                        href="login.html"
+                        class="footer-link"
+                    >
+                        Login
+                    </a>
+
+                    <a
+                        href="register.html"
+                        class="footer-link"
+                    >
+                        Register
+                    </a>
+
+                </div>
+
+
+                <div class="footer-column">
+
+                    <h3 class="footer-title">
+                        Yummy Tummy
+                    </h3>
+
+                    <p class="footer-information-text">
+                        Discover vegetarian food, restaurants and
+                        table booking with Yummy Tummy.
+                    </p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <div class="footer-bottom">
+
+            <p class="copyright-text">
+                © 2026 Yummy Tummy. All rights reserved.
+            </p>
+
+        </div>
+
+    </footer>
+
+</body>
+</html>
