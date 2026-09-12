@@ -23,7 +23,7 @@
 /* ==================== PAGE HEADING ==================== */
 
 .wishlist-page-heading {
-    margin-bottom: 35px;
+    margin-bottom: 38px;
     text-align: center;
 }
 
@@ -47,7 +47,8 @@
 
 
 .wishlist-subtitle {
-    margin: 12px 0 0;
+    max-width: 600px;
+    margin: 12px auto 0;
     color: dimgray;
     font-size: 15px;
     line-height: 1.6;
@@ -66,7 +67,9 @@
     align-items: center;
     justify-content: space-between;
     gap: 20px;
-    margin-bottom: 20px;
+    margin-bottom: 22px;
+    padding-bottom: 14px;
+    border-bottom: 1px solid lightgray;
 }
 
 
@@ -79,9 +82,12 @@
 
 .wishlist-results-heading p {
     margin: 0;
+    padding: 7px 12px;
+    border-radius: 20px;
+    background-color: white;
     color: dimgray;
-    font-size: 14px;
-    font-weight: 600;
+    font-size: 13px;
+    font-weight: 700;
 }
 
 
@@ -90,18 +96,21 @@
 .wishlist-food-grid {
     display: grid;
     grid-template-columns: repeat(3, minmax(0, 1fr));
-    gap: 24px;
+    gap: 25px;
 }
 
 
 /* ==================== FOOD CARD ==================== */
 
 .wishlist-food-card {
+    display: flex;
     overflow: hidden;
+    flex-direction: column;
+    min-width: 0;
     background-color: white;
     border: 1px solid lightgray;
     border-radius: 14px;
-    box-shadow: 0 6px 18px lightgray;
+    box-shadow: 0 5px 16px lightgray;
     transition:
         transform 0.2s ease,
         box-shadow 0.2s ease,
@@ -111,8 +120,8 @@
 
 .wishlist-food-card:hover {
     border-color: orange;
-    box-shadow: 0 10px 24px lightgray;
-    transform: translateY(-3px);
+    box-shadow: 0 10px 25px lightgray;
+    transform: translateY(-4px);
 }
 
 
@@ -120,7 +129,7 @@
 
 .wishlist-food-image-wrapper {
     width: 100%;
-    height: 220px;
+    height: 225px;
     overflow: hidden;
     background-color: whitesmoke;
 }
@@ -131,18 +140,27 @@
     width: 100%;
     height: 100%;
     object-fit: cover;
+    transition: transform 0.3s ease;
+}
+
+
+.wishlist-food-card:hover .wishlist-food-image {
+    transform: scale(1.03);
 }
 
 
 /* ==================== FOOD CONTENT ==================== */
 
 .wishlist-food-content {
+    display: flex;
+    flex: 1;
+    flex-direction: column;
     padding: 20px;
 }
 
 
 .wishlist-food-category {
-    margin: 0 0 6px;
+    margin: 0 0 7px;
     color: orange;
     font-size: 13px;
     font-weight: 700;
@@ -153,7 +171,7 @@
     margin: 0 0 10px;
     color: black;
     font-size: 20px;
-    line-height: 1.3;
+    line-height: 1.35;
 }
 
 
@@ -179,7 +197,8 @@
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 10px;
-    margin-top: 18px;
+    margin-top: auto;
+    padding-top: 20px;
 }
 
 
@@ -200,7 +219,8 @@
     transition:
         background-color 0.2s ease,
         color 0.2s ease,
-        border-color 0.2s ease;
+        border-color 0.2s ease,
+        transform 0.2s ease;
 }
 
 
@@ -214,6 +234,13 @@
 .wishlist-view-button:hover {
     border-color: darkorange;
     background-color: darkorange;
+    transform: translateY(-1px);
+}
+
+
+.wishlist-view-button:focus {
+    outline: 3px solid moccasin;
+    outline-offset: 2px;
 }
 
 
@@ -227,13 +254,20 @@
 .wishlist-remove-button:hover {
     background-color: firebrick;
     color: white;
+    transform: translateY(-1px);
+}
+
+
+.wishlist-remove-button:focus {
+    outline: 3px solid mistyrose;
+    outline-offset: 2px;
 }
 
 
 /* ==================== EMPTY STATE ==================== */
 
 .wishlist-empty-state {
-    padding: 70px 25px;
+    padding: 75px 25px;
     border: 1px dashed gray;
     border-radius: 14px;
     background-color: white;
@@ -244,43 +278,57 @@
 .wishlist-empty-state h2 {
     margin: 0 0 10px;
     color: black;
-    font-size: 25px;
+    font-size: 26px;
+    line-height: 1.3;
 }
 
 
 .wishlist-empty-state p {
-    max-width: 500px;
-    margin: 0 auto 25px;
+    max-width: 520px;
+    margin: 0 auto 26px;
     color: dimgray;
     font-size: 15px;
-    line-height: 1.6;
+    line-height: 1.7;
 }
 
 
 .wishlist-explore-button {
     display: inline-flex;
     min-height: 44px;
+    box-sizing: border-box;
     align-items: center;
     justify-content: center;
-    padding: 11px 24px;
+    padding: 11px 25px;
+    border: 1px solid orange;
     border-radius: 8px;
     background-color: orange;
     color: white;
     font-size: 15px;
     font-weight: 700;
     text-decoration: none;
-    transition: background-color 0.2s ease;
+    transition:
+        background-color 0.2s ease,
+        border-color 0.2s ease,
+        transform 0.2s ease;
 }
 
 
 .wishlist-explore-button:hover {
+    border-color: darkorange;
     background-color: darkorange;
+    transform: translateY(-1px);
+}
+
+
+.wishlist-explore-button:focus {
+    outline: 3px solid moccasin;
+    outline-offset: 2px;
 }
 
 
 /* ==================== RESPONSIVE ==================== */
 
-@media (max-width: 950px) {
+@media (max-width: 1000px) {
 
     .wishlist-food-grid {
         grid-template-columns: repeat(2, minmax(0, 1fr));
@@ -289,15 +337,27 @@
 }
 
 
-@media (max-width: 650px) {
+@media (max-width: 700px) {
 
     .wishlist-page {
         padding: 45px 15px;
     }
 
 
+    .wishlist-page-heading {
+        margin-bottom: 30px;
+    }
+
+
     .wishlist-page-heading h1 {
         font-size: 31px;
+    }
+
+
+    .wishlist-results-heading {
+        align-items: flex-start;
+        flex-direction: column;
+        gap: 10px;
     }
 
 
@@ -307,10 +367,8 @@
     }
 
 
-    .wishlist-results-heading {
-        align-items: flex-start;
-        flex-direction: column;
-        gap: 7px;
+    .wishlist-food-image-wrapper {
+        height: 230px;
     }
 
 }
@@ -333,18 +391,38 @@
     }
 
 
+    .wishlist-results-heading h2 {
+        font-size: 21px;
+    }
+
+
     .wishlist-food-content {
         padding: 17px;
     }
 
 
     .wishlist-food-image-wrapper {
-        height: 200px;
+        height: 205px;
+    }
+
+
+    .wishlist-food-name {
+        font-size: 18px;
     }
 
 
     .wishlist-food-actions {
         grid-template-columns: 1fr;
+    }
+
+
+    .wishlist-empty-state {
+        padding: 55px 18px;
+    }
+
+
+    .wishlist-empty-state h2 {
+        font-size: 22px;
     }
 
 }
