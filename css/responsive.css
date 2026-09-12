@@ -727,3 +727,150 @@
     }
 
 }
+
+/* ==================================================
+   YUMMY TUMMY
+   DAY 16 - PART 3
+   RESPONSIVE FINAL CONSISTENCY
+   ================================================== */
+
+
+/* ==================================================
+   TABLET
+   ================================================== */
+
+@media (max-width: 1024px) {
+
+    .section-container {
+        width: 92%;
+    }
+
+    .menu-page-heading,
+    .restaurants-page-heading {
+        max-width: 800px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .menu-food-card,
+    .restaurant-card {
+        min-width: 0;
+    }
+
+}
+
+
+/* ==================================================
+   MOBILE
+   ================================================== */
+
+@media (max-width: 768px) {
+
+    .section-container {
+        width: 92%;
+    }
+
+
+    /* ==================== HERO ==================== */
+
+    .menu-page-heading,
+    .restaurants-page-heading {
+        width: 100%;
+        text-align: center;
+    }
+
+    .menu-page-heading h1,
+    .restaurants-page-heading h1 {
+        margin-bottom: 10px;
+    }
+
+
+    /* ==================== SEARCH ==================== */
+
+    .restaurant-search-heading {
+        text-align: center;
+    }
+
+
+    /* ==================== RESULTS ==================== */
+
+    .menu-results-heading,
+    .restaurants-results-heading {
+        width: 100%;
+    }
+
+
+    /* ==================== EMPTY STATE ==================== */
+
+    .menu-empty-state,
+    .restaurants-empty-state,
+    .wishlist-empty-state,
+    .cart-empty-state,
+    .checkout-empty-state {
+        width: 100%;
+    }
+
+
+    /* ==================== FOOTER ==================== */
+
+    .footer-container {
+        width: 92%;
+    }
+
+}
+
+
+/* ==================================================
+   SMALL MOBILE
+   ================================================== */
+
+@media (max-width: 480px) {
+
+    .section-container,
+    .footer-container {
+        width: 94%;
+    }
+
+
+    .menu-page-heading h1,
+    .restaurants-page-heading h1 {
+        font-size: 27px;
+    }
+
+    .menu-page-heading p,
+    .restaurants-page-heading p {
+        font-size: 14px;
+    }
+
+
+    .menu-results-heading,
+    .restaurants-results-heading {
+        gap: 7px;
+    }
+
+
+    .menu-results-count,
+    .restaurants-results-count {
+        font-size: 13px;
+    }
+
+}
+
+
+/* ==================================================
+   EXTRA SMALL
+   ================================================== */
+
+@media (max-width: 360px) {
+
+    .section-container,
+    .footer-container {
+        width: 94%;
+    }
+
+    .menu-page-heading h1,
+    .restaurants-page-heading h1 {
+        font-size: 24px;
+    }
+
+}

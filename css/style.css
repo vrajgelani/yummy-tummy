@@ -3726,3 +3726,621 @@ input:disabled {
     }
 
 }
+
+/* ==================================================
+   YUMMY TUMMY
+   DAY 16 - PART 2
+   CARDS / BUTTONS / FORMS POLISH
+   ================================================== */
+
+
+/* ==================================================
+   COMMON CARD POLISH
+   ================================================== */
+
+.menu-food-card,
+.restaurant-card,
+.wishlist-food-card,
+.cart-item,
+.checkout-item,
+.profile-card,
+.restaurant-detail-card {
+    box-sizing: border-box;
+    border-radius: 14px;
+}
+
+
+/* ==================================================
+   FOOD CARD CONTENT
+   ================================================== */
+
+.menu-food-content {
+    box-sizing: border-box;
+}
+
+.menu-food-content h3 {
+    margin-top: 8px;
+    margin-bottom: 8px;
+}
+
+.menu-food-category {
+    margin-bottom: 5px;
+}
+
+.menu-food-content p {
+    line-height: 1.5;
+}
+
+
+/* ==================================================
+   RESTAURANT CARD CONTENT
+   ================================================== */
+
+.restaurant-card-content {
+    box-sizing: border-box;
+}
+
+.restaurant-card-content h3 {
+    margin-top: 0;
+    margin-bottom: 8px;
+}
+
+.restaurant-card-content p {
+    line-height: 1.5;
+}
+
+
+/* ==================================================
+   COMMON BUTTON
+   ================================================== */
+
+button,
+.button,
+.menu-food-button,
+.restaurant-button,
+.food-action-button,
+.checkout-button,
+.profile-logout-button {
+    border-radius: 8px;
+    font-weight: 600;
+    text-decoration: none;
+    box-sizing: border-box;
+}
+
+
+/* ==================================================
+   BUTTON HOVER
+   ================================================== */
+
+button:hover:not(:disabled),
+.button:hover,
+.menu-food-button:hover,
+.restaurant-button:hover,
+.food-action-button:hover,
+.checkout-button:hover,
+.profile-logout-button:hover {
+    transform: translateY(-2px);
+}
+
+
+/* ==================================================
+   BUTTON ACTIVE
+   ================================================== */
+
+button:active:not(:disabled),
+.button:active,
+.menu-food-button:active,
+.restaurant-button:active,
+.food-action-button:active,
+.checkout-button:active,
+.profile-logout-button:active {
+    transform: translateY(0);
+}
+
+
+/* ==================================================
+   FORM GROUP
+   ================================================== */
+
+.form-group,
+.auth-form-group,
+.checkout-form-group,
+.address-form-group {
+    width: 100%;
+    box-sizing: border-box;
+}
+
+
+/* ==================================================
+   FORM LABEL
+   ================================================== */
+
+.form-group label,
+.auth-form-group label,
+.checkout-form-group label,
+.address-form-group label {
+    display: block;
+    margin-bottom: 7px;
+    font-weight: 600;
+}
+
+
+/* ==================================================
+   FORM INPUT
+   ================================================== */
+
+.form-group input,
+.form-group select,
+.form-group textarea,
+.auth-form-group input,
+.auth-form-group select,
+.auth-form-group textarea,
+.checkout-form-group input,
+.checkout-form-group select,
+.checkout-form-group textarea,
+.address-form-group input,
+.address-form-group select,
+.address-form-group textarea {
+    width: 100%;
+    box-sizing: border-box;
+    border-radius: 8px;
+}
+
+
+/* ==================================================
+   INPUT HOVER
+   ================================================== */
+
+input:hover,
+select:hover,
+textarea:hover {
+    border-color: darkorange;
+}
+
+
+/* ==================================================
+   TEXTAREA
+   ================================================== */
+
+textarea {
+    min-height: 110px;
+    resize: vertical;
+}
+
+
+/* ==================================================
+   ERROR MESSAGE
+   ================================================== */
+
+.form-error,
+.input-error,
+.auth-error,
+.error-message {
+    line-height: 1.4;
+}
+
+
+/* ==================================================
+   SUCCESS MESSAGE
+   ================================================== */
+
+.form-success,
+.success-message {
+    line-height: 1.4;
+}
+
+
+/* ==================================================
+   FOOD ACTION AREA
+   ================================================== */
+
+.food-actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    align-items: center;
+}
+
+
+/* ==================================================
+   CART QUANTITY AREA
+   ================================================== */
+
+.cart-quantity-controls {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    flex-wrap: wrap;
+}
+
+.cart-quantity-controls button {
+    min-width: 38px;
+    min-height: 38px;
+}
+
+
+/* ==================================================
+   CART ITEM
+   ================================================== */
+
+.cart-item {
+    box-sizing: border-box;
+}
+
+.cart-item img {
+    max-width: 100%;
+    display: block;
+}
+
+.cart-item button {
+    min-height: 40px;
+}
+
+
+/* ==================================================
+   WISHLIST CARD
+   ================================================== */
+
+.wishlist-food-card {
+    box-sizing: border-box;
+}
+
+.wishlist-food-card img {
+    display: block;
+    width: 100%;
+    max-width: 100%;
+}
+
+.wishlist-food-card button {
+    min-height: 40px;
+}
+
+
+/* ==================================================
+   CHECKOUT ITEM
+   ================================================== */
+
+.checkout-item {
+    box-sizing: border-box;
+}
+
+.checkout-item img {
+    display: block;
+    max-width: 100%;
+}
+
+
+/* ==================================================
+   PAYMENT OPTIONS
+   ================================================== */
+
+.payment-option {
+    cursor: pointer;
+}
+
+.payment-option input {
+    cursor: pointer;
+}
+
+
+/* ==================================================
+   PROFILE OPTION LINKS
+   ================================================== */
+
+.profile-option,
+.profile-option-link {
+    box-sizing: border-box;
+    border-radius: 10px;
+}
+
+
+/* ==================================================
+   SEARCH BOX
+   ================================================== */
+
+.header-search,
+.restaurant-search-box {
+    box-sizing: border-box;
+}
+
+.header-search input,
+.restaurant-search-box input {
+    border-radius: 8px;
+}
+
+
+/* ==================================================
+   EMPTY STATE
+   ================================================== */
+
+.menu-empty-state,
+.restaurants-empty-state,
+.wishlist-empty-state,
+.cart-empty-state,
+.checkout-empty-state {
+    box-sizing: border-box;
+    padding: 35px 20px;
+}
+
+
+/* ==================================================
+   MOBILE CARD POLISH
+   ================================================== */
+
+@media (max-width: 768px) {
+
+    .menu-food-card,
+    .restaurant-card,
+    .wishlist-food-card,
+    .cart-item,
+    .checkout-item {
+        width: 100%;
+        max-width: 100%;
+    }
+
+    .food-actions {
+        width: 100%;
+    }
+
+    .food-actions button,
+    .food-actions a {
+        flex: 1;
+    }
+
+}
+
+
+/* ==================================================
+   SMALL MOBILE
+   ================================================== */
+
+@media (max-width: 480px) {
+
+    .menu-food-card,
+    .restaurant-card,
+    .wishlist-food-card,
+    .cart-item,
+    .checkout-item {
+        border-radius: 10px;
+    }
+
+    button,
+    .button,
+    .menu-food-button,
+    .restaurant-button,
+    .food-action-button,
+    .checkout-button,
+    .profile-logout-button {
+        min-height: 42px;
+    }
+
+    .food-actions {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .food-actions button,
+    .food-actions a {
+        width: 100%;
+        flex: none;
+    }
+
+}
+
+/* ==================================================
+   YUMMY TUMMY
+   DAY 16 - PART 3
+   FINAL VISUAL CONSISTENCY
+   ================================================== */
+
+
+/* ==================================================
+   COMMON PAGE SPACING
+   ================================================== */
+
+main {
+    width: 100%;
+    box-sizing: border-box;
+}
+
+section {
+    box-sizing: border-box;
+}
+
+
+/* ==================================================
+   COMMON SECTION CONTAINER
+   ================================================== */
+
+.section-container {
+    box-sizing: border-box;
+}
+
+
+/* ==================================================
+   COMMON SECTION LABEL
+   ================================================== */
+
+.section-label {
+    margin-top: 0;
+    margin-bottom: 8px;
+    font-weight: 700;
+}
+
+
+/* ==================================================
+   COMMON HEADING SPACING
+   ================================================== */
+
+section h1,
+section h2,
+section h3 {
+    margin-top: 0;
+}
+
+
+/* ==================================================
+   COMMON PARAGRAPH
+   ================================================== */
+
+section p {
+    line-height: 1.6;
+}
+
+
+/* ==================================================
+   PAGE HERO CONSISTENCY
+   ================================================== */
+
+.menu-page-hero,
+.restaurants-page-hero,
+.food-details-hero,
+.profile-page-hero,
+.login-page-hero,
+.register-page-hero {
+    box-sizing: border-box;
+}
+
+
+/* ==================================================
+   SEARCH SECTION
+   ================================================== */
+
+.restaurant-search-section {
+    box-sizing: border-box;
+}
+
+.restaurant-search-heading h2 {
+    margin-bottom: 8px;
+}
+
+.restaurant-search-heading p {
+    margin-bottom: 0;
+}
+
+
+/* ==================================================
+   RESULTS HEADING
+   ================================================== */
+
+.menu-results-heading,
+.restaurants-results-heading {
+    box-sizing: border-box;
+}
+
+.menu-results-count,
+.restaurants-results-count {
+    font-weight: 600;
+}
+
+
+/* ==================================================
+   CARD CONTENT CONSISTENCY
+   ================================================== */
+
+.menu-food-content,
+.restaurant-card-content,
+.wishlist-food-content,
+.cart-item-content,
+.checkout-item-content {
+    box-sizing: border-box;
+}
+
+.menu-food-content h3,
+.restaurant-card-content h3 {
+    line-height: 1.35;
+}
+
+
+/* ==================================================
+   CARD LINKS
+   ================================================== */
+
+.restaurant-card-link {
+    text-decoration: none;
+}
+
+
+/* ==================================================
+   IMAGE CONSISTENCY
+   ================================================== */
+
+.menu-food-image,
+.restaurant-image {
+    display: block;
+    max-width: 100%;
+}
+
+
+/* ==================================================
+   COMMON EMPTY STATE
+   ================================================== */
+
+.menu-empty-state,
+.restaurants-empty-state,
+.wishlist-empty-state,
+.cart-empty-state,
+.checkout-empty-state {
+    text-align: center;
+    box-sizing: border-box;
+}
+
+.menu-empty-state h3,
+.restaurants-empty-state h3,
+.wishlist-empty-state h3,
+.cart-empty-state h3,
+.checkout-empty-state h3 {
+    margin-top: 0;
+}
+
+
+/* ==================================================
+   COMMON FORM SPACING
+   ================================================== */
+
+label {
+    line-height: 1.4;
+}
+
+input,
+select,
+textarea {
+    font: inherit;
+}
+
+
+/* ==================================================
+   COMMON IMAGE BEHAVIOR
+   ================================================== */
+
+img {
+    height: auto;
+}
+
+
+/* ==================================================
+   COMMON FOCUS
+   ================================================== */
+
+:focus-visible {
+    outline: 2px solid orange;
+    outline-offset: 3px;
+}
+
+
+/* ==================================================
+   HIDDEN STATE
+   ================================================== */
+
+.hidden {
+    display: none !important;
+}
+
+
+/* ==================================================
+   SMOOTH PAGE SCROLL
+   ================================================== */
+
+html {
+    scroll-behavior: smooth;
+}
