@@ -1,1162 +1,1633 @@
 /* =========================================================
-   YUMMY TUMMY
-   ADDRESS PAGE
-   ADD ADDRESS
-   ========================================================= */
-
-
-/* =========================================================
-   PAGE INITIALIZATION
-   ========================================================= */
+   YUMMY TUMMY - ADDRESS MANAGEMENT
+========================================================= */
 
 document.addEventListener(
     "DOMContentLoaded",
     function () {
 
-        initializeAddressPage();
-
-    }
-);
+        "use strict";
 
 
-/* =========================================================
-   INITIALIZE ADDRESS PAGE
-   ========================================================= */
+        /* =====================================================
+           STORAGE KEYS
+        ===================================================== */
 
-function initializeAddressPage() {
+        const ADDRESS_STORAGE_KEY =
+            "yummyTummyAddresses";
 
-    const addressGrid =
-        document.getElementById(
-            "addressGrid"
-        );
-
-    const emptyState =
-        document.getElementById(
-            "addressEmptyState"
-        );
-
-    const addressCount =
-        document.getElementById(
-            "addressCount"
-        );
-
-    const addAddressButton =
-        document.getElementById(
-            "addAddressButton"
-        );
-
-    const emptyAddAddressButton =
-        document.getElementById(
-            "emptyAddAddressButton"
-        );
-
-    const addressFormSection =
-        document.getElementById(
-            "addressFormSection"
-        );
-
-    const addressForm =
-        document.getElementById(
-            "addressForm"
-        );
-
-    const cancelAddressButton =
-        document.getElementById(
-            "cancelAddressButton"
-        );
+        const SELECTED_ADDRESS_STORAGE_KEY =
+            "yummyTummySelectedAddress";
 
 
-    if (
-        !addressGrid ||
-        !emptyState ||
-        !addressCount
-    ) {
-        return;
-    }
+        /* =====================================================
+           LOGIN CHECK
+        ===================================================== */
+
+        const loggedIn =
+            localStorage.getItem(
+                "yummyTummyLoggedIn"
+            ) === "true";
 
 
-    /*
-     * Login Protection
-     */
-    if (
-        !isAddressUserLoggedIn()
-    ) {
+        if (!loggedIn) {
 
-        window.location.href =
-            "login.html";
+            window.location.href =
+                "login.html";
 
-        return;
-    }
+            return;
+        }
 
 
-    /*
-     * Show current saved addresses
-     */
-    renderAddresses();
+        /* =====================================================
+           ELEMENTS
+        ===================================================== */
 
-
-    /*
-     * Add button
-     */
-    if (
-        addAddressButton
-    ) {
-
-        addAddressButton.addEventListener(
-            "click",
-            function () {
-
-                openAddressForm();
-
-            }
-        );
-
-    }
-
-
-    /*
-     * Empty state add button
-     */
-    if (
-        emptyAddAddressButton
-    ) {
-
-        emptyAddAddressButton.addEventListener(
-            "click",
-            function () {
-
-                openAddressForm();
-
-            }
-        );
-
-    }
-
-
-    /*
-     * Cancel
-     */
-    if (
-        cancelAddressButton
-    ) {
-
-        cancelAddressButton.addEventListener(
-            "click",
-            function () {
-
-                closeAddressForm();
-
-            }
-        );
-
-    }
-
-
-    /*
-     * Form Submit
-     */
-    if (
-        addressForm
-    ) {
-
-        addressForm.addEventListener(
-            "submit",
-            function (
-                event
-            ) {
-
-                event.preventDefault();
-
-                saveNewAddress();
-
-            }
-        );
-
-    }
-
-}
-
-
-/* =========================================================
-   LOGIN CHECK
-   ========================================================= */
-
-function isAddressUserLoggedIn() {
-
-    return (
-        localStorage.getItem(
-            "yummyTummyLoggedIn"
-        ) === "true"
-    );
-
-}
-
-
-/* =========================================================
-   GET STORED ADDRESSES
-   ========================================================= */
-
-function getSavedAddresses() {
-
-    const storedAddresses =
-        localStorage.getItem(
-            "yummyTummyAddresses"
-        );
-
-
-    if (!storedAddresses) {
-        return [];
-    }
-
-
-    try {
-
-        const parsedAddresses =
-            JSON.parse(
-                storedAddresses
+        const addAddressButton =
+            document.getElementById(
+                "addAddressButton"
             );
 
 
-        if (
-            Array.isArray(
-                parsedAddresses
-            )
-        ) {
+        const emptyAddAddressButton =
+            document.getElementById(
+                "emptyAddAddressButton"
+            );
 
-            return parsedAddresses;
 
-        }
+        const addressFormSection =
+            document.getElementById(
+                "addressFormSection"
+            );
 
 
-        return [];
+        const addressForm =
+            document.getElementById(
+                "addressForm"
+            );
 
-    } catch (error) {
 
-        return [];
+        const addressCount =
+            document.getElementById(
+                "addressCount"
+            );
 
-    }
 
-}
+        const addressGrid =
+            document.getElementById(
+                "addressGrid"
+            );
 
 
-/* =========================================================
-   SAVE ADDRESSES
-   ========================================================= */
+        const addressEmptyState =
+            document.getElementById(
+                "addressEmptyState"
+            );
 
-function saveAddresses(
-    addresses
-) {
 
-    localStorage.setItem(
-        "yummyTummyAddresses",
-        JSON.stringify(
-            addresses
-        )
-    );
+        const addressLabelInput =
+            document.getElementById(
+                "addressLabel"
+            );
 
-}
 
+        const addressNameInput =
+            document.getElementById(
+                "addressName"
+            );
 
-/* =========================================================
-   OPEN FORM
-   ========================================================= */
 
-function openAddressForm() {
+        const addressMobileInput =
+            document.getElementById(
+                "addressMobile"
+            );
 
-    const formSection =
-        document.getElementById(
-            "addressFormSection"
-        );
 
-    const addressForm =
-        document.getElementById(
-            "addressForm"
-        );
+        const addressHouseInput =
+            document.getElementById(
+                "addressHouse"
+            );
 
 
-    if (
-        !formSection
-    ) {
-        return;
-    }
+        const addressAreaInput =
+            document.getElementById(
+                "addressArea"
+            );
 
 
-    formSection.hidden =
-        false;
+        const addressCityInput =
+            document.getElementById(
+                "addressCity"
+            );
 
 
-    formSection.style.display =
-        "";
+        const addressStateInput =
+            document.getElementById(
+                "addressState"
+            );
 
 
-    if (
-        addressForm
-    ) {
+        const addressPincodeInput =
+            document.getElementById(
+                "addressPincode"
+            );
 
-        addressForm.scrollIntoView({
-            behavior: "smooth",
-            block: "start"
-        });
 
-    }
+        const saveAddressButton =
+            document.getElementById(
+                "saveAddressButton"
+            );
 
-}
 
+        const cancelAddressButton =
+            document.getElementById(
+                "cancelAddressButton"
+            );
 
-/* =========================================================
-   CLOSE FORM
-   ========================================================= */
 
-function closeAddressForm() {
+        /* =====================================================
+           EDIT STATE
+        ===================================================== */
 
-    const formSection =
-        document.getElementById(
-            "addressFormSection"
-        );
+        let editingAddressId =
+            null;
 
-    const addressForm =
-        document.getElementById(
-            "addressForm"
-        );
 
+        /* =====================================================
+           STORAGE HELPERS
+        ===================================================== */
 
-    if (
-        formSection
-    ) {
+        function getAddresses() {
 
-        formSection.hidden =
-            true;
+            try {
 
-        formSection.style.display =
-            "none";
+                const stored =
+                    localStorage.getItem(
+                        ADDRESS_STORAGE_KEY
+                    );
 
-    }
 
-
-    if (
-        addressForm
-    ) {
-
-        addressForm.reset();
-
-    }
-
-}
-
-
-/* =========================================================
-   GET FORM VALUE
-   ========================================================= */
-
-function getAddressFormValue(
-    id
-) {
-
-    const field =
-        document.getElementById(
-            id
-        );
-
-
-    if (!field) {
-        return "";
-    }
-
-
-    return String(
-        field.value || ""
-    ).trim();
-
-}
-
-
-/* =========================================================
-   SAVE NEW ADDRESS
-   ========================================================= */
-
-function saveNewAddress() {
-
-    const label =
-        getAddressFormValue(
-            "addressLabel"
-        );
-
-    const fullName =
-        getAddressFormValue(
-            "addressName"
-        );
-
-    const mobile =
-        getAddressFormValue(
-            "addressMobile"
-        );
-
-    const house =
-        getAddressFormValue(
-            "addressHouse"
-        );
-
-    const area =
-        getAddressFormValue(
-            "addressArea"
-        );
-
-    const city =
-        getAddressFormValue(
-            "addressCity"
-        );
-
-    const state =
-        getAddressFormValue(
-            "addressState"
-        );
-
-    const pincode =
-        getAddressFormValue(
-            "addressPincode"
-        );
-
-
-    /* ==================== VALIDATION ==================== */
-
-    if (!label) {
-
-        window.alert(
-            "Please select an address type."
-        );
-
-        return;
-    }
-
-
-    if (
-        fullName.length < 2
-    ) {
-
-        window.alert(
-            "Please enter a valid full name."
-        );
-
-        return;
-    }
-
-
-    if (
-        !/^[0-9]{10}$/.test(
-            mobile
-        )
-    ) {
-
-        window.alert(
-            "Please enter a valid 10 digit mobile number."
-        );
-
-        return;
-    }
-
-
-    if (!house) {
-
-        window.alert(
-            "Please enter house, flat or building details."
-        );
-
-        return;
-    }
-
-
-    if (!area) {
-
-        window.alert(
-            "Please enter area or street."
-        );
-
-        return;
-    }
-
-
-    if (!city) {
-
-        window.alert(
-            "Please enter city."
-        );
-
-        return;
-    }
-
-
-    if (!state) {
-
-        window.alert(
-            "Please enter state."
-        );
-
-        return;
-    }
-
-
-    if (
-        !/^[0-9]{6}$/.test(
-            pincode
-        )
-    ) {
-
-        window.alert(
-            "Please enter a valid 6 digit pincode."
-        );
-
-        return;
-    }
-
-
-    /* ==================== ADDRESS LIMIT ==================== */
-
-    const addresses =
-        getSavedAddresses();
-
-
-    if (
-        addresses.length >= 4
-    ) {
-
-        window.alert(
-            "You can save maximum 4 addresses."
-        );
-
-        return;
-    }
-
-
-    /* ==================== CREATE ADDRESS ==================== */
-
-    const address = {
-
-        id:
-            "address-" +
-            Date.now(),
-
-        label:
-            label,
-
-        name:
-            fullName,
-
-        mobile:
-            mobile,
-
-        house:
-            house,
-
-        area:
-            area,
-
-        city:
-            city,
-
-        state:
-            state,
-
-        pincode:
-            pincode,
-
-        selected:
-            addresses.length === 0
-
-    };
-
-
-    /* ==================== SAVE ==================== */
-
-    addresses.push(
-        address
-    );
-
-
-    saveAddresses(
-        addresses
-    );
-
-
-    /*
-     * Close form
-     */
-    closeAddressForm();
-
-
-    /*
-     * Render immediately
-     */
-    renderAddresses();
-
-
-    /*
-     * Success message
-     */
-    window.alert(
-        "Address saved successfully."
-    );
-
-}
-
-
-/* =========================================================
-   RENDER ADDRESSES
-   ========================================================= */
-
-function renderAddresses() {
-
-    const addressGrid =
-        document.getElementById(
-            "addressGrid"
-        );
-
-    const emptyState =
-        document.getElementById(
-            "addressEmptyState"
-        );
-
-    const addressCount =
-        document.getElementById(
-            "addressCount"
-        );
-
-
-    if (
-        !addressGrid ||
-        !emptyState ||
-        !addressCount
-    ) {
-        return;
-    }
-
-
-    const addresses =
-        getSavedAddresses();
-
-
-    const cards =
-        addressGrid.querySelectorAll(
-            ".address-card"
-        );
-
-
-    /*
-     * Hide all cards first
-     */
-    cards.forEach(
-        function (
-            card
-        ) {
-
-            card.hidden =
-                true;
-
-            card.style.display =
-                "none";
-
-        }
-    );
-
-
-    /*
-     * Empty State
-     */
-    if (
-        addresses.length === 0
-    ) {
-
-        emptyState.hidden =
-            false;
-
-        emptyState.style.display =
-            "";
-
-
-        addressCount.textContent =
-            "0 Addresses";
-
-
-        return;
-    }
-
-
-    /*
-     * Hide Empty State
-     */
-    emptyState.hidden =
-        true;
-
-    emptyState.style.display =
-        "none";
-
-
-    let visibleCount =
-        0;
-
-
-    /*
-     * Render cards
-     */
-    addresses
-        .slice(
-            0,
-            cards.length
-        )
-        .forEach(
-            function (
-                address,
-                index
-            ) {
-
-                const card =
-                    cards[index];
-
-
-                if (!card) {
-                    return;
+                if (!stored) {
+                    return [];
                 }
 
 
-                fillAddressCard(
-                    card,
-                    address
+                const parsed =
+                    JSON.parse(
+                        stored
+                    );
+
+
+                if (
+                    Array.isArray(parsed)
+                ) {
+
+                    return parsed;
+                }
+
+
+                return [];
+
+            } catch (error) {
+
+                console.error(
+                    "Unable to read addresses:",
+                    error
                 );
 
 
-                card.hidden =
-                    false;
-
-                card.style.display =
-                    "";
-
-
-                initializeAddressCardButtons(
-                    card,
-                    address.id
-                );
-
-
-                visibleCount++;
-
+                return [];
             }
-        );
+        }
 
 
-    /*
-     * Count
-     */
-    addressCount.textContent =
-        visibleCount +
-        (
-            visibleCount === 1
-                ? " Address"
-                : " Addresses"
-        );
+        function saveAddresses(
+            addresses
+        ) {
 
-}
+            try {
 
-
-/* =========================================================
-   FILL ADDRESS CARD
-   ========================================================= */
-
-function fillAddressCard(
-    card,
-    address
-) {
-
-    if (
-        !card ||
-        !address
-    ) {
-        return;
-    }
-
-
-    const label =
-        card.querySelector(
-            "[data-address-label]"
-        );
-
-    const name =
-        card.querySelector(
-            "[data-address-name]"
-        );
-
-    const line =
-        card.querySelector(
-            "[data-address-line]"
-        );
-
-    const city =
-        card.querySelector(
-            "[data-address-city]"
-        );
-
-    const state =
-        card.querySelector(
-            "[data-address-state]"
-        );
-
-    const pincode =
-        card.querySelector(
-            "[data-address-pincode]"
-        );
-
-    const mobile =
-        card.querySelector(
-            "[data-address-mobile]"
-        );
-
-
-    if (label) {
-
-        label.textContent =
-            address.label ||
-            "Address";
-
-    }
-
-
-    if (name) {
-
-        name.textContent =
-            address.name ||
-            "";
-
-    }
-
-
-    if (line) {
-
-        line.textContent =
-            (
-                address.house ||
-                ""
-            ) +
-            ", " +
-            (
-                address.area ||
-                ""
-            );
-
-    }
-
-
-    if (city) {
-
-        city.textContent =
-            "City: " +
-            (
-                address.city ||
-                ""
-            );
-
-    }
-
-
-    if (state) {
-
-        state.textContent =
-            "State: " +
-            (
-                address.state ||
-                ""
-            );
-
-    }
-
-
-    if (pincode) {
-
-        pincode.textContent =
-            "Pincode: " +
-            (
-                address.pincode ||
-                ""
-            );
-
-    }
-
-
-    if (mobile) {
-
-        mobile.textContent =
-            "Mobile: " +
-            (
-                address.mobile ||
-                ""
-            );
-
-    }
-
-
-    card.dataset.addressId =
-        address.id;
-
-
-    /*
-     * Selected state
-     */
-    card.dataset.selected =
-        address.selected
-            ? "true"
-            : "false";
-
-}
-
-
-/* =========================================================
-   INITIALIZE CARD BUTTONS
-   ========================================================= */
-
-function initializeAddressCardButtons(
-    card,
-    addressId
-) {
-
-    if (
-        !card ||
-        !addressId
-    ) {
-        return;
-    }
-
-
-    const selectButton =
-        card.querySelector(
-            "[data-address-select]"
-        );
-
-
-    const editButton =
-        card.querySelector(
-            "[data-address-edit]"
-        );
-
-
-    const deleteButton =
-        card.querySelector(
-            "[data-address-delete]"
-        );
-
-
-    /*
-     * SELECT
-     *
-     * Functionality will be expanded
-     * in Part 3.
-     */
-
-    if (
-        selectButton
-    ) {
-
-        selectButton.onclick =
-            function () {
-
-                selectAddress(
-                    addressId
+                localStorage.setItem(
+                    ADDRESS_STORAGE_KEY,
+                    JSON.stringify(
+                        addresses
+                    )
                 );
 
-            };
 
-    }
+                return true;
 
+            } catch (error) {
 
-    /*
-     * EDIT
-     *
-     * Functionality will be expanded
-     * in Part 3.
-     */
-
-    if (
-        editButton
-    ) {
-
-        editButton.onclick =
-            function () {
-
-                window.alert(
-                    "Edit Address will be available in the next part."
+                console.error(
+                    "Unable to save addresses:",
+                    error
                 );
 
-            };
 
-    }
+                return false;
+            }
+        }
 
 
-    /*
-     * DELETE
-     *
-     * Functionality will be expanded
-     * in Part 3.
-     */
+        function getSelectedAddress() {
 
-    if (
-        deleteButton
-    ) {
+            try {
 
-        deleteButton.onclick =
-            function () {
+                const stored =
+                    localStorage.getItem(
+                        SELECTED_ADDRESS_STORAGE_KEY
+                    );
 
-                deleteAddress(
-                    addressId
+
+                if (!stored) {
+                    return null;
+                }
+
+
+                return JSON.parse(
+                    stored
                 );
 
-            };
+            } catch (error) {
 
-    }
-
-}
-
-
-/* =========================================================
-   SELECT ADDRESS
-   ========================================================= */
-
-function selectAddress(
-    addressId
-) {
-
-    const addresses =
-        getSavedAddresses();
+                console.error(
+                    "Unable to read selected address:",
+                    error
+                );
 
 
-    addresses.forEach(
-        function (
+                return null;
+            }
+        }
+
+
+        function saveSelectedAddress(
             address
         ) {
 
-            address.selected =
-                address.id ===
-                addressId;
+            try {
 
+                localStorage.setItem(
+                    SELECTED_ADDRESS_STORAGE_KEY,
+                    JSON.stringify(
+                        address
+                    )
+                );
+
+
+                return true;
+
+            } catch (error) {
+
+                console.error(
+                    "Unable to save selected address:",
+                    error
+                );
+
+
+                return false;
+            }
         }
-    );
 
 
-    saveAddresses(
-        addresses
-    );
+        function removeSelectedAddress() {
+
+            localStorage.removeItem(
+                SELECTED_ADDRESS_STORAGE_KEY
+            );
+        }
 
 
-    renderAddresses();
+        /* =====================================================
+           ID GENERATOR
+        ===================================================== */
+
+        function createAddressId() {
+
+            return (
+                "address-" +
+                Date.now() +
+                "-" +
+                Math.random()
+                    .toString(36)
+                    .substring(2, 9)
+            );
+        }
 
 
-    window.alert(
-        "Address selected."
-    );
+        /* =====================================================
+           FORM SHOW
+        ===================================================== */
 
-}
+        function showAddressForm() {
 
-
-/* =========================================================
-   DELETE ADDRESS
-   ========================================================= */
-
-function deleteAddress(
-    addressId
-) {
-
-    if (!addressId) {
-        return;
-    }
+            if (!addressFormSection) {
+                return;
+            }
 
 
-    const shouldDelete =
-        window.confirm(
-            "Delete this address?"
-        );
+            addressFormSection.hidden =
+                false;
+        }
 
 
-    if (!shouldDelete) {
-        return;
-    }
+        /* =====================================================
+           FORM HIDE
+        ===================================================== */
+
+        function hideAddressForm() {
+
+            if (!addressFormSection) {
+                return;
+            }
 
 
-    const addresses =
-        getSavedAddresses();
+            addressFormSection.hidden =
+                true;
+        }
 
 
-    const deletedAddress =
-        addresses.find(
-            function (
-                address
+        /* =====================================================
+           RESET FORM
+        ===================================================== */
+
+        function resetAddressForm() {
+
+            if (addressForm) {
+
+                addressForm.reset();
+            }
+
+
+            editingAddressId =
+                null;
+
+
+            if (saveAddressButton) {
+
+                saveAddressButton.textContent =
+                    "Save Address";
+            }
+        }
+
+
+        /* =====================================================
+           SCROLL TO FORM
+        ===================================================== */
+
+        function scrollToForm() {
+
+            if (!addressFormSection) {
+                return;
+            }
+
+
+            addressFormSection.scrollIntoView({
+                behavior: "smooth",
+                block: "start"
+            });
+        }
+
+
+        /* =====================================================
+           ADD NEW ADDRESS
+        ===================================================== */
+
+        function openAddAddressForm() {
+
+            resetAddressForm();
+
+
+            showAddressForm();
+
+
+            scrollToForm();
+
+
+            if (
+                addressLabelInput
             ) {
 
-                return (
-                    address.id ===
-                    addressId
-                );
-
+                addressLabelInput.focus();
             }
-        );
+        }
 
 
-    const updatedAddresses =
-        addresses.filter(
-            function (
-                address
-            ) {
+        /* =====================================================
+           EDIT ADDRESS
+        ===================================================== */
 
-                return (
-                    address.id !==
-                    addressId
-                );
-
-            }
-        );
-
-
-    /*
-     * If selected address was deleted,
-     * select another saved address.
-     */
-    if (
-        deletedAddress &&
-        deletedAddress.selected &&
-        updatedAddresses.length > 0
-    ) {
-
-        updatedAddresses[0].selected =
-            true;
-
-    }
-
-
-    saveAddresses(
-        updatedAddresses
-    );
-
-
-    /*
-     * Instant UI update
-     */
-    renderAddresses();
-
-}
-
-
-/* =========================================================
-   STORAGE CHANGE SUPPORT
-   ========================================================= */
-
-window.addEventListener(
-    "storage",
-    function (
-        event
-    ) {
-
-        if (
-            event.key ===
-            "yummyTummyAddresses"
+        function openEditAddress(
+            address
         ) {
 
-            renderAddresses();
+            if (!address) {
+                return;
+            }
 
+
+            editingAddressId =
+                address.id;
+
+
+            showAddressForm();
+
+
+            /* ================= LABEL ================= */
+
+            if (
+                addressLabelInput
+            ) {
+
+                addressLabelInput.value =
+                    address.label ||
+                    address.type ||
+                    "";
+            }
+
+
+            /* ================= NAME ================= */
+
+            if (
+                addressNameInput
+            ) {
+
+                addressNameInput.value =
+                    address.name ||
+                    "";
+            }
+
+
+            /* ================= MOBILE ================= */
+
+            if (
+                addressMobileInput
+            ) {
+
+                addressMobileInput.value =
+                    address.mobile ||
+                    "";
+            }
+
+
+            /* ================= HOUSE ================= */
+
+            if (
+                addressHouseInput
+            ) {
+
+                addressHouseInput.value =
+                    address.house ||
+                    address.address ||
+                    "";
+            }
+
+
+            /* ================= AREA ================= */
+
+            if (
+                addressAreaInput
+            ) {
+
+                addressAreaInput.value =
+                    address.area ||
+                    "";
+            }
+
+
+            /* ================= CITY ================= */
+
+            if (
+                addressCityInput
+            ) {
+
+                addressCityInput.value =
+                    address.city ||
+                    "";
+            }
+
+
+            /* ================= STATE ================= */
+
+            if (
+                addressStateInput
+            ) {
+
+                addressStateInput.value =
+                    address.state ||
+                    "";
+            }
+
+
+            /* ================= PINCODE ================= */
+
+            if (
+                addressPincodeInput
+            ) {
+
+                addressPincodeInput.value =
+                    address.pincode ||
+                    "";
+            }
+
+
+            if (
+                saveAddressButton
+            ) {
+
+                saveAddressButton.textContent =
+                    "Update Address";
+            }
+
+
+            scrollToForm();
+
+
+            if (
+                addressLabelInput
+            ) {
+
+                addressLabelInput.focus();
+            }
         }
+
+
+        /* =====================================================
+           READ FORM
+        ===================================================== */
+
+        function getFormAddress() {
+
+            return {
+
+                id:
+                    editingAddressId ||
+                    createAddressId(),
+
+                label:
+                    addressLabelInput
+                        ? addressLabelInput.value.trim()
+                        : "",
+
+                name:
+                    addressNameInput
+                        ? addressNameInput.value.trim()
+                        : "",
+
+                mobile:
+                    addressMobileInput
+                        ? addressMobileInput.value.trim()
+                        : "",
+
+                house:
+                    addressHouseInput
+                        ? addressHouseInput.value.trim()
+                        : "",
+
+                area:
+                    addressAreaInput
+                        ? addressAreaInput.value.trim()
+                        : "",
+
+                city:
+                    addressCityInput
+                        ? addressCityInput.value.trim()
+                        : "",
+
+                state:
+                    addressStateInput
+                        ? addressStateInput.value.trim()
+                        : "",
+
+                pincode:
+                    addressPincodeInput
+                        ? addressPincodeInput.value.trim()
+                        : ""
+            };
+        }
+
+
+        /* =====================================================
+           VALIDATE FORM
+        ===================================================== */
+
+        function validateAddress(
+            address
+        ) {
+
+            if (!address.label) {
+
+                alert(
+                    "Please select address type."
+                );
+
+                return false;
+            }
+
+
+            if (
+                address.name.length <
+                2
+            ) {
+
+                alert(
+                    "Please enter your full name."
+                );
+
+                return false;
+            }
+
+
+            if (
+                !/^[0-9]{10}$/.test(
+                    address.mobile
+                )
+            ) {
+
+                alert(
+                    "Please enter a valid 10 digit mobile number."
+                );
+
+                return false;
+            }
+
+
+            if (!address.house) {
+
+                alert(
+                    "Please enter House / Flat / Building."
+                );
+
+                return false;
+            }
+
+
+            if (!address.area) {
+
+                alert(
+                    "Please enter Area / Street."
+                );
+
+                return false;
+            }
+
+
+            if (!address.city) {
+
+                alert(
+                    "Please enter City."
+                );
+
+                return false;
+            }
+
+
+            if (!address.state) {
+
+                alert(
+                    "Please enter State."
+                );
+
+                return false;
+            }
+
+
+            if (
+                !/^[0-9]{6}$/.test(
+                    address.pincode
+                )
+            ) {
+
+                alert(
+                    "Please enter a valid 6 digit pincode."
+                );
+
+                return false;
+            }
+
+
+            return true;
+        }
+
+
+        /* =====================================================
+           UPDATE ADDRESS COUNT
+        ===================================================== */
+
+        function updateAddressCount(
+            count
+        ) {
+
+            if (!addressCount) {
+                return;
+            }
+
+
+            addressCount.textContent =
+                count +
+                (
+                    count === 1
+                        ? " Address"
+                        : " Addresses"
+                );
+        }
+
+
+        /* =====================================================
+           RENDER EMPTY STATE
+        ===================================================== */
+
+        function updateEmptyState(
+            hasAddresses
+        ) {
+
+            if (
+                addressEmptyState
+            ) {
+
+                addressEmptyState.hidden =
+                    hasAddresses;
+            }
+
+
+            if (
+                addressGrid
+            ) {
+
+                addressGrid.hidden =
+                    !hasAddresses;
+            }
+        }
+
+
+        /* =====================================================
+           FORMAT ADDRESS LINE
+        ===================================================== */
+
+        function buildAddressLine(
+            address
+        ) {
+
+            return [
+                address.house,
+                address.area
+            ]
+                .filter(Boolean)
+                .join(", ");
+        }
+
+
+        /* =====================================================
+           RENDER ADDRESSES
+        ===================================================== */
+
+        function renderAddresses() {
+
+            if (!addressGrid) {
+                return;
+            }
+
+
+            const addresses =
+                getAddresses();
+
+
+            const selected =
+                getSelectedAddress();
+
+
+            const cards =
+                addressGrid.querySelectorAll(
+                    ".address-card"
+                );
+
+
+            updateAddressCount(
+                addresses.length
+            );
+
+
+            updateEmptyState(
+                addresses.length > 0
+            );
+
+
+            /*
+               First hide all template cards.
+            */
+
+            cards.forEach(
+                function (card) {
+
+                    card.hidden =
+                        true;
+
+                    card.removeAttribute(
+                        "data-address-id"
+                    );
+
+                    card.classList.remove(
+                        "selected-address-card"
+                    );
+                }
+            );
+
+
+            /*
+               Maximum cards available
+               in current address.html = 4.
+            */
+
+            addresses.forEach(
+                function (
+                    address,
+                    index
+                ) {
+
+                    const card =
+                        cards[index];
+
+
+                    if (!card) {
+                        return;
+                    }
+
+
+                    card.hidden =
+                        false;
+
+
+                    card.setAttribute(
+                        "data-address-id",
+                        address.id
+                    );
+
+
+                    const labelElement =
+                        card.querySelector(
+                            "[data-address-label]"
+                        );
+
+
+                    const nameElement =
+                        card.querySelector(
+                            "[data-address-name]"
+                        );
+
+
+                    const lineElement =
+                        card.querySelector(
+                            "[data-address-line]"
+                        );
+
+
+                    const cityElement =
+                        card.querySelector(
+                            "[data-address-city]"
+                        );
+
+
+                    const stateElement =
+                        card.querySelector(
+                            "[data-address-state]"
+                        );
+
+
+                    const pincodeElement =
+                        card.querySelector(
+                            "[data-address-pincode]"
+                        );
+
+
+                    const mobileElement =
+                        card.querySelector(
+                            "[data-address-mobile]"
+                        );
+
+
+                    const selectButton =
+                        card.querySelector(
+                            "[data-address-select]"
+                        );
+
+
+                    const editButton =
+                        card.querySelector(
+                            "[data-address-edit]"
+                        );
+
+
+                    const deleteButton =
+                        card.querySelector(
+                            "[data-address-delete]"
+                        );
+
+
+                    if (
+                        labelElement
+                    ) {
+
+                        labelElement.textContent =
+                            address.label ||
+                            "Other";
+                    }
+
+
+                    if (
+                        nameElement
+                    ) {
+
+                        nameElement.textContent =
+                            address.name ||
+                            "Customer";
+                    }
+
+
+                    if (
+                        lineElement
+                    ) {
+
+                        lineElement.textContent =
+                            buildAddressLine(
+                                address
+                            );
+                    }
+
+
+                    if (
+                        cityElement
+                    ) {
+
+                        cityElement.textContent =
+                            address.city ||
+                            "-";
+                    }
+
+
+                    if (
+                        stateElement
+                    ) {
+
+                        stateElement.textContent =
+                            address.state ||
+                            "-";
+                    }
+
+
+                    if (
+                        pincodeElement
+                    ) {
+
+                        pincodeElement.textContent =
+                            address.pincode ||
+                            "-";
+                    }
+
+
+                    if (
+                        mobileElement
+                    ) {
+
+                        mobileElement.textContent =
+                            "Mobile: " +
+                            (
+                                address.mobile ||
+                                "-"
+                            );
+                    }
+
+
+                    const isSelected =
+                        selected &&
+                        String(
+                            selected.id
+                        ) ===
+                        String(
+                            address.id
+                        );
+
+
+                    if (
+                        isSelected
+                    ) {
+
+                        card.classList.add(
+                            "selected-address-card"
+                        );
+                    }
+
+
+                    if (
+                        selectButton
+                    ) {
+
+                        selectButton.textContent =
+                            isSelected
+                                ? "Selected"
+                                : "Select";
+
+                        selectButton.disabled =
+                            isSelected;
+                    }
+
+
+                    /*
+                       Important:
+                       Store address id directly
+                       on each button.
+                    */
+
+                    if (
+                        editButton
+                    ) {
+
+                        editButton.setAttribute(
+                            "data-address-id",
+                            address.id
+                        );
+                    }
+
+
+                    if (
+                        selectButton
+                    ) {
+
+                        selectButton.setAttribute(
+                            "data-address-id",
+                            address.id
+                        );
+                    }
+
+
+                    if (
+                        deleteButton
+                    ) {
+
+                        deleteButton.setAttribute(
+                            "data-address-id",
+                            address.id
+                        );
+                    }
+                }
+            );
+        }
+
+
+        /* =====================================================
+           SELECT ADDRESS
+        ===================================================== */
+
+        function selectAddress(
+            addressId
+        ) {
+
+            const addresses =
+                getAddresses();
+
+
+            const address =
+                addresses.find(
+                    function (item) {
+
+                        return String(
+                            item.id
+                        ) ===
+                        String(
+                            addressId
+                        );
+                    }
+                );
+
+
+            if (!address) {
+                return;
+            }
+
+
+            saveSelectedAddress(
+                address
+            );
+
+
+            renderAddresses();
+        }
+
+
+        /* =====================================================
+           DELETE ADDRESS
+        ===================================================== */
+
+        function deleteAddress(
+            addressId
+        ) {
+
+            const addresses =
+                getAddresses();
+
+
+            const address =
+                addresses.find(
+                    function (item) {
+
+                        return String(
+                            item.id
+                        ) ===
+                        String(
+                            addressId
+                        );
+                    }
+                );
+
+
+            if (!address) {
+                return;
+            }
+
+
+            const confirmed =
+                window.confirm(
+                    "Are you sure you want to delete this address?"
+                );
+
+
+            if (!confirmed) {
+                return;
+            }
+
+
+            const updated =
+                addresses.filter(
+                    function (item) {
+
+                        return String(
+                            item.id
+                        ) !==
+                        String(
+                            addressId
+                        );
+                    }
+                );
+
+
+            if (
+                !saveAddresses(
+                    updated
+                )
+            ) {
+
+                alert(
+                    "Unable to delete address."
+                );
+
+                return;
+            }
+
+
+            const selected =
+                getSelectedAddress();
+
+
+            if (
+                selected &&
+                String(
+                    selected.id
+                ) ===
+                String(
+                    addressId
+                )
+            ) {
+
+                removeSelectedAddress();
+
+
+                if (
+                    updated.length >
+                    0
+                ) {
+
+                    saveSelectedAddress(
+                        updated[0]
+                    );
+                }
+            }
+
+
+            renderAddresses();
+        }
+
+
+        /* =====================================================
+           SELECT / EDIT / DELETE EVENTS
+        ===================================================== */
+
+        if (addressGrid) {
+
+            addressGrid.addEventListener(
+                "click",
+                function (event) {
+
+                    const editButton =
+                        event.target.closest(
+                            "[data-address-edit]"
+                        );
+
+
+                    if (
+                        editButton
+                    ) {
+
+                        event.preventDefault();
+                        event.stopPropagation();
+
+
+                        const addressId =
+                            editButton.getAttribute(
+                                "data-address-id"
+                            );
+
+
+                        const addresses =
+                            getAddresses();
+
+
+                        const address =
+                            addresses.find(
+                                function (item) {
+
+                                    return String(
+                                        item.id
+                                    ) ===
+                                    String(
+                                        addressId
+                                    );
+                                }
+                            );
+
+
+                        if (
+                            address
+                        ) {
+
+                            openEditAddress(
+                                address
+                            );
+                        }
+
+
+                        return;
+                    }
+
+
+                    const selectButton =
+                        event.target.closest(
+                            "[data-address-select]"
+                        );
+
+
+                    if (
+                        selectButton
+                    ) {
+
+                        event.preventDefault();
+                        event.stopPropagation();
+
+
+                        const addressId =
+                            selectButton.getAttribute(
+                                "data-address-id"
+                            );
+
+
+                        selectAddress(
+                            addressId
+                        );
+
+
+                        return;
+                    }
+
+
+                    const deleteButton =
+                        event.target.closest(
+                            "[data-address-delete]"
+                        );
+
+
+                    if (
+                        deleteButton
+                    ) {
+
+                        event.preventDefault();
+                        event.stopPropagation();
+
+
+                        const addressId =
+                            deleteButton.getAttribute(
+                                "data-address-id"
+                            );
+
+
+                        deleteAddress(
+                            addressId
+                        );
+                    }
+                }
+            );
+        }
+
+
+        /* =====================================================
+           ADD BUTTON
+        ===================================================== */
+
+        if (
+            addAddressButton
+        ) {
+
+            addAddressButton.addEventListener(
+                "click",
+                function () {
+
+                    openAddAddressForm();
+                }
+            );
+        }
+
+
+        /* =====================================================
+           EMPTY STATE ADD BUTTON
+        ===================================================== */
+
+        if (
+            emptyAddAddressButton
+        ) {
+
+            emptyAddAddressButton.addEventListener(
+                "click",
+                function () {
+
+                    openAddAddressForm();
+                }
+            );
+        }
+
+
+        /* =====================================================
+           CANCEL BUTTON
+        ===================================================== */
+
+        if (
+            cancelAddressButton
+        ) {
+
+            cancelAddressButton.addEventListener(
+                "click",
+                function () {
+
+                    resetAddressForm();
+
+
+                    hideAddressForm();
+                }
+            );
+        }
+
+
+        /* =====================================================
+           FORM SUBMIT
+        ===================================================== */
+
+        if (
+            addressForm
+        ) {
+
+            addressForm.addEventListener(
+                "submit",
+                function (event) {
+
+                    event.preventDefault();
+
+
+                    const address =
+                        getFormAddress();
+
+
+                    if (
+                        !validateAddress(
+                            address
+                        )
+                    ) {
+
+                        return;
+                    }
+
+
+                    const addresses =
+                        getAddresses();
+
+
+                    /*
+                       UPDATE
+                    */
+
+                    if (
+                        editingAddressId
+                    ) {
+
+                        const updated =
+                            addresses.map(
+                                function (
+                                    item
+                                ) {
+
+                                    if (
+                                        String(
+                                            item.id
+                                        ) ===
+                                        String(
+                                            editingAddressId
+                                        )
+                                    ) {
+
+                                        return address;
+                                    }
+
+
+                                    return item;
+                                }
+                            );
+
+
+                        if (
+                            !saveAddresses(
+                                updated
+                            )
+                        ) {
+
+                            alert(
+                                "Unable to update address."
+                            );
+
+                            return;
+                        }
+
+
+                        const selected =
+                            getSelectedAddress();
+
+
+                        if (
+                            selected &&
+                            String(
+                                selected.id
+                            ) ===
+                            String(
+                                editingAddressId
+                            )
+                        ) {
+
+                            saveSelectedAddress(
+                                address
+                            );
+                        }
+
+
+                        alert(
+                            "Address updated successfully."
+                        );
+
+
+                        resetAddressForm();
+
+
+                        hideAddressForm();
+
+
+                        renderAddresses();
+
+
+                        return;
+                    }
+
+
+                    /*
+                       ADD
+                    */
+
+                    addresses.push(
+                        address
+                    );
+
+
+                    if (
+                        !saveAddresses(
+                            addresses
+                        )
+                    ) {
+
+                        alert(
+                            "Unable to save address."
+                        );
+
+                        return;
+                    }
+
+
+                    /*
+                       Automatically select
+                       first address.
+                    */
+
+                    if (
+                        !getSelectedAddress()
+                    ) {
+
+                        saveSelectedAddress(
+                            address
+                        );
+                    }
+
+
+                    alert(
+                        "Address saved successfully."
+                    );
+
+
+                    resetAddressForm();
+
+
+                    hideAddressForm();
+
+
+                    renderAddresses();
+                }
+            );
+        }
+
+
+        /* =====================================================
+           MOBILE INPUT
+        ===================================================== */
+
+        if (
+            addressMobileInput
+        ) {
+
+            addressMobileInput.addEventListener(
+                "input",
+                function () {
+
+                    this.value =
+                        this.value
+                            .replace(
+                                /\D/g,
+                                ""
+                            )
+                            .slice(
+                                0,
+                                10
+                            );
+                }
+            );
+        }
+
+
+        /* =====================================================
+           PINCODE INPUT
+        ===================================================== */
+
+        if (
+            addressPincodeInput
+        ) {
+
+            addressPincodeInput.addEventListener(
+                "input",
+                function () {
+
+                    this.value =
+                        this.value
+                            .replace(
+                                /\D/g,
+                                ""
+                            )
+                            .slice(
+                                0,
+                                6
+                            );
+                }
+            );
+        }
+
+
+        /* =====================================================
+           INITIAL PAGE STATE
+        ===================================================== */
+
+        hideAddressForm();
+
+
+        renderAddresses();
 
     }
 );

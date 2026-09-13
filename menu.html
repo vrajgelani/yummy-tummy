@@ -1,38 +1,96 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
+
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Menu - Yummy Tummy</title>
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
 
-    <link rel="stylesheet" href="css/style.css">
+    <title>
+        Menu - Yummy Tummy
+    </title>
 
-    <link rel="stylesheet" href="css/responsive.css">
-        
-    <link rel="stylesheet" href="css/menu.css">
-    
+
+    <link
+        rel="stylesheet"
+        href="css/style.css"
+    >
+
+
+    <link
+        rel="stylesheet"
+        href="css/responsive.css"
+    >
+
+
+    <link
+        rel="stylesheet"
+        href="css/menu.css"
+    >
+
 </head>
+
 
 <body>
 
-    <!-- Header -->
+
+    <!-- =====================================================
+         HEADER
+    ====================================================== -->
+
     <header class="site-header">
 
         <div class="header-container">
 
-            <a href="index.html" class="brand-logo">
+
+            <!-- LOGO -->
+
+            <a
+                href="index.html"
+                class="brand-logo"
+            >
+
                 <img
                     src="images/logo/yummy-tummy-logo.png"
                     alt="Yummy Tummy"
                 >
+
             </a>
 
+
+            <!-- NAVIGATION -->
+
             <nav class="main-navigation">
-                <a href="index.html">Home</a>
-                <a href="menu.html">Menu</a>
-                <a href="restaurants.html">Restaurants</a>
+
+                <a
+                    href="index.html"
+                >
+                    Home
+                </a>
+
+
+                <a
+                    href="menu.html"
+                    class="active"
+                >
+                    Menu
+                </a>
+
+
+                <a
+                    href="restaurants.html"
+                >
+                    Restaurants
+                </a>
+
             </nav>
+
+
+            <!-- SEARCH -->
 
             <div class="header-search">
 
@@ -46,6 +104,9 @@
 
             </div>
 
+
+            <!-- HEADER ACTIONS -->
+
             <div class="header-actions">
 
                 <a
@@ -55,12 +116,14 @@
                     Wishlist
                 </a>
 
+
                 <a
                     href="cart.html"
                     class="cart-link"
                 >
                     Cart
                 </a>
+
 
                 <a
                     href="login.html"
@@ -69,12 +132,14 @@
                     Login
                 </a>
 
+
                 <a
                     href="register.html"
                     class="register-link"
                 >
                     Register
                 </a>
+
 
                 <a
                     href="profile.html"
@@ -91,8 +156,17 @@
     </header>
 
 
-    <!-- Menu Hero -->
+
+    <!-- =====================================================
+         MAIN MENU
+    ====================================================== -->
+
     <main class="menu-page">
+
+
+        <!-- =================================================
+             MENU HERO
+        ================================================== -->
 
         <section class="menu-hero">
 
@@ -102,12 +176,15 @@
                     Yummy Tummy Menu
                 </p>
 
+
                 <h1>
                     Explore Our Food
                 </h1>
 
+
                 <p>
-                    Discover delicious vegetarian food from different categories.
+                    Discover delicious vegetarian food
+                    from different categories.
                 </p>
 
             </div>
@@ -115,7 +192,11 @@
         </section>
 
 
-        <!-- Category Filters -->
+
+        <!-- =================================================
+             CATEGORY FILTERS
+        ================================================== -->
+
         <section class="menu-filter-section">
 
             <div class="menu-container">
@@ -125,6 +206,7 @@
                     <h2>
                         Food Categories
                     </h2>
+
 
                     <p>
                         Choose a category to explore.
@@ -138,6 +220,7 @@
                     id="menuCategoryFilters"
                 >
 
+
                     <button
                         type="button"
                         class="menu-filter-button active"
@@ -145,6 +228,7 @@
                     >
                         All Foods
                     </button>
+
 
                     <button
                         type="button"
@@ -154,6 +238,7 @@
                         Starters
                     </button>
 
+
                     <button
                         type="button"
                         class="menu-filter-button"
@@ -161,6 +246,7 @@
                     >
                         Pizza
                     </button>
+
 
                     <button
                         type="button"
@@ -170,6 +256,7 @@
                         Burger
                     </button>
 
+
                     <button
                         type="button"
                         class="menu-filter-button"
@@ -177,6 +264,7 @@
                     >
                         Sandwich
                     </button>
+
 
                     <button
                         type="button"
@@ -186,6 +274,7 @@
                         Pasta
                     </button>
 
+
                     <button
                         type="button"
                         class="menu-filter-button"
@@ -193,6 +282,7 @@
                     >
                         Chinese
                     </button>
+
 
                     <button
                         type="button"
@@ -202,6 +292,7 @@
                         South Indian
                     </button>
 
+
                     <button
                         type="button"
                         class="menu-filter-button"
@@ -209,6 +300,7 @@
                     >
                         Gujarati
                     </button>
+
 
                     <button
                         type="button"
@@ -218,6 +310,7 @@
                         Biryani
                     </button>
 
+
                     <button
                         type="button"
                         class="menu-filter-button"
@@ -226,6 +319,7 @@
                         Desserts
                     </button>
 
+
                 </div>
 
             </div>
@@ -233,10 +327,17 @@
         </section>
 
 
-        <!-- Results -->
+
+        <!-- =================================================
+             RESULTS
+        ================================================== -->
+
         <section class="menu-results-section">
 
             <div class="menu-container">
+
+
+                <!-- RESULTS HEADER -->
 
                 <div class="menu-results-header">
 
@@ -246,26 +347,40 @@
                             Food Collection
                         </p>
 
-                        <h2 id="menuResultsTitle">
+
+                        <h2
+                            id="menuResultsTitle"
+                        >
                             All Foods
                         </h2>
 
                     </div>
 
-                    <p id="menuResultsCount">
+
+                    <p
+                        id="menuResultsCount"
+                    >
                         50 Foods
                     </p>
 
                 </div>
 
 
-                <!-- Food Grid -->
+
+                <!-- =================================================
+                     FOOD GRID
+                ================================================== -->
+
                 <div
                     class="menu-food-grid"
                     id="menuFoodGrid"
                 >
 
-                    <!-- Starters -->
+
+                    <!-- =========================
+                         STARTERS
+                    ========================== -->
+
 
                     <article
                         class="menu-food-card"
@@ -274,30 +389,45 @@
                     >
 
                         <div class="menu-food-image">
+
                             <img
                                 src=""
                                 alt=""
                                 data-food-image
                             >
+
                         </div>
+
 
                         <div class="menu-food-content">
 
-                            <span data-food-category>
+                            <span
+                                data-food-category
+                            >
                                 Starters
                             </span>
 
-                            <h3 data-food-name>
+
+                            <h3
+                                data-food-name
+                            >
                                 Paneer Tikka
                             </h3>
 
-                            <p data-food-rating>
+
+                            <p
+                                data-food-rating
+                            >
                                 4.6
                             </p>
 
-                            <strong data-food-price>
+
+                            <strong
+                                data-food-price
+                            >
                                 ₹249
                             </strong>
+
 
                             <a
                                 href="#"
@@ -318,6 +448,549 @@
                     >
 
                         <div class="menu-food-image">
+
+                            <img
+                                src=""
+                                alt=""
+                                data-food-image
+                            >
+
+                        </div>
+
+
+                        <div class="menu-food-content">
+
+                            <span
+                                data-food-category
+                            >
+                                Starters
+                            </span>
+
+
+                            <h3
+                                data-food-name
+                            >
+                                Veg Spring Rolls
+                            </h3>
+
+
+                            <p
+                                data-food-rating
+                            >
+                                4.5
+                            </p>
+
+
+                            <strong
+                                data-food-price
+                            >
+                                ₹199
+                            </strong>
+
+
+                            <a
+                                href="#"
+                                data-food-link
+                            >
+                                View Food
+                            </a>
+
+                        </div>
+
+                    </article>
+
+
+                    <article
+                        class="menu-food-card"
+                        data-food-id="hara-bhara-kebab"
+                        data-category="starters"
+                    >
+
+                        <div class="menu-food-image">
+
+                            <img
+                                src=""
+                                alt=""
+                                data-food-image
+                            >
+
+                        </div>
+
+
+                        <div class="menu-food-content">
+
+                            <span
+                                data-food-category
+                            >
+                                Starters
+                            </span>
+
+
+                            <h3
+                                data-food-name
+                            >
+                                Hara Bhara Kebab
+                            </h3>
+
+
+                            <p
+                                data-food-rating
+                            >
+                                4.7
+                            </p>
+
+
+                            <strong
+                                data-food-price
+                            >
+                                ₹219
+                            </strong>
+
+
+                            <a
+                                href="#"
+                                data-food-link
+                            >
+                                View Food
+                            </a>
+
+                        </div>
+
+                    </article>
+
+
+                    <article
+                        class="menu-food-card"
+                        data-food-id="cheese-corn-balls"
+                        data-category="starters"
+                    >
+
+                        <div class="menu-food-image">
+
+                            <img
+                                src=""
+                                alt=""
+                                data-food-image
+                            >
+
+                        </div>
+
+
+                        <div class="menu-food-content">
+
+                            <span
+                                data-food-category
+                            >
+                                Starters
+                            </span>
+
+
+                            <h3
+                                data-food-name
+                            >
+                                Cheese Corn Balls
+                            </h3>
+
+
+                            <p
+                                data-food-rating
+                            >
+                                4.6
+                            </p>
+
+
+                            <strong
+                                data-food-price
+                            >
+                                ₹229
+                            </strong>
+
+
+                            <a
+                                href="#"
+                                data-food-link
+                            >
+                                View Food
+                            </a>
+
+                        </div>
+
+                    </article>
+
+
+                    <article
+                        class="menu-food-card"
+                        data-food-id="crispy-veg-fingers"
+                        data-category="starters"
+                    >
+
+                        <div class="menu-food-image">
+
+                            <img
+                                src=""
+                                alt=""
+                                data-food-image
+                            >
+
+                        </div>
+
+
+                        <div class="menu-food-content">
+
+                            <span
+                                data-food-category
+                            >
+                                Starters
+                            </span>
+
+
+                            <h3
+                                data-food-name
+                            >
+                                Crispy Veg Fingers
+                            </h3>
+
+
+                            <p
+                                data-food-rating
+                            >
+                                4.5
+                            </p>
+
+
+                            <strong
+                                data-food-price
+                            >
+                                ₹189
+                            </strong>
+
+
+                            <a
+                                href="#"
+                                data-food-link
+                            >
+                                View Food
+                            </a>
+
+                        </div>
+
+                    </article>
+
+
+
+                    <!-- =========================
+                         PIZZA
+                    ========================== -->
+
+
+                    <article
+                        class="menu-food-card"
+                        data-food-id="margherita-pizza"
+                        data-category="pizza"
+                    >
+
+                        <div class="menu-food-image">
+
+                            <img
+                                src=""
+                                alt=""
+                                data-food-image
+                            >
+
+                        </div>
+
+
+                        <div class="menu-food-content">
+
+                            <span
+                                data-food-category
+                            >
+                                Pizza
+                            </span>
+
+
+                            <h3
+                                data-food-name
+                            >
+                                Margherita Pizza
+                            </h3>
+
+
+                            <p
+                                data-food-rating
+                            >
+                                4.5
+                            </p>
+
+
+                            <strong
+                                data-food-price
+                            >
+                                ₹249
+                            </strong>
+
+
+                            <a
+                                href="#"
+                                data-food-link
+                            >
+                                View Food
+                            </a>
+
+                        </div>
+
+                    </article>
+
+
+                    <article
+                        class="menu-food-card"
+                        data-food-id="farmhouse-pizza"
+                        data-category="pizza"
+                    >
+
+                        <div class="menu-food-image">
+
+                            <img
+                                src=""
+                                alt=""
+                                data-food-image
+                            >
+
+                        </div>
+
+
+                        <div class="menu-food-content">
+
+                            <span
+                                data-food-category
+                            >
+                                Pizza
+                            </span>
+
+
+                            <h3
+                                data-food-name
+                            >
+                                Farmhouse Pizza
+                            </h3>
+
+
+                            <p
+                                data-food-rating
+                            >
+                                4.7
+                            </p>
+
+
+                            <strong
+                                data-food-price
+                            >
+                                ₹299
+                            </strong>
+
+
+                            <a
+                                href="#"
+                                data-food-link
+                            >
+                                View Food
+                            </a>
+
+                        </div>
+
+                    </article>
+
+
+                    <article
+                        class="menu-food-card"
+                        data-food-id="veggie-delight-pizza"
+                        data-category="pizza"
+                    >
+
+                        <div class="menu-food-image">
+
+                            <img
+                                src=""
+                                alt=""
+                                data-food-image
+                            >
+
+                        </div>
+
+
+                        <div class="menu-food-content">
+
+                            <span
+                                data-food-category
+                            >
+                                Pizza
+                            </span>
+
+
+                            <h3
+                                data-food-name
+                            >
+                                Veggie Delight Pizza
+                            </h3>
+
+
+                            <p
+                                data-food-rating
+                            >
+                                4.6
+                            </p>
+
+
+                            <strong
+                                data-food-price
+                            >
+                                ₹279
+                            </strong>
+
+
+                            <a
+                                href="#"
+                                data-food-link
+                            >
+                                View Food
+                            </a>
+
+                        </div>
+
+                    </article>
+
+
+                    <article
+                        class="menu-food-card"
+                        data-food-id="corn-cheese-pizza"
+                        data-category="pizza"
+                    >
+
+                        <div class="menu-food-image">
+
+                            <img
+                                src=""
+                                alt=""
+                                data-food-image
+                            >
+
+                        </div>
+
+
+                        <div class="menu-food-content">
+
+                            <span
+                                data-food-category
+                            >
+                                Pizza
+                            </span>
+
+
+                            <h3
+                                data-food-name
+                            >
+                                Corn Cheese Pizza
+                            </h3>
+
+
+                            <p
+                                data-food-rating
+                            >
+                                4.5
+                            </p>
+
+
+                            <strong
+                                data-food-price
+                            >
+                                ₹289
+                            </strong>
+
+
+                            <a
+                                href="#"
+                                data-food-link
+                            >
+                                View Food
+                            </a>
+
+                        </div>
+
+                    </article>
+
+
+                    <article
+                        class="menu-food-card"
+                        data-food-id="paneer-tikka-pizza"
+                        data-category="pizza"
+                    >
+
+                        <div class="menu-food-image">
+
+                            <img
+                                src=""
+                                alt=""
+                                data-food-image
+                            >
+
+                        </div>
+
+
+                        <div class="menu-food-content">
+
+                            <span
+                                data-food-category
+                            >
+                                Pizza
+                            </span>
+
+
+                            <h3
+                                data-food-name
+                            >
+                                Paneer Tikka Pizza
+                            </h3>
+
+
+                            <p
+                                data-food-rating
+                            >
+                                4.8
+                            </p>
+
+
+                            <strong
+                                data-food-price
+                            >
+                                ₹319
+                            </strong>
+
+
+                            <a
+                                href="#"
+                                data-food-link
+                            >
+                                View Food
+                            </a>
+
+                        </div>
+
+                    </article>
+
+
+
+                    <!-- =========================
+                         BURGER
+                    ========================== -->
+
+
+                    <article
+                        class="menu-food-card"
+                        data-food-id="classic-veg-burger"
+                        data-category="burger"
+                    >
+
+                        <div class="menu-food-image">
                             <img
                                 src=""
                                 alt=""
@@ -328,11 +1001,187 @@
                         <div class="menu-food-content">
 
                             <span data-food-category>
-                                Starters
+                                Burger
                             </span>
 
                             <h3 data-food-name>
-                                Veg Spring Rolls
+                                Classic Veg Burger
+                            </h3>
+
+                            <p data-food-rating>
+                                4.5
+                            </p>
+
+                            <strong data-food-price>
+                                ₹169
+                            </strong>
+
+                            <a
+                                href="#"
+                                data-food-link
+                            >
+                                View Food
+                            </a>
+
+                        </div>
+
+                    </article>
+
+
+                    <article
+                        class="menu-food-card"
+                        data-food-id="aloo-tikki-burger"
+                        data-category="burger"
+                    >
+
+                        <div class="menu-food-image">
+                            <img
+                                src=""
+                                alt=""
+                                data-food-image
+                            >
+                        </div>
+
+                        <div class="menu-food-content">
+
+                            <span data-food-category>
+                                Burger
+                            </span>
+
+                            <h3 data-food-name>
+                                Aloo Tikki Burger
+                            </h3>
+
+                            <p data-food-rating>
+                                4.6
+                            </p>
+
+                            <strong data-food-price>
+                                ₹149
+                            </strong>
+
+                            <a
+                                href="#"
+                                data-food-link
+                            >
+                                View Food
+                            </a>
+
+                        </div>
+
+                    </article>
+
+
+                    <article
+                        class="menu-food-card"
+                        data-food-id="cheese-veg-burger"
+                        data-category="burger"
+                    >
+
+                        <div class="menu-food-image">
+                            <img
+                                src=""
+                                alt=""
+                                data-food-image
+                            >
+                        </div>
+
+                        <div class="menu-food-content">
+
+                            <span data-food-category>
+                                Burger
+                            </span>
+
+                            <h3 data-food-name>
+                                Cheese Veg Burger
+                            </h3>
+
+                            <p data-food-rating>
+                                4.7
+                            </p>
+
+                            <strong data-food-price>
+                                ₹189
+                            </strong>
+
+                            <a
+                                href="#"
+                                data-food-link
+                            >
+                                View Food
+                            </a>
+
+                        </div>
+
+                    </article>
+
+
+                    <article
+                        class="menu-food-card"
+                        data-food-id="paneer-burger"
+                        data-category="burger"
+                    >
+
+                        <div class="menu-food-image">
+                            <img
+                                src=""
+                                alt=""
+                                data-food-image
+                            >
+                        </div>
+
+                        <div class="menu-food-content">
+
+                            <span data-food-category>
+                                Burger
+                            </span>
+
+                            <h3 data-food-name>
+                                Paneer Burger
+                            </h3>
+
+                            <p data-food-rating>
+                                4.6
+                            </p>
+
+                            <strong data-food-price>
+                                ₹209
+                            </strong>
+
+                            <a
+                                href="#"
+                                data-food-link
+                            >
+                                View Food
+                            </a>
+
+                        </div>
+
+                    </article>
+
+
+                    <article
+                        class="menu-food-card"
+                        data-food-id="mexican-veg-burger"
+                        data-category="burger"
+                    >
+
+                        <div class="menu-food-image">
+                            <img
+                                src=""
+                                alt=""
+                                data-food-image
+                            >
+                        </div>
+
+                        <div class="menu-food-content">
+
+                            <span data-food-category>
+                                Burger
+                            </span>
+
+                            <h3 data-food-name>
+                                Mexican Veg Burger
                             </h3>
 
                             <p data-food-rating>
@@ -355,10 +1204,16 @@
                     </article>
 
 
+
+                    <!-- =========================
+                         SANDWICH
+                    ========================== -->
+
+
                     <article
                         class="menu-food-card"
-                        data-food-id="hara-bhara-kebab"
-                        data-category="starters"
+                        data-food-id="grilled-veg-sandwich"
+                        data-category="sandwich"
                     >
 
                         <div class="menu-food-image">
@@ -372,25 +1227,22 @@
                         <div class="menu-food-content">
 
                             <span data-food-category>
-                                Starters
+                                Sandwich
                             </span>
 
                             <h3 data-food-name>
-                                Hara Bhara Kebab
+                                Grilled Veg Sandwich
                             </h3>
 
                             <p data-food-rating>
-                                4.7
+                                4.5
                             </p>
 
                             <strong data-food-price>
-                                ₹219
+                                ₹159
                             </strong>
 
-                            <a
-                                href="#"
-                                data-food-link
-                            >
+                            <a href="#" data-food-link>
                                 View Food
                             </a>
 
@@ -401,26 +1253,22 @@
 
                     <article
                         class="menu-food-card"
-                        data-food-id="cheese-corn-balls"
-                        data-category="starters"
+                        data-food-id="bombay-veg-sandwich"
+                        data-category="sandwich"
                     >
 
                         <div class="menu-food-image">
-                            <img
-                                src=""
-                                alt=""
-                                data-food-image
-                            >
+                            <img src="" alt="" data-food-image>
                         </div>
 
                         <div class="menu-food-content">
 
                             <span data-food-category>
-                                Starters
+                                Sandwich
                             </span>
 
                             <h3 data-food-name>
-                                Cheese Corn Balls
+                                Bombay Veg Sandwich
                             </h3>
 
                             <p data-food-rating>
@@ -428,13 +1276,10 @@
                             </p>
 
                             <strong data-food-price>
-                                ₹229
+                                ₹149
                             </strong>
 
-                            <a
-                                href="#"
-                                data-food-link
-                            >
+                            <a href="#" data-food-link>
                                 View Food
                             </a>
 
@@ -445,26 +1290,367 @@
 
                     <article
                         class="menu-food-card"
-                        data-food-id="crispy-veg-fingers"
-                        data-category="starters"
+                        data-food-id="cheese-corn-sandwich"
+                        data-category="sandwich"
                     >
 
                         <div class="menu-food-image">
-                            <img
-                                src=""
-                                alt=""
-                                data-food-image
-                            >
+                            <img src="" alt="" data-food-image>
                         </div>
 
                         <div class="menu-food-content">
 
                             <span data-food-category>
-                                Starters
+                                Sandwich
                             </span>
 
                             <h3 data-food-name>
-                                Crispy Veg Fingers
+                                Cheese Corn Sandwich
+                            </h3>
+
+                            <p data-food-rating>
+                                4.5
+                            </p>
+
+                            <strong data-food-price>
+                                ₹179
+                            </strong>
+
+                            <a href="#" data-food-link>
+                                View Food
+                            </a>
+
+                        </div>
+
+                    </article>
+
+
+                    <article
+                        class="menu-food-card"
+                        data-food-id="masala-paneer-sandwich"
+                        data-category="sandwich"
+                    >
+
+                        <div class="menu-food-image">
+                            <img src="" alt="" data-food-image>
+                        </div>
+
+                        <div class="menu-food-content">
+
+                            <span data-food-category>
+                                Sandwich
+                            </span>
+
+                            <h3 data-food-name>
+                                Masala Paneer Sandwich
+                            </h3>
+
+                            <p data-food-rating>
+                                4.7
+                            </p>
+
+                            <strong data-food-price>
+                                ₹199
+                            </strong>
+
+                            <a href="#" data-food-link>
+                                View Food
+                            </a>
+
+                        </div>
+
+                    </article>
+
+
+                    <article
+                        class="menu-food-card"
+                        data-food-id="veg-club-sandwich"
+                        data-category="sandwich"
+                    >
+
+                        <div class="menu-food-image">
+                            <img src="" alt="" data-food-image>
+                        </div>
+
+                        <div class="menu-food-content">
+
+                            <span data-food-category>
+                                Sandwich
+                            </span>
+
+                            <h3 data-food-name>
+                                Veg Club Sandwich
+                            </h3>
+
+                            <p data-food-rating>
+                                4.6
+                            </p>
+
+                            <strong data-food-price>
+                                ₹219
+                            </strong>
+
+                            <a href="#" data-food-link>
+                                View Food
+                            </a>
+
+                        </div>
+
+                    </article>
+
+
+
+                    <!-- =========================
+                         PASTA
+                    ========================== -->
+
+
+                    <article
+                        class="menu-food-card"
+                        data-food-id="arrabbiata-pasta"
+                        data-category="pasta"
+                    >
+
+                        <div class="menu-food-image">
+                            <img src="" alt="" data-food-image>
+                        </div>
+
+                        <div class="menu-food-content">
+
+                            <span data-food-category>
+                                Pasta
+                            </span>
+
+                            <h3 data-food-name>
+                                Arrabbiata Pasta
+                            </h3>
+
+                            <p data-food-rating>
+                                4.5
+                            </p>
+
+                            <strong data-food-price>
+                                ₹229
+                            </strong>
+
+                            <a href="#" data-food-link>
+                                View Food
+                            </a>
+
+                        </div>
+
+                    </article>
+
+
+                    <article
+                        class="menu-food-card"
+                        data-food-id="alfredo-pasta"
+                        data-category="pasta"
+                    >
+
+                        <div class="menu-food-image">
+                            <img src="" alt="" data-food-image>
+                        </div>
+
+                        <div class="menu-food-content">
+
+                            <span data-food-category>
+                                Pasta
+                            </span>
+
+                            <h3 data-food-name>
+                                Alfredo Pasta
+                            </h3>
+
+                            <p data-food-rating>
+                                4.7
+                            </p>
+
+                            <strong data-food-price>
+                                ₹249
+                            </strong>
+
+                            <a href="#" data-food-link>
+                                View Food
+                            </a>
+
+                        </div>
+
+                    </article>
+
+
+                    <article
+                        class="menu-food-card"
+                        data-food-id="pink-sauce-pasta"
+                        data-category="pasta"
+                    >
+
+                        <div class="menu-food-image">
+                            <img src="" alt="" data-food-image>
+                        </div>
+
+                        <div class="menu-food-content">
+
+                            <span data-food-category>
+                                Pasta
+                            </span>
+
+                            <h3 data-food-name>
+                                Pink Sauce Pasta
+                            </h3>
+
+                            <p data-food-rating>
+                                4.6
+                            </p>
+
+                            <strong data-food-price>
+                                ₹259
+                            </strong>
+
+                            <a href="#" data-food-link>
+                                View Food
+                            </a>
+
+                        </div>
+
+                    </article>
+
+
+                    <article
+                        class="menu-food-card"
+                        data-food-id="pesto-veg-pasta"
+                        data-category="pasta"
+                    >
+
+                        <div class="menu-food-image">
+                            <img src="" alt="" data-food-image>
+                        </div>
+
+                        <div class="menu-food-content">
+
+                            <span data-food-category>
+                                Pasta
+                            </span>
+
+                            <h3 data-food-name>
+                                Pesto Veg Pasta
+                            </h3>
+
+                            <p data-food-rating>
+                                4.5
+                            </p>
+
+                            <strong data-food-price>
+                                ₹269
+                            </strong>
+
+                            <a href="#" data-food-link>
+                                View Food
+                            </a>
+
+                        </div>
+
+                    </article>
+
+
+                    <article
+                        class="menu-food-card"
+                        data-food-id="creamy-mushroom-pasta"
+                        data-category="pasta"
+                    >
+
+                        <div class="menu-food-image">
+                            <img src="" alt="" data-food-image>
+                        </div>
+
+                        <div class="menu-food-content">
+
+                            <span data-food-category>
+                                Pasta
+                            </span>
+
+                            <h3 data-food-name>
+                                Creamy Mushroom Pasta
+                            </h3>
+
+                            <p data-food-rating>
+                                4.6
+                            </p>
+
+                            <strong data-food-price>
+                                ₹279
+                            </strong>
+
+                            <a href="#" data-food-link>
+                                View Food
+                            </a>
+
+                        </div>
+
+                    </article>
+
+
+
+                    <!-- =========================
+                         CHINESE
+                    ========================== -->
+
+
+                    <article
+                        class="menu-food-card"
+                        data-food-id="veg-hakka-noodles"
+                        data-category="chinese"
+                    >
+
+                        <div class="menu-food-image">
+                            <img src="" alt="" data-food-image>
+                        </div>
+
+                        <div class="menu-food-content">
+
+                            <span data-food-category>
+                                Chinese
+                            </span>
+
+                            <h3 data-food-name>
+                                Veg Hakka Noodles
+                            </h3>
+
+                            <p data-food-rating>
+                                4.6
+                            </p>
+
+                            <strong data-food-price>
+                                ₹199
+                            </strong>
+
+                            <a href="#" data-food-link>
+                                View Food
+                            </a>
+
+                        </div>
+
+                    </article>
+
+
+                    <article
+                        class="menu-food-card"
+                        data-food-id="veg-fried-rice"
+                        data-category="chinese"
+                    >
+
+                        <div class="menu-food-image">
+                            <img src="" alt="" data-food-image>
+                        </div>
+
+                        <div class="menu-food-content">
+
+                            <span data-food-category>
+                                Chinese
+                            </span>
+
+                            <h3 data-food-name>
+                                Veg Fried Rice
                             </h3>
 
                             <p data-food-rating>
@@ -475,10 +1661,7 @@
                                 ₹189
                             </strong>
 
-                            <a
-                                href="#"
-                                data-food-link
-                            >
+                            <a href="#" data-food-link>
                                 View Food
                             </a>
 
@@ -487,12 +1670,10 @@
                     </article>
 
 
-                    <!-- Pizza -->
-
                     <article
                         class="menu-food-card"
-                        data-food-id="margherita-pizza"
-                        data-category="pizza"
+                        data-food-id="veg-manchurian"
+                        data-category="chinese"
                     >
 
                         <div class="menu-food-image">
@@ -500,11 +1681,27 @@
                         </div>
 
                         <div class="menu-food-content">
-                            <span data-food-category>Pizza</span>
-                            <h3 data-food-name>Margherita Pizza</h3>
-                            <p data-food-rating>4.5</p>
-                            <strong data-food-price>₹249</strong>
-                            <a href="#" data-food-link>View Food</a>
+
+                            <span data-food-category>
+                                Chinese
+                            </span>
+
+                            <h3 data-food-name>
+                                Veg Manchurian
+                            </h3>
+
+                            <p data-food-rating>
+                                4.7
+                            </p>
+
+                            <strong data-food-price>
+                                ₹209
+                            </strong>
+
+                            <a href="#" data-food-link>
+                                View Food
+                            </a>
+
                         </div>
 
                     </article>
@@ -512,8 +1709,8 @@
 
                     <article
                         class="menu-food-card"
-                        data-food-id="farmhouse-pizza"
-                        data-category="pizza"
+                        data-food-id="chilli-paneer"
+                        data-category="chinese"
                     >
 
                         <div class="menu-food-image">
@@ -521,11 +1718,27 @@
                         </div>
 
                         <div class="menu-food-content">
-                            <span data-food-category>Pizza</span>
-                            <h3 data-food-name>Farmhouse Pizza</h3>
-                            <p data-food-rating>4.7</p>
-                            <strong data-food-price>₹299</strong>
-                            <a href="#" data-food-link>View Food</a>
+
+                            <span data-food-category>
+                                Chinese
+                            </span>
+
+                            <h3 data-food-name>
+                                Chilli Paneer
+                            </h3>
+
+                            <p data-food-rating>
+                                4.6
+                            </p>
+
+                            <strong data-food-price>
+                                ₹229
+                            </strong>
+
+                            <a href="#" data-food-link>
+                                View Food
+                            </a>
+
                         </div>
 
                     </article>
@@ -533,8 +1746,8 @@
 
                     <article
                         class="menu-food-card"
-                        data-food-id="veggie-delight-pizza"
-                        data-category="pizza"
+                        data-food-id="schezwan-veg-noodles"
+                        data-category="chinese"
                     >
 
                         <div class="menu-food-image">
@@ -542,11 +1755,70 @@
                         </div>
 
                         <div class="menu-food-content">
-                            <span data-food-category>Pizza</span>
-                            <h3 data-food-name>Veggie Delight Pizza</h3>
-                            <p data-food-rating>4.6</p>
-                            <strong data-food-price>₹279</strong>
-                            <a href="#" data-food-link>View Food</a>
+
+                            <span data-food-category>
+                                Chinese
+                            </span>
+
+                            <h3 data-food-name>
+                                Schezwan Veg Noodles
+                            </h3>
+
+                            <p data-food-rating>
+                                4.5
+                            </p>
+
+                            <strong data-food-price>
+                                ₹219
+                            </strong>
+
+                            <a href="#" data-food-link>
+                                View Food
+                            </a>
+
+                        </div>
+
+                    </article>
+
+
+
+                    <!-- =========================
+                         SOUTH INDIAN
+                    ========================== -->
+
+
+                    <article
+                        class="menu-food-card"
+                        data-food-id="masala-dosa"
+                        data-category="south-indian"
+                    >
+
+                        <div class="menu-food-image">
+                            <img src="" alt="" data-food-image>
+                        </div>
+
+                        <div class="menu-food-content">
+
+                            <span data-food-category>
+                                South Indian
+                            </span>
+
+                            <h3 data-food-name>
+                                Masala Dosa
+                            </h3>
+
+                            <p data-food-rating>
+                                4.7
+                            </p>
+
+                            <strong data-food-price>
+                                ₹149
+                            </strong>
+
+                            <a href="#" data-food-link>
+                                View Food
+                            </a>
+
                         </div>
 
                     </article>
@@ -554,8 +1826,8 @@
 
                     <article
                         class="menu-food-card"
-                        data-food-id="corn-cheese-pizza"
-                        data-category="pizza"
+                        data-food-id="plain-dosa"
+                        data-category="south-indian"
                     >
 
                         <div class="menu-food-image">
@@ -563,11 +1835,27 @@
                         </div>
 
                         <div class="menu-food-content">
-                            <span data-food-category>Pizza</span>
-                            <h3 data-food-name>Corn Cheese Pizza</h3>
-                            <p data-food-rating>4.5</p>
-                            <strong data-food-price>₹289</strong>
-                            <a href="#" data-food-link>View Food</a>
+
+                            <span data-food-category>
+                                South Indian
+                            </span>
+
+                            <h3 data-food-name>
+                                Plain Dosa
+                            </h3>
+
+                            <p data-food-rating>
+                                4.5
+                            </p>
+
+                            <strong data-food-price>
+                                ₹119
+                            </strong>
+
+                            <a href="#" data-food-link>
+                                View Food
+                            </a>
+
                         </div>
 
                     </article>
@@ -575,8 +1863,8 @@
 
                     <article
                         class="menu-food-card"
-                        data-food-id="paneer-tikka-pizza"
-                        data-category="pizza"
+                        data-food-id="idli-sambar"
+                        data-category="south-indian"
                     >
 
                         <div class="menu-food-image">
@@ -584,34 +1872,27 @@
                         </div>
 
                         <div class="menu-food-content">
-                            <span data-food-category>Pizza</span>
-                            <h3 data-food-name>Paneer Tikka Pizza</h3>
-                            <p data-food-rating>4.8</p>
-                            <strong data-food-price>₹319</strong>
-                            <a href="#" data-food-link>View Food</a>
-                        </div>
 
-                    </article>
+                            <span data-food-category>
+                                South Indian
+                            </span>
 
+                            <h3 data-food-name>
+                                Idli Sambar
+                            </h3>
 
-                    <!-- Burger -->
+                            <p data-food-rating>
+                                4.6
+                            </p>
 
-                    <article
-                        class="menu-food-card"
-                        data-food-id="classic-veg-burger"
-                        data-category="burger"
-                    >
+                            <strong data-food-price>
+                                ₹109
+                            </strong>
 
-                        <div class="menu-food-image">
-                            <img src="" alt="" data-food-image>
-                        </div>
+                            <a href="#" data-food-link>
+                                View Food
+                            </a>
 
-                        <div class="menu-food-content">
-                            <span data-food-category>Burger</span>
-                            <h3 data-food-name>Classic Veg Burger</h3>
-                            <p data-food-rating>4.5</p>
-                            <strong data-food-price>₹169</strong>
-                            <a href="#" data-food-link>View Food</a>
                         </div>
 
                     </article>
@@ -619,8 +1900,8 @@
 
                     <article
                         class="menu-food-card"
-                        data-food-id="aloo-tikki-burger"
-                        data-category="burger"
+                        data-food-id="medu-vada"
+                        data-category="south-indian"
                     >
 
                         <div class="menu-food-image">
@@ -628,11 +1909,27 @@
                         </div>
 
                         <div class="menu-food-content">
-                            <span data-food-category>Burger</span>
-                            <h3 data-food-name>Aloo Tikki Burger</h3>
-                            <p data-food-rating>4.6</p>
-                            <strong data-food-price>₹149</strong>
-                            <a href="#" data-food-link>View Food</a>
+
+                            <span data-food-category>
+                                South Indian
+                            </span>
+
+                            <h3 data-food-name>
+                                Medu Vada
+                            </h3>
+
+                            <p data-food-rating>
+                                4.5
+                            </p>
+
+                            <strong data-food-price>
+                                ₹129
+                            </strong>
+
+                            <a href="#" data-food-link>
+                                View Food
+                            </a>
+
                         </div>
 
                     </article>
@@ -640,8 +1937,8 @@
 
                     <article
                         class="menu-food-card"
-                        data-food-id="cheese-veg-burger"
-                        data-category="burger"
+                        data-food-id="uttapam"
+                        data-category="south-indian"
                     >
 
                         <div class="menu-food-image">
@@ -649,11 +1946,70 @@
                         </div>
 
                         <div class="menu-food-content">
-                            <span data-food-category>Burger</span>
-                            <h3 data-food-name>Cheese Veg Burger</h3>
-                            <p data-food-rating>4.7</p>
-                            <strong data-food-price>₹189</strong>
-                            <a href="#" data-food-link>View Food</a>
+
+                            <span data-food-category>
+                                South Indian
+                            </span>
+
+                            <h3 data-food-name>
+                                Uttapam
+                            </h3>
+
+                            <p data-food-rating>
+                                4.6
+                            </p>
+
+                            <strong data-food-price>
+                                ₹159
+                            </strong>
+
+                            <a href="#" data-food-link>
+                                View Food
+                            </a>
+
+                        </div>
+
+                    </article>
+
+
+
+                    <!-- =========================
+                         GUJARATI
+                    ========================== -->
+
+
+                    <article
+                        class="menu-food-card"
+                        data-food-id="gujarati-thali"
+                        data-category="gujarati"
+                    >
+
+                        <div class="menu-food-image">
+                            <img src="" alt="" data-food-image>
+                        </div>
+
+                        <div class="menu-food-content">
+
+                            <span data-food-category>
+                                Gujarati
+                            </span>
+
+                            <h3 data-food-name>
+                                Gujarati Thali
+                            </h3>
+
+                            <p data-food-rating>
+                                4.8
+                            </p>
+
+                            <strong data-food-price>
+                                ₹299
+                            </strong>
+
+                            <a href="#" data-food-link>
+                                View Food
+                            </a>
+
                         </div>
 
                     </article>
@@ -661,8 +2017,8 @@
 
                     <article
                         class="menu-food-card"
-                        data-food-id="paneer-burger"
-                        data-category="burger"
+                        data-food-id="sev-tameta"
+                        data-category="gujarati"
                     >
 
                         <div class="menu-food-image">
@@ -670,11 +2026,27 @@
                         </div>
 
                         <div class="menu-food-content">
-                            <span data-food-category>Burger</span>
-                            <h3 data-food-name>Paneer Burger</h3>
-                            <p data-food-rating>4.6</p>
-                            <strong data-food-price>₹209</strong>
-                            <a href="#" data-food-link>View Food</a>
+
+                            <span data-food-category>
+                                Gujarati
+                            </span>
+
+                            <h3 data-food-name>
+                                Sev Tameta
+                            </h3>
+
+                            <p data-food-rating>
+                                4.5
+                            </p>
+
+                            <strong data-food-price>
+                                ₹169
+                            </strong>
+
+                            <a href="#" data-food-link>
+                                View Food
+                            </a>
+
                         </div>
 
                     </article>
@@ -682,8 +2054,8 @@
 
                     <article
                         class="menu-food-card"
-                        data-food-id="mexican-veg-burger"
-                        data-category="burger"
+                        data-food-id="undhiyu"
+                        data-category="gujarati"
                     >
 
                         <div class="menu-food-image">
@@ -691,495 +2063,496 @@
                         </div>
 
                         <div class="menu-food-content">
-                            <span data-food-category>Burger</span>
-                            <h3 data-food-name>Mexican Veg Burger</h3>
-                            <p data-food-rating>4.5</p>
-                            <strong data-food-price>₹199</strong>
-                            <a href="#" data-food-link>View Food</a>
+
+                            <span data-food-category>
+                                Gujarati
+                            </span>
+
+                            <h3 data-food-name>
+                                Undhiyu
+                            </h3>
+
+                            <p data-food-rating>
+                                4.7
+                            </p>
+
+                            <strong data-food-price>
+                                ₹219
+                            </strong>
+
+                            <a href="#" data-food-link>
+                                View Food
+                            </a>
+
                         </div>
 
                     </article>
 
 
-                    <!-- Sandwich -->
+                    <article
+                        class="menu-food-card"
+                        data-food-id="dal-dhokli"
+                        data-category="gujarati"
+                    >
 
-                    <article class="menu-food-card" data-food-id="grilled-veg-sandwich" data-category="sandwich">
                         <div class="menu-food-image">
                             <img src="" alt="" data-food-image>
                         </div>
+
                         <div class="menu-food-content">
-                            <span data-food-category>Sandwich</span>
-                            <h3 data-food-name>Grilled Veg Sandwich</h3>
-                            <p data-food-rating>4.5</p>
-                            <strong data-food-price>₹159</strong>
-                            <a href="#" data-food-link>View Food</a>
+
+                            <span data-food-category>
+                                Gujarati
+                            </span>
+
+                            <h3 data-food-name>
+                                Dal Dhokli
+                            </h3>
+
+                            <p data-food-rating>
+                                4.6
+                            </p>
+
+                            <strong data-food-price>
+                                ₹179
+                            </strong>
+
+                            <a href="#" data-food-link>
+                                View Food
+                            </a>
+
                         </div>
+
                     </article>
 
-                    <article class="menu-food-card" data-food-id="bombay-veg-sandwich" data-category="sandwich">
+
+                    <article
+                        class="menu-food-card"
+                        data-food-id="khandvi"
+                        data-category="gujarati"
+                    >
+
                         <div class="menu-food-image">
                             <img src="" alt="" data-food-image>
                         </div>
+
                         <div class="menu-food-content">
-                            <span data-food-category>Sandwich</span>
-                            <h3 data-food-name>Bombay Veg Sandwich</h3>
-                            <p data-food-rating>4.6</p>
-                            <strong data-food-price>₹149</strong>
-                            <a href="#" data-food-link>View Food</a>
+
+                            <span data-food-category>
+                                Gujarati
+                            </span>
+
+                            <h3 data-food-name>
+                                Khandvi
+                            </h3>
+
+                            <p data-food-rating>
+                                4.5
+                            </p>
+
+                            <strong data-food-price>
+                                ₹139
+                            </strong>
+
+                            <a href="#" data-food-link>
+                                View Food
+                            </a>
+
                         </div>
+
                     </article>
 
-                    <article class="menu-food-card" data-food-id="cheese-corn-sandwich" data-category="sandwich">
+
+
+                    <!-- =========================
+                         BIRYANI
+                    ========================== -->
+
+
+                    <article
+                        class="menu-food-card"
+                        data-food-id="veg-dum-biryani"
+                        data-category="biryani"
+                    >
+
                         <div class="menu-food-image">
                             <img src="" alt="" data-food-image>
                         </div>
+
                         <div class="menu-food-content">
-                            <span data-food-category>Sandwich</span>
-                            <h3 data-food-name>Cheese Corn Sandwich</h3>
-                            <p data-food-rating>4.5</p>
-                            <strong data-food-price>₹179</strong>
-                            <a href="#" data-food-link>View Food</a>
+
+                            <span data-food-category>
+                                Biryani
+                            </span>
+
+                            <h3 data-food-name>
+                                Veg Dum Biryani
+                            </h3>
+
+                            <p data-food-rating>
+                                4.7
+                            </p>
+
+                            <strong data-food-price>
+                                ₹249
+                            </strong>
+
+                            <a href="#" data-food-link>
+                                View Food
+                            </a>
+
                         </div>
+
                     </article>
 
-                    <article class="menu-food-card" data-food-id="masala-paneer-sandwich" data-category="sandwich">
+
+                    <article
+                        class="menu-food-card"
+                        data-food-id="paneer-biryani"
+                        data-category="biryani"
+                    >
+
                         <div class="menu-food-image">
                             <img src="" alt="" data-food-image>
                         </div>
+
                         <div class="menu-food-content">
-                            <span data-food-category>Sandwich</span>
-                            <h3 data-food-name>Masala Paneer Sandwich</h3>
-                            <p data-food-rating>4.7</p>
-                            <strong data-food-price>₹199</strong>
-                            <a href="#" data-food-link>View Food</a>
+
+                            <span data-food-category>
+                                Biryani
+                            </span>
+
+                            <h3 data-food-name>
+                                Paneer Biryani
+                            </h3>
+
+                            <p data-food-rating>
+                                4.6
+                            </p>
+
+                            <strong data-food-price>
+                                ₹269
+                            </strong>
+
+                            <a href="#" data-food-link>
+                                View Food
+                            </a>
+
                         </div>
+
                     </article>
 
-                    <article class="menu-food-card" data-food-id="veg-club-sandwich" data-category="sandwich">
+
+                    <article
+                        class="menu-food-card"
+                        data-food-id="hyderabadi-veg-biryani"
+                        data-category="biryani"
+                    >
+
                         <div class="menu-food-image">
                             <img src="" alt="" data-food-image>
                         </div>
+
                         <div class="menu-food-content">
-                            <span data-food-category>Sandwich</span>
-                            <h3 data-food-name>Veg Club Sandwich</h3>
-                            <p data-food-rating>4.6</p>
-                            <strong data-food-price>₹219</strong>
-                            <a href="#" data-food-link>View Food</a>
+
+                            <span data-food-category>
+                                Biryani
+                            </span>
+
+                            <h3 data-food-name>
+                                Hyderabadi Veg Biryani
+                            </h3>
+
+                            <p data-food-rating>
+                                4.8
+                            </p>
+
+                            <strong data-food-price>
+                                ₹259
+                            </strong>
+
+                            <a href="#" data-food-link>
+                                View Food
+                            </a>
+
                         </div>
+
                     </article>
 
 
-                    <!-- Pasta -->
+                    <article
+                        class="menu-food-card"
+                        data-food-id="kathiyawadi-veg-biryani"
+                        data-category="biryani"
+                    >
 
-                    <article class="menu-food-card" data-food-id="arrabbiata-pasta" data-category="pasta">
                         <div class="menu-food-image">
                             <img src="" alt="" data-food-image>
                         </div>
+
                         <div class="menu-food-content">
-                            <span data-food-category>Pasta</span>
-                            <h3 data-food-name>Arrabbiata Pasta</h3>
-                            <p data-food-rating>4.5</p>
-                            <strong data-food-price>₹229</strong>
-                            <a href="#" data-food-link>View Food</a>
+
+                            <span data-food-category>
+                                Biryani
+                            </span>
+
+                            <h3 data-food-name>
+                                Kathiyawadi Veg Biryani
+                            </h3>
+
+                            <p data-food-rating>
+                                4.5
+                            </p>
+
+                            <strong data-food-price>
+                                ₹239
+                            </strong>
+
+                            <a href="#" data-food-link>
+                                View Food
+                            </a>
+
                         </div>
+
                     </article>
 
-                    <article class="menu-food-card" data-food-id="alfredo-pasta" data-category="pasta">
+
+                    <article
+                        class="menu-food-card"
+                        data-food-id="tawa-veg-biryani"
+                        data-category="biryani"
+                    >
+
                         <div class="menu-food-image">
                             <img src="" alt="" data-food-image>
                         </div>
+
                         <div class="menu-food-content">
-                            <span data-food-category>Pasta</span>
-                            <h3 data-food-name>Alfredo Pasta</h3>
-                            <p data-food-rating>4.7</p>
-                            <strong data-food-price>₹249</strong>
-                            <a href="#" data-food-link>View Food</a>
+
+                            <span data-food-category>
+                                Biryani
+                            </span>
+
+                            <h3 data-food-name>
+                                Tawa Veg Biryani
+                            </h3>
+
+                            <p data-food-rating>
+                                4.6
+                            </p>
+
+                            <strong data-food-price>
+                                ₹229
+                            </strong>
+
+                            <a href="#" data-food-link>
+                                View Food
+                            </a>
+
                         </div>
+
                     </article>
 
-                    <article class="menu-food-card" data-food-id="pink-sauce-pasta" data-category="pasta">
+
+
+                    <!-- =========================
+                         DESSERTS
+                    ========================== -->
+
+
+                    <article
+                        class="menu-food-card"
+                        data-food-id="gulab-jamun"
+                        data-category="desserts"
+                    >
+
                         <div class="menu-food-image">
                             <img src="" alt="" data-food-image>
                         </div>
+
                         <div class="menu-food-content">
-                            <span data-food-category>Pasta</span>
-                            <h3 data-food-name>Pink Sauce Pasta</h3>
-                            <p data-food-rating>4.6</p>
-                            <strong data-food-price>₹259</strong>
-                            <a href="#" data-food-link>View Food</a>
+
+                            <span data-food-category>
+                                Desserts
+                            </span>
+
+                            <h3 data-food-name>
+                                Gulab Jamun
+                            </h3>
+
+                            <p data-food-rating>
+                                4.6
+                            </p>
+
+                            <strong data-food-price>
+                                ₹119
+                            </strong>
+
+                            <a href="#" data-food-link>
+                                View Food
+                            </a>
+
                         </div>
+
                     </article>
 
-                    <article class="menu-food-card" data-food-id="pesto-veg-pasta" data-category="pasta">
+
+                    <article
+                        class="menu-food-card"
+                        data-food-id="rasmalai"
+                        data-category="desserts"
+                    >
+
                         <div class="menu-food-image">
                             <img src="" alt="" data-food-image>
                         </div>
+
                         <div class="menu-food-content">
-                            <span data-food-category>Pasta</span>
-                            <h3 data-food-name>Pesto Veg Pasta</h3>
-                            <p data-food-rating>4.5</p>
-                            <strong data-food-price>₹269</strong>
-                            <a href="#" data-food-link>View Food</a>
+
+                            <span data-food-category>
+                                Desserts
+                            </span>
+
+                            <h3 data-food-name>
+                                Rasmalai
+                            </h3>
+
+                            <p data-food-rating>
+                                4.7
+                            </p>
+
+                            <strong data-food-price>
+                                ₹149
+                            </strong>
+
+                            <a href="#" data-food-link>
+                                View Food
+                            </a>
+
                         </div>
+
                     </article>
 
-                    <article class="menu-food-card" data-food-id="creamy-mushroom-pasta" data-category="pasta">
+
+                    <article
+                        class="menu-food-card"
+                        data-food-id="jalebi"
+                        data-category="desserts"
+                    >
+
                         <div class="menu-food-image">
                             <img src="" alt="" data-food-image>
                         </div>
+
                         <div class="menu-food-content">
-                            <span data-food-category>Pasta</span>
-                            <h3 data-food-name>Creamy Mushroom Pasta</h3>
-                            <p data-food-rating>4.6</p>
-                            <strong data-food-price>₹279</strong>
-                            <a href="#" data-food-link>View Food</a>
+
+                            <span data-food-category>
+                                Desserts
+                            </span>
+
+                            <h3 data-food-name>
+                                Jalebi
+                            </h3>
+
+                            <p data-food-rating>
+                                4.5
+                            </p>
+
+                            <strong data-food-price>
+                                ₹99
+                            </strong>
+
+                            <a href="#" data-food-link>
+                                View Food
+                            </a>
+
                         </div>
+
                     </article>
 
 
-                    <!-- Chinese -->
+                    <article
+                        class="menu-food-card"
+                        data-food-id="gajar-halwa"
+                        data-category="desserts"
+                    >
 
-                    <article class="menu-food-card" data-food-id="veg-hakka-noodles" data-category="chinese">
                         <div class="menu-food-image">
                             <img src="" alt="" data-food-image>
                         </div>
+
                         <div class="menu-food-content">
-                            <span data-food-category>Chinese</span>
-                            <h3 data-food-name>Veg Hakka Noodles</h3>
-                            <p data-food-rating>4.6</p>
-                            <strong data-food-price>₹199</strong>
-                            <a href="#" data-food-link>View Food</a>
+
+                            <span data-food-category>
+                                Desserts
+                            </span>
+
+                            <h3 data-food-name>
+                                Gajar Halwa
+                            </h3>
+
+                            <p data-food-rating>
+                                4.6
+                            </p>
+
+                            <strong data-food-price>
+                                ₹139
+                            </strong>
+
+                            <a href="#" data-food-link>
+                                View Food
+                            </a>
+
                         </div>
+
                     </article>
 
-                    <article class="menu-food-card" data-food-id="veg-fried-rice" data-category="chinese">
+
+                    <article
+                        class="menu-food-card"
+                        data-food-id="shrikhand"
+                        data-category="desserts"
+                    >
+
                         <div class="menu-food-image">
                             <img src="" alt="" data-food-image>
                         </div>
+
                         <div class="menu-food-content">
-                            <span data-food-category>Chinese</span>
-                            <h3 data-food-name>Veg Fried Rice</h3>
-                            <p data-food-rating>4.5</p>
-                            <strong data-food-price>₹189</strong>
-                            <a href="#" data-food-link>View Food</a>
+
+                            <span data-food-category>
+                                Desserts
+                            </span>
+
+                            <h3 data-food-name>
+                                Shrikhand
+                            </h3>
+
+                            <p data-food-rating>
+                                4.7
+                            </p>
+
+                            <strong data-food-price>
+                                ₹129
+                            </strong>
+
+                            <a href="#" data-food-link>
+                                View Food
+                            </a>
+
                         </div>
+
                     </article>
 
-                    <article class="menu-food-card" data-food-id="veg-manchurian" data-category="chinese">
-                        <div class="menu-food-image">
-                            <img src="" alt="" data-food-image>
-                        </div>
-                        <div class="menu-food-content">
-                            <span data-food-category>Chinese</span>
-                            <h3 data-food-name>Veg Manchurian</h3>
-                            <p data-food-rating>4.7</p>
-                            <strong data-food-price>₹209</strong>
-                            <a href="#" data-food-link>View Food</a>
-                        </div>
-                    </article>
-
-                    <article class="menu-food-card" data-food-id="chilli-paneer" data-category="chinese">
-                        <div class="menu-food-image">
-                            <img src="" alt="" data-food-image>
-                        </div>
-                        <div class="menu-food-content">
-                            <span data-food-category>Chinese</span>
-                            <h3 data-food-name>Chilli Paneer</h3>
-                            <p data-food-rating>4.6</p>
-                            <strong data-food-price>₹229</strong>
-                            <a href="#" data-food-link>View Food</a>
-                        </div>
-                    </article>
-
-                    <article class="menu-food-card" data-food-id="schezwan-veg-noodles" data-category="chinese">
-                        <div class="menu-food-image">
-                            <img src="" alt="" data-food-image>
-                        </div>
-                        <div class="menu-food-content">
-                            <span data-food-category>Chinese</span>
-                            <h3 data-food-name>Schezwan Veg Noodles</h3>
-                            <p data-food-rating>4.5</p>
-                            <strong data-food-price>₹219</strong>
-                            <a href="#" data-food-link>View Food</a>
-                        </div>
-                    </article>
-
-
-                    <!-- South Indian -->
-
-                    <article class="menu-food-card" data-food-id="masala-dosa" data-category="south-indian">
-                        <div class="menu-food-image">
-                            <img src="" alt="" data-food-image>
-                        </div>
-                        <div class="menu-food-content">
-                            <span data-food-category>South Indian</span>
-                            <h3 data-food-name>Masala Dosa</h3>
-                            <p data-food-rating>4.7</p>
-                            <strong data-food-price>₹149</strong>
-                            <a href="#" data-food-link>View Food</a>
-                        </div>
-                    </article>
-
-                    <article class="menu-food-card" data-food-id="plain-dosa" data-category="south-indian">
-                        <div class="menu-food-image">
-                            <img src="" alt="" data-food-image>
-                        </div>
-                        <div class="menu-food-content">
-                            <span data-food-category>South Indian</span>
-                            <h3 data-food-name>Plain Dosa</h3>
-                            <p data-food-rating>4.5</p>
-                            <strong data-food-price>₹119</strong>
-                            <a href="#" data-food-link>View Food</a>
-                        </div>
-                    </article>
-
-                    <article class="menu-food-card" data-food-id="idli-sambar" data-category="south-indian">
-                        <div class="menu-food-image">
-                            <img src="" alt="" data-food-image>
-                        </div>
-                        <div class="menu-food-content">
-                            <span data-food-category>South Indian</span>
-                            <h3 data-food-name>Idli Sambar</h3>
-                            <p data-food-rating>4.6</p>
-                            <strong data-food-price>₹109</strong>
-                            <a href="#" data-food-link>View Food</a>
-                        </div>
-                    </article>
-
-                    <article class="menu-food-card" data-food-id="medu-vada" data-category="south-indian">
-                        <div class="menu-food-image">
-                            <img src="" alt="" data-food-image>
-                        </div>
-                        <div class="menu-food-content">
-                            <span data-food-category>South Indian</span>
-                            <h3 data-food-name>Medu Vada</h3>
-                            <p data-food-rating>4.5</p>
-                            <strong data-food-price>₹129</strong>
-                            <a href="#" data-food-link>View Food</a>
-                        </div>
-                    </article>
-
-                    <article class="menu-food-card" data-food-id="uttapam" data-category="south-indian">
-                        <div class="menu-food-image">
-                            <img src="" alt="" data-food-image>
-                        </div>
-                        <div class="menu-food-content">
-                            <span data-food-category>South Indian</span>
-                            <h3 data-food-name>Uttapam</h3>
-                            <p data-food-rating>4.6</p>
-                            <strong data-food-price>₹159</strong>
-                            <a href="#" data-food-link>View Food</a>
-                        </div>
-                    </article>
-
-
-                    <!-- Gujarati -->
-
-                    <article class="menu-food-card" data-food-id="gujarati-thali" data-category="gujarati">
-                        <div class="menu-food-image">
-                            <img src="" alt="" data-food-image>
-                        </div>
-                        <div class="menu-food-content">
-                            <span data-food-category>Gujarati</span>
-                            <h3 data-food-name>Gujarati Thali</h3>
-                            <p data-food-rating>4.8</p>
-                            <strong data-food-price>₹299</strong>
-                            <a href="#" data-food-link>View Food</a>
-                        </div>
-                    </article>
-
-                    <article class="menu-food-card" data-food-id="sev-tameta" data-category="gujarati">
-                        <div class="menu-food-image">
-                            <img src="" alt="" data-food-image>
-                        </div>
-                        <div class="menu-food-content">
-                            <span data-food-category>Gujarati</span>
-                            <h3 data-food-name>Sev Tameta</h3>
-                            <p data-food-rating>4.5</p>
-                            <strong data-food-price>₹169</strong>
-                            <a href="#" data-food-link>View Food</a>
-                        </div>
-                    </article>
-
-                    <article class="menu-food-card" data-food-id="undhiyu" data-category="gujarati">
-                        <div class="menu-food-image">
-                            <img src="" alt="" data-food-image>
-                        </div>
-                        <div class="menu-food-content">
-                            <span data-food-category>Gujarati</span>
-                            <h3 data-food-name>Undhiyu</h3>
-                            <p data-food-rating>4.7</p>
-                            <strong data-food-price>₹219</strong>
-                            <a href="#" data-food-link>View Food</a>
-                        </div>
-                    </article>
-
-                    <article class="menu-food-card" data-food-id="dal-dhokli" data-category="gujarati">
-                        <div class="menu-food-image">
-                            <img src="" alt="" data-food-image>
-                        </div>
-                        <div class="menu-food-content">
-                            <span data-food-category>Gujarati</span>
-                            <h3 data-food-name>Dal Dhokli</h3>
-                            <p data-food-rating>4.6</p>
-                            <strong data-food-price>₹179</strong>
-                            <a href="#" data-food-link>View Food</a>
-                        </div>
-                    </article>
-
-                    <article class="menu-food-card" data-food-id="khandvi" data-category="gujarati">
-                        <div class="menu-food-image">
-                            <img src="" alt="" data-food-image>
-                        </div>
-                        <div class="menu-food-content">
-                            <span data-food-category>Gujarati</span>
-                            <h3 data-food-name>Khandvi</h3>
-                            <p data-food-rating>4.5</p>
-                            <strong data-food-price>₹139</strong>
-                            <a href="#" data-food-link>View Food</a>
-                        </div>
-                    </article>
-
-
-                    <!-- Biryani -->
-
-                    <article class="menu-food-card" data-food-id="veg-dum-biryani" data-category="biryani">
-                        <div class="menu-food-image">
-                            <img src="" alt="" data-food-image>
-                        </div>
-                        <div class="menu-food-content">
-                            <span data-food-category>Biryani</span>
-                            <h3 data-food-name>Veg Dum Biryani</h3>
-                            <p data-food-rating>4.7</p>
-                            <strong data-food-price>₹249</strong>
-                            <a href="#" data-food-link>View Food</a>
-                        </div>
-                    </article>
-
-                    <article class="menu-food-card" data-food-id="paneer-biryani" data-category="biryani">
-                        <div class="menu-food-image">
-                            <img src="" alt="" data-food-image>
-                        </div>
-                        <div class="menu-food-content">
-                            <span data-food-category>Biryani</span>
-                            <h3 data-food-name>Paneer Biryani</h3>
-                            <p data-food-rating>4.6</p>
-                            <strong data-food-price>₹269</strong>
-                            <a href="#" data-food-link>View Food</a>
-                        </div>
-                    </article>
-
-                    <article class="menu-food-card" data-food-id="hyderabadi-veg-biryani" data-category="biryani">
-                        <div class="menu-food-image">
-                            <img src="" alt="" data-food-image>
-                        </div>
-                        <div class="menu-food-content">
-                            <span data-food-category>Biryani</span>
-                            <h3 data-food-name>Hyderabadi Veg Biryani</h3>
-                            <p data-food-rating>4.8</p>
-                            <strong data-food-price>₹259</strong>
-                            <a href="#" data-food-link>View Food</a>
-                        </div>
-                    </article>
-
-                    <article class="menu-food-card" data-food-id="kathiyawadi-veg-biryani" data-category="biryani">
-                        <div class="menu-food-image">
-                            <img src="" alt="" data-food-image>
-                        </div>
-                        <div class="menu-food-content">
-                            <span data-food-category>Biryani</span>
-                            <h3 data-food-name>Kathiyawadi Veg Biryani</h3>
-                            <p data-food-rating>4.5</p>
-                            <strong data-food-price>₹239</strong>
-                            <a href="#" data-food-link>View Food</a>
-                        </div>
-                    </article>
-
-                    <article class="menu-food-card" data-food-id="tawa-veg-biryani" data-category="biryani">
-                        <div class="menu-food-image">
-                            <img src="" alt="" data-food-image>
-                        </div>
-                        <div class="menu-food-content">
-                            <span data-food-category>Biryani</span>
-                            <h3 data-food-name>Tawa Veg Biryani</h3>
-                            <p data-food-rating>4.6</p>
-                            <strong data-food-price>₹229</strong>
-                            <a href="#" data-food-link>View Food</a>
-                        </div>
-                    </article>
-
-
-                    <!-- Desserts -->
-
-                    <article class="menu-food-card" data-food-id="gulab-jamun" data-category="desserts">
-                        <div class="menu-food-image">
-                            <img src="" alt="" data-food-image>
-                        </div>
-                        <div class="menu-food-content">
-                            <span data-food-category>Desserts</span>
-                            <h3 data-food-name>Gulab Jamun</h3>
-                            <p data-food-rating>4.6</p>
-                            <strong data-food-price>₹119</strong>
-                            <a href="#" data-food-link>View Food</a>
-                        </div>
-                    </article>
-
-                    <article class="menu-food-card" data-food-id="rasmalai" data-category="desserts">
-                        <div class="menu-food-image">
-                            <img src="" alt="" data-food-image>
-                        </div>
-                        <div class="menu-food-content">
-                            <span data-food-category>Desserts</span>
-                            <h3 data-food-name>Rasmalai</h3>
-                            <p data-food-rating>4.7</p>
-                            <strong data-food-price>₹149</strong>
-                            <a href="#" data-food-link>View Food</a>
-                        </div>
-                    </article>
-
-                    <article class="menu-food-card" data-food-id="jalebi" data-category="desserts">
-                        <div class="menu-food-image">
-                            <img src="" alt="" data-food-image>
-                        </div>
-                        <div class="menu-food-content">
-                            <span data-food-category>Desserts</span>
-                            <h3 data-food-name>Jalebi</h3>
-                            <p data-food-rating>4.5</p>
-                            <strong data-food-price>₹99</strong>
-                            <a href="#" data-food-link>View Food</a>
-                        </div>
-                    </article>
-
-                    <article class="menu-food-card" data-food-id="gajar-halwa" data-category="desserts">
-                        <div class="menu-food-image">
-                            <img src="" alt="" data-food-image>
-                        </div>
-                        <div class="menu-food-content">
-                            <span data-food-category>Desserts</span>
-                            <h3 data-food-name>Gajar Halwa</h3>
-                            <p data-food-rating>4.6</p>
-                            <strong data-food-price>₹139</strong>
-                            <a href="#" data-food-link>View Food</a>
-                        </div>
-                    </article>
-
-                    <article class="menu-food-card" data-food-id="shrikhand" data-category="desserts">
-                        <div class="menu-food-image">
-                            <img src="" alt="" data-food-image>
-                        </div>
-                        <div class="menu-food-content">
-                            <span data-food-category>Desserts</span>
-                            <h3 data-food-name>Shrikhand</h3>
-                            <p data-food-rating>4.7</p>
-                            <strong data-food-price>₹129</strong>
-                            <a href="#" data-food-link>View Food</a>
-                        </div>
-                    </article>
 
                 </div>
 
 
-                <!-- Search Empty State -->
+
+                <!-- =================================================
+                     EMPTY STATE
+                ================================================== -->
+
                 <section
                     class="menu-empty-state"
                     id="menuSearchEmptyState"
@@ -1192,12 +2565,15 @@
                             No Food Found
                         </p>
 
+
                         <h2>
                             We could not find matching food
                         </h2>
 
+
                         <span>
-                            Try another food name or choose a different category.
+                            Try another food name or choose
+                            a different category.
                         </span>
 
                     </div>
@@ -1211,19 +2587,29 @@
     </main>
 
 
-    <!-- Footer -->
+
+    <!-- =====================================================
+         FOOTER
+    ====================================================== -->
+
     <footer class="site-footer">
 
         <div class="footer-container">
 
+
             <div class="footer-brand">
 
-                <a href="index.html">
+                <a
+                    href="index.html"
+                >
+
                     <img
                         src="images/logo/yummy-tummy-logo.png"
                         alt="Yummy Tummy"
                     >
+
                 </a>
+
 
                 <p>
                     Delicious food, delivered with care.
@@ -1234,21 +2620,31 @@
 
             <div class="footer-links">
 
+
                 <div class="footer-column">
 
                     <h3>
                         Quick Links
                     </h3>
 
-                    <a href="index.html">
+
+                    <a
+                        href="index.html"
+                    >
                         Home
                     </a>
 
-                    <a href="menu.html">
+
+                    <a
+                        href="menu.html"
+                    >
                         Menu
                     </a>
 
-                    <a href="restaurants.html">
+
+                    <a
+                        href="restaurants.html"
+                    >
                         Restaurants
                     </a>
 
@@ -1261,20 +2657,69 @@
                         Account
                     </h3>
 
-                    <a href="profile.html">
+
+                    <a
+                        href="profile.html"
+                    >
                         Profile
                     </a>
 
-                    <a href="orders.html">
+
+                    <a
+                        href="orders.html"
+                    >
                         My Orders
                     </a>
 
-                    <a href="wishlist.html">
+
+                    <a
+                        href="wishlist.html"
+                    >
                         Wishlist
                     </a>
 
-                    <a href="cart.html">
+
+                    <a
+                        href="cart.html"
+                    >
                         Cart
+                    </a>
+
+                </div>
+
+
+                <div class="footer-column">
+
+                    <h3>
+                        Help
+                    </h3>
+
+
+                    <a
+                        href="address.html"
+                    >
+                        Addresses
+                    </a>
+
+
+                    <a
+                        href="restaurants.html"
+                    >
+                        Find Restaurants
+                    </a>
+
+
+                    <a
+                        href="login.html"
+                    >
+                        Login
+                    </a>
+
+
+                    <a
+                        href="register.html"
+                    >
+                        Register
                     </a>
 
                 </div>
@@ -1295,10 +2740,21 @@
     </footer>
 
 
-<script src="js/menu-data.js"></script>
-<script src="js/restaurant-data.js"></script>
-<script src="js/auth.js"></script>
-<script src="js/global-search.js"></script>
-<script src="js/main.js"></script>
+
+    <!-- =====================================================
+         JAVASCRIPT
+    ====================================================== -->
+
+    <script src="js/menu-data.js"></script>
+
+    <script src="js/restaurant-data.js"></script>
+
+    <script src="js/auth.js"></script>
+
+    <script src="js/global-search.js"></script>
+
+    <script src="js/main.js"></script>
+
 </body>
+
 </html>

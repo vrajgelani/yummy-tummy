@@ -669,119 +669,181 @@ function findRestaurantById(id) {
 
 /* =========================================================
    VIEW RESTAURANT PAGE
-========================================================= */
+   TABLE BOOKING REMOVED
+   ========================================================= */
 
 function initializeViewRestaurantPage() {
+
     const page =
         document.getElementById(
             "viewRestaurantPage"
         );
 
+
     if (!page) {
         return;
     }
+
 
     const params =
         new URLSearchParams(
             window.location.search
         );
 
+
     const restaurantId =
-        params.get("restaurant");
+        params.get(
+            "restaurant"
+        );
+
 
     const restaurant =
         findRestaurantById(
             restaurantId
         );
 
+
     if (!restaurant) {
+
         showInvalidRestaurant();
+
         return;
+
     }
 
+
+    /*
+     * RESTAURANT NAME
+     */
     setText(
         "viewRestaurantName",
         restaurant.name
     );
 
+
+    /*
+     * CUISINE
+     */
     setText(
         "viewRestaurantCuisine",
         restaurant.cuisine
     );
 
+
+    /*
+     * DESCRIPTION
+     */
     setText(
         "viewRestaurantDescription",
         restaurant.description || ""
     );
 
+
+    /*
+     * LOCATION
+     */
     setText(
         "viewRestaurantLocation",
         restaurant.location
     );
 
+
+    /*
+     * RATING
+     */
     setText(
         "viewRestaurantRating",
         restaurant.rating
-            ? restaurant.rating.toFixed(1)
+            ? Number(
+                restaurant.rating
+            ).toFixed(1)
             : "0.0"
     );
 
+
+    /*
+     * RATING DETAILS
+     */
     setText(
         "viewRestaurantRatingDetails",
         restaurant.rating
-            ? restaurant.rating.toFixed(1) +
+            ? Number(
+                restaurant.rating
+            ).toFixed(1) +
               " Rating"
             : ""
     );
 
+
+    /*
+     * OPENING TIME
+     */
     setText(
         "viewRestaurantOpeningTime",
         restaurant.openingTime || ""
     );
 
+
+    /*
+     * CLOSING TIME
+     */
     setText(
         "viewRestaurantClosingTime",
         restaurant.closingTime || ""
     );
 
+
+    /*
+     * ADDRESS
+     */
     setText(
         "viewRestaurantAddress",
         restaurant.address || ""
     );
 
-    const image =
+
+    /*
+     * RESTAURANT INSIDE IMAGE
+     */
+    const restaurantImage =
         document.getElementById(
             "viewRestaurantImage"
         );
 
-    if (image) {
-        image.src =
-            restaurant.insideImage ||
-            "images/restaurants/" +
-            restaurant.id +
-            "-inside.png";
 
-        image.alt =
+    if (restaurantImage) {
+
+        restaurantImage.src =
+            restaurant.insideImage ||
+            (
+                "images/restaurants/" +
+                restaurant.id +
+                "-inside.png"
+            );
+
+
+        restaurantImage.alt =
             restaurant.name +
             " Interior";
+
     }
 
-    const bookTable =
-        document.getElementById(
-            "viewRestaurantBookTable"
-        );
 
-    if (bookTable) {
-        bookTable.href =
-            "book-table.html?restaurant=" +
-            encodeURIComponent(
-                restaurant.id
-            );
-    }
-
+    /*
+     * RESTAURANT MENU
+     */
     initializeRestaurantMenu(
         restaurant
     );
+
+
+    /*
+     * PAGE TITLE
+     */
+    document.title =
+        restaurant.name +
+        " | Yummy Tummy";
+
 }
 
 
@@ -1264,1187 +1326,6 @@ function showInvalidRestaurant() {
         invalid.hidden = false;
     }
 }
-
-
-/* ========================================
-   BOOK TABLE PAGE
-======================================== */
-
-function initializeBookTablePage() {
-
-    const bookTablePage =
-        document.getElementById(
-            "bookTablePage"
-        );
-
-
-    if (
-        !bookTablePage ||
-        typeof restaurantData ===
-            "undefined"
-    ) {
-        return;
-    }
-
-
-    const urlParams =
-        new URLSearchParams(
-            window.location.search
-        );
-
-
-    const restaurantId =
-        urlParams.get(
-            "restaurant"
-        );
-
-
-    const restaurant =
-        restaurantData.find(
-            function (item) {
-
-                return (
-                    item.id ===
-                    restaurantId
-                );
-
-            }
-        );
-
-
-    if (!restaurant) {
-
-        showInvalidBookingRestaurant();
-
-        return;
-
-    }
-
-
-    /*
-     * Keep current restaurant globally
-     * so the booking button can access it.
-     */
-    window.currentBookingRestaurant =
-        restaurant;
-
-
-    const restaurantName =
-        document.getElementById(
-            "bookingRestaurantName"
-        );
-
-
-    const restaurantCuisine =
-        document.getElementById(
-            "bookingRestaurantCuisine"
-        );
-
-
-    const restaurantLocation =
-        document.getElementById(
-            "bookingRestaurantLocation"
-        );
-
-
-    const restaurantRating =
-        document.getElementById(
-            "bookingRestaurantRating"
-        );
-
-
-    const bookTableTitle =
-        document.getElementById(
-            "bookTableTitle"
-        );
-
-
-    if (restaurantName) {
-
-        restaurantName.textContent =
-            restaurant.name;
-
-    }
-
-
-    if (restaurantCuisine) {
-
-        restaurantCuisine.textContent =
-            restaurant.cuisine;
-
-    }
-
-
-    if (restaurantLocation) {
-
-        restaurantLocation.textContent =
-            restaurant.location;
-
-    }
-
-
-    if (restaurantRating) {
-
-        restaurantRating.textContent =
-            restaurant.rating;
-
-    }
-
-
-    if (bookTableTitle) {
-
-        bookTableTitle.textContent =
-            "Book a Table at " +
-            restaurant.name;
-
-    }
-
-
-    document.title =
-        "Book Table - " +
-        restaurant.name +
-        " | Yummy Tummy";
-
-
-    initializeRestaurantTables(
-        restaurant
-    );
-
-
-    initializeBookingAction();
-}
-
-
-/* ========================================
-   INVALID BOOKING RESTAURANT
-======================================== */
-
-function showInvalidBookingRestaurant() {
-
-    const bookingContent =
-        document.getElementById(
-            "bookingContent"
-        );
-
-
-    const invalidState =
-        document.getElementById(
-            "invalidBookingState"
-        );
-
-
-    const tableSection =
-        document.getElementById(
-            "tableBookingSection"
-        );
-
-
-    if (bookingContent) {
-
-        bookingContent.hidden =
-            true;
-
-    }
-
-
-    if (tableSection) {
-
-        tableSection.hidden =
-            true;
-
-    }
-
-
-    if (invalidState) {
-
-        invalidState.hidden =
-            false;
-
-    }
-
-}
-
-
-/* ========================================
-   RESTAURANT TABLES
-======================================== */
-
-function initializeRestaurantTables(
-    restaurant
-) {
-
-    const tableButtons =
-        document.querySelectorAll(
-            ".restaurant-table"
-        );
-
-
-    if (
-        !tableButtons.length
-    ) {
-        return;
-    }
-
-
-    /*
-     * Reset all tables.
-     */
-    tableButtons.forEach(
-        function (button) {
-
-            button.hidden =
-                true;
-
-            button.disabled =
-                true;
-
-
-            button.classList.remove(
-                "table-available",
-                "table-booked",
-                "table-selected"
-            );
-
-
-            button.setAttribute(
-                "data-selected",
-                "false"
-            );
-
-
-            button.removeAttribute(
-                "data-table-number"
-            );
-
-
-            button.removeAttribute(
-                "data-table-seats"
-            );
-
-
-            button.removeAttribute(
-                "data-table-status"
-            );
-
-
-            /*
-             * Remove old table listeners
-             * state marker.
-             */
-            button.dataset.selectionInitialized =
-                "false";
-
-        }
-    );
-
-
-    if (
-        typeof restaurantTableData ===
-            "undefined"
-    ) {
-        return;
-    }
-
-
-    if (
-        !restaurant ||
-        !restaurant.id
-    ) {
-        return;
-    }
-
-
-    const tables =
-        restaurantTableData[
-            restaurant.id
-        ];
-
-
-    if (
-        !Array.isArray(
-            tables
-        )
-    ) {
-        return;
-    }
-
-
-    tableButtons.forEach(
-        function (
-            button,
-            index
-        ) {
-
-            const table =
-                tables[index];
-
-
-            if (!table) {
-                return;
-            }
-
-
-            button.hidden =
-                false;
-
-
-            const status =
-                String(
-                    table.status ||
-                    "available"
-                )
-                    .toLowerCase()
-                    .trim();
-
-
-            button.textContent =
-                "Table " +
-                table.number +
-                " - " +
-                table.seats +
-                " Seats";
-
-
-            button.setAttribute(
-                "data-table-number",
-                table.number
-            );
-
-
-            button.setAttribute(
-                "data-table-seats",
-                table.seats
-            );
-
-
-            button.setAttribute(
-                "data-table-status",
-                status
-            );
-
-
-            button.setAttribute(
-                "data-selected",
-                "false"
-            );
-
-
-            /*
-             * Booked
-             */
-            if (
-                status ===
-                "booked"
-            ) {
-
-                button.disabled =
-                    true;
-
-
-                button.classList.add(
-                    "table-booked"
-                );
-
-
-                return;
-
-            }
-
-
-            /*
-             * Available
-             */
-            button.disabled =
-                false;
-
-
-            button.classList.add(
-                "table-available"
-            );
-
-        }
-    );
-
-
-    /*
-     * Reset selected text.
-     */
-    const selectedTableText =
-        document.getElementById(
-            "selectedTableText"
-        );
-
-
-    if (
-        selectedTableText
-    ) {
-
-        selectedTableText.textContent =
-            "No table selected.";
-
-    }
-
-
-    /*
-     * Initialize multi-select.
-     */
-    initializeTableSelection();
-
-}
-
-
-/* ========================================
-   TABLE SELECTION
-   MULTIPLE TABLES
-======================================== */
-
-function initializeTableSelection() {
-
-    const tableButtons =
-        document.querySelectorAll(
-            ".restaurant-table"
-        );
-
-
-    const selectedTableText =
-        document.getElementById(
-            "selectedTableText"
-        );
-
-
-    if (
-        !tableButtons.length
-    ) {
-        return;
-    }
-
-
-    tableButtons.forEach(
-        function (
-            button
-        ) {
-
-            if (
-                button.hidden ||
-                button.disabled
-            ) {
-                return;
-            }
-
-
-            /*
-             * Prevent duplicate listeners.
-             */
-            if (
-                button.dataset.selectionInitialized ===
-                "true"
-            ) {
-                return;
-            }
-
-
-            button.dataset.selectionInitialized =
-                "true";
-
-
-            button.addEventListener(
-                "click",
-                function () {
-
-                    if (
-                        button.hidden ||
-                        button.disabled
-                    ) {
-                        return;
-                    }
-
-
-                    const status =
-                        button.getAttribute(
-                            "data-table-status"
-                        );
-
-
-                    if (
-                        status !==
-                        "available"
-                    ) {
-                        return;
-                    }
-
-
-                    const isSelected =
-                        button.getAttribute(
-                            "data-selected"
-                        ) ===
-                        "true";
-
-
-                    /*
-                     * DESELECT
-                     */
-                    if (
-                        isSelected
-                    ) {
-
-                        button.setAttribute(
-                            "data-selected",
-                            "false"
-                        );
-
-
-                        button.classList.remove(
-                            "table-selected"
-                        );
-
-
-                        button.classList.add(
-                            "table-available"
-                        );
-
-                    }
-
-
-                    /*
-                     * SELECT
-                     */
-                    else {
-
-                        button.setAttribute(
-                            "data-selected",
-                            "true"
-                        );
-
-
-                        button.classList.remove(
-                            "table-available"
-                        );
-
-
-                        button.classList.add(
-                            "table-selected"
-                        );
-
-                    }
-
-
-                    updateSelectedTableText();
-
-                }
-            );
-
-        }
-    );
-
-
-    function updateSelectedTableText() {
-
-        if (
-            !selectedTableText
-        ) {
-            return;
-        }
-
-
-        const selectedTables =
-            Array.from(
-                document.querySelectorAll(
-                    ".restaurant-table"
-                )
-            )
-            .filter(
-                function (
-                    button
-                ) {
-
-                    return (
-                        button.getAttribute(
-                            "data-selected"
-                        ) ===
-                        "true"
-                    );
-
-                }
-            );
-
-
-        if (
-            selectedTables.length ===
-            0
-        ) {
-
-            selectedTableText.textContent =
-                "No table selected.";
-
-            selectedTableText.setAttribute(
-                "data-selected",
-                "false"
-            );
-
-            return;
-        }
-
-
-        const tableNumbers =
-            selectedTables.map(
-                function (
-                    button
-                ) {
-
-                    return (
-                        "Table " +
-                        button.getAttribute(
-                            "data-table-number"
-                        )
-                    );
-
-                }
-            );
-
-
-        selectedTableText.textContent =
-            "Selected Tables: " +
-            tableNumbers.join(
-                ", "
-            );
-
-
-        selectedTableText.setAttribute(
-            "data-selected",
-            "true"
-        );
-
-    }
-
-
-    updateSelectedTableText();
-
-}
-
-
-/* ========================================
-   BOOKING ACTION
-   MULTI TABLE
-======================================== */
-
-function initializeBookingAction() {
-
-    const bookButton =
-        document.getElementById(
-            "bookSelectedTableButton"
-        );
-
-
-    if (
-        !bookButton
-    ) {
-        return;
-    }
-
-
-    /*
-     * Remove every previous click handler
-     * attached through onclick.
-     */
-    bookButton.onclick =
-        null;
-
-
-    /*
-     * Direct click handler.
-     */
-    bookButton.onclick =
-        function () {
-
-            /*
-             * LOGIN CHECK
-             */
-            const isLoggedIn =
-                localStorage.getItem(
-                    "yummyTummyLoggedIn"
-                ) ===
-                "true";
-
-
-            if (
-                !isLoggedIn
-            ) {
-
-                const goLogin =
-                    window.confirm(
-                        "Please Login First"
-                    );
-
-
-                if (
-                    goLogin
-                ) {
-
-                    window.location.href =
-                        "login.html";
-
-                }
-
-
-                return;
-
-            }
-
-
-            /*
-             * Current restaurant
-             */
-            const restaurant =
-                window.currentBookingRestaurant;
-
-
-            if (
-                !restaurant
-            ) {
-
-                window.alert(
-                    "Restaurant information is missing. Please open the table booking page again."
-                );
-
-                return;
-
-            }
-
-
-            /*
-             * Find all selected tables.
-             */
-            const selectedTables =
-                Array.from(
-                    document.querySelectorAll(
-                        ".restaurant-table"
-                    )
-                )
-                .filter(
-                    function (
-                        button
-                    ) {
-
-                        return (
-                            button.getAttribute(
-                                "data-selected"
-                            ) ===
-                            "true"
-                        );
-
-                    }
-                );
-
-
-            /*
-             * Nothing selected.
-             */
-            if (
-                selectedTables.length ===
-                0
-            ) {
-
-                window.alert(
-                    "Please select at least one available table first."
-                );
-
-                return;
-
-            }
-
-
-            /*
-             * Get table numbers.
-             */
-            const tableNumbers =
-                selectedTables
-                    .map(
-                        function (
-                            button
-                        ) {
-
-                            return button.getAttribute(
-                                "data-table-number"
-                            );
-
-                        }
-                    )
-                    .filter(
-                        function (
-                            number
-                        ) {
-
-                            return Boolean(
-                                number
-                            );
-
-                        }
-                    );
-
-
-            if (
-                tableNumbers.length ===
-                0
-            ) {
-
-                window.alert(
-                    "Unable to identify selected tables."
-                );
-
-                return;
-
-            }
-
-
-            /*
-             * Save booking.
-             */
-            saveTableBooking(
-                restaurant,
-                tableNumbers
-            );
-
-        };
-
-}
-
-
-/* ========================================
-   LOGIN REQUIRED
-======================================== */
-
-function showLoginRequiredState() {
-
-    const bookingContent =
-        document.getElementById(
-            "bookingContent"
-        );
-
-
-    const loginRequiredState =
-        document.getElementById(
-            "loginRequiredState"
-        );
-
-
-    if (bookingContent) {
-
-        bookingContent.hidden =
-            true;
-
-    }
-
-
-    if (loginRequiredState) {
-
-        loginRequiredState.hidden =
-            false;
-
-    }
-
-}
-
-
-/* ========================================
-   SAVE TABLE BOOKING
-======================================== */
-
-function saveTableBooking(
-    restaurant,
-    tableNumbers
-) {
-
-    if (
-        !restaurant ||
-        !Array.isArray(
-            tableNumbers
-        ) ||
-        tableNumbers.length ===
-            0
-    ) {
-        return;
-    }
-
-
-    const now =
-        new Date();
-
-
-    const bookingId =
-        "YT-" +
-        now.getFullYear() +
-        String(
-            now.getMonth() + 1
-        ).padStart(
-            2,
-            "0"
-        ) +
-        String(
-            now.getDate()
-        ).padStart(
-            2,
-            "0"
-        ) +
-        "-" +
-        String(
-            now.getHours()
-        ).padStart(
-            2,
-            "0"
-        ) +
-        String(
-            now.getMinutes()
-        ).padStart(
-            2,
-            "0"
-        ) +
-        String(
-            now.getSeconds()
-        ).padStart(
-            2,
-            "0"
-        );
-
-
-    const booking = {
-
-        bookingId:
-            bookingId,
-
-        restaurantId:
-            restaurant.id,
-
-        restaurantName:
-            restaurant.name,
-
-        tableNumbers:
-            tableNumbers,
-
-        tableCount:
-            tableNumbers.length,
-
-        bookingDate:
-            now.toLocaleDateString(
-                "en-IN"
-            ),
-
-        bookingTime:
-            now.toLocaleTimeString(
-                "en-IN",
-                {
-                    hour:
-                        "2-digit",
-
-                    minute:
-                        "2-digit"
-                }
-            ),
-
-        bookedAt:
-            now.toISOString()
-
-    };
-
-
-    let existingBookings =
-        [];
-
-
-    try {
-
-        const storedBookings =
-            localStorage.getItem(
-                "yummyTummyTableBookings"
-            );
-
-
-        if (
-            storedBookings
-        ) {
-
-            const parsed =
-                JSON.parse(
-                    storedBookings
-                );
-
-
-            if (
-                Array.isArray(
-                    parsed
-                )
-            ) {
-
-                existingBookings =
-                    parsed;
-
-            }
-
-        }
-
-    } catch (error) {
-
-        existingBookings =
-            [];
-
-    }
-
-
-    existingBookings.push(
-        booking
-    );
-
-
-    localStorage.setItem(
-        "yummyTummyTableBookings",
-        JSON.stringify(
-            existingBookings
-        )
-    );
-
-
-    showBookingSuccess(
-        booking
-    );
-
-}
-
-
-/* ========================================
-   SHOW BOOKING SUCCESS
-======================================== */
-
-function showBookingSuccess(
-    booking
-) {
-
-    const bookingContent =
-        document.getElementById(
-            "bookingContent"
-        );
-
-
-    const successState =
-        document.getElementById(
-            "bookingSuccessState"
-        );
-
-
-    const bookingIdElement =
-        document.getElementById(
-            "successBookingId"
-        );
-
-
-    const restaurantElement =
-        document.getElementById(
-            "successRestaurantName"
-        );
-
-
-    const tablesElement =
-        document.getElementById(
-            "successTableNumber"
-        );
-
-
-    const dateElement =
-        document.getElementById(
-            "successBookingDate"
-        );
-
-
-    const timeElement =
-        document.getElementById(
-            "successBookingTime"
-        );
-
-
-    if (
-        bookingIdElement
-    ) {
-
-        bookingIdElement.textContent =
-            booking.bookingId;
-
-    }
-
-
-    if (
-        restaurantElement
-    ) {
-
-        restaurantElement.textContent =
-            booking.restaurantName;
-
-    }
-
-
-    if (
-        tablesElement
-    ) {
-
-        tablesElement.textContent =
-            booking.tableNumbers
-                .map(
-                    function (
-                        number
-                    ) {
-
-                        return (
-                            "Table " +
-                            number
-                        );
-
-                    }
-                )
-                .join(
-                    ", "
-                );
-
-    }
-
-
-    if (
-        dateElement
-    ) {
-
-        dateElement.textContent =
-            booking.bookingDate;
-
-    }
-
-
-    if (
-        timeElement
-    ) {
-
-        timeElement.textContent =
-            booking.bookingTime;
-
-    }
-
-
-    if (
-        bookingContent
-    ) {
-
-        bookingContent.hidden =
-            true;
-
-    }
-
-
-    if (
-        successState
-    ) {
-
-        successState.hidden =
-            false;
-
-    }
-
-}
-
 
 /* =========================================================
    HEADER AUTHENTICATION

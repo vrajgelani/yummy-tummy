@@ -1,7 +1,10 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
+
     <meta charset="UTF-8">
+
     <meta
         name="viewport"
         content="width=device-width, initial-scale=1.0"
@@ -12,30 +15,59 @@
         content="View and manage your saved vegetarian foods on Yummy Tummy."
     >
 
-    <title>Wishlist | Yummy Tummy</title>
+    <title>
+        Wishlist | Yummy Tummy
+    </title>
 
-    <link rel="stylesheet" href="css/style.css">
-    <link rel="stylesheet" href="css/wishlist.css">
+
+    <link
+        rel="stylesheet"
+        href="css/style.css"
+    >
+
+
+    <link
+        rel="stylesheet"
+        href="css/responsive.css"
+    >
+
+
+    <link
+        rel="stylesheet"
+        href="css/wishlist.css"
+    >
+
 </head>
+
 
 <body>
 
-    <!-- ==================== HEADER ==================== -->
+
+    <!-- =====================================================
+         HEADER
+    ====================================================== -->
 
     <header class="site-header">
 
         <div class="header-container">
 
+
+            <!-- LOGO -->
+
             <a
                 href="index.html"
                 class="brand-logo"
             >
+
                 <img
                     src="images/logo/yummy-tummy-logo.png"
                     alt="Yummy Tummy Logo"
                 >
+
             </a>
 
+
+            <!-- NAVIGATION -->
 
             <nav
                 class="main-navigation"
@@ -49,12 +81,14 @@
                     Home
                 </a>
 
+
                 <a
                     href="menu.html"
                     class="nav-link"
                 >
                     Menu
                 </a>
+
 
                 <a
                     href="restaurants.html"
@@ -66,6 +100,8 @@
             </nav>
 
 
+            <!-- SEARCH -->
+
             <div class="header-search">
 
                 <input
@@ -73,10 +109,13 @@
                     id="headerSearch"
                     placeholder="Search food or restaurant"
                     aria-label="Search food or restaurant"
+                    autocomplete="off"
                 >
 
             </div>
 
+
+            <!-- HEADER ACTIONS -->
 
             <div class="header-actions">
 
@@ -87,12 +126,14 @@
                     Wishlist
                 </a>
 
+
                 <a
                     href="cart.html"
                     class="header-action"
                 >
                     Cart
                 </a>
+
 
                 <a
                     href="login.html"
@@ -101,12 +142,14 @@
                     Login
                 </a>
 
+
                 <a
                     href="register.html"
                     class="header-action register-link"
                 >
                     Register
                 </a>
+
 
                 <a
                     href="profile.html"
@@ -122,7 +165,10 @@
     </header>
 
 
-    <!-- ==================== MAIN ==================== -->
+
+    <!-- =====================================================
+         MAIN
+    ====================================================== -->
 
     <main>
 
@@ -130,7 +176,10 @@
 
             <div class="wishlist-container">
 
-                <!-- ==================== PAGE HEADING ==================== -->
+
+                <!-- =================================================
+                     PAGE HEADING
+                ================================================== -->
 
                 <div class="wishlist-page-heading">
 
@@ -138,9 +187,11 @@
                         Yummy Tummy
                     </p>
 
+
                     <h1>
                         My Wishlist
                     </h1>
+
 
                     <p class="wishlist-subtitle">
                         Save your favourite vegetarian foods
@@ -150,12 +201,18 @@
                 </div>
 
 
-                <!-- ==================== WISHLIST CONTENT ==================== -->
+
+                <!-- =================================================
+                     WISHLIST CONTENT
+                ================================================== -->
 
                 <section
                     class="wishlist-content"
                     aria-live="polite"
                 >
+
+
+                    <!-- RESULTS HEADER -->
 
                     <div class="wishlist-results-heading">
 
@@ -163,21 +220,30 @@
                             Saved Foods
                         </h2>
 
-                        <p id="wishlistCount">
+
+                        <p
+                            id="wishlistCount"
+                        >
                             0 Foods
                         </p>
 
                     </div>
 
 
-                    <!-- ==================== FOOD GRID ==================== -->
+
+                    <!-- =================================================
+                         FOOD GRID
+                    ================================================== -->
 
                     <div
                         id="wishlistFoodGrid"
                         class="wishlist-food-grid"
                     >
 
-                        <!-- Food Card 1 -->
+
+                        <!-- =========================================
+                             FOOD CARD 1
+                        ========================================== -->
 
                         <article
                             class="wishlist-food-card"
@@ -185,7 +251,9 @@
                             hidden
                         >
 
-                            <div class="wishlist-food-image-wrapper">
+                            <div
+                                class="wishlist-food-image-wrapper"
+                            >
 
                                 <img
                                     src=""
@@ -197,7 +265,9 @@
                             </div>
 
 
-                            <div class="wishlist-food-content">
+                            <div
+                                class="wishlist-food-content"
+                            >
 
                                 <p
                                     class="wishlist-food-category"
@@ -206,6 +276,7 @@
                                     Category
                                 </p>
 
+
                                 <h3
                                     class="wishlist-food-name"
                                     data-wishlist-name
@@ -213,12 +284,14 @@
                                     Food Name
                                 </h3>
 
+
                                 <p
                                     class="wishlist-food-rating"
                                     data-wishlist-rating
                                 >
                                     Rating
                                 </p>
+
 
                                 <p
                                     class="wishlist-food-price"
@@ -228,7 +301,9 @@
                                 </p>
 
 
-                                <div class="wishlist-food-actions">
+                                <div
+                                    class="wishlist-food-actions"
+                                >
 
                                     <a
                                         href="food-details.html"
@@ -237,6 +312,7 @@
                                     >
                                         View Food
                                     </a>
+
 
                                     <button
                                         type="button"
@@ -253,7 +329,10 @@
                         </article>
 
 
-                        <!-- Food Card 2 -->
+
+                        <!-- =========================================
+                             FOOD CARD 2
+                        ========================================== -->
 
                         <article
                             class="wishlist-food-card"
@@ -261,7 +340,9 @@
                             hidden
                         >
 
-                            <div class="wishlist-food-image-wrapper">
+                            <div
+                                class="wishlist-food-image-wrapper"
+                            >
 
                                 <img
                                     src=""
@@ -273,7 +354,9 @@
                             </div>
 
 
-                            <div class="wishlist-food-content">
+                            <div
+                                class="wishlist-food-content"
+                            >
 
                                 <p
                                     class="wishlist-food-category"
@@ -282,6 +365,7 @@
                                     Category
                                 </p>
 
+
                                 <h3
                                     class="wishlist-food-name"
                                     data-wishlist-name
@@ -289,12 +373,14 @@
                                     Food Name
                                 </h3>
 
+
                                 <p
                                     class="wishlist-food-rating"
                                     data-wishlist-rating
                                 >
                                     Rating
                                 </p>
+
 
                                 <p
                                     class="wishlist-food-price"
@@ -304,7 +390,9 @@
                                 </p>
 
 
-                                <div class="wishlist-food-actions">
+                                <div
+                                    class="wishlist-food-actions"
+                                >
 
                                     <a
                                         href="food-details.html"
@@ -313,6 +401,7 @@
                                     >
                                         View Food
                                     </a>
+
 
                                     <button
                                         type="button"
@@ -329,7 +418,10 @@
                         </article>
 
 
-                        <!-- Food Card 3 -->
+
+                        <!-- =========================================
+                             FOOD CARD 3
+                        ========================================== -->
 
                         <article
                             class="wishlist-food-card"
@@ -337,7 +429,9 @@
                             hidden
                         >
 
-                            <div class="wishlist-food-image-wrapper">
+                            <div
+                                class="wishlist-food-image-wrapper"
+                            >
 
                                 <img
                                     src=""
@@ -349,7 +443,9 @@
                             </div>
 
 
-                            <div class="wishlist-food-content">
+                            <div
+                                class="wishlist-food-content"
+                            >
 
                                 <p
                                     class="wishlist-food-category"
@@ -358,6 +454,7 @@
                                     Category
                                 </p>
 
+
                                 <h3
                                     class="wishlist-food-name"
                                     data-wishlist-name
@@ -365,12 +462,14 @@
                                     Food Name
                                 </h3>
 
+
                                 <p
                                     class="wishlist-food-rating"
                                     data-wishlist-rating
                                 >
                                     Rating
                                 </p>
+
 
                                 <p
                                     class="wishlist-food-price"
@@ -380,7 +479,9 @@
                                 </p>
 
 
-                                <div class="wishlist-food-actions">
+                                <div
+                                    class="wishlist-food-actions"
+                                >
 
                                     <a
                                         href="food-details.html"
@@ -389,6 +490,7 @@
                                     >
                                         View Food
                                     </a>
+
 
                                     <button
                                         type="button"
@@ -405,7 +507,10 @@
                         </article>
 
 
-                        <!-- Food Card 4 -->
+
+                        <!-- =========================================
+                             FOOD CARD 4
+                        ========================================== -->
 
                         <article
                             class="wishlist-food-card"
@@ -413,7 +518,9 @@
                             hidden
                         >
 
-                            <div class="wishlist-food-image-wrapper">
+                            <div
+                                class="wishlist-food-image-wrapper"
+                            >
 
                                 <img
                                     src=""
@@ -425,7 +532,9 @@
                             </div>
 
 
-                            <div class="wishlist-food-content">
+                            <div
+                                class="wishlist-food-content"
+                            >
 
                                 <p
                                     class="wishlist-food-category"
@@ -434,6 +543,7 @@
                                     Category
                                 </p>
 
+
                                 <h3
                                     class="wishlist-food-name"
                                     data-wishlist-name
@@ -441,12 +551,14 @@
                                     Food Name
                                 </h3>
 
+
                                 <p
                                     class="wishlist-food-rating"
                                     data-wishlist-rating
                                 >
                                     Rating
                                 </p>
+
 
                                 <p
                                     class="wishlist-food-price"
@@ -456,7 +568,9 @@
                                 </p>
 
 
-                                <div class="wishlist-food-actions">
+                                <div
+                                    class="wishlist-food-actions"
+                                >
 
                                     <a
                                         href="food-details.html"
@@ -465,6 +579,7 @@
                                     >
                                         View Food
                                     </a>
+
 
                                     <button
                                         type="button"
@@ -481,7 +596,10 @@
                         </article>
 
 
-                        <!-- Food Card 5 -->
+
+                        <!-- =========================================
+                             FOOD CARD 5
+                        ========================================== -->
 
                         <article
                             class="wishlist-food-card"
@@ -489,7 +607,9 @@
                             hidden
                         >
 
-                            <div class="wishlist-food-image-wrapper">
+                            <div
+                                class="wishlist-food-image-wrapper"
+                            >
 
                                 <img
                                     src=""
@@ -501,7 +621,9 @@
                             </div>
 
 
-                            <div class="wishlist-food-content">
+                            <div
+                                class="wishlist-food-content"
+                            >
 
                                 <p
                                     class="wishlist-food-category"
@@ -510,6 +632,7 @@
                                     Category
                                 </p>
 
+
                                 <h3
                                     class="wishlist-food-name"
                                     data-wishlist-name
@@ -517,12 +640,14 @@
                                     Food Name
                                 </h3>
 
+
                                 <p
                                     class="wishlist-food-rating"
                                     data-wishlist-rating
                                 >
                                     Rating
                                 </p>
+
 
                                 <p
                                     class="wishlist-food-price"
@@ -532,7 +657,9 @@
                                 </p>
 
 
-                                <div class="wishlist-food-actions">
+                                <div
+                                    class="wishlist-food-actions"
+                                >
 
                                     <a
                                         href="food-details.html"
@@ -541,6 +668,7 @@
                                     >
                                         View Food
                                     </a>
+
 
                                     <button
                                         type="button"
@@ -557,7 +685,10 @@
                         </article>
 
 
-                        <!-- Food Card 6 -->
+
+                        <!-- =========================================
+                             FOOD CARD 6
+                        ========================================== -->
 
                         <article
                             class="wishlist-food-card"
@@ -565,7 +696,9 @@
                             hidden
                         >
 
-                            <div class="wishlist-food-image-wrapper">
+                            <div
+                                class="wishlist-food-image-wrapper"
+                            >
 
                                 <img
                                     src=""
@@ -577,7 +710,9 @@
                             </div>
 
 
-                            <div class="wishlist-food-content">
+                            <div
+                                class="wishlist-food-content"
+                            >
 
                                 <p
                                     class="wishlist-food-category"
@@ -586,6 +721,7 @@
                                     Category
                                 </p>
 
+
                                 <h3
                                     class="wishlist-food-name"
                                     data-wishlist-name
@@ -593,12 +729,14 @@
                                     Food Name
                                 </h3>
 
+
                                 <p
                                     class="wishlist-food-rating"
                                     data-wishlist-rating
                                 >
                                     Rating
                                 </p>
+
 
                                 <p
                                     class="wishlist-food-price"
@@ -608,7 +746,9 @@
                                 </p>
 
 
-                                <div class="wishlist-food-actions">
+                                <div
+                                    class="wishlist-food-actions"
+                                >
 
                                     <a
                                         href="food-details.html"
@@ -617,6 +757,7 @@
                                     >
                                         View Food
                                     </a>
+
 
                                     <button
                                         type="button"
@@ -635,21 +776,27 @@
                     </div>
 
 
-                    <!-- ==================== EMPTY STATE ==================== -->
+
+                    <!-- =================================================
+                         EMPTY STATE
+                    ================================================== -->
 
                     <div
                         id="wishlistEmptyState"
                         class="wishlist-empty-state"
+                        hidden
                     >
 
                         <h2>
                             Your Wishlist is Empty
                         </h2>
 
+
                         <p>
                             Save your favourite vegetarian foods
                             to find them here later.
                         </p>
+
 
                         <a
                             href="menu.html"
@@ -660,6 +807,7 @@
 
                     </div>
 
+
                 </section>
 
             </div>
@@ -669,162 +817,208 @@
     </main>
 
 
-    <!-- ==================== FOOTER ==================== -->
 
-    <footer class="site-footer">
+<!-- =====================================================
+     FOOTER
+====================================================== -->
 
-        <div class="footer-container">
+<footer class="site-footer">
 
-            <div class="footer-brand">
+    <div class="footer-container">
 
-                <a
-                    href="index.html"
-                    class="footer-brand-link"
+
+        <!-- ==================== FOOTER BRAND ==================== -->
+
+        <div class="footer-brand">
+
+            <a
+                href="index.html"
+                class="footer-brand-link"
+            >
+
+                <img
+                    src="images/logo/yummy-tummy-logo.png"
+                    alt="Yummy Tummy Logo"
+                    class="footer-logo"
                 >
 
-                    <img
-                        src="images/logo/yummy-tummy-logo.png"
-                        alt="Yummy Tummy Logo"
-                        class="footer-logo"
-                    >
-
-                </a>
-
-                <p class="footer-description">
-                    Delicious vegetarian food and restaurant table
-                    booking, all in one place.
-                </p>
-
-            </div>
+            </a>
 
 
-            <div class="footer-links">
-
-                <div class="footer-column">
-
-                    <h3 class="footer-title">
-                        Quick Links
-                    </h3>
-
-                    <a
-                        href="index.html"
-                        class="footer-link"
-                    >
-                        Home
-                    </a>
-
-                    <a
-                        href="menu.html"
-                        class="footer-link"
-                    >
-                        Menu
-                    </a>
-
-                    <a
-                        href="restaurants.html"
-                        class="footer-link"
-                    >
-                        Restaurants
-                    </a>
-
-                </div>
-
-
-                <div class="footer-column">
-
-                    <h3 class="footer-title">
-                        Customer
-                    </h3>
-
-                    <a
-                        href="wishlist.html"
-                        class="footer-link"
-                    >
-                        Wishlist
-                    </a>
-
-                    <a
-                        href="cart.html"
-                        class="footer-link"
-                    >
-                        Cart
-                    </a>
-
-                    <a
-                        href="profile.html"
-                        class="footer-link"
-                    >
-                        Profile
-                    </a>
-
-                    <a
-                        href="orders.html"
-                        class="footer-link"
-                    >
-                        My Orders
-                    </a>
-
-                </div>
-
-
-                <div class="footer-column">
-
-                    <h3 class="footer-title">
-                        Account
-                    </h3>
-
-                    <a
-                        href="login.html"
-                        class="footer-link"
-                    >
-                        Login
-                    </a>
-
-                    <a
-                        href="register.html"
-                        class="footer-link"
-                    >
-                        Register
-                    </a>
-
-                </div>
-
-
-                <div class="footer-column">
-
-                    <h3 class="footer-title">
-                        Yummy Tummy
-                    </h3>
-
-                    <p class="footer-information-text">
-                        Discover vegetarian food, restaurants and
-                        table booking with Yummy Tummy.
-                    </p>
-
-                </div>
-
-            </div>
-
-        </div>
-
-
-        <div class="footer-bottom">
-
-            <p class="copyright-text">
-                © 2026 Yummy Tummy. All rights reserved.
+            <p class="footer-description">
+                Delicious vegetarian food and restaurants,
+                all in one place.
             </p>
 
         </div>
 
-    </footer>
 
+
+        <!-- ==================== FOOTER LINKS ==================== -->
+
+        <div class="footer-links">
+
+
+            <!-- QUICK LINKS -->
+
+            <div class="footer-column">
+
+                <h3 class="footer-title">
+                    Quick Links
+                </h3>
+
+
+                <a
+                    href="index.html"
+                    class="footer-link"
+                >
+                    Home
+                </a>
+
+
+                <a
+                    href="menu.html"
+                    class="footer-link"
+                >
+                    Menu
+                </a>
+
+
+                <a
+                    href="restaurants.html"
+                    class="footer-link"
+                >
+                    Restaurants
+                </a>
+
+            </div>
+
+
+
+            <!-- CUSTOMER -->
+
+            <div class="footer-column">
+
+                <h3 class="footer-title">
+                    Customer
+                </h3>
+
+
+                <a
+                    href="wishlist.html"
+                    class="footer-link"
+                >
+                    Wishlist
+                </a>
+
+
+                <a
+                    href="cart.html"
+                    class="footer-link"
+                >
+                    Cart
+                </a>
+
+
+                <a
+                    href="orders.html"
+                    class="footer-link"
+                >
+                    My Orders
+                </a>
+
+
+                <a
+                    href="profile.html"
+                    class="footer-link"
+                >
+                    Profile
+                </a>
+
+            </div>
+
+
+
+            <!-- ACCOUNT -->
+
+            <div class="footer-column">
+
+                <h3 class="footer-title">
+                    Account
+                </h3>
+
+
+                <a
+                    href="login.html"
+                    class="footer-link"
+                >
+                    Login
+                </a>
+
+
+                <a
+                    href="register.html"
+                    class="footer-link"
+                >
+                    Register
+                </a>
+
+            </div>
+
+
+
+            <!-- YUMMY TUMMY -->
+
+            <div class="footer-column">
+
+                <h3 class="footer-title">
+                    Yummy Tummy
+                </h3>
+
+
+                <p class="footer-information-text">
+                    Discover delicious vegetarian food
+                    and restaurants with Yummy Tummy.
+                </p>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+
+    <!-- ==================== FOOTER BOTTOM ==================== -->
+
+    <div class="footer-bottom">
+
+        <p class="copyright-text">
+            © 2026 Yummy Tummy. All rights reserved.
+        </p>
+
+    </div>
+
+</footer>
+
+
+
+    <!-- =====================================================
+         JAVASCRIPT
+    ====================================================== -->
 
     <script src="js/menu-data.js"></script>
+
     <script src="js/restaurant-data.js"></script>
+
     <script src="js/restaurant-menu-data.js"></script>
+
     <script src="js/auth.js"></script>
+
     <script src="js/wishlist.js"></script>
+
     <script src="js/main.js"></script>
 
 </body>
+
 </html>
