@@ -130,9 +130,9 @@ const restaurantData = [
         description:
             "Elegant vegetarian Awadhi cuisine inspired by the royal culinary traditions of Lucknow.",
         outsideImage:
-            "images/restaurants/awadhi-dastarkhan-outside.png",
+            "images/restaurants/awadhi-dastarkhwan-outside.png",
         insideImage:
-            "images/restaurants/awadhi-dastarkhan-inside.png"
+            "images/restaurants/awadhi-dastarkhwan-inside.png"
     },
 
     {

@@ -1266,106 +1266,277 @@ function showInvalidRestaurant() {
 }
 
 
-/* =========================================================
+/* ========================================
    BOOK TABLE PAGE
-========================================================= */
+======================================== */
 
 function initializeBookTablePage() {
-    const page =
+
+    const bookTablePage =
         document.getElementById(
             "bookTablePage"
         );
 
-    if (!page) {
+
+    if (
+        !bookTablePage ||
+        typeof restaurantData ===
+            "undefined"
+    ) {
         return;
     }
 
-    const params =
+
+    const urlParams =
         new URLSearchParams(
             window.location.search
         );
 
-    const restaurantId =
-        params.get("restaurant");
 
-    const restaurant =
-        findRestaurantById(
-            restaurantId
+    const restaurantId =
+        urlParams.get(
+            "restaurant"
         );
 
+
+    const restaurant =
+        restaurantData.find(
+            function (item) {
+
+                return (
+                    item.id ===
+                    restaurantId
+                );
+
+            }
+        );
+
+
     if (!restaurant) {
+
         showInvalidBookingRestaurant();
+
         return;
+
     }
 
-    setText(
-        "bookingRestaurantName",
-        restaurant.name
-    );
 
-    setText(
-        "bookingRestaurantCuisine",
-        restaurant.cuisine
-    );
+    /*
+     * Keep current restaurant globally
+     * so the booking button can access it.
+     */
+    window.currentBookingRestaurant =
+        restaurant;
 
-    setText(
-        "bookingRestaurantLocation",
-        restaurant.location
-    );
 
-    setText(
-        "bookingRestaurantRating",
-        restaurant.rating
-            ? restaurant.rating.toFixed(1)
-            : "0.0"
-    );
+    const restaurantName =
+        document.getElementById(
+            "bookingRestaurantName"
+        );
+
+
+    const restaurantCuisine =
+        document.getElementById(
+            "bookingRestaurantCuisine"
+        );
+
+
+    const restaurantLocation =
+        document.getElementById(
+            "bookingRestaurantLocation"
+        );
+
+
+    const restaurantRating =
+        document.getElementById(
+            "bookingRestaurantRating"
+        );
+
+
+    const bookTableTitle =
+        document.getElementById(
+            "bookTableTitle"
+        );
+
+
+    if (restaurantName) {
+
+        restaurantName.textContent =
+            restaurant.name;
+
+    }
+
+
+    if (restaurantCuisine) {
+
+        restaurantCuisine.textContent =
+            restaurant.cuisine;
+
+    }
+
+
+    if (restaurantLocation) {
+
+        restaurantLocation.textContent =
+            restaurant.location;
+
+    }
+
+
+    if (restaurantRating) {
+
+        restaurantRating.textContent =
+            restaurant.rating;
+
+    }
+
+
+    if (bookTableTitle) {
+
+        bookTableTitle.textContent =
+            "Book a Table at " +
+            restaurant.name;
+
+    }
+
+
+    document.title =
+        "Book Table - " +
+        restaurant.name +
+        " | Yummy Tummy";
+
 
     initializeRestaurantTables(
         restaurant
     );
+
+
+    initializeBookingAction();
 }
 
 
-/* =========================================================
-   INVALID BOOKING
-========================================================= */
+/* ========================================
+   INVALID BOOKING RESTAURANT
+======================================== */
 
 function showInvalidBookingRestaurant() {
-    const content =
+
+    const bookingContent =
         document.getElementById(
-            "bookTableContent"
+            "bookingContent"
         );
 
-    const invalid =
+
+    const invalidState =
         document.getElementById(
             "invalidBookingState"
         );
 
-    if (content) {
-        content.hidden = true;
+
+    const tableSection =
+        document.getElementById(
+            "tableBookingSection"
+        );
+
+
+    if (bookingContent) {
+
+        bookingContent.hidden =
+            true;
+
     }
 
-    if (invalid) {
-        invalid.hidden = false;
+
+    if (tableSection) {
+
+        tableSection.hidden =
+            true;
+
     }
+
+
+    if (invalidState) {
+
+        invalidState.hidden =
+            false;
+
+    }
+
 }
 
 
-/* =========================================================
+/* ========================================
    RESTAURANT TABLES
-========================================================= */
+======================================== */
 
 function initializeRestaurantTables(
     restaurant
 ) {
-    const tableGrid =
-        document.getElementById(
-            "restaurantTableGrid"
+
+    const tableButtons =
+        document.querySelectorAll(
+            ".restaurant-table"
         );
 
-    if (!tableGrid) {
+
+    if (
+        !tableButtons.length
+    ) {
         return;
     }
+
+
+    /*
+     * Reset all tables.
+     */
+    tableButtons.forEach(
+        function (button) {
+
+            button.hidden =
+                true;
+
+            button.disabled =
+                true;
+
+
+            button.classList.remove(
+                "table-available",
+                "table-booked",
+                "table-selected"
+            );
+
+
+            button.setAttribute(
+                "data-selected",
+                "false"
+            );
+
+
+            button.removeAttribute(
+                "data-table-number"
+            );
+
+
+            button.removeAttribute(
+                "data-table-seats"
+            );
+
+
+            button.removeAttribute(
+                "data-table-status"
+            );
+
+
+            /*
+             * Remove old table listeners
+             * state marker.
+             */
+            button.dataset.selectionInitialized =
+                "false";
+
+        }
+    );
+
 
     if (
         typeof restaurantTableData ===
@@ -1374,248 +1545,754 @@ function initializeRestaurantTables(
         return;
     }
 
-    const tableData =
-        restaurantTableData[
-            restaurant.id
-        ];
 
     if (
-        !Array.isArray(tableData)
+        !restaurant ||
+        !restaurant.id
     ) {
         return;
     }
 
-    const buttons =
-        Array.from(
-            tableGrid.querySelectorAll(
-                ".restaurant-table"
-            )
-        );
 
-    buttons.forEach(
-        function (button, index) {
+    const tables =
+        restaurantTableData[
+            restaurant.id
+        ];
+
+
+    if (
+        !Array.isArray(
+            tables
+        )
+    ) {
+        return;
+    }
+
+
+    tableButtons.forEach(
+        function (
+            button,
+            index
+        ) {
+
             const table =
-                tableData[index];
+                tables[index];
+
 
             if (!table) {
-                button.hidden = true;
                 return;
             }
 
-            button.hidden = false;
+
+            button.hidden =
+                false;
+
+
+            const status =
+                String(
+                    table.status ||
+                    "available"
+                )
+                    .toLowerCase()
+                    .trim();
+
 
             button.textContent =
                 "Table " +
-                table.number;
+                table.number +
+                " - " +
+                table.seats +
+                " Seats";
+
 
             button.setAttribute(
                 "data-table-number",
                 table.number
             );
 
+
             button.setAttribute(
                 "data-table-seats",
                 table.seats
             );
 
+
             button.setAttribute(
                 "data-table-status",
-                table.status
+                status
             );
 
-            button.classList.remove(
-                "table-available",
-                "table-booked",
-                "table-selected"
+
+            button.setAttribute(
+                "data-selected",
+                "false"
             );
 
+
+            /*
+             * Booked
+             */
             if (
-                table.status ===
+                status ===
                 "booked"
             ) {
+
+                button.disabled =
+                    true;
+
+
                 button.classList.add(
                     "table-booked"
                 );
 
-                button.disabled = true;
-            } else {
-                button.classList.add(
-                    "table-available"
-                );
 
-                button.disabled = false;
+                return;
+
             }
+
+
+            /*
+             * Available
+             */
+            button.disabled =
+                false;
+
+
+            button.classList.add(
+                "table-available"
+            );
+
         }
     );
 
+
+    /*
+     * Reset selected text.
+     */
+    const selectedTableText =
+        document.getElementById(
+            "selectedTableText"
+        );
+
+
+    if (
+        selectedTableText
+    ) {
+
+        selectedTableText.textContent =
+            "No table selected.";
+
+    }
+
+
+    /*
+     * Initialize multi-select.
+     */
     initializeTableSelection();
-    initializeBookingAction();
+
 }
 
 
-/* =========================================================
+/* ========================================
    TABLE SELECTION
-========================================================= */
+   MULTIPLE TABLES
+======================================== */
 
 function initializeTableSelection() {
-    const buttons =
+
+    const tableButtons =
         document.querySelectorAll(
             ".restaurant-table"
         );
 
-    buttons.forEach(
-        function (button) {
+
+    const selectedTableText =
+        document.getElementById(
+            "selectedTableText"
+        );
+
+
+    if (
+        !tableButtons.length
+    ) {
+        return;
+    }
+
+
+    tableButtons.forEach(
+        function (
+            button
+        ) {
+
+            if (
+                button.hidden ||
+                button.disabled
+            ) {
+                return;
+            }
+
+
+            /*
+             * Prevent duplicate listeners.
+             */
+            if (
+                button.dataset.selectionInitialized ===
+                "true"
+            ) {
+                return;
+            }
+
+
+            button.dataset.selectionInitialized =
+                "true";
+
+
             button.addEventListener(
                 "click",
                 function () {
+
                     if (
+                        button.hidden ||
                         button.disabled
                     ) {
                         return;
                     }
 
-                    buttons.forEach(
-                        function (otherButton) {
-                            if (
-                                !otherButton.disabled
-                            ) {
-                                otherButton.classList.remove(
-                                    "table-selected"
-                                );
 
-                                otherButton.classList.add(
-                                    "table-available"
-                                );
-                            }
-                        }
-                    );
+                    const status =
+                        button.getAttribute(
+                            "data-table-status"
+                        );
 
-                    button.classList.remove(
-                        "table-available"
-                    );
 
-                    button.classList.add(
-                        "table-selected"
-                    );
+                    if (
+                        status !==
+                        "available"
+                    ) {
+                        return;
+                    }
 
-                    button.setAttribute(
-                        "data-selected",
-                        "true"
-                    );
+
+                    const isSelected =
+                        button.getAttribute(
+                            "data-selected"
+                        ) ===
+                        "true";
+
+
+                    /*
+                     * DESELECT
+                     */
+                    if (
+                        isSelected
+                    ) {
+
+                        button.setAttribute(
+                            "data-selected",
+                            "false"
+                        );
+
+
+                        button.classList.remove(
+                            "table-selected"
+                        );
+
+
+                        button.classList.add(
+                            "table-available"
+                        );
+
+                    }
+
+
+                    /*
+                     * SELECT
+                     */
+                    else {
+
+                        button.setAttribute(
+                            "data-selected",
+                            "true"
+                        );
+
+
+                        button.classList.remove(
+                            "table-available"
+                        );
+
+
+                        button.classList.add(
+                            "table-selected"
+                        );
+
+                    }
+
+
+                    updateSelectedTableText();
+
                 }
             );
+
         }
     );
+
+
+    function updateSelectedTableText() {
+
+        if (
+            !selectedTableText
+        ) {
+            return;
+        }
+
+
+        const selectedTables =
+            Array.from(
+                document.querySelectorAll(
+                    ".restaurant-table"
+                )
+            )
+            .filter(
+                function (
+                    button
+                ) {
+
+                    return (
+                        button.getAttribute(
+                            "data-selected"
+                        ) ===
+                        "true"
+                    );
+
+                }
+            );
+
+
+        if (
+            selectedTables.length ===
+            0
+        ) {
+
+            selectedTableText.textContent =
+                "No table selected.";
+
+            selectedTableText.setAttribute(
+                "data-selected",
+                "false"
+            );
+
+            return;
+        }
+
+
+        const tableNumbers =
+            selectedTables.map(
+                function (
+                    button
+                ) {
+
+                    return (
+                        "Table " +
+                        button.getAttribute(
+                            "data-table-number"
+                        )
+                    );
+
+                }
+            );
+
+
+        selectedTableText.textContent =
+            "Selected Tables: " +
+            tableNumbers.join(
+                ", "
+            );
+
+
+        selectedTableText.setAttribute(
+            "data-selected",
+            "true"
+        );
+
+    }
+
+
+    updateSelectedTableText();
+
 }
 
 
-/* =========================================================
+/* ========================================
    BOOKING ACTION
-========================================================= */
+   MULTI TABLE
+======================================== */
 
 function initializeBookingAction() {
-    const button =
+
+    const bookButton =
         document.getElementById(
-            "confirmTableBooking"
+            "bookSelectedTableButton"
         );
 
-    if (!button) {
+
+    if (
+        !bookButton
+    ) {
         return;
     }
 
-    button.addEventListener(
-        "click",
+
+    /*
+     * Remove every previous click handler
+     * attached through onclick.
+     */
+    bookButton.onclick =
+        null;
+
+
+    /*
+     * Direct click handler.
+     */
+    bookButton.onclick =
         function () {
-            const loggedIn =
+
+            /*
+             * LOGIN CHECK
+             */
+            const isLoggedIn =
                 localStorage.getItem(
                     "yummyTummyLoggedIn"
-                ) === "true";
+                ) ===
+                "true";
 
-            if (!loggedIn) {
-                showLoginRequiredState();
+
+            if (
+                !isLoggedIn
+            ) {
+
+                const goLogin =
+                    window.confirm(
+                        "Please Login First"
+                    );
+
+
+                if (
+                    goLogin
+                ) {
+
+                    window.location.href =
+                        "login.html";
+
+                }
+
+
                 return;
+
             }
 
-            const selected =
-                document.querySelector(
-                    ".restaurant-table.table-selected"
-                );
 
-            if (!selected) {
-                alert(
-                    "Please select an available table first."
+            /*
+             * Current restaurant
+             */
+            const restaurant =
+                window.currentBookingRestaurant;
+
+
+            if (
+                !restaurant
+            ) {
+
+                window.alert(
+                    "Restaurant information is missing. Please open the table booking page again."
                 );
 
                 return;
+
             }
 
+
+            /*
+             * Find all selected tables.
+             */
+            const selectedTables =
+                Array.from(
+                    document.querySelectorAll(
+                        ".restaurant-table"
+                    )
+                )
+                .filter(
+                    function (
+                        button
+                    ) {
+
+                        return (
+                            button.getAttribute(
+                                "data-selected"
+                            ) ===
+                            "true"
+                        );
+
+                    }
+                );
+
+
+            /*
+             * Nothing selected.
+             */
+            if (
+                selectedTables.length ===
+                0
+            ) {
+
+                window.alert(
+                    "Please select at least one available table first."
+                );
+
+                return;
+
+            }
+
+
+            /*
+             * Get table numbers.
+             */
+            const tableNumbers =
+                selectedTables
+                    .map(
+                        function (
+                            button
+                        ) {
+
+                            return button.getAttribute(
+                                "data-table-number"
+                            );
+
+                        }
+                    )
+                    .filter(
+                        function (
+                            number
+                        ) {
+
+                            return Boolean(
+                                number
+                            );
+
+                        }
+                    );
+
+
+            if (
+                tableNumbers.length ===
+                0
+            ) {
+
+                window.alert(
+                    "Unable to identify selected tables."
+                );
+
+                return;
+
+            }
+
+
+            /*
+             * Save booking.
+             */
             saveTableBooking(
-                selected
+                restaurant,
+                tableNumbers
             );
-        }
-    );
+
+        };
+
 }
 
 
-/* =========================================================
+/* ========================================
    LOGIN REQUIRED
-========================================================= */
+======================================== */
 
 function showLoginRequiredState() {
-    const shouldLogin =
-        window.confirm(
-            "Please Login First"
+
+    const bookingContent =
+        document.getElementById(
+            "bookingContent"
         );
 
-    if (shouldLogin) {
-        window.location.href =
-            "login.html";
+
+    const loginRequiredState =
+        document.getElementById(
+            "loginRequiredState"
+        );
+
+
+    if (bookingContent) {
+
+        bookingContent.hidden =
+            true;
+
     }
+
+
+    if (loginRequiredState) {
+
+        loginRequiredState.hidden =
+            false;
+
+    }
+
 }
 
 
-/* =========================================================
+/* ========================================
    SAVE TABLE BOOKING
-========================================================= */
+======================================== */
 
 function saveTableBooking(
-    selectedTable
+    restaurant,
+    tableNumbers
 ) {
-    const params =
-        new URLSearchParams(
-            window.location.search
+
+    if (
+        !restaurant ||
+        !Array.isArray(
+            tableNumbers
+        ) ||
+        tableNumbers.length ===
+            0
+    ) {
+        return;
+    }
+
+
+    const now =
+        new Date();
+
+
+    const bookingId =
+        "YT-" +
+        now.getFullYear() +
+        String(
+            now.getMonth() + 1
+        ).padStart(
+            2,
+            "0"
+        ) +
+        String(
+            now.getDate()
+        ).padStart(
+            2,
+            "0"
+        ) +
+        "-" +
+        String(
+            now.getHours()
+        ).padStart(
+            2,
+            "0"
+        ) +
+        String(
+            now.getMinutes()
+        ).padStart(
+            2,
+            "0"
+        ) +
+        String(
+            now.getSeconds()
+        ).padStart(
+            2,
+            "0"
         );
 
-    const restaurantId =
-        params.get("restaurant");
 
     const booking = {
+
+        bookingId:
+            bookingId,
+
         restaurantId:
-            restaurantId,
-        tableNumber:
-            selectedTable.getAttribute(
-                "data-table-number"
+            restaurant.id,
+
+        restaurantName:
+            restaurant.name,
+
+        tableNumbers:
+            tableNumbers,
+
+        tableCount:
+            tableNumbers.length,
+
+        bookingDate:
+            now.toLocaleDateString(
+                "en-IN"
             ),
-        seats:
-            selectedTable.getAttribute(
-                "data-table-seats"
+
+        bookingTime:
+            now.toLocaleTimeString(
+                "en-IN",
+                {
+                    hour:
+                        "2-digit",
+
+                    minute:
+                        "2-digit"
+                }
             ),
-        status:
-            "Booked",
-        createdAt:
-            new Date().toISOString()
+
+        bookedAt:
+            now.toISOString()
+
     };
 
-    const existingBookings =
-        JSON.parse(
+
+    let existingBookings =
+        [];
+
+
+    try {
+
+        const storedBookings =
             localStorage.getItem(
                 "yummyTummyTableBookings"
-            ) || "[]"
-        );
+            );
+
+
+        if (
+            storedBookings
+        ) {
+
+            const parsed =
+                JSON.parse(
+                    storedBookings
+                );
+
+
+            if (
+                Array.isArray(
+                    parsed
+                )
+            ) {
+
+                existingBookings =
+                    parsed;
+
+            }
+
+        }
+
+    } catch (error) {
+
+        existingBookings =
+            [];
+
+    }
+
 
     existingBookings.push(
         booking
     );
+
 
     localStorage.setItem(
         "yummyTummyTableBookings",
@@ -1624,18 +2301,148 @@ function saveTableBooking(
         )
     );
 
-    showBookingSuccess();
+
+    showBookingSuccess(
+        booking
+    );
+
 }
 
 
-/* =========================================================
-   BOOKING SUCCESS
-========================================================= */
+/* ========================================
+   SHOW BOOKING SUCCESS
+======================================== */
 
-function showBookingSuccess() {
-    alert(
-        "Table booked successfully!"
-    );
+function showBookingSuccess(
+    booking
+) {
+
+    const bookingContent =
+        document.getElementById(
+            "bookingContent"
+        );
+
+
+    const successState =
+        document.getElementById(
+            "bookingSuccessState"
+        );
+
+
+    const bookingIdElement =
+        document.getElementById(
+            "successBookingId"
+        );
+
+
+    const restaurantElement =
+        document.getElementById(
+            "successRestaurantName"
+        );
+
+
+    const tablesElement =
+        document.getElementById(
+            "successTableNumber"
+        );
+
+
+    const dateElement =
+        document.getElementById(
+            "successBookingDate"
+        );
+
+
+    const timeElement =
+        document.getElementById(
+            "successBookingTime"
+        );
+
+
+    if (
+        bookingIdElement
+    ) {
+
+        bookingIdElement.textContent =
+            booking.bookingId;
+
+    }
+
+
+    if (
+        restaurantElement
+    ) {
+
+        restaurantElement.textContent =
+            booking.restaurantName;
+
+    }
+
+
+    if (
+        tablesElement
+    ) {
+
+        tablesElement.textContent =
+            booking.tableNumbers
+                .map(
+                    function (
+                        number
+                    ) {
+
+                        return (
+                            "Table " +
+                            number
+                        );
+
+                    }
+                )
+                .join(
+                    ", "
+                );
+
+    }
+
+
+    if (
+        dateElement
+    ) {
+
+        dateElement.textContent =
+            booking.bookingDate;
+
+    }
+
+
+    if (
+        timeElement
+    ) {
+
+        timeElement.textContent =
+            booking.bookingTime;
+
+    }
+
+
+    if (
+        bookingContent
+    ) {
+
+        bookingContent.hidden =
+            true;
+
+    }
+
+
+    if (
+        successState
+    ) {
+
+        successState.hidden =
+            false;
+
+    }
+
 }
 
 
@@ -1996,3 +2803,5 @@ document.addEventListener(
 
     }
 );
+
+        
