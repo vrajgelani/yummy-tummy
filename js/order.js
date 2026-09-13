@@ -135,7 +135,9 @@ function createYummyTummyOrder() {
         getCheckoutCartItems();
 
 
-    if (!cartItems.length) {
+    if (
+        !cartItems.length
+    ) {
 
         window.alert(
             "Your cart is empty."
@@ -182,57 +184,197 @@ function createYummyTummyOrder() {
     }
 
 
+    /*
+     * ==============================
+     * SUBTOTAL
+     * ==============================
+     */
+
     const subtotal =
         typeof calculateCartSubtotal ===
         "function"
-            ? calculateCartSubtotal(cartItems)
+            ? calculateCartSubtotal(
+                cartItems
+            )
             : 0;
 
 
-    const deliveryFee =
-        typeof calculateDeliveryFee ===
-        "function"
-            ? calculateDeliveryFee(cartItems)
-            : 0;
+    /*
+     * ==============================
+     * COUPON
+     * ==============================
+     */
 
+    let coupon =
+        null;
+
+
+    try {
+
+        if (
+            typeof getSavedCoupon ===
+            "function"
+        ) {
+
+            coupon =
+                getSavedCoupon();
+
+        }
+
+    } catch (error) {
+
+        coupon =
+            null;
+
+    }
+
+
+    /*
+     * ==============================
+     * DISCOUNT
+     * ==============================
+     */
+
+    let couponDiscount =
+        0;
+
+
+    try {
+
+        if (
+            typeof calculateCouponDiscount ===
+            "function"
+        ) {
+
+            couponDiscount =
+                calculateCouponDiscount(
+                    coupon,
+                    subtotal
+                );
+
+        }
+
+    } catch (error) {
+
+        couponDiscount =
+            0;
+
+    }
+
+
+    /*
+     * ==============================
+     * DELIVERY FEE
+     * ==============================
+     */
+
+    let deliveryFee =
+        0;
+
+
+    try {
+
+        if (
+            typeof getCheckoutDeliveryFee ===
+            "function"
+        ) {
+
+            deliveryFee =
+                getCheckoutDeliveryFee();
+
+        } else if (
+            typeof calculateDeliveryFee ===
+            "function"
+        ) {
+
+            deliveryFee =
+                calculateDeliveryFee(
+                    cartItems
+                );
+
+        }
+
+    } catch (error) {
+
+        deliveryFee =
+            cartItems.length > 0
+                ? 40
+                : 0;
+
+    }
+
+
+    /*
+     * ==============================
+     * GRAND TOTAL
+     * ==============================
+     */
 
     const grandTotal =
-        subtotal +
-        deliveryFee;
+        Math.max(
+            0,
+            subtotal -
+            couponDiscount +
+            deliveryFee
+        );
 
+
+    /*
+     * ==============================
+     * ORDER ITEMS
+     * ==============================
+     */
 
     const orderItems =
-        cartItems.map((cartItem) => {
+        cartItems.map(
+            function (
+                cartItem
+            ) {
 
-            return {
-                foodId:
-                    cartItem.foodId,
+                return {
 
-                name:
-                    cartItem.food.name,
+                    foodId:
+                        cartItem.foodId,
 
-                category:
-                    cartItem.food.category,
+                    name:
+                        cartItem.food.name,
 
-                price:
-                    Number(cartItem.food.price),
+                    category:
+                        cartItem.food.category,
 
-                quantity:
-                    cartItem.quantity,
+                    price:
+                        Number(
+                            cartItem.food.price
+                        ),
 
-                image:
-                    cartItem.food.image || "",
+                    quantity:
+                        cartItem.quantity,
 
-                restaurantId:
-                    cartItem.restaurantId || "",
+                    image:
+                        cartItem.food.image ||
+                        "",
 
-                itemTotal:
-                    Number(cartItem.food.price) *
-                    cartItem.quantity
-            };
+                    restaurantId:
+                        cartItem.restaurantId ||
+                        "",
 
-        });
+                    itemTotal:
+                        Number(
+                            cartItem.food.price
+                        ) *
+                        cartItem.quantity
 
+                };
+
+            }
+        );
+
+
+    /*
+     * ==============================
+     * ORDER OBJECT
+     * ==============================
+     */
 
     const order = {
 
@@ -256,6 +398,14 @@ function createYummyTummyOrder() {
         subtotal:
             subtotal,
 
+        coupon:
+            coupon
+                ? coupon.code
+                : "",
+
+        couponDiscount:
+            couponDiscount,
+
         deliveryFee:
             deliveryFee,
 
@@ -271,13 +421,20 @@ function createYummyTummyOrder() {
     };
 
 
+    /*
+     * ==============================
+     * GET EXISTING ORDERS
+     * ==============================
+     */
+
     const storedOrders =
         localStorage.getItem(
             "yummyTummyOrders"
         );
 
 
-    let orders = [];
+    let orders =
+        [];
 
 
     if (storedOrders) {
@@ -290,7 +447,11 @@ function createYummyTummyOrder() {
                 );
 
 
-            if (Array.isArray(parsedOrders)) {
+            if (
+                Array.isArray(
+                    parsedOrders
+                )
+            ) {
 
                 orders =
                     parsedOrders;
@@ -299,12 +460,19 @@ function createYummyTummyOrder() {
 
         } catch (error) {
 
-            orders = [];
+            orders =
+                [];
 
         }
 
     }
 
+
+    /*
+     * ==============================
+     * SAVE ORDER
+     * ==============================
+     */
 
     orders.unshift(
         order
@@ -313,14 +481,39 @@ function createYummyTummyOrder() {
 
     localStorage.setItem(
         "yummyTummyOrders",
-        JSON.stringify(orders)
+        JSON.stringify(
+            orders
+        )
     );
 
+
+    /*
+     * ==============================
+     * CLEAR CART
+     * ==============================
+     */
 
     localStorage.removeItem(
         "yummyTummyCart"
     );
 
+
+    /*
+     * ==============================
+     * CLEAR COUPON
+     * ==============================
+     */
+
+    localStorage.removeItem(
+        "yummyTummyCoupon"
+    );
+
+
+    /*
+     * ==============================
+     * SUCCESS
+     * ==============================
+     */
 
     window.alert(
         "Your order has been placed successfully."

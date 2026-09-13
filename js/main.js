@@ -1804,3 +1804,195 @@ function getTableStatusLabel(status) {
 
     return "Available";
 }
+
+/* =========================================================
+   YUMMY TUMMY
+   HOME PAGE OFFER BUTTONS
+   ========================================================= */
+
+function initializeHomeOfferButtons() {
+
+    const offerButtons =
+        document.querySelectorAll(
+            "button, a"
+        );
+
+
+    if (!offerButtons.length) {
+        return;
+    }
+
+
+    offerButtons.forEach(
+        function (button) {
+
+            const buttonText =
+                String(
+                    button.textContent || ""
+                )
+                    .trim()
+                    .toLowerCase();
+
+
+            /*
+             * Only target offer buttons.
+             */
+            if (
+                !buttonText.includes(
+                    "apply offer"
+                ) &&
+                !buttonText.includes(
+                    "applied"
+                )
+            ) {
+                return;
+            }
+
+
+            /*
+             * Find nearest offer card/container.
+             */
+            const offerCard =
+                button.closest(
+                    "article, .offer-card, .special-offer-card, .offer-item, .offer, section, div"
+                );
+
+
+            if (!offerCard) {
+                return;
+            }
+
+
+            const cardText =
+                String(
+                    offerCard.textContent || ""
+                )
+                    .toUpperCase();
+
+
+            /*
+             * Detect coupon code from the
+             * offer card itself.
+             */
+            let couponCode =
+                "";
+
+
+            if (
+                cardText.includes(
+                    "YUMMY100"
+                )
+            ) {
+
+                couponCode =
+                    "YUMMY100";
+
+            } else if (
+                cardText.includes(
+                    "FOODIE20"
+                )
+            ) {
+
+                couponCode =
+                    "FOODIE20";
+
+            } else if (
+                cardText.includes(
+                    "FREEDEL"
+                )
+            ) {
+
+                couponCode =
+                    "FREEDEL";
+
+            }
+
+
+            if (!couponCode) {
+                return;
+            }
+
+
+            /*
+             * Prevent duplicate event listeners.
+             */
+            if (
+                button.dataset.offerInitialized ===
+                "true"
+            ) {
+                return;
+            }
+
+
+            button.dataset.offerInitialized =
+                "true";
+
+
+            button.addEventListener(
+                "click",
+                function (
+                    event
+                ) {
+
+                    event.preventDefault();
+
+
+                    /*
+                     * Save coupon for Checkout.
+                     */
+                    localStorage.setItem(
+                        "yummyTummyCoupon",
+                        JSON.stringify({
+
+                            code:
+                                couponCode,
+
+                            type:
+                                couponCode ===
+                                "YUMMY100"
+                                    ? "flat"
+                                    : couponCode ===
+                                      "FOODIE20"
+                                        ? "percentage"
+                                        : "free-delivery",
+
+                            value:
+                                couponCode ===
+                                "YUMMY100"
+                                    ? 100
+                                    : couponCode ===
+                                      "FOODIE20"
+                                        ? 20
+                                        : 0
+
+                        })
+                    );
+
+
+                    /*
+                     * Go directly to Checkout.
+                     */
+                    window.location.href =
+                        "checkout.html";
+
+                }
+            );
+
+        }
+    );
+
+}
+
+
+/* =========================================================
+   INITIALIZE HOME OFFERS
+   ========================================================= */
+
+document.addEventListener(
+    "DOMContentLoaded",
+    function () {
+
+        initializeHomeOfferButtons();
+
+    }
+);

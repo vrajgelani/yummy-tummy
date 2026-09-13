@@ -751,6 +751,22 @@
                         <div class="checkout-summary-divider">
                         </div>
 
+                        <div
+    class="checkout-summary-row"
+    id="checkoutDiscountRow"
+    hidden
+>
+
+    <span>
+        Coupon Discount
+    </span>
+
+    <strong id="checkoutDiscount">
+        ₹0
+    </strong>
+
+</div>
+
 
                         <div class="checkout-summary-total">
 
@@ -763,6 +779,94 @@
                             </strong>
 
                         </div>
+
+                        <!-- ==================== COUPON ==================== -->
+
+<div class="checkout-coupon-section">
+
+    <div class="checkout-coupon-heading">
+
+        <h3>
+            Apply Coupon
+        </h3>
+
+        <p>
+            Save more on your order with available offers.
+        </p>
+
+    </div>
+
+
+    <div class="checkout-coupon-input-row">
+
+        <input
+            type="text"
+            id="checkoutCouponInput"
+            placeholder="Enter coupon code"
+            maxlength="20"
+            autocomplete="off"
+        >
+
+        <button
+            type="button"
+            id="applyCouponButton"
+        >
+            Apply
+        </button>
+
+    </div>
+
+
+    <p
+        id="couponMessage"
+        class="coupon-message"
+        aria-live="polite"
+    >
+    </p>
+
+
+    <div
+        id="appliedCouponBox"
+        class="applied-coupon-box"
+        hidden
+    >
+
+        <div>
+
+            <span>
+                Applied Coupon
+            </span>
+
+            <strong id="appliedCouponCode">
+                -
+            </strong>
+
+        </div>
+
+
+        <div>
+
+            <span>
+                Discount
+            </span>
+
+            <strong id="appliedCouponDiscount">
+                ₹0
+            </strong>
+
+        </div>
+
+
+        <button
+            type="button"
+            id="removeCouponButton"
+        >
+            Remove
+        </button>
+
+    </div>
+
+</div>
 
 
                         <button

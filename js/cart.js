@@ -577,24 +577,21 @@ function calculateCartSubtotal(
 function calculateDeliveryFee(
     cartItems
 ) {
-    if (
-        !cartItems.length
-    ) {
-        return 0;
-    }
 
-    const subtotal =
-        calculateCartSubtotal(
+    if (
+        !Array.isArray(
             cartItems
-        );
-
-    if (
-        subtotal >= 500
+        ) ||
+        cartItems.length === 0
     ) {
+
         return 0;
+
     }
+
 
     return 40;
+
 }
 
 
@@ -1125,40 +1122,93 @@ function removeCartItem(
 
 /* ==================== UPDATE CHECKOUT ITEMS ==================== */
 
+/* ==================== UPDATE CHECKOUT ITEMS ==================== */
+
 function updateCheckoutItems() {
+
     const checkoutItemsList =
         document.getElementById(
             "checkoutItemsList"
         );
 
-    if (
-        !checkoutItemsList
-    ) {
+
+    if (!checkoutItemsList) {
         return;
     }
+
 
     const checkoutCards =
         checkoutItemsList.querySelectorAll(
             ".checkout-item"
         );
 
+
     const emptyState =
         document.getElementById(
             "checkoutEmptyState"
         );
 
+
     const checkoutItems =
         prepareCartItems();
 
+
+    /*
+     * Hide every pre-existing card first.
+     */
     checkoutCards.forEach(
         function (card) {
+
             card.hidden =
                 true;
 
             card.style.display =
                 "none";
+
         }
     );
+
+
+    /*
+     * If cart is empty
+     */
+    if (
+        checkoutItems.length === 0
+    ) {
+
+        if (emptyState) {
+
+            emptyState.hidden =
+                false;
+
+            emptyState.style.display =
+                "";
+
+        }
+
+
+        updateCheckoutSummary(
+            []
+        );
+
+
+        return;
+    }
+
+
+    /*
+     * Cart has items
+     */
+    if (emptyState) {
+
+        emptyState.hidden =
+            true;
+
+        emptyState.style.display =
+            "none";
+
+    }
+
 
     checkoutItems
         .slice(
@@ -1176,35 +1226,48 @@ function updateCheckoutItems() {
                         index
                     ];
 
+
                 if (!card) {
                     return;
                 }
 
+
                 const food =
                     cartItem.food;
 
+
                 const quantity =
                     cartItem.quantity;
+
+
+                if (!food) {
+                    return;
+                }
+
 
                 const image =
                     card.querySelector(
                         "[data-checkout-image]"
                     );
 
+
                 const category =
                     card.querySelector(
                         "[data-checkout-category]"
                     );
+
 
                 const name =
                     card.querySelector(
                         "[data-checkout-name]"
                     );
 
+
                 const quantityElement =
                     card.querySelector(
                         "[data-checkout-quantity]"
                     );
+
 
                 const price =
                     card.querySelector(
@@ -1212,6 +1275,9 @@ function updateCheckoutItems() {
                     );
 
 
+                /*
+                 * Image
+                 */
                 if (image) {
 
                     image.src =
@@ -1221,25 +1287,37 @@ function updateCheckoutItems() {
                     image.alt =
                         food.name ||
                         "Food";
+
                 }
 
 
+                /*
+                 * Category
+                 */
                 if (category) {
 
                     category.textContent =
                         food.category ||
                         "Food";
+
                 }
 
 
+                /*
+                 * Name
+                 */
                 if (name) {
 
                     name.textContent =
                         food.name ||
                         "Food";
+
                 }
 
 
+                /*
+                 * Quantity
+                 */
                 if (
                     quantityElement
                 ) {
@@ -1247,51 +1325,50 @@ function updateCheckoutItems() {
                     quantityElement.textContent =
                         "Quantity: " +
                         quantity;
+
                 }
 
 
+                /*
+                 * Price
+                 */
                 if (price) {
 
                     const itemTotal =
                         Number(
-                            food.price
+                            food.price || 0
                         ) *
                         quantity;
+
 
                     price.textContent =
                         formatCartPrice(
                             itemTotal
                         );
+
                 }
 
 
+                /*
+                 * Show only this real item
+                 */
                 card.hidden =
                     false;
 
                 card.style.display =
                     "";
+
             }
         );
 
 
-    if (
-        emptyState
-    ) {
-
-        emptyState.hidden =
-            checkoutItems.length !==
-            0;
-
-        emptyState.style.display =
-            checkoutItems.length === 0
-                ? ""
-                : "none";
-    }
-
-
+    /*
+     * Update summary
+     */
     updateCheckoutSummary(
         checkoutItems
     );
+
 }
 
 
@@ -1300,67 +1377,187 @@ function updateCheckoutItems() {
 function updateCheckoutSummary(
     checkoutItems
 ) {
+
     const subtotalElement =
         document.getElementById(
             "checkoutSubtotal"
         );
+
 
     const deliveryFeeElement =
         document.getElementById(
             "checkoutDeliveryFee"
         );
 
+
     const grandTotalElement =
         document.getElementById(
             "checkoutGrandTotal"
         );
+
+
+    const discountElement =
+        document.getElementById(
+            "checkoutDiscount"
+        );
+
+
+    const discountRow =
+        document.getElementById(
+            "checkoutDiscountRow"
+        );
+
 
     const subtotal =
         calculateCartSubtotal(
             checkoutItems
         );
 
-    const deliveryFee =
-        calculateDeliveryFee(
-            checkoutItems
-        );
+
+    /*
+     * Default delivery:
+     * Empty = ₹0
+     * Items = ₹40
+     */
+    let deliveryFee =
+        checkoutItems.length > 0
+            ? 40
+            : 0;
+
+
+    /*
+     * Coupon
+     */
+    let discount =
+        0;
+
+
+    if (
+        typeof getSavedCoupon ===
+        "function"
+    ) {
+
+        const coupon =
+            getSavedCoupon();
+
+
+        if (
+            typeof calculateCouponDiscount ===
+            "function"
+        ) {
+
+            discount =
+                calculateCouponDiscount(
+                    coupon,
+                    subtotal
+                );
+
+        }
+
+
+        /*
+         * FREEDEL
+         */
+        if (
+            typeof isFreeDeliveryCoupon ===
+                "function" &&
+            isFreeDeliveryCoupon(
+                coupon
+            )
+        ) {
+
+            deliveryFee =
+                checkoutItems.length > 0
+                    ? 0
+                    : 0;
+
+        }
+
+    }
+
 
     const grandTotal =
-        subtotal +
-        deliveryFee;
+        Math.max(
+            0,
+            subtotal -
+            discount +
+            deliveryFee
+        );
 
 
+    /*
+     * Subtotal
+     */
     if (
         subtotalElement
     ) {
 
         subtotalElement.textContent =
-            formatCartPrice(
-                subtotal
-            );
+            "₹" +
+            subtotal;
+
     }
 
 
+    /*
+     * Delivery
+     */
     if (
         deliveryFeeElement
     ) {
 
         deliveryFeeElement.textContent =
-            formatCartPrice(
-                deliveryFee
-            );
+            "₹" +
+            deliveryFee;
+
     }
 
 
+    /*
+     * Discount
+     */
+    if (
+        discountElement
+    ) {
+
+        discountElement.textContent =
+            "₹" +
+            discount;
+
+    }
+
+
+    /*
+     * Discount row
+     */
+    if (
+        discountRow
+    ) {
+
+        discountRow.hidden =
+            discount <= 0;
+
+        discountRow.style.display =
+            discount > 0
+                ? ""
+                : "none";
+
+    }
+
+
+    /*
+     * Grand total
+     */
     if (
         grandTotalElement
     ) {
 
         grandTotalElement.textContent =
-            formatCartPrice(
-                grandTotal
-            );
+            "₹" +
+            grandTotal;
+
     }
+
 }
 
 
